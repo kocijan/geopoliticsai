@@ -92,20 +92,20 @@ class GeopoliticsMap {
         }
       }
     }
+  }
 
-    normalizeCityStateGeometry(geometry) {
-      if (!geometry || geometry.type !== 'Polygon' || !Array.isArray(geometry.coordinates)) return null;
+  normalizeCityStateGeometry(geometry) {
+    if (!geometry || geometry.type !== 'Polygon' || !Array.isArray(geometry.coordinates)) return null;
 
-      // Guard against ring winding issues that can make tiny polygons render as near-world masks.
-      if (typeof d3.geoArea === 'function' && d3.geoArea(geometry) > (2 * Math.PI)) {
-        return {
-          type: 'Polygon',
-          coordinates: geometry.coordinates.map(ring => Array.isArray(ring) ? [...ring].reverse() : ring)
-        };
-      }
-
-      return geometry;
+    // Guard against ring winding issues that can make tiny polygons render as near-world masks.
+    if (typeof d3.geoArea === 'function' && d3.geoArea(geometry) > (2 * Math.PI)) {
+      return {
+        type: 'Polygon',
+        coordinates: geometry.coordinates.map(ring => Array.isArray(ring) ? [...ring].reverse() : ring)
+      };
     }
+
+    return geometry;
   }
 
   setupSvg() {

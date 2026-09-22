@@ -33,13 +33,14 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇫"
     },
     "ALA": {
       "iso3": "ALA",
       "iso2": "AX",
       "numeric": "248",
-      "name": "\u00c5land Islands",
+      "name": "Åland Islands",
       "region": "Europe",
       "subregion": "Northern Europe",
       "is_eu_member": false,
@@ -47,7 +48,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇽"
     },
     "ALB": {
       "iso3": "ALB",
@@ -61,7 +63,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇱"
     },
     "DZA": {
       "iso3": "DZA",
@@ -81,7 +84,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇩🇿"
     },
     "ASM": {
       "iso3": "ASM",
@@ -95,7 +99,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇸"
     },
     "AND": {
       "iso3": "AND",
@@ -109,7 +114,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇩"
     },
     "AGO": {
       "iso3": "AGO",
@@ -123,7 +129,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇴"
     },
     "AIA": {
       "iso3": "AIA",
@@ -137,7 +144,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇮"
     },
     "ATA": {
       "iso3": "ATA",
@@ -151,7 +159,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇶"
     },
     "ATG": {
       "iso3": "ATG",
@@ -165,7 +174,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇬"
     },
     "ARG": {
       "iso3": "ARG",
@@ -186,7 +196,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇦🇷"
     },
     "ARM": {
       "iso3": "ARM",
@@ -200,7 +211,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇲"
     },
     "ABW": {
       "iso3": "ABW",
@@ -214,7 +226,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇼"
     },
     "AUS": {
       "iso3": "AUS",
@@ -245,7 +258,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇦🇺"
     },
     "AUT": {
       "iso3": "AUT",
@@ -266,7 +280,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇦🇹"
     },
     "AZE": {
       "iso3": "AZE",
@@ -280,7 +295,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇦🇿"
     },
     "BHS": {
       "iso3": "BHS",
@@ -294,7 +310,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇸"
     },
     "BHR": {
       "iso3": "BHR",
@@ -318,7 +335,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "frontier_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇧🇭"
     },
     "BGD": {
       "iso3": "BGD",
@@ -345,7 +363,8 @@
       },
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇧🇩"
     },
     "BRB": {
       "iso3": "BRB",
@@ -359,7 +378,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇧"
     },
     "BLR": {
       "iso3": "BLR",
@@ -379,7 +399,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇧🇾"
     },
     "BEL": {
       "iso3": "BEL",
@@ -400,7 +421,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇧🇪"
     },
     "BLZ": {
       "iso3": "BLZ",
@@ -414,7 +436,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇿"
     },
     "BEN": {
       "iso3": "BEN",
@@ -428,7 +451,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇯"
     },
     "BMU": {
       "iso3": "BMU",
@@ -442,7 +466,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇲"
     },
     "BTN": {
       "iso3": "BTN",
@@ -456,7 +481,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇹"
     },
     "BOL": {
       "iso3": "BOL",
@@ -470,7 +496,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇴"
     },
     "BES": {
       "iso3": "BES",
@@ -484,7 +511,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇶"
     },
     "BIH": {
       "iso3": "BIH",
@@ -498,7 +526,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇦"
     },
     "BWA": {
       "iso3": "BWA",
@@ -512,7 +541,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇼"
     },
     "BVT": {
       "iso3": "BVT",
@@ -526,7 +556,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇻"
     },
     "BRA": {
       "iso3": "BRA",
@@ -546,7 +577,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇧🇷"
     },
     "IOT": {
       "iso3": "IOT",
@@ -560,7 +592,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇮🇴"
     },
     "BRN": {
       "iso3": "BRN",
@@ -580,7 +613,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇧🇳"
     },
     "BGR": {
       "iso3": "BGR",
@@ -601,7 +635,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇧🇬"
     },
     "BFA": {
       "iso3": "BFA",
@@ -615,7 +650,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇫"
     },
     "BDI": {
       "iso3": "BDI",
@@ -629,7 +665,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇮"
     },
     "CPV": {
       "iso3": "CPV",
@@ -643,7 +680,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇻"
     },
     "KHM": {
       "iso3": "KHM",
@@ -663,7 +701,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇰🇭"
     },
     "CMR": {
       "iso3": "CMR",
@@ -683,7 +722,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇨🇲"
     },
     "CAN": {
       "iso3": "CAN",
@@ -714,7 +754,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇨🇦"
     },
     "CYM": {
       "iso3": "CYM",
@@ -728,7 +769,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇰🇾"
     },
     "CAF": {
       "iso3": "CAF",
@@ -742,7 +784,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇫"
     },
     "TCD": {
       "iso3": "TCD",
@@ -756,7 +799,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇩"
     },
     "CHL": {
       "iso3": "CHL",
@@ -777,7 +821,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇨🇱"
     },
     "CHN": {
       "iso3": "CHN",
@@ -797,7 +842,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇨🇳"
     },
     "CXR": {
       "iso3": "CXR",
@@ -811,7 +857,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇽"
     },
     "CCK": {
       "iso3": "CCK",
@@ -825,7 +872,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇨"
     },
     "COL": {
       "iso3": "COL",
@@ -839,7 +887,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇴"
     },
     "COM": {
       "iso3": "COM",
@@ -853,7 +902,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇰🇲"
     },
     "COG": {
       "iso3": "COG",
@@ -873,7 +923,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇨🇬"
     },
     "COD": {
       "iso3": "COD",
@@ -887,7 +938,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇩"
     },
     "COK": {
       "iso3": "COK",
@@ -901,7 +953,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇰"
     },
     "CRI": {
       "iso3": "CRI",
@@ -922,13 +975,14 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇨🇷"
     },
     "CIV": {
       "iso3": "CIV",
       "iso2": "CI",
       "numeric": "384",
-      "name": "C\u00f4te d'Ivoire",
+      "name": "Côte d'Ivoire",
       "region": "Africa",
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
@@ -936,7 +990,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇮"
     },
     "HRV": {
       "iso3": "HRV",
@@ -957,7 +1012,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇭🇷"
     },
     "CUB": {
       "iso3": "CUB",
@@ -977,13 +1033,14 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇨🇺"
     },
     "CUW": {
       "iso3": "CUW",
       "iso2": "CW",
       "numeric": "531",
-      "name": "Cura\u00e7ao",
+      "name": "Curaçao",
       "region": "Americas",
       "subregion": "Latin America and the Caribbean",
       "is_eu_member": false,
@@ -991,7 +1048,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇼"
     },
     "CYP": {
       "iso3": "CYP",
@@ -1012,7 +1070,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇨🇾"
     },
     "CZE": {
       "iso3": "CZE",
@@ -1033,7 +1092,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇨🇿"
     },
     "DNK": {
       "iso3": "DNK",
@@ -1064,7 +1124,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇩🇰"
     },
     "DJI": {
       "iso3": "DJI",
@@ -1078,7 +1139,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇩🇯"
     },
     "DMA": {
       "iso3": "DMA",
@@ -1098,7 +1160,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇩🇲"
     },
     "DOM": {
       "iso3": "DOM",
@@ -1112,7 +1175,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇩🇴"
     },
     "ECU": {
       "iso3": "ECU",
@@ -1126,7 +1190,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇪🇨"
     },
     "EGY": {
       "iso3": "EGY",
@@ -1140,7 +1205,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇪🇬"
     },
     "SLV": {
       "iso3": "SLV",
@@ -1161,7 +1227,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇸🇻"
     },
     "GNQ": {
       "iso3": "GNQ",
@@ -1175,7 +1242,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇶"
     },
     "ERI": {
       "iso3": "ERI",
@@ -1189,7 +1257,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇪🇷"
     },
     "EST": {
       "iso3": "EST",
@@ -1220,7 +1289,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇪🇪"
     },
     "SWZ": {
       "iso3": "SWZ",
@@ -1234,7 +1304,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇿"
     },
     "ETH": {
       "iso3": "ETH",
@@ -1254,7 +1325,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇪🇹"
     },
     "FLK": {
       "iso3": "FLK",
@@ -1268,7 +1340,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇫🇰"
     },
     "FRO": {
       "iso3": "FRO",
@@ -1282,7 +1355,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇫🇴"
     },
     "FJI": {
       "iso3": "FJI",
@@ -1296,7 +1370,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇫🇯"
     },
     "FIN": {
       "iso3": "FIN",
@@ -1327,7 +1402,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇫🇮"
     },
     "FRA": {
       "iso3": "FRA",
@@ -1348,7 +1424,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇫🇷"
     },
     "GUF": {
       "iso3": "GUF",
@@ -1362,7 +1439,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇫"
     },
     "PYF": {
       "iso3": "PYF",
@@ -1376,7 +1454,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇫"
     },
     "ATF": {
       "iso3": "ATF",
@@ -1390,7 +1469,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇫"
     },
     "GAB": {
       "iso3": "GAB",
@@ -1404,7 +1484,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇦"
     },
     "GMB": {
       "iso3": "GMB",
@@ -1418,7 +1499,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇲"
     },
     "GEO": {
       "iso3": "GEO",
@@ -1438,7 +1520,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇬🇪"
     },
     "DEU": {
       "iso3": "DEU",
@@ -1469,7 +1552,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇩🇪"
     },
     "GHA": {
       "iso3": "GHA",
@@ -1483,7 +1567,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇭"
     },
     "GIB": {
       "iso3": "GIB",
@@ -1497,7 +1582,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇮"
     },
     "GRC": {
       "iso3": "GRC",
@@ -1518,7 +1604,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇬🇷"
     },
     "GRL": {
       "iso3": "GRL",
@@ -1532,7 +1619,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇱"
     },
     "GRD": {
       "iso3": "GRD",
@@ -1546,7 +1634,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇩"
     },
     "GLP": {
       "iso3": "GLP",
@@ -1560,7 +1649,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇵"
     },
     "GUM": {
       "iso3": "GUM",
@@ -1574,7 +1664,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇺"
     },
     "GTM": {
       "iso3": "GTM",
@@ -1588,7 +1679,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇹"
     },
     "GGY": {
       "iso3": "GGY",
@@ -1602,7 +1694,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇬"
     },
     "GIN": {
       "iso3": "GIN",
@@ -1616,7 +1709,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇳"
     },
     "GNB": {
       "iso3": "GNB",
@@ -1630,7 +1724,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇼"
     },
     "GUY": {
       "iso3": "GUY",
@@ -1644,7 +1739,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇾"
     },
     "HTI": {
       "iso3": "HTI",
@@ -1658,7 +1754,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇭🇹"
     },
     "HMD": {
       "iso3": "HMD",
@@ -1672,7 +1769,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇭🇲"
     },
     "VAT": {
       "iso3": "VAT",
@@ -1686,7 +1784,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇻🇦"
     },
     "HND": {
       "iso3": "HND",
@@ -1700,7 +1799,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇭🇳"
     },
     "HKG": {
       "iso3": "HKG",
@@ -1714,7 +1814,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇭🇰"
     },
     "HUN": {
       "iso3": "HUN",
@@ -1735,7 +1836,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇭🇺"
     },
     "ISL": {
       "iso3": "ISL",
@@ -1751,15 +1853,16 @@
         "status": "leader_endorsement",
         "role_label": "Endorsed by Prime Minister",
         "leader_title": "Prime Minister",
-        "leader_name": "Kristr\u00fan Frostad\u00f3ttir",
+        "leader_name": "Kristrún Frostadóttir",
         "date": "2026-09-21",
-        "endorsed_by": "Kristr\u00fan Frostad\u00f3ttir (Prime Minister)",
+        "endorsed_by": "Kristrún Frostadóttir (Prime Minister)",
         "is_co_initiator": false,
         "notes": "Nordic endorsement of international AI oversight.",
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "frontier_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇮🇸"
     },
     "IND": {
       "iso3": "IND",
@@ -1780,7 +1883,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇮🇳"
     },
     "IDN": {
       "iso3": "IDN",
@@ -1800,7 +1904,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇮🇩"
     },
     "IRN": {
       "iso3": "IRN",
@@ -1820,7 +1925,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇮🇷"
     },
     "IRQ": {
       "iso3": "IRQ",
@@ -1834,7 +1940,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇮🇶"
     },
     "IRL": {
       "iso3": "IRL",
@@ -1857,15 +1964,16 @@
         "status": "leader_endorsement",
         "role_label": "Endorsed by Prime Minister",
         "leader_title": "Prime Minister",
-        "leader_name": "Miche\u00e1l Martin",
+        "leader_name": "Micheál Martin",
         "date": "2026-09-21",
-        "endorsed_by": "Miche\u00e1l Martin (Prime Minister)",
+        "endorsed_by": "Micheál Martin (Prime Minister)",
         "is_co_initiator": false,
         "notes": "European technology hub leader endorsing frontier oversight.",
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇮🇪"
     },
     "IMN": {
       "iso3": "IMN",
@@ -1879,7 +1987,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇮🇲"
     },
     "ISR": {
       "iso3": "ISR",
@@ -1900,7 +2009,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇮🇱"
     },
     "ITA": {
       "iso3": "ITA",
@@ -1921,7 +2031,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇮🇹"
     },
     "JAM": {
       "iso3": "JAM",
@@ -1935,7 +2046,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇯🇲"
     },
     "JPN": {
       "iso3": "JPN",
@@ -1956,7 +2068,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇯🇵"
     },
     "JEY": {
       "iso3": "JEY",
@@ -1970,7 +2083,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇯🇪"
     },
     "JOR": {
       "iso3": "JOR",
@@ -1984,7 +2098,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇯🇴"
     },
     "KAZ": {
       "iso3": "KAZ",
@@ -2021,7 +2136,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "tripartite",
-      "active_initiatives_count": 3
+      "active_initiatives_count": 3,
+      "flag_emoji": "🇰🇿"
     },
     "KEN": {
       "iso3": "KEN",
@@ -2051,7 +2167,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "waico_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇰🇪"
     },
     "KIR": {
       "iso3": "KIR",
@@ -2065,7 +2182,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇰🇮"
     },
     "PRK": {
       "iso3": "PRK",
@@ -2079,7 +2197,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇰🇵"
     },
     "KOR": {
       "iso3": "KOR",
@@ -2100,7 +2219,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇰🇷"
     },
     "KWT": {
       "iso3": "KWT",
@@ -2114,7 +2234,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇰🇼"
     },
     "KGZ": {
       "iso3": "KGZ",
@@ -2134,7 +2255,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇰🇬"
     },
     "LAO": {
       "iso3": "LAO",
@@ -2154,7 +2276,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇱🇦"
     },
     "LVA": {
       "iso3": "LVA",
@@ -2177,15 +2300,16 @@
         "status": "leader_endorsement",
         "role_label": "Endorsed by President",
         "leader_title": "President",
-        "leader_name": "Edgars Rink\u0113vi\u010ds",
+        "leader_name": "Edgars Rinkēvičs",
         "date": "2026-09-21",
-        "endorsed_by": "Edgars Rink\u0113vi\u010ds (President)",
+        "endorsed_by": "Edgars Rinkēvičs (President)",
         "is_co_initiator": false,
         "notes": "Baltic state endorsing independent AI testing.",
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇱🇻"
     },
     "LBN": {
       "iso3": "LBN",
@@ -2199,7 +2323,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇱🇧"
     },
     "LSO": {
       "iso3": "LSO",
@@ -2219,7 +2344,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇱🇸"
     },
     "LBR": {
       "iso3": "LBR",
@@ -2233,7 +2359,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇱🇷"
     },
     "LBY": {
       "iso3": "LBY",
@@ -2247,7 +2374,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇱🇾"
     },
     "LIE": {
       "iso3": "LIE",
@@ -2261,7 +2389,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇱🇮"
     },
     "LTU": {
       "iso3": "LTU",
@@ -2282,7 +2411,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇱🇹"
     },
     "LUX": {
       "iso3": "LUX",
@@ -2303,7 +2433,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇱🇺"
     },
     "MAC": {
       "iso3": "MAC",
@@ -2317,7 +2448,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇴"
     },
     "MDG": {
       "iso3": "MDG",
@@ -2331,7 +2463,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇬"
     },
     "MWI": {
       "iso3": "MWI",
@@ -2345,7 +2478,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇼"
     },
     "MYS": {
       "iso3": "MYS",
@@ -2365,7 +2499,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇲🇾"
     },
     "MDV": {
       "iso3": "MDV",
@@ -2379,7 +2514,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇻"
     },
     "MLI": {
       "iso3": "MLI",
@@ -2393,7 +2529,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇱"
     },
     "MLT": {
       "iso3": "MLT",
@@ -2414,7 +2551,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇲🇹"
     },
     "MHL": {
       "iso3": "MHL",
@@ -2428,7 +2566,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇭"
     },
     "MTQ": {
       "iso3": "MTQ",
@@ -2442,7 +2581,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇶"
     },
     "MRT": {
       "iso3": "MRT",
@@ -2456,7 +2596,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇷"
     },
     "MUS": {
       "iso3": "MUS",
@@ -2470,7 +2611,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇺"
     },
     "MYT": {
       "iso3": "MYT",
@@ -2484,7 +2626,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇾🇹"
     },
     "MEX": {
       "iso3": "MEX",
@@ -2498,7 +2641,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇽"
     },
     "FSM": {
       "iso3": "FSM",
@@ -2512,7 +2656,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇫🇲"
     },
     "MDA": {
       "iso3": "MDA",
@@ -2536,7 +2681,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "frontier_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇲🇩"
     },
     "MCO": {
       "iso3": "MCO",
@@ -2550,7 +2696,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇨"
     },
     "MNG": {
       "iso3": "MNG",
@@ -2564,7 +2711,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇳"
     },
     "MNE": {
       "iso3": "MNE",
@@ -2578,7 +2726,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇪"
     },
     "MSR": {
       "iso3": "MSR",
@@ -2592,7 +2741,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇸"
     },
     "MAR": {
       "iso3": "MAR",
@@ -2606,7 +2756,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇦"
     },
     "MOZ": {
       "iso3": "MOZ",
@@ -2626,7 +2777,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇲🇿"
     },
     "MMR": {
       "iso3": "MMR",
@@ -2646,7 +2798,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇲🇲"
     },
     "NAM": {
       "iso3": "NAM",
@@ -2660,7 +2813,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇦"
     },
     "NRU": {
       "iso3": "NRU",
@@ -2674,7 +2828,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇷"
     },
     "NPL": {
       "iso3": "NPL",
@@ -2688,7 +2843,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇵"
     },
     "NLD": {
       "iso3": "NLD",
@@ -2719,7 +2875,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇳🇱"
     },
     "NCL": {
       "iso3": "NCL",
@@ -2733,7 +2890,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇨"
     },
     "NZL": {
       "iso3": "NZL",
@@ -2747,7 +2905,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇿"
     },
     "NIC": {
       "iso3": "NIC",
@@ -2767,7 +2926,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇳🇮"
     },
     "NER": {
       "iso3": "NER",
@@ -2781,7 +2941,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇪"
     },
     "NGA": {
       "iso3": "NGA",
@@ -2795,7 +2956,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇬"
     },
     "NIU": {
       "iso3": "NIU",
@@ -2809,7 +2971,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇺"
     },
     "NFK": {
       "iso3": "NFK",
@@ -2823,7 +2986,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇳🇫"
     },
     "MKD": {
       "iso3": "MKD",
@@ -2837,7 +3001,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇰"
     },
     "MNP": {
       "iso3": "MNP",
@@ -2851,7 +3016,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇵"
     },
     "NOR": {
       "iso3": "NOR",
@@ -2874,15 +3040,16 @@
         "status": "leader_endorsement",
         "role_label": "Endorsed by Prime Minister",
         "leader_title": "Prime Minister",
-        "leader_name": "Jonas Gahr St\u00f8re",
+        "leader_name": "Jonas Gahr Støre",
         "date": "2026-09-21",
-        "endorsed_by": "Jonas Gahr St\u00f8re (Prime Minister)",
+        "endorsed_by": "Jonas Gahr Støre (Prime Minister)",
         "is_co_initiator": true,
         "notes": "Co-spearheaded the initiative alongside Finland.",
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇳🇴"
     },
     "OMN": {
       "iso3": "OMN",
@@ -2902,7 +3069,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇴🇲"
     },
     "PAK": {
       "iso3": "PAK",
@@ -2922,7 +3090,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇵🇰"
     },
     "PLW": {
       "iso3": "PLW",
@@ -2936,7 +3105,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇼"
     },
     "PSE": {
       "iso3": "PSE",
@@ -2950,7 +3120,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇸"
     },
     "PAN": {
       "iso3": "PAN",
@@ -2971,7 +3142,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇵🇦"
     },
     "PNG": {
       "iso3": "PNG",
@@ -2985,7 +3157,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇬"
     },
     "PRY": {
       "iso3": "PRY",
@@ -2999,7 +3172,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇾"
     },
     "PER": {
       "iso3": "PER",
@@ -3013,7 +3187,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇪"
     },
     "PHL": {
       "iso3": "PHL",
@@ -3034,7 +3209,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇵🇭"
     },
     "PCN": {
       "iso3": "PCN",
@@ -3048,7 +3224,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇳"
     },
     "POL": {
       "iso3": "POL",
@@ -3069,7 +3246,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇵🇱"
     },
     "PRT": {
       "iso3": "PRT",
@@ -3090,7 +3268,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇵🇹"
     },
     "PRI": {
       "iso3": "PRI",
@@ -3104,7 +3283,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇷"
     },
     "QAT": {
       "iso3": "QAT",
@@ -3125,13 +3305,14 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇶🇦"
     },
     "REU": {
       "iso3": "REU",
       "iso2": "RE",
       "numeric": "638",
-      "name": "R\u00e9union",
+      "name": "Réunion",
       "region": "Africa",
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
@@ -3139,7 +3320,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇷🇪"
     },
     "ROU": {
       "iso3": "ROU",
@@ -3160,7 +3342,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇷🇴"
     },
     "RUS": {
       "iso3": "RUS",
@@ -3180,7 +3363,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇷🇺"
     },
     "RWA": {
       "iso3": "RWA",
@@ -3194,13 +3378,14 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇷🇼"
     },
     "BLM": {
       "iso3": "BLM",
       "iso2": "BL",
       "numeric": "652",
-      "name": "Saint Barth\u00e9lemy",
+      "name": "Saint Barthélemy",
       "region": "Americas",
       "subregion": "Latin America and the Caribbean",
       "is_eu_member": false,
@@ -3208,7 +3393,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇧🇱"
     },
     "SHN": {
       "iso3": "SHN",
@@ -3222,7 +3408,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇭"
     },
     "KNA": {
       "iso3": "KNA",
@@ -3236,7 +3423,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇰🇳"
     },
     "LCA": {
       "iso3": "LCA",
@@ -3250,7 +3438,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇱🇨"
     },
     "MAF": {
       "iso3": "MAF",
@@ -3264,7 +3453,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇲🇫"
     },
     "SPM": {
       "iso3": "SPM",
@@ -3278,7 +3468,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇲"
     },
     "VCT": {
       "iso3": "VCT",
@@ -3292,7 +3483,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇻🇨"
     },
     "WSM": {
       "iso3": "WSM",
@@ -3306,7 +3498,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇼🇸"
     },
     "SMR": {
       "iso3": "SMR",
@@ -3320,7 +3513,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇲"
     },
     "STP": {
       "iso3": "STP",
@@ -3334,7 +3528,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇹"
     },
     "SAU": {
       "iso3": "SAU",
@@ -3348,7 +3543,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇦"
     },
     "SEN": {
       "iso3": "SEN",
@@ -3368,7 +3564,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇸🇳"
     },
     "SRB": {
       "iso3": "SRB",
@@ -3388,7 +3585,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇷🇸"
     },
     "SYC": {
       "iso3": "SYC",
@@ -3402,7 +3600,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇨"
     },
     "SLE": {
       "iso3": "SLE",
@@ -3416,7 +3615,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇱"
     },
     "SGP": {
       "iso3": "SGP",
@@ -3453,7 +3653,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇸🇬"
     },
     "SXM": {
       "iso3": "SXM",
@@ -3467,7 +3668,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇽"
     },
     "SVK": {
       "iso3": "SVK",
@@ -3488,7 +3690,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇸🇰"
     },
     "SVN": {
       "iso3": "SVN",
@@ -3509,7 +3712,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇸🇮"
     },
     "SLB": {
       "iso3": "SLB",
@@ -3523,7 +3727,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇧"
     },
     "SOM": {
       "iso3": "SOM",
@@ -3537,7 +3742,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇴"
     },
     "ZAF": {
       "iso3": "ZAF",
@@ -3567,7 +3773,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "waico_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇿🇦"
     },
     "SGS": {
       "iso3": "SGS",
@@ -3581,7 +3788,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇬🇸"
     },
     "SSD": {
       "iso3": "SSD",
@@ -3595,7 +3803,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇸"
     },
     "ESP": {
       "iso3": "ESP",
@@ -3618,15 +3827,16 @@
         "status": "leader_endorsement",
         "role_label": "Endorsed by Prime Minister",
         "leader_title": "Prime Minister",
-        "leader_name": "Pedro S\u00e1nchez",
+        "leader_name": "Pedro Sánchez",
         "date": "2026-09-21",
-        "endorsed_by": "Pedro S\u00e1nchez (Prime Minister)",
+        "endorsed_by": "Pedro Sánchez (Prime Minister)",
         "is_co_initiator": false,
         "notes": "Host of EU AI supervision initiatives endorsing global oversight.",
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇪🇸"
     },
     "LKA": {
       "iso3": "LKA",
@@ -3640,7 +3850,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇱🇰"
     },
     "SDN": {
       "iso3": "SDN",
@@ -3660,7 +3871,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇸🇩"
     },
     "SUR": {
       "iso3": "SUR",
@@ -3674,7 +3886,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇷"
     },
     "SJM": {
       "iso3": "SJM",
@@ -3688,7 +3901,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇯"
     },
     "SWE": {
       "iso3": "SWE",
@@ -3709,7 +3923,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇸🇪"
     },
     "CHE": {
       "iso3": "CHE",
@@ -3723,7 +3938,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇨🇭"
     },
     "SYR": {
       "iso3": "SYR",
@@ -3737,7 +3953,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇸🇾"
     },
     "TWN": {
       "iso3": "TWN",
@@ -3758,7 +3975,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇹🇼"
     },
     "TJK": {
       "iso3": "TJK",
@@ -3778,7 +3996,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇹🇯"
     },
     "TZA": {
       "iso3": "TZA",
@@ -3798,7 +4017,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇹🇿"
     },
     "THA": {
       "iso3": "THA",
@@ -3812,7 +4032,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇭"
     },
     "TLS": {
       "iso3": "TLS",
@@ -3826,7 +4047,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇱"
     },
     "TGO": {
       "iso3": "TGO",
@@ -3846,7 +4068,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇹🇬"
     },
     "TKL": {
       "iso3": "TKL",
@@ -3860,7 +4083,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇰"
     },
     "TON": {
       "iso3": "TON",
@@ -3874,7 +4098,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇴"
     },
     "TTO": {
       "iso3": "TTO",
@@ -3888,7 +4113,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇹"
     },
     "TUN": {
       "iso3": "TUN",
@@ -3902,13 +4128,14 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇳"
     },
     "TUR": {
       "iso3": "TUR",
       "iso2": "TR",
       "numeric": "792",
-      "name": "T\u00fcrkiye",
+      "name": "Türkiye",
       "region": "Asia",
       "subregion": "Western Asia",
       "is_eu_member": false,
@@ -3926,7 +4153,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "frontier_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇹🇷"
     },
     "TKM": {
       "iso3": "TKM",
@@ -3940,7 +4168,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇲"
     },
     "TCA": {
       "iso3": "TCA",
@@ -3954,7 +4183,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇨"
     },
     "TUV": {
       "iso3": "TUV",
@@ -3968,7 +4198,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇹🇻"
     },
     "UGA": {
       "iso3": "UGA",
@@ -3982,7 +4213,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇺🇬"
     },
     "UKR": {
       "iso3": "UKR",
@@ -3996,7 +4228,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇺🇦"
     },
     "ARE": {
       "iso3": "ARE",
@@ -4027,7 +4260,8 @@
         "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
       },
       "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2
+      "active_initiatives_count": 2,
+      "flag_emoji": "🇦🇪"
     },
     "GBR": {
       "iso3": "GBR",
@@ -4048,7 +4282,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇬🇧"
     },
     "USA": {
       "iso3": "USA",
@@ -4069,7 +4304,8 @@
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇺🇸"
     },
     "UMI": {
       "iso3": "UMI",
@@ -4083,7 +4319,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇺🇲"
     },
     "URY": {
       "iso3": "URY",
@@ -4097,7 +4334,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇺🇾"
     },
     "UZB": {
       "iso3": "UZB",
@@ -4117,7 +4355,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇺🇿"
     },
     "VUT": {
       "iso3": "VUT",
@@ -4131,7 +4370,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇻🇺"
     },
     "VEN": {
       "iso3": "VEN",
@@ -4151,7 +4391,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇻🇪"
     },
     "VNM": {
       "iso3": "VNM",
@@ -4171,7 +4412,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇻🇳"
     },
     "VGB": {
       "iso3": "VGB",
@@ -4185,7 +4427,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇻🇬"
     },
     "VIR": {
       "iso3": "VIR",
@@ -4199,7 +4442,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇻🇮"
     },
     "WLF": {
       "iso3": "WLF",
@@ -4213,7 +4457,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇼🇫"
     },
     "ESH": {
       "iso3": "ESH",
@@ -4227,7 +4472,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇪🇭"
     },
     "YEM": {
       "iso3": "YEM",
@@ -4241,7 +4487,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇾🇪"
     },
     "ZMB": {
       "iso3": "ZMB",
@@ -4261,7 +4508,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇿🇲"
     },
     "ZWE": {
       "iso3": "ZWE",
@@ -4275,14 +4523,15 @@
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
-      "active_initiatives_count": 0
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇿🇼"
     },
     "XKX": {
       "iso3": "XKX",
       "numeric": "383",
       "name": "Kosovo",
       "region": "Europe",
-      "flag_emoji": "\ud83c\uddfd\ud83c\uddf0",
+      "flag_emoji": "🇽🇰",
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,
@@ -4293,7 +4542,7 @@
       "numeric": "900",
       "name": "N. Cyprus",
       "region": "Asia",
-      "flag_emoji": "\ud83c\udde8\ud83c\uddfe",
+      "flag_emoji": "🇨🇾",
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,
@@ -4304,7 +4553,7 @@
       "numeric": "901",
       "name": "Somaliland",
       "region": "Africa",
-      "flag_emoji": "\ud83c\uddf8\ud83c\uddf4",
+      "flag_emoji": "🇸🇴",
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,

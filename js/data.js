@@ -25,6 +25,15 @@ const DataStore = {
       this.countriesByName.clear();
 
       for (const c of this.countriesList) {
+        if (!c.flag_emoji || c.flag_emoji === '🏳️') {
+          if (c.iso2 && c.iso2.length === 2) {
+            try {
+              c.flag_emoji = String.fromCodePoint(...[...c.iso2.toUpperCase()].map(char => 127397 + char.charCodeAt(0)));
+            } catch (_) {
+              c.flag_emoji = '🏳️';
+            }
+          }
+        }
         this.countriesByIso3.set(c.iso3, c);
         if (c.numeric) this.countriesByNumeric.set(String(c.numeric).padStart(3, '0'), c);
         this.countriesByName.set(c.name.toLowerCase(), c);

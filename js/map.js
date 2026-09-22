@@ -44,6 +44,7 @@ class GeopoliticsMap {
   async init(worldTopoJson) {
     this.worldData = worldTopoJson;
     this.countryFeatures = topojson.feature(this.worldData, this.worldData.objects.countries).features;
+    this.injectCityStates();
 
     this.setupSvg();
     this.setupDefs();
@@ -55,6 +56,40 @@ class GeopoliticsMap {
     window.addEventListener('resize', () => this.handleResize());
     if (window.ResizeObserver) {
       new ResizeObserver(() => this.handleResize()).observe(this.container);
+    }
+  }
+
+  injectCityStates() {
+    const cityStates = [
+      { id: '702', name: 'Singapore', lon: 103.8198, lat: 1.3521, r: 0.45 },
+      { id: '492', name: 'Monaco', lon: 7.4246, lat: 43.7384, r: 0.35 },
+      { id: '336', name: 'Holy See', lon: 12.4534, lat: 41.9029, r: 0.3 },
+      { id: '674', name: 'San Marino', lon: 12.4578, lat: 43.9424, r: 0.35 },
+      { id: '438', name: 'Liechtenstein', lon: 9.5554, lat: 47.1660, r: 0.35 },
+      { id: '470', name: 'Malta', lon: 14.3754, lat: 35.9375, r: 0.4 },
+      { id: '020', name: 'Andorra', lon: 1.5218, lat: 42.5063, r: 0.35 },
+      { id: '048', name: 'Bahrain', lon: 50.5577, lat: 26.0667, r: 0.4 }
+    ];
+
+    const existingIds = new Set(
+      this.countryFeatures.map(f => (f.id !== undefined && f.id !== null ? String(f.id).padStart(3, '0') : ''))
+    );
+
+    for (const cs of cityStates) {
+      if (!existingIds.has(cs.id)) {
+        const circleGeo = typeof d3.geoCircle === 'function'
+          ? d3.geoCircle().center([cs.lon, cs.lat]).radius(cs.r)()
+          : null;
+
+        if (circleGeo) {
+          this.countryFeatures.push({
+            type: 'Feature',
+            id: cs.id,
+            properties: { name: cs.name },
+            geometry: circleGeo
+          });
+        }
+      }
     }
   }
 
@@ -447,11 +482,16 @@ class GeopoliticsMap {
       }
 
       if (country.pax_silica) {
-        const directLabel = country.pax_silica.is_direct ? '' : ' (via EU)';
+        let paxRole = country.pax_silica.role_label || 'Pax Silica';
+        if (!country.pax_silica.is_direct && !paxRole.includes('(via EU)')) {
+          paxRole += ' (via EU)';
+        }
+        paxRole = paxRole.replace(/(\s*\(via EU\))+/g, ' (via EU)');
+
         badgesHtml += `
           <div class="tooltip-badge-row">
             <span class="symbology-badge symbol-pax">■</span>
-            <strong>Pax Silica:</strong> ${country.pax_silica.role_label}${directLabel}
+            <strong>Pax Silica:</strong> ${paxRole}
           </div>
         `;
       }

@@ -1,6 +1,6 @@
 # GeopoliticsAI.com
 
-### *The Geopolitics of AI, Mapped*
+### *Map of AI Geopolitics*
 
 An interactive, source-linked geospatial tracker of international AI governance, semiconductor supply chains, and frontier-model safety alignments across **WAICO**, **Pax Silica**, and the **Call for Control of Frontier AI Models**.
 
@@ -132,8 +132,6 @@ python3 scripts/fetch_wikipedia_data.py
 ---
 
 ## Author & Community Contributions
-
-Built by **[Martin Josip Kocijan](https://github.com/kocijan)**.
 
 Improvements, corrections, and additions are warmly welcomed:
 - Found a newly signed accession or missing leader endorsement? Open a [GitHub Issue](https://github.com/kocijan/geopoliticsai/issues) or submit a Pull Request.

@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Header / Controls
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const textureToggleCheckbox = document.getElementById('texture-toggle-checkbox') || document.getElementById('texture-toggle-btn');
   const themeIcon = document.getElementById('theme-icon');
   const textureToggleBtn = document.getElementById('texture-toggle-btn');
   const proj2dBtn = document.getElementById('proj-2d-btn');
@@ -159,18 +160,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // 4. Pattern Mode Toggle
-  textureToggleBtn.addEventListener('click', () => {
-    mapInstance.textureMode = !mapInstance.textureMode;
-    document.body.classList.toggle('texture-mode-active', mapInstance.textureMode);
-    mapInstance.updateStyles();
-  });
+  // 4. Pattern Mode Toggle (Checkbox or Button)
+  if (textureToggleCheckbox) {
+    const handleToggle = () => {
+      const isActive = textureToggleCheckbox.type === 'checkbox'
+        ? textureToggleCheckbox.checked
+        : !mapInstance.textureMode;
+      mapInstance.textureMode = isActive;
+      document.body.classList.toggle('texture-mode-active', isActive);
+      mapInstance.updateStyles();
+    };
+
+    textureToggleCheckbox.addEventListener('change', handleToggle);
+    if (textureToggleCheckbox.tagName === 'BUTTON') {
+      textureToggleCheckbox.addEventListener('click', handleToggle);
+    }
+  }
 
   // Alt+A Shortcut for Patterns
   document.addEventListener('keydown', (e) => {
     if (e.altKey && (e.key === 'a' || e.key === 'A')) {
       e.preventDefault();
-      textureToggleBtn.click();
+      if (textureToggleCheckbox) {
+        if (textureToggleCheckbox.type === 'checkbox') {
+          textureToggleCheckbox.checked = !textureToggleCheckbox.checked;
+          textureToggleCheckbox.dispatchEvent(new Event('change'));
+        } else {
+          textureToggleCheckbox.click();
+        }
+      }
     }
   });
 
@@ -288,6 +306,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!c.pax_silica.is_direct && !paxLabel.includes('(via EU)')) {
           paxLabel += ' (via EU)';
         }
+        paxLabel = paxLabel.replace(/(\s*\(via EU\))+/g, ' (via EU)');
         const style = c.pax_silica.is_direct
           ? 'background:var(--color-pax-bg); color:var(--color-pax); border:1px solid var(--color-pax-border);'
           : 'background:rgba(37,99,235,0.08); color:var(--color-pax); border:1px dashed var(--color-pax-border);';
@@ -401,6 +420,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (!country.pax_silica.is_direct && !paxLabel.includes('(via EU)')) {
         paxLabel += ' (via EU)';
       }
+      paxLabel = paxLabel.replace(/(\s*\(via EU\))+/g, ' (via EU)');
       document.getElementById('details-pax-status').textContent = paxLabel;
       document.getElementById('details-pax-date').textContent = country.pax_silica.date || 'December 2025';
       document.getElementById('details-pax-signatory').textContent = country.pax_silica.signatory_title || (country.pax_silica.is_direct ? 'National Representative' : 'European Commission');
@@ -416,7 +436,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       frontierCard.style.display = 'block';
       document.getElementById('details-frontier-status').textContent = country.frontier_call.role_label;
       document.getElementById('details-frontier-date').textContent = country.frontier_call.date || '21 September 2026';
-      document.getElementById('details-frontier-endorser').textContent = country.frontier_call.endorsed_by || 'Head of State/Government';
+      const endorserEl = document.getElementById('details-frontier-endorser') || document.getElementById('details-frontier-leader');
+      if (endorserEl) {
+        endorserEl.textContent = country.frontier_call.endorsed_by || 'Head of State/Government';
+      }
       document.getElementById('details-frontier-notes').textContent = country.frontier_call.notes || '';
       document.getElementById('details-frontier-source').href = country.frontier_call.source_url || 'https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf';
     } else {

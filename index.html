@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeopoliticsAI.com — The Geopolitics of AI, Mapped</title>
+  
+  <!-- SEO Meta -->
+  <meta name="description" content="An interactive, source-linked tracker of international AI governance, supply-chain, and frontier-safety alignments across WAICO, Pax Silica, and the Call for Control of Frontier AI Models.">
+  <meta name="keywords" content="AI geopolitics, WAICO, Pax Silica, Frontier AI Call, artificial intelligence governance, global AI alliances, AI supply chain">
+  <meta name="author" content="Martin Josip Kocijan">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GeopoliticsAI.com — The Geopolitics of AI, Mapped">
+  <meta property="og:description" content="Interactive 2D map and 3D globe tracking overlapping international alignments on AI governance, semiconductors, and frontier model control.">
+  <meta property="og:url" content="https://geopoliticsai.com/">
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/accessibility.css?v=4">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#workspace" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Brand -->
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <h1 class="brand-title">GeopoliticsAI.com</h1>
+        <span class="brand-subtitle-tag">The Geopolitics of AI, Mapped</span>
+        <div class="brand-date-badge" title="Data updated for September 22, 2026">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>September 22, 2026</span>
+        </div>
+      </div>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <!-- Segmented 2D / 3D Slider Toggle -->
+        <div class="segmented-control" role="radiogroup" aria-label="Map Projection Mode">
+          <button type="button" class="segmented-option is-active" id="proj-2d-btn" role="radio" aria-checked="true" title="2D Map (optimal for pan & zoom)">2D Map</button>
+          <button type="button" class="segmented-option" id="proj-3d-btn" role="radio" aria-checked="false" title="Interactive 3D Globe">3D Globe</button>
+        </div>
+
+        <button id="texture-toggle-btn" class="btn btn-sm" title="Toggle tactile patterns and hatching for color-blind distinction (Alt+A)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          <span>Patterns</span>
+        </button>
+
+        <button id="methodology-btn" class="btn btn-sm" aria-haspopup="dialog" aria-controls="methodology-modal">
+          <span>Methodology</span>
+        </button>
+        
+        <button id="about-btn" class="btn btn-sm" aria-haspopup="dialog" aria-controls="about-modal">
+          <span>About</span>
+        </button>
+
+        <button id="theme-toggle-btn" class="btn btn-icon" aria-label="Toggle dark/light theme">
+          <span id="theme-icon" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Condensed Side-by-Side Main Workspace -->
+  <main id="workspace" class="workspace-container">
+    <!-- Left Pane: Map & Visualization -->
+    <section class="map-pane" aria-label="Geopolitical Map Visualization">
+      <div class="map-toolbar">
+        <!-- Top Toolbar Row: Layer Checkboxes & Controls -->
+        <div class="map-toolbar-row">
+          <div class="layer-toggles">
+            <label class="layer-checkbox-label layer-label-waico" title="World Artificial Intelligence Cooperation Organization (37 states)">
+              <input type="checkbox" id="layer-waico" value="waico" checked>
+              <span><span class="symbology-badge symbol-waico">◆</span> WAICO</span>
+            </label>
+
+            <label class="layer-checkbox-label layer-label-pax" title="Pax Silica supply-chain & critical minerals initiative (Includes EU member states)">
+              <input type="checkbox" id="layer-pax" value="pax" checked>
+              <span><span class="symbology-badge symbol-pax">■</span> Pax Silica</span>
+            </label>
+
+            <label class="layer-checkbox-label layer-label-frontier" title="Call for Control of Frontier AI Models (20 sovereign countries + European Commission)">
+              <input type="checkbox" id="layer-frontier" value="frontier" checked>
+              <span><span class="symbology-badge symbol-frontier">★</span> Frontier AI Call</span>
+            </label>
+          </div>
+
+          <button id="auto-rotate-btn" class="btn btn-sm" style="display:none;" title="Auto-rotate 3D Globe">
+            <span>Spin Globe</span>
+          </button>
+        </div>
+
+        <!-- Legend positioned on Top of Map -->
+        <div class="legend-panel-top">
+          <div class="legend-items-row">
+            <div class="legend-item" title="World Artificial Intelligence Cooperation Organization (37 states)">
+              <span class="legend-swatch" style="background: var(--color-waico); border-color: var(--color-waico-border);"></span>
+              <span class="legend-label-text"><span class="symbology-badge symbol-waico">◆</span> WAICO (37)</span>
+            </div>
+
+            <div class="legend-item" title="Pax Silica initiative (33 direct + EU member states)">
+              <span class="legend-swatch" style="background: var(--color-pax); border-color: var(--color-pax-border);"></span>
+              <span class="legend-label-text"><span class="symbology-badge symbol-pax">■</span> Pax Silica (inc. EU)</span>
+            </div>
+
+            <div class="legend-item" title="Declaration by 22 leaders from 20 sovereign countries + European Commission">
+              <span class="legend-swatch" style="background: var(--color-frontier); border-color: var(--color-frontier-border);"></span>
+              <span class="legend-label-text"><span class="symbology-badge symbol-frontier">★</span> Frontier Call (20+EU)</span>
+            </div>
+
+            <div class="legend-item" title="Tripartite alignment across all three initiatives (Kazakhstan)">
+              <span class="legend-swatch" style="background: var(--color-tripartite); border-color: #581c87;"></span>
+              <span class="legend-label-text"><span class="symbology-badge">◆■★</span> All 3 (Kazakhstan)</span>
+            </div>
+
+            <div class="legend-item" title="States aligned across both Pax Silica and Frontier Call (13 states)">
+              <span class="legend-swatch" style="background: var(--color-pax-frontier); border-color: #0f766e;"></span>
+              <span class="legend-label-text"><span class="symbology-badge">■★</span> Pax + Frontier (13)</span>
+            </div>
+
+            <div class="legend-item" title="States aligned across both WAICO and Frontier Call (2 states)">
+              <span class="legend-swatch" style="background: var(--color-waico-frontier); border-color: #c2410c;"></span>
+              <span class="legend-label-text"><span class="symbology-badge">◆★</span> WAICO + Frontier (2)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Viewport filling remaining vertical height -->
+      <div id="map-viewport" class="map-viewport" tabindex="0" role="region" aria-label="Interactive world map showing AI alliances">
+        <!-- Floating On-Map Zoom Controls -->
+        <div class="map-floating-controls">
+          <button id="zoom-in-btn" class="floating-btn" aria-label="Zoom in" title="Zoom in (+)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <button id="zoom-out-btn" class="floating-btn" aria-label="Zoom out" title="Zoom out (-)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <button id="reset-view-btn" class="floating-btn" aria-label="Reset map view" title="Reset view">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><polyline points="3 3 3 8 8 8"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Dynamic Floating Tooltip -->
+        <div id="map-tooltip" class="map-tooltip" role="tooltip" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Right Pane: Countries Register & Direct Search with Inline Details Window -->
+    <section class="register-pane" aria-labelledby="register-heading">
+      <div class="register-header">
+        <!-- Integrated Search Row -->
+        <div class="register-search-row">
+          <div class="search-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="search" id="search-input" class="search-input" placeholder="Search country, leader, or ISO..." aria-label="Search countries or leaders">
+          </div>
+
+          <!-- Preset Filter -->
+          <select id="filter-preset" class="filter-select" aria-label="Filter countries">
+            <option value="all">All Countries</option>
+            <option value="aligned">Aligned States Only</option>
+            <option value="tripartite">Tripartite Overlap (Kazakhstan)</option>
+            <option value="two_way">Two-Way Overlaps</option>
+            <option value="waico">WAICO Signatories</option>
+            <option value="pax">Pax Silica (inc. EU)</option>
+            <option value="frontier">Frontier Call Endorsements</option>
+            <option value="observers">Observers & Invited</option>
+            <option value="eu">EU Member States</option>
+          </select>
+        </div>
+
+        <!-- Meta & Export Row -->
+        <div class="register-meta-row">
+          <div>
+            <strong id="register-heading">Countries Register</strong>
+            <span id="table-count" style="margin-left: 0.25rem;"></span>
+          </div>
+
+          <div class="export-actions">
+            <button id="export-csv-btn" class="btn btn-sm" title="Download dataset as CSV">CSV</button>
+            <button id="export-json-btn" class="btn btn-sm" title="Download dataset as JSON">JSON</button>
+            <button id="export-xml-btn" class="btn btn-sm" title="Download dataset as XML">XML</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrollable Countries Table -->
+      <div class="table-container" id="table-container">
+        <table class="countries-table">
+          <thead>
+            <tr>
+              <th data-sort="name">Country &#8645;</th>
+              <th data-sort="waico">WAICO &#8645;</th>
+              <th data-sort="pax">Pax Silica &#8645;</th>
+              <th data-sort="frontier">Frontier AI Call &#8645;</th>
+              <th style="text-align: right;">Details</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Inline Details Window at Bottom of Table (Desktop) / Sliding Sheet (Mobile) -->
+      <div id="country-details-panel" class="country-details-panel" style="display: none;" role="region" aria-labelledby="details-name">
+        <div class="details-header">
+          <div class="details-header-info">
+            <span id="details-flag" class="details-flag">🏳️</span>
+            <div>
+              <div style="display:flex; align-items:baseline; gap:0.4rem;">
+                <h3 id="details-name" class="details-country-name">Country</h3>
+                <span id="details-iso" class="details-iso-code">ISO</span>
+              </div>
+              <span id="details-region" class="details-region-name">Region</span>
+            </div>
+          </div>
+          <div class="details-header-actions">
+            <button id="copy-permalink-btn" class="btn btn-sm" title="Copy shareable link">
+              <span id="copy-btn-text">Share</span>
+            </button>
+            <button id="details-close-btn" class="btn btn-icon btn-sm" aria-label="Close details window">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="details-body">
+          <!-- EU Status Notification -->
+          <div id="details-eu-status" style="display:none;"></div>
+
+          <!-- WAICO Card -->
+          <div id="details-card-waico" class="initiative-detail-card card-waico" style="display:none;">
+            <div class="initiative-card-header">
+              <div class="initiative-card-title">
+                <span class="symbology-badge symbol-waico">◆</span>
+                <span>WAICO</span>
+              </div>
+              <span id="details-waico-status" class="table-badge" style="background:var(--color-waico-bg); color:var(--color-waico);">Member</span>
+            </div>
+            <div class="initiative-card-meta">
+              <div><span class="meta-label">Accession Date</span><span id="details-waico-date">--</span></div>
+              <div><span class="meta-label">Signatory Status</span><span id="details-waico-signatory">--</span></div>
+            </div>
+            <p id="details-waico-notes" class="initiative-card-notes"></p>
+            <a id="details-waico-source" href="#" target="_blank" rel="noopener noreferrer" class="initiative-source-link">
+              <span>WAICO Wikipedia</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <!-- Pax Silica Card -->
+          <div id="details-card-pax" class="initiative-detail-card card-pax" style="display:none;">
+            <div class="initiative-card-header">
+              <div class="initiative-card-title">
+                <span class="symbology-badge symbol-pax">■</span>
+                <span>Pax Silica</span>
+              </div>
+              <span id="details-pax-status" class="table-badge" style="background:var(--color-pax-bg); color:var(--color-pax);">Signatory</span>
+            </div>
+            <div class="initiative-card-meta">
+              <div><span class="meta-label">Accession Date</span><span id="details-pax-date">--</span></div>
+              <div><span class="meta-label">Signatory Status</span><span id="details-pax-signatory">--</span></div>
+            </div>
+            <p id="details-pax-notes" class="initiative-card-notes"></p>
+            <a id="details-pax-source" href="#" target="_blank" rel="noopener noreferrer" class="initiative-source-link">
+              <span>Pax Silica Wikipedia</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <!-- Frontier AI Call Card -->
+          <div id="details-card-frontier" class="initiative-detail-card card-frontier" style="display:none;">
+            <div class="initiative-card-header">
+              <div class="initiative-card-title">
+                <span class="symbology-badge symbol-frontier">★</span>
+                <span>Frontier AI Call</span>
+              </div>
+              <span id="details-frontier-status" class="table-badge" style="background:var(--color-frontier-bg); color:var(--color-frontier);">Endorsed</span>
+            </div>
+            <div class="initiative-card-meta">
+              <div><span class="meta-label">Date</span><span id="details-frontier-date">21 Sept 2026</span></div>
+              <div><span class="meta-label">Endorsed By</span><span id="details-frontier-endorser">--</span></div>
+            </div>
+            <p id="details-frontier-notes" class="initiative-card-notes"></p>
+            <a id="details-frontier-source" href="#" target="_blank" rel="noopener noreferrer" class="initiative-source-link">
+              <span>Official Statement (PDF)</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <!-- Unaligned Notice -->
+          <div id="details-unaligned-notice" style="display:none;" class="unaligned-notice">
+            <p>No recorded signature, accession, or endorsement across WAICO, Pax Silica, or the Frontier AI Call.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- About Modal -->
+  <dialog id="about-modal" class="modal-dialog" aria-labelledby="about-modal-title">
+    <div class="modal-header">
+      <h3 id="about-modal-title" class="modal-title">About GeopoliticsAI.com</h3>
+      <button id="about-close-btn" class="btn btn-icon" aria-label="Close About modal">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>
+        <strong>GeopoliticsAI.com</strong> tracks overlapping international alignments across artificial intelligence governance, semiconductor supply chains, and frontier-model safety.
+      </p>
+      
+      <h4>Creator & Maintainer</h4>
+      <p>
+        Built by <strong><a href="https://github.com/kocijan" target="_blank" rel="noopener noreferrer">Martin Josip Kocijan</a></strong>.
+      </p>
+      <p>
+        The code is open source and hosted at <a href="https://github.com/kocijan/geopoliticsai" target="_blank" rel="noopener noreferrer"><strong>github.com/kocijan/geopoliticsai</strong></a>.
+      </p>
+
+      <h4>Contribute & Improve</h4>
+      <p>
+        Improvements, corrections, and pull requests are warmly welcomed! If you notice a newly signed accession or correction, please open an issue or pull request on GitHub.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button onclick="document.getElementById('about-modal').close()" class="btn btn-primary">Close</button>
+    </div>
+  </dialog>
+
+  <!-- Methodology & Rules Modal -->
+  <dialog id="methodology-modal" class="modal-dialog" aria-labelledby="methodology-modal-title">
+    <div class="modal-header">
+      <h3 id="methodology-modal-title" class="modal-title">Methodology & Legal Distinctions</h3>
+      <button id="methodology-close-btn" class="btn btn-icon" aria-label="Close Methodology modal">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>
+        These three initiatives differ substantially in legal form and intent:
+      </p>
+
+      <h4>1. WAICO (World Artificial Intelligence Cooperation Organization)</h4>
+      <p>
+        An intergovernmental treaty organization established in Shanghai on 16 July 2026, oriented toward the Global South and open-weight AI architectures.
+      </p>
+
+      <h4>2. Pax Silica</h4>
+      <p>
+        A U.S. State Department-led economic-security framework established in December 2025 focusing on semiconductor fabrication, critical minerals refining, and compute supply-chain resilience.
+      </p>
+
+      <h4>3. Call for Control of Frontier AI Models (21 September 2026)</h4>
+      <p>
+        An open political declaration launched on the sidelines of the UN General Assembly by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre, endorsed by 22 world leaders and the European Commission. It calls for mandatory testing, independent evaluations, and exploring international oversight.
+      </p>
+
+      <h4>European Union Representation</h4>
+      <p>
+        The European Union signed Pax Silica on 23 June 2026, and European Commission President Ursula von der Leyen endorsed the Frontier AI Call. On the map, EU member states are colored into Pax Silica, while the country details window and register distinguish direct national signatories from states covered via EU accession.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button onclick="document.getElementById('methodology-modal').close()" class="btn btn-primary">Close</button>
+    </div>
+  </dialog>
+
+  <!-- Clean Centered Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf" target="_blank" rel="noopener noreferrer">Frontier Call PDF</a>
+        <span>&bull;</span>
+        <a href="https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization" target="_blank" rel="noopener noreferrer">WAICO Wikipedia</a>
+        <span>&bull;</span>
+        <a href="https://en.wikipedia.org/wiki/Pax_Silica" target="_blank" rel="noopener noreferrer">Pax Silica Wikipedia</a>
+        <span>&bull;</span>
+        <a href="https://github.com/kocijan/geopoliticsai" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendored Libraries -->
+  <script src="js/vendor/d3.min.js"></script>
+  <script src="js/vendor/topojson-client.min.js"></script>
+
+  <!-- Application Logic -->
+  <script src="js/data.js?v=4"></script>
+  <script src="js/map.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
+</body>
+</html>

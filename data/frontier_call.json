@@ -1,0 +1,203 @@
+{
+  "title": "A Call for Control of Frontier AI Models",
+  "published_date": "2026-09-21",
+  "document_type": "Political Leaders Declaration",
+  "source_urls": [
+    "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf",
+    "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/",
+    "https://www.politico.eu/article/20-countries-urge-to-strenghten-oversight-of-ai-to-keep-it-under-human-control/"
+  ],
+  "summary": "International call launched on 21 September 2026 by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre alongside 20 other world leaders and the European Commission on the sidelines of the UN General Assembly. Urges mandatory pre-deployment safety testing, independent third-party evaluations, incident reporting, and exploring a UN-style international oversight institution for frontier AI.",
+  "open_to_further_endorsements": true,
+  "signatories": [
+    {
+      "country_name": "Norway",
+      "iso3": "NOR",
+      "leader_name": "Jonas Gahr Støre",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": true,
+      "date": "2026-09-21",
+      "notes": "Co-spearheaded the initiative alongside Finland."
+    },
+    {
+      "country_name": "Finland",
+      "iso3": "FIN",
+      "leader_name": "Alexander Stubb & Petteri Orpo",
+      "leader_title": "President of the Republic & Prime Minister",
+      "is_co_initiator": true,
+      "date": "2026-09-21",
+      "notes": "Both President Alexander Stubb and Prime Minister Petteri Orpo endorsed the call."
+    },
+    {
+      "country_name": "Australia",
+      "iso3": "AUS",
+      "leader_name": "Anthony Albanese",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Representing a major Asia-Pacific middle power."
+    },
+    {
+      "country_name": "Bahrain",
+      "iso3": "BHR",
+      "leader_name": "Dr. Abdullatif bin Rashid Al Zayani",
+      "leader_title": "Minister of Foreign Affairs",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Endorsed in official ministerial capacity."
+    },
+    {
+      "country_name": "Canada",
+      "iso3": "CAN",
+      "leader_name": "Mark Carney",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Prime Minister of Canada endorsing frontier AI safeguards."
+    },
+    {
+      "country_name": "Denmark",
+      "iso3": "DNK",
+      "leader_name": "Mette Frederiksen",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Nordic partner supporting common European and global safety standards."
+    },
+    {
+      "country_name": "Estonia",
+      "iso3": "EST",
+      "leader_name": "Kristen Michal",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Digital leader in EU advocating for transparent verification protocols."
+    },
+    {
+      "country_name": "Germany",
+      "iso3": "DEU",
+      "leader_name": "Friedrich Merz",
+      "leader_title": "Federal Chancellor",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Largest European economy endorsing mandatory pre-deployment evaluations."
+    },
+    {
+      "country_name": "Iceland",
+      "iso3": "ISL",
+      "leader_name": "Kristrún Frostadóttir",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Nordic endorsement of international AI oversight."
+    },
+    {
+      "country_name": "Ireland",
+      "iso3": "IRL",
+      "leader_name": "Micheál Martin",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "European technology hub leader endorsing frontier oversight."
+    },
+    {
+      "country_name": "Kazakhstan",
+      "iso3": "KAZ",
+      "leader_name": "Kassym-Jomart Tokayev",
+      "leader_title": "President",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Crucial Central Asian bridge state; also WAICO founding member and Pax Silica signatory."
+    },
+    {
+      "country_name": "Kenya",
+      "iso3": "KEN",
+      "leader_name": "William Ruto",
+      "leader_title": "President",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "East African tech hub leader; also a WAICO founding member."
+    },
+    {
+      "country_name": "Latvia",
+      "iso3": "LVA",
+      "leader_name": "Edgars Rinkēvičs",
+      "leader_title": "President",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Baltic state endorsing independent AI testing."
+    },
+    {
+      "country_name": "Moldova",
+      "iso3": "MDA",
+      "leader_name": "Maia Sandu",
+      "leader_title": "President",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Eastern European partner supporting democratic AI governance."
+    },
+    {
+      "country_name": "Netherlands",
+      "iso3": "NLD",
+      "leader_name": "Rob Jetten",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Key semiconductor and technology hub; also a Pax Silica signatory."
+    },
+    {
+      "country_name": "Singapore",
+      "iso3": "SGP",
+      "leader_name": "Lawrence Wong",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Major Southeast Asian AI hub; also a Pax Silica founding signatory and WAICO invitee."
+    },
+    {
+      "country_name": "South Africa",
+      "iso3": "ZAF",
+      "leader_name": "Cyril Ramaphosa",
+      "leader_title": "President",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Leading African economy; also a WAICO founding member."
+    },
+    {
+      "country_name": "Spain",
+      "iso3": "ESP",
+      "leader_name": "Pedro Sánchez",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Host of EU AI supervision initiatives endorsing global oversight."
+    },
+    {
+      "country_name": "Türkiye",
+      "iso3": "TUR",
+      "leader_name": "Hakan Fidan",
+      "leader_title": "Minister of Foreign Affairs",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Transcontinental regional power endorsing frontier model guardrails."
+    },
+    {
+      "country_name": "United Arab Emirates",
+      "iso3": "ARE",
+      "leader_name": "H.H. Sheikh Abdullah bin Zayed Al Nahyan",
+      "leader_title": "Deputy Prime Minister & Minister of Foreign Affairs",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Leading AI compute and investment investor; also a Pax Silica signatory."
+    },
+    {
+      "country_name": "European Union",
+      "iso3": "EU",
+      "leader_name": "Ursula von der Leyen",
+      "leader_title": "President of the European Commission",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Supranational body; European Commission endorsed the declaration."
+    }
+  ]
+}

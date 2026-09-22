@@ -1,0 +1,133 @@
+/* ==========================================================================
+   GeopoliticsAI.com - Accessibility & Tactile Pattern Styles (A11y)
+   ========================================================================== */
+
+/* Screen Reader Only Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to Content Link */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-pax);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Universal Focus States */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Texture & Pattern Mode (A11y) */
+body.texture-mode-active {
+  /* High contrast accents for color-blind accessibility */
+  --waico-symbol: "◆";
+  --pax-symbol: "■";
+  --frontier-symbol: "★";
+}
+
+/* When Texture mode is active, show tactile badges and distinct borders */
+body.texture-mode-active .country-path[data-alliance="waico_only"] {
+  fill: url(#pattern-waico-stripes) !important;
+  stroke: #991b1b !important;
+  stroke-width: 1px !important;
+}
+
+body.texture-mode-active .country-path[data-alliance="pax_only"] {
+  fill: url(#pattern-pax-dots) !important;
+  stroke: #1e40af !important;
+  stroke-width: 1px !important;
+}
+
+body.texture-mode-active .country-path[data-alliance="frontier_only"] {
+  fill: url(#pattern-frontier-grid) !important;
+  stroke: #b45309 !important;
+  stroke-width: 1px !important;
+}
+
+body.texture-mode-active .country-path[data-alliance="tripartite"] {
+  fill: url(#pattern-tripartite-weave) !important;
+  stroke: #581c87 !important;
+  stroke-width: 1.5px !important;
+}
+
+body.texture-mode-active .country-path[data-alliance="pax_frontier"] {
+  fill: url(#pattern-pax-frontier-cross) !important;
+  stroke: #0f766e !important;
+  stroke-width: 1px !important;
+}
+
+body.texture-mode-active .country-path[data-alliance="waico_frontier"] {
+  fill: url(#pattern-waico-frontier-zigzag) !important;
+  stroke: #c2410c !important;
+  stroke-width: 1px !important;
+}
+
+body.texture-mode-active .country-path[data-alliance="waico_pax"] {
+  fill: url(#pattern-waico-pax-blend) !important;
+  stroke: #7e22ce !important;
+  stroke-width: 1px !important;
+}
+
+/* Visual Symbology Badges */
+.symbology-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  font-weight: 800;
+  margin-right: 0.25rem;
+  line-height: 1;
+}
+
+.symbol-waico {
+  color: var(--color-waico);
+}
+
+.symbol-pax {
+  color: var(--color-pax);
+}
+
+.symbol-frontier {
+  color: var(--color-frontier);
+}
+
+/* Accessible high-contrast table borders */
+body.texture-mode-active .countries-table td,
+body.texture-mode-active .countries-table th {
+  border-bottom: 1px solid var(--border-strong);
+}
+
+/* Reduced Motion Accommodations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

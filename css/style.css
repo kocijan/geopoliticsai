@@ -270,6 +270,12 @@ a:hover {
   border-radius: var(--radius-full);
 }
 
+.brand-hint {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 .pulse-dot {
   width: 6px;
   height: 6px;
@@ -282,6 +288,39 @@ a:hover {
   align-items: center;
   gap: 0.55rem;
   flex-wrap: wrap;
+}
+
+/* Header Patterns Checkbox Toggle */
+.header-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.775rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-fast);
+}
+
+.header-checkbox-label:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.header-checkbox-label:has(input:checked) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.header-checkbox-label input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: var(--color-pax);
 }
 
 /* Segmented 2D / 3D Slider Toggle */
@@ -318,7 +357,7 @@ a:hover {
   box-shadow: var(--shadow-sm);
 }
 
-/* Workspace Layout: Condensed Side-by-Side */
+/* Workspace Layout: Left Register Pane, Right Map Pane */
 .workspace-container {
   max-width: 1720px;
   margin: 0 auto;
@@ -328,7 +367,7 @@ a:hover {
   min-height: 0;
   height: 0;
   display: grid;
-  grid-template-columns: minmax(460px, 1.15fr) minmax(520px, 1fr);
+  grid-template-columns: minmax(520px, 1fr) minmax(460px, 1.15fr);
   grid-template-rows: 100%;
   gap: 0.75rem;
   align-items: stretch;
@@ -785,12 +824,18 @@ a:hover {
   border-collapse: collapse;
   font-size: 0.78rem;
   text-align: left;
-  table-layout: auto;
+  table-layout: fixed;
 }
+
+.col-country { width: 25%; }
+.col-waico { width: 17%; }
+.col-pax { width: 19%; }
+.col-frontier { width: 30%; }
+.col-details { width: 9%; min-width: 58px; text-align: right; }
 
 .countries-table th {
   background: var(--bg-hover);
-  padding: 0.45rem 0.6rem;
+  padding: 0.45rem 0.5rem;
   font-weight: 600;
   font-size: 0.75rem;
   color: var(--text-secondary);
@@ -800,7 +845,9 @@ a:hover {
   z-index: 5;
   cursor: pointer;
   user-select: none;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.25;
+  vertical-align: middle;
 }
 
 .countries-table th:hover {
@@ -808,10 +855,11 @@ a:hover {
 }
 
 .countries-table td {
-  padding: 0.38rem 0.6rem;
+  padding: 0.38rem 0.5rem;
   border-bottom: 1px solid var(--border-subtle);
   color: var(--text-primary);
   vertical-align: middle;
+  word-break: break-word;
 }
 
 .table-country-row {
@@ -836,19 +884,19 @@ a:hover {
   align-items: center;
   gap: 0.4rem;
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .country-flag {
   font-size: 0.95rem;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .country-name-text {
-  max-width: 160px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.25;
 }
 
 .table-badge {
@@ -859,7 +907,9 @@ a:hover {
   border-radius: var(--radius-full);
   font-size: 0.72rem;
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 .btn-details {
@@ -878,10 +928,10 @@ a:hover {
 
 /* Inline Country Details Window (Pop-up at bottom of table on Desktop) */
 .country-details-panel {
-  flex-shrink: 0;
-  height: 350px;
-  max-height: 48%;
-  min-height: 220px;
+  flex-shrink: 1;
+  height: auto;
+  max-height: calc(100% - 75px);
+  min-height: 180px;
   border-top: 2px solid var(--border-subtle);
   background: var(--bg-surface);
   display: flex;
@@ -1140,6 +1190,7 @@ a:hover {
   .map-pane {
     height: 460px;
     flex-shrink: 0;
+    order: -1;
   }
   .map-viewport {
     height: 390px;

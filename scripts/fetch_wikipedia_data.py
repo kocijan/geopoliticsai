@@ -286,13 +286,16 @@ def main():
     countries_db = {}
 
     for iso3, base in iso3_to_entry.items():
+        iso2_val = base["iso2"]
+        flag_emoji = "".join(chr(127397 + ord(c)) for c in iso2_val.upper()) if (iso2_val and len(iso2_val) == 2) else "🏳️"
         country_record = {
             "iso3": iso3,
-            "iso2": base["iso2"],
+            "iso2": iso2_val,
             "numeric": base["numeric"],
             "name": base["name"],
             "region": base["region"],
             "subregion": base["subregion"],
+            "flag_emoji": flag_emoji,
             "is_eu_member": base["is_eu_member"],
             "waico": None,
             "pax_silica": None,

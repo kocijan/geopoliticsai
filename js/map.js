@@ -77,9 +77,10 @@ class GeopoliticsMap {
 
     for (const cs of cityStates) {
       if (!existingIds.has(cs.id)) {
-        const circleGeo = typeof d3.geoCircle === 'function'
+        const rawCircleGeo = typeof d3.geoCircle === 'function'
           ? d3.geoCircle().center([cs.lon, cs.lat]).radius(cs.r)()
           : null;
+        const circleGeo = this.normalizeCityStateGeometry(rawCircleGeo);
 
         if (circleGeo) {
           this.countryFeatures.push({
@@ -90,6 +91,20 @@ class GeopoliticsMap {
           });
         }
       }
+    }
+
+    normalizeCityStateGeometry(geometry) {
+      if (!geometry || geometry.type !== 'Polygon' || !Array.isArray(geometry.coordinates)) return null;
+
+      // Guard against ring winding issues that can make tiny polygons render as near-world masks.
+      if (typeof d3.geoArea === 'function' && d3.geoArea(geometry) > (2 * Math.PI)) {
+        return {
+          type: 'Polygon',
+          coordinates: geometry.coordinates.map(ring => Array.isArray(ring) ? [...ring].reverse() : ring)
+        };
+      }
+
+      return geometry;
     }
   }
 

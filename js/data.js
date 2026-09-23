@@ -68,10 +68,13 @@ const DataStore = {
   computeCountryAlliance(country, activeLayers = { waico: true, pax: true, frontier: true }) {
     if (!country) return 'none';
 
-    const hasWaico = activeLayers.waico && country.waico && Boolean(country.waico.status);
+    // WAICO membership (excludes non-member invited/invitee states from map coloring)
+    const hasWaico = activeLayers.waico && country.waico && Boolean(country.waico.status) &&
+      country.waico.status !== 'invitee' && country.waico.status !== 'invited';
     
-    // Pax includes founding signatories, later accessions, observers, and EU member states covered via EU
-    const hasPax = activeLayers.pax && country.pax_silica && Boolean(country.pax_silica.status);
+    // Pax includes founding signatories, later accessions, observers, and EU member states covered via EU (excludes invited states)
+    const hasPax = activeLayers.pax && country.pax_silica && Boolean(country.pax_silica.status) &&
+      country.pax_silica.status !== 'invited' && country.pax_silica.status !== 'invitee';
     
     const hasFrontier = activeLayers.frontier && country.frontier_call && 
       country.frontier_call.status === 'leader_endorsement';

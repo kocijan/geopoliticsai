@@ -351,7 +351,7 @@ def main():
                 "endorsed_by": f"{name} ({title})",
                 "is_co_initiator": f_info["is_co_initiator"],
                 "notes": f_info["notes"],
-                "source_url": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
+                "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
             }
 
     # Compute alignments and counts
@@ -410,7 +410,7 @@ def main():
             "sources": {
                 "waico": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization",
                 "pax_silica": "https://en.wikipedia.org/wiki/Pax_Silica",
-                "frontier_call": "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf"
+                "frontier_call": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
             },
             "statistics": counts
         },

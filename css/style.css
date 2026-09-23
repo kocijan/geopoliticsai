@@ -126,7 +126,11 @@
 html {
   font-size: 15px;
   scroll-behavior: smooth;
-  color-scheme: light dark;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -321,6 +325,18 @@ a:hover {
 .header-checkbox-label input[type="checkbox"] {
   cursor: pointer;
   accent-color: var(--color-pax);
+  color-scheme: light;
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  border: 1px solid var(--border-strong);
+  background-color: #ffffff;
+}
+
+[data-theme="dark"] .header-checkbox-label input[type="checkbox"] {
+  color-scheme: dark;
+  background-color: var(--bg-surface-elevated);
+  border-color: var(--border-subtle);
 }
 
 /* Segmented 2D / 3D Slider Toggle */
@@ -497,6 +513,7 @@ a:hover {
   background-color: var(--map-ocean);
   cursor: grab;
   overflow: hidden;
+  touch-action: none;
 }
 
 .map-viewport:active {
@@ -510,6 +527,7 @@ a:hover {
   width: 100%;
   height: 100%;
   display: block;
+  touch-action: none;
 }
 
 /* Country Polygons & Colors (Guaranteed CSS Fills) */
@@ -522,6 +540,12 @@ a:hover {
   cursor: pointer;
   pointer-events: all;
   transition: opacity 0.15s ease;
+  touch-action: none;
+}
+
+.country-path:focus,
+.country-path:focus-visible {
+  outline: none !important;
 }
 
 .country-path[data-alliance="waico_only"] { fill: var(--color-waico); }
@@ -540,16 +564,48 @@ a:hover {
   opacity: 0.95;
 }
 
-.country-path.is-selected {
-  stroke: #0f172a;
-  stroke-width: 1.4px;
+.country-path.is-selected,
+.country-path.is-city-state.is-selected {
+  stroke: #0f172a !important;
+  stroke-width: 2.2px !important;
   vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.45));
 }
 
-[data-theme="dark"] .country-path.is-selected {
-  stroke: #ffffff;
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
+[data-theme="dark"] .country-path.is-selected,
+[data-theme="dark"] .country-path.is-city-state.is-selected {
+  stroke: #ffffff !important;
+  stroke-width: 2.2px !important;
+  filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.55));
+}
+
+.country-path.is-city-state {
+  stroke: rgba(15, 23, 42, 0.45);
+  stroke-width: 0.85px;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .country-path.is-city-state {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 0.85px;
+}
+
+.country-path.is-city-state:hover,
+.country-path.is-city-state.is-hovered {
+  stroke: var(--text-primary);
+  stroke-width: 1.4px;
+}
+
+/* Artificial Hitbox Overlay for Small Countries & City States */
+.country-hitbox {
+  fill: rgba(0, 0, 0, 0.001);
+  stroke: rgba(0, 0, 0, 0.001);
+  stroke-width: 16px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: all;
+  cursor: pointer;
 }
 
 .graticule-path {
@@ -580,7 +636,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  z-index: 10;
+  z-index: 20;
 }
 
 .floating-btn {
@@ -604,10 +660,60 @@ a:hover {
   border-color: var(--border-strong);
 }
 
+/* Map Center Loading Indicator */
+.map-loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 2rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 25;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.map-loading-indicator.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.map-loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-subtle);
+  border-top-color: var(--color-pax);
+  border-right-color: var(--color-waico);
+  border-radius: 50%;
+  animation: mapSpin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes mapSpin {
+  to { transform: rotate(360deg); }
+}
+
+.map-loading-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+}
+
 /* Tooltip */
 .map-tooltip {
   position: absolute;
   pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
   background: var(--bg-surface-elevated);
   color: var(--text-primary);
   padding: 0.6rem 0.85rem;
@@ -616,10 +722,13 @@ a:hover {
   box-shadow: var(--shadow-lg);
   font-size: 0.8rem;
   z-index: 30;
-  max-width: 280px;
+  width: max-content;
+  max-width: min(280px, calc(100vw - 32px));
+  box-sizing: border-box;
   opacity: 0;
-  transform: translate(-50%, -115%);
   transition: opacity 0.15s ease;
+  /* Default: above cursor, centered. JS overrides via inline transform for edge-awareness */
+  transform: translate(-50%, -115%);
 }
 
 .map-tooltip.is-visible {
@@ -632,8 +741,25 @@ a:hover {
   margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.45rem;
+}
+
+.tooltip-flag {
+  font-size: 1.15rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tooltip-name-text {
+  flex: 1 1 auto;
+}
+
+.tooltip-iso {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-family-mono);
+  font-weight: 500;
 }
 
 .tooltip-badges {
@@ -772,9 +898,79 @@ a:hover {
   color: var(--text-muted);
 }
 
-.export-actions {
-  display: flex;
+/* Export Dropdown Menu */
+.export-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.export-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
   gap: 0.3rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.export-dropdown-btn svg {
+  transition: transform var(--transition-fast);
+}
+
+.export-dropdown.is-open .export-dropdown-btn svg {
+  transform: rotate(180deg);
+}
+
+.export-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 60;
+  min-width: 130px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 0.25rem;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.export-dropdown.is-open .export-dropdown-menu {
+  display: flex;
+  animation: dropdownFadeIn 0.15s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.export-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.35rem 0.65rem;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.775rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.export-menu-item:hover {
+  background: var(--bg-hover);
+  color: var(--color-pax);
+}
+
+.export-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 /* Scrollable Table Container - Full Height */
@@ -899,6 +1095,29 @@ a:hover {
   line-height: 1.25;
 }
 
+/* Visual Symbology Badges */
+.symbology-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  font-weight: 800;
+  margin-right: 0.25rem;
+  line-height: 1;
+}
+
+.symbol-waico {
+  color: var(--color-waico);
+}
+
+.symbol-pax {
+  color: var(--color-pax);
+}
+
+.symbol-frontier {
+  color: var(--color-frontier);
+}
+
 .table-badge {
   display: inline-flex;
   align-items: center;
@@ -910,6 +1129,15 @@ a:hover {
   white-space: normal;
   line-height: 1.25;
   word-break: break-word;
+}
+
+.table-badge.is-invited {
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  border: 1px dashed var(--border-strong) !important;
+  font-style: italic;
+  font-weight: 500;
+  opacity: 0.85;
 }
 
 .btn-details {
@@ -1173,72 +1401,349 @@ a:hover {
   color: var(--color-pax);
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1080px) {
+/* ==========================================================================
+   Responsive Layout & Orientation Adaptations
+   ========================================================================== */
+
+/* Portrait Layout (Mobile / Narrow Portrait Devices) */
+@media (orientation: portrait) {
+  html,
   body {
-    height: auto;
-    max-height: none;
-    overflow-y: auto;
+    height: 100dvh;
+    height: 100svh;
+    min-height: 0;
+    max-height: 100dvh;
+    max-height: 100svh;
+    overflow: hidden;
   }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-header {
+    flex: 0 0 auto;
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.35rem 0.5rem;
+    gap: 0.22rem;
+    max-width: 100%;
+  }
+
+  .brand-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+  }
+
+  .brand-title {
+    font-size: 1.15rem;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-subtitle-tag,
+  .brand-hint {
+    display: none;
+  }
+
+  .brand-date-badge {
+    font-size: 0.65rem;
+    padding: 0.12rem 0.4rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* All navbar toolbar buttons on the same row */
+  .header-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.2rem;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .header-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header-nav .btn-sm,
+  .header-nav .header-checkbox-label,
+  .header-nav .segmented-option {
+    padding: 0.18rem 0.32rem;
+    font-size: 0.66rem;
+    flex-shrink: 0;
+    gap: 0.2rem;
+  }
+
+  .header-nav .btn-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.22rem;
+    flex-shrink: 0;
+  }
+
   .workspace-container {
     display: flex;
     flex-direction: column;
-    height: auto;
-    max-height: none;
-    overflow: visible;
+    flex: 1 1 0;
+    min-height: 0;
+    padding: 0.25rem 0.35rem;
+    gap: 0.3rem;
+    overflow: hidden;
+    width: 100%;
   }
-  .map-pane {
-    height: 460px;
-    flex-shrink: 0;
-    order: -1;
-  }
-  .map-viewport {
-    height: 390px;
-    flex: 1 1 auto;
-  }
-  .register-pane {
-    height: auto;
-    max-height: none;
-    overflow: visible;
-  }
-  .table-container {
-    height: 480px;
-    max-height: 480px;
-    flex: none;
-  }
-}
 
-@media (max-width: 768px) {
-  .workspace-container {
-    padding: 0.4rem;
-  }
+  /* Map Pane on Top & Compact - Enhanced height for mobile interactivity */
   .map-pane {
-    height: 380px;
+    order: -1;
+    flex: 0 0 auto;
+    width: 100%;
+    height: clamp(230px, 40dvh, 380px);
+    min-height: 220px;
+    max-height: 420px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
-  .table-container {
-    max-height: 380px;
+
+  .map-toolbar {
+    padding: 0.2rem 0.35rem;
+    gap: 0.18rem;
+  }
+
+  .map-toolbar-row {
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+  }
+
+  .layer-toggles {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.2rem;
     overflow-x: auto;
+    scrollbar-width: none;
+    min-width: 0;
   }
+
+  .layer-toggles::-webkit-scrollbar,
+  .legend-panel-top::-webkit-scrollbar {
+    display: none;
+  }
+
+  .layer-checkbox-label {
+    flex: 0 0 auto;
+    padding: 0.12rem 0.28rem;
+    font-size: 0.6rem;
+    gap: 0.2rem;
+  }
+
+  .legend-panel-top {
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+
+  .legend-items-row {
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 0.3rem;
+  }
+
+  .legend-item {
+    font-size: 0.56rem;
+    gap: 0.2rem;
+  }
+
+  .map-viewport {
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+    position: relative;
+  }
+
+  /* Countries Register Pane Fills Remaining Space */
+  .register-pane {
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .register-header {
+    padding: 0.22rem 0.35rem;
+    gap: 0.18rem;
+  }
+
+  .register-search-row {
+    gap: 0.25rem;
+  }
+
+  .search-input,
+  .filter-select {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    font-size: 0.68rem;
+  }
+
+  .filter-select {
+    max-width: 44%;
+  }
+
+  .register-meta-row {
+    font-size: 0.62rem;
+  }
+
+  .export-dropdown,
+  .export-actions {
+    display: none !important;
+  }
+
+  .table-container {
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  /* Fitted Table Width & Compact Elements */
+  .countries-table {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.62rem;
+    table-layout: fixed;
+  }
+
+  .countries-table th,
+  .countries-table td {
+    padding: 0.18rem 0.14rem;
+    word-break: break-word;
+  }
+
+  .countries-table th {
+    font-size: 0.58rem;
+  }
+
+  .col-country { width: 25%; }
+  .col-waico { width: 17%; }
+  .col-pax { width: 21%; }
+  .col-frontier { width: 25%; }
+  .col-details { width: 12%; text-align: right; }
+
+  .table-country-cell {
+    gap: 0.14rem;
+  }
+
+  .country-flag {
+    font-size: 0.72rem;
+  }
+
+  .country-name-text {
+    line-height: 1.1;
+    font-size: 0.62rem;
+  }
+
+  .country-iso-tag {
+    font-size: 0.52rem;
+  }
+
+  .table-badge,
+  .status-tag.inactive,
+  .btn-details {
+    font-size: 0.55rem;
+    padding: 0.06rem 0.18rem;
+    line-height: 1.15;
+  }
+
+  .btn-details {
+    padding: 0.1rem 0.22rem;
+  }
+
+  /* Bottom sheet modal for details in portrait */
   .country-details-panel.is-open {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    max-height: 80vh;
+    max-height: 75dvh;
+    max-height: 75svh;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.3);
     z-index: 100;
+  }
+
+  .site-footer {
+    display: none;
   }
 }
 
-@media (max-width: 640px) {
-  .header-container {
-    padding: 0.4rem 0.75rem;
+/* Landscape Layout (Desktop / Side-by-Side Landscape Devices) */
+@media (orientation: landscape) {
+  html,
+  body {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
   }
+
+  .workspace-container {
+    display: grid;
+    grid-template-columns: minmax(360px, 1fr) minmax(420px, 1.15fr);
+    grid-template-rows: 100%;
+    height: 0;
+    min-height: 0;
+    flex: 1 1 0;
+    overflow: hidden;
+  }
+
+  .register-pane,
+  .map-pane {
+    height: 100%;
+    max-height: 100%;
+    min-height: 0;
+  }
+
+  .map-viewport,
+  .table-container {
+    min-height: 0;
+  }
+}
+
+/* Small landscape screens (e.g. mobile phones turned sideways) */
+@media (orientation: landscape) and (max-height: 520px) {
+  .site-header {
+    padding: 0.25rem 0.5rem;
+  }
+
   .brand-title {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
   }
+
+  .brand-subtitle-tag,
+  .brand-hint {
+    display: none;
+  }
+
   .site-footer {
-    padding: 0.85rem 1rem;
+    display: none;
   }
 }

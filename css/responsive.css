@@ -1,0 +1,51 @@
+/* Responsive layout rules for portrait mobile and landscape desktop modes. */
+@media (orientation: portrait) {
+  html, body { height: 100svh !important; min-height: 0 !important; max-height: 100svh !important; overflow: hidden !important; }
+  body { display: flex !important; flex-direction: column !important; }
+  .site-header { flex: 0 0 auto; }
+  .header-container { flex-wrap: nowrap !important; gap: .3rem !important; padding: .3rem .45rem !important; }
+  .brand-wrapper { min-width: 0; flex: 1 1 auto; flex-wrap: nowrap !important; gap: .3rem !important; overflow: hidden; }
+  .brand-title { font-size: 1.1rem !important; white-space: nowrap; }
+  .brand-subtitle-tag, .brand-date-badge, .brand-hint { display: none !important; }
+  .header-nav { flex: 0 0 auto; flex-wrap: nowrap !important; gap: .2rem !important; }
+  .header-nav .btn-sm, .header-checkbox-label, .segmented-option { padding: .18rem .3rem !important; font-size: .64rem !important; }
+  .header-nav .btn-icon { width: 1.75rem; height: 1.75rem; padding: .22rem; }
+  .workspace-container { display: flex !important; flex: 1 1 auto !important; flex-direction: column !important; height: auto !important; min-height: 0 !important; max-height: none !important; overflow-y: auto !important; overflow-x: hidden !important; padding: .25rem !important; gap: .35rem !important; }
+  .map-pane { order: -1 !important; width: 100% !important; height: 29svh !important; min-height: 190px !important; max-height: 300px !important; flex: 0 0 auto !important; }
+  .map-toolbar { padding: .25rem .35rem !important; gap: .2rem !important; }
+  .map-toolbar-row, .layer-toggles { flex-wrap: nowrap !important; gap: .2rem !important; }
+  .layer-toggles { min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .layer-toggles::-webkit-scrollbar, .legend-panel-top::-webkit-scrollbar { display: none; }
+  .layer-checkbox-label { flex: 0 0 auto; padding: .12rem .25rem !important; font-size: .6rem !important; }
+  .legend-panel-top { overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
+  .legend-items-row { flex-wrap: nowrap !important; width: max-content; gap: .35rem !important; }
+  .legend-item { font-size: .58rem !important; }
+  .map-viewport { height: auto !important; min-height: 0 !important; flex: 1 1 auto !important; }
+  .register-pane { width: 100% !important; height: auto !important; min-height: 0 !important; max-height: none !important; flex: 1 1 auto !important; }
+  .register-header { padding: .3rem .35rem !important; gap: .2rem !important; }
+  .register-search-row { gap: .25rem !important; }
+  .search-input, .filter-select { padding-top: .22rem !important; padding-bottom: .22rem !important; font-size: .66rem !important; }
+  .filter-select { max-width: 40% !important; }
+  .register-meta-row { font-size: .62rem !important; }
+  .export-actions { gap: .12rem !important; }
+  .export-actions .btn { padding: .18rem .25rem !important; font-size: .58rem !important; }
+  .table-container { height: auto !important; max-height: none !important; flex: 1 1 auto !important; overflow: auto !important; }
+  .countries-table { width: 100% !important; min-width: 0 !important; font-size: .58rem !important; table-layout: fixed !important; }
+  .countries-table th, .countries-table td { padding: .18rem .16rem !important; }
+  .countries-table th { font-size: .56rem !important; }
+  .table-badge, .status-tag.inactive, .btn-details { font-size: .54rem !important; padding: .06rem .16rem !important; }
+  .table-country-cell { gap: .14rem !important; }
+  .country-flag { font-size: .68rem !important; }
+  .country-name-text { line-height: 1.05 !important; }
+  .col-country { width: 24% !important; }
+  .col-waico { width: 17% !important; }
+  .col-pax { width: 20% !important; }
+  .col-frontier { width: 27% !important; }
+  .col-details { width: 12% !important; min-width: 0 !important; }
+}
+@media (orientation: landscape) {
+  html, body { height: 100vh !important; max-height: 100vh !important; overflow: hidden !important; }
+  .workspace-container { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) !important; grid-template-rows: 100% !important; height: 0 !important; max-height: none !important; overflow: hidden !important; }
+  .register-pane, .map-pane { height: 100% !important; max-height: 100% !important; min-height: 0 !important; }
+  .map-viewport, .table-container { min-height: 0 !important; }
+}

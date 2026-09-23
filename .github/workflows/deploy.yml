@@ -41,6 +41,11 @@ jobs:
         run: |
           python3 scripts/fetch_wikipedia_data.py
 
+      - name: Generate OG social thumbnail
+        run: |
+          pip install Pillow
+          python3 scripts/generate_thumbnail.py
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 

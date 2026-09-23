@@ -42,6 +42,12 @@
   outline-offset: 2px;
 }
 
+/* Country SVG paths manage selection through custom strokes, suppress rectangular outline */
+.country-path:focus,
+.country-path:focus-visible {
+  outline: none !important;
+}
+
 /* Texture & Pattern Mode (A11y) */
 body.texture-mode-active {
   /* High contrast accents for color-blind accessibility */
@@ -93,28 +99,6 @@ body.texture-mode-active .country-path[data-alliance="waico_pax"] {
   stroke-width: 1px !important;
 }
 
-/* Visual Symbology Badges */
-.symbology-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85em;
-  font-weight: 800;
-  margin-right: 0.25rem;
-  line-height: 1;
-}
-
-.symbol-waico {
-  color: var(--color-waico);
-}
-
-.symbol-pax {
-  color: var(--color-pax);
-}
-
-.symbol-frontier {
-  color: var(--color-frontier);
-}
 
 /* Accessible high-contrast table borders */
 body.texture-mode-active .countries-table td,

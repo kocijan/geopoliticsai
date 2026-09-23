@@ -39,7 +39,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const methodologyBtn = document.getElementById('methodology-btn');
   const methodologyCloseBtn = document.getElementById('methodology-close-btn');
 
-  // Export Buttons
+  // Export Dropdown & Buttons
+  const exportDropdown = document.getElementById('export-dropdown');
+  const exportDropdownBtn = document.getElementById('export-dropdown-btn');
   const exportCsvBtn = document.getElementById('export-csv-btn');
   const exportJsonBtn = document.getElementById('export-json-btn');
   const exportXmlBtn = document.getElementById('export-xml-btn');
@@ -47,6 +49,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Table
   const tableBody = document.getElementById('table-body');
   const tableCountSpan = document.getElementById('table-count');
+
+  // Orientation & Mobile Layout State Detection
+  function updateOrientationState() {
+    const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+    document.body.classList.toggle('is-mobile-layout', isPortrait);
+    document.body.classList.toggle('is-desktop-layout', !isPortrait);
+    if (mapInstance && typeof mapInstance.handleResize === 'function') {
+      mapInstance.handleResize();
+    }
+  }
+
+  const orientationMedia = window.matchMedia('(orientation: portrait)');
+  if (typeof orientationMedia.addEventListener === 'function') {
+    orientationMedia.addEventListener('change', updateOrientationState);
+  } else if (typeof orientationMedia.addListener === 'function') {
+    orientationMedia.addListener(updateOrientationState);
+  }
+  window.addEventListener('resize', () => {
+    if (mapInstance && typeof mapInstance.handleResize === 'function') {
+      mapInstance.handleResize();
+    }
+  });
+  updateOrientationState();
 
   // 1. Initialize Theme (Light Mode Default)
   const savedTheme = localStorage.getItem('geopolitics_theme') || 'light';
@@ -89,12 +114,40 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // 2. Load Data & Initialize Map
+  const mapLoader = document.getElementById('map-loader');
+
   try {
     await DataStore.init();
 
-    const worldResp = await fetch('data/world-110m.json');
-    if (!worldResp.ok) throw new Error(`Failed to load world map: ${worldResp.status}`);
-    const worldTopoJson = await worldResp.json();
+    // Show table and URL hash immediately before map finishes loading!
+    updateCountsAndTable();
+    checkUrlHash();
+
+    // Load 110m (low-res) world map TopoJSON first for fast initial render
+    let worldTopoJson;
+    try {
+      const worldResp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/110m.json');
+      if (!worldResp.ok) throw new Error(`HTTP ${worldResp.status}`);
+      worldTopoJson = await worldResp.json();
+    } catch (cdnErr) {
+      console.warn('[App] CDN 110m fetch failed, falling back to local data/world-110m.json:', cdnErr);
+      try {
+        const fallbackResp = await fetch('data/world-110m.json');
+        if (!fallbackResp.ok) throw new Error(`110m fallback: ${fallbackResp.status}`);
+        worldTopoJson = await fallbackResp.json();
+      } catch (fallbackErr) {
+        // Ultimate fallback: try 50m directly
+        console.warn('[App] 110m not available, loading 50m directly:', fallbackErr);
+        const resp50m = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/50m.json');
+        if (!resp50m.ok) {
+          const local50m = await fetch('data/world-50m.json');
+          if (!local50m.ok) throw new Error(`Failed to load any world map`);
+          worldTopoJson = await local50m.json();
+        } else {
+          worldTopoJson = await resp50m.json();
+        }
+      }
+    }
 
     // Initialize Map (Default: 2D Projection for best zooming)
     mapInstance = new GeopoliticsMap('map-viewport', {
@@ -102,12 +155,24 @@ document.addEventListener('DOMContentLoaded', async () => {
       onCountrySelect: (country) => {
         openCountryDetails(country);
         updateUrlHash(country.iso3);
+      },
+      onRotationChange: (isRotating) => {
+        autoRotateBtn.classList.toggle('is-active', isRotating);
+        autoRotateBtn.querySelector('span').textContent = isRotating ? 'Stop Spin' : 'Spin Globe';
       }
     });
 
     console.log('[App] Initializing mapInstance...');
     await mapInstance.init(worldTopoJson);
     console.log('[App] mapInstance.init completed. Paths in DOM:', document.querySelectorAll('.country-path').length);
+
+    // Hide loading indicator smoothly
+    if (mapLoader) {
+      mapLoader.classList.add('is-hidden');
+      setTimeout(() => {
+        if (mapLoader.parentNode) mapLoader.remove();
+      }, 350);
+    }
 
     // Robust geometry and style sync once layout is calculated
     function ensureMapSized() {
@@ -128,12 +193,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     setTimeout(ensureMapSized, 100);
     setTimeout(ensureMapSized, 300);
 
-    // Initial render of table and url hash
-    updateCountsAndTable();
-    checkUrlHash();
+    // Sync selected country if already chosen from table or hash
+    const currentHash = window.location.hash;
+    if (currentHash && currentHash.startsWith('#country=')) {
+      const iso = currentHash.replace('#country=', '').toUpperCase();
+      mapInstance.selectCountryByIso3(iso);
+    }
+
+    // Lazy-load 50m (high-res) TopoJSON in background for zoom-based upgrade
+    (async () => {
+      try {
+        let hiRes;
+        try {
+          const resp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/50m.json');
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          hiRes = await resp.json();
+        } catch (_) {
+          const fallback = await fetch('data/world-50m.json');
+          if (fallback.ok) hiRes = await fallback.json();
+        }
+        if (hiRes && mapInstance) {
+          mapInstance.setHighResData(hiRes);
+          console.log('[App] 50m high-res map loaded and available for zoom switching.');
+        }
+      } catch (err) {
+        console.warn('[App] Failed to lazy-load 50m map, staying on 110m:', err);
+      }
+    })();
 
   } catch (err) {
     console.error('[App] Initialization error:', err);
+    if (mapLoader) mapLoader.remove();
     mapViewport.innerHTML = `
       <div style="padding: 2rem; text-align: center; color: var(--color-waico);">
         <h3>Failed to initialize visualization</h3>
@@ -295,25 +385,40 @@ document.addEventListener('DOMContentLoaded', async () => {
     tableBody.innerHTML = filtered.map(c => {
       let waicoBadge = '<span class="status-tag inactive">None</span>';
       if (c.waico) {
-        waicoBadge = `<span class="table-badge" style="background:var(--color-waico-bg); color:var(--color-waico); border:1px solid var(--color-waico-border);">
-          <span class="symbology-badge symbol-waico">◆</span> ${c.waico.role_label}
-        </span>`;
+        const isWaicoInvited = c.waico.status === 'invitee' || c.waico.status === 'invited';
+        if (isWaicoInvited) {
+          waicoBadge = `<span class="table-badge is-invited" title="${c.waico.notes || 'Invited State'}">
+            <span class="symbology-badge symbol-waico" style="opacity:0.6;">◆</span> ${c.waico.role_label || 'Invited State'}
+          </span>`;
+        } else {
+          waicoBadge = `<span class="table-badge" style="background:var(--color-waico-bg); color:var(--color-waico); border:1px solid var(--color-waico-border);">
+            <span class="symbology-badge symbol-waico">◆</span> ${c.waico.role_label}
+          </span>`;
+        }
       }
 
       let paxBadge = '<span class="status-tag inactive">None</span>';
       if (c.pax_silica) {
+        const isPaxInvited = c.pax_silica.status === 'invitee' || c.pax_silica.status === 'invited';
         let paxLabel = c.pax_silica.role_label || 'Signatory';
-        if (!c.pax_silica.is_direct && !paxLabel.includes('(via EU)')) {
+        if (!c.pax_silica.is_direct && !paxLabel.includes('(via EU)') && !isPaxInvited) {
           paxLabel += ' (via EU)';
         }
         paxLabel = paxLabel.replace(/(\s*\(via EU\))+/g, ' (via EU)');
-        const style = c.pax_silica.is_direct
-          ? 'background:var(--color-pax-bg); color:var(--color-pax); border:1px solid var(--color-pax-border);'
-          : 'background:rgba(37,99,235,0.08); color:var(--color-pax); border:1px dashed var(--color-pax-border);';
 
-        paxBadge = `<span class="table-badge" style="${style}">
-          <span class="symbology-badge symbol-pax">■</span> ${paxLabel}
-        </span>`;
+        if (isPaxInvited) {
+          paxBadge = `<span class="table-badge is-invited" title="${c.pax_silica.notes || 'Invited State'}">
+            <span class="symbology-badge symbol-pax" style="opacity:0.6;">■</span> ${paxLabel}
+          </span>`;
+        } else {
+          const style = c.pax_silica.is_direct
+            ? 'background:var(--color-pax-bg); color:var(--color-pax); border:1px solid var(--color-pax-border);'
+            : 'background:rgba(37,99,235,0.08); color:var(--color-pax); border:1px dashed var(--color-pax-border);';
+
+          paxBadge = `<span class="table-badge" style="${style}">
+            <span class="symbology-badge symbol-pax">■</span> ${paxLabel}
+          </span>`;
+        }
       }
 
       let frontierBadge = '<span class="status-tag inactive">None</span>';
@@ -350,7 +455,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const iso = row.getAttribute('data-iso');
         const country = DataStore.getCountryByIso3(iso);
         if (country) {
-          mapInstance.selectCountryByIso3(iso);
+          if (mapInstance && typeof mapInstance.selectCountryByIso3 === 'function') {
+            mapInstance.selectCountryByIso3(iso);
+          }
           openCountryDetails(country);
           updateUrlHash(iso);
         }
@@ -441,7 +548,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         endorserEl.textContent = country.frontier_call.endorsed_by || 'Head of State/Government';
       }
       document.getElementById('details-frontier-notes').textContent = country.frontier_call.notes || '';
-      document.getElementById('details-frontier-source').href = country.frontier_call.source_url || 'https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf';
+      document.getElementById('details-frontier-source').href = country.frontier_call.source_url || 'https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/';
     } else {
       frontierCard.style.display = 'none';
     }
@@ -471,9 +578,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     countryDetailsPanel.classList.add('is-open');
 
     // Highlight row in table
+    let selectedRowEl = null;
     document.querySelectorAll('.table-country-row').forEach(r => {
-      r.classList.toggle('is-selected', r.getAttribute('data-iso') === country.iso3);
+      const match = r.getAttribute('data-iso') === country.iso3;
+      r.classList.toggle('is-selected', match);
+      if (match) selectedRowEl = r;
     });
+
+    // Center-jump-scroll selected table row so it isn't underneath the details box element
+    const tableContainer = document.getElementById('table-container');
+    if (selectedRowEl && tableContainer) {
+      requestAnimationFrame(() => {
+        const containerRect = tableContainer.getBoundingClientRect();
+        const rowRect = selectedRowEl.getBoundingClientRect();
+        const currentScroll = tableContainer.scrollTop;
+        const rowOffsetInContainer = (rowRect.top - containerRect.top) + currentScroll;
+        const targetScrollTop = rowOffsetInContainer - (tableContainer.clientHeight / 2) + (rowRect.height / 2);
+        tableContainer.scrollTo({
+          top: Math.max(0, targetScrollTop),
+          behavior: 'smooth'
+        });
+      });
+    }
   }
 
   function closeCountryDetails() {
@@ -509,10 +635,51 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // 10. Data Exports
-  exportCsvBtn.addEventListener('click', () => DataStore.exportToCSV());
-  exportJsonBtn.addEventListener('click', () => DataStore.exportToJSON());
-  exportXmlBtn.addEventListener('click', () => DataStore.exportToXML());
+  // 10. Data Exports & Dropdown
+  if (exportDropdownBtn && exportDropdown) {
+    exportDropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = exportDropdown.classList.toggle('is-open');
+      exportDropdownBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!exportDropdown.contains(e.target)) {
+        exportDropdown.classList.remove('is-open');
+        exportDropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  if (exportCsvBtn) {
+    exportCsvBtn.addEventListener('click', () => {
+      DataStore.exportToCSV();
+      if (exportDropdown) {
+        exportDropdown.classList.remove('is-open');
+        if (exportDropdownBtn) exportDropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  if (exportJsonBtn) {
+    exportJsonBtn.addEventListener('click', () => {
+      DataStore.exportToJSON();
+      if (exportDropdown) {
+        exportDropdown.classList.remove('is-open');
+        if (exportDropdownBtn) exportDropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  if (exportXmlBtn) {
+    exportXmlBtn.addEventListener('click', () => {
+      DataStore.exportToXML();
+      if (exportDropdown) {
+        exportDropdown.classList.remove('is-open');
+        if (exportDropdownBtn) exportDropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   // 11. URL Hash Support
   function updateUrlHash(iso3) {
@@ -527,7 +694,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       const iso = hash.replace('#country=', '').toUpperCase();
       const country = DataStore.getCountryByIso3(iso);
       if (country) {
-        mapInstance.selectCountryByIso3(iso);
+        if (mapInstance && typeof mapInstance.selectCountryByIso3 === 'function') {
+          mapInstance.selectCountryByIso3(iso);
+        }
         openCountryDetails(country);
       }
     }
@@ -538,6 +707,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Keyboard Shortcuts
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      if (exportDropdown) {
+        exportDropdown.classList.remove('is-open');
+        if (exportDropdownBtn) exportDropdownBtn.setAttribute('aria-expanded', 'false');
+      }
       if (countryDetailsPanel.classList.contains('is-open')) closeCountryDetails();
       if (aboutModal.open) aboutModal.close();
       if (methodologyModal.open) methodologyModal.close();

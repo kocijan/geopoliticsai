@@ -10,11 +10,23 @@
   <meta name="keywords" content="AI geopolitics, WAICO, Pax Silica, Frontier AI Call, artificial intelligence governance, global AI alliances, AI supply chain">
   <meta name="author" content="Martin Josip Kocijan">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="GeopoliticsAI.com — Map of AI Geopolitics">
   <meta property="og:description" content="Interactive 2D map and 3D globe tracking overlapping international alignments on AI governance, semiconductors, and frontier model control.">
   <meta property="og:url" content="https://geopoliticsai.com/">
+  <meta property="og:image" content="https://geopoliticsai.com/og-thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GeopoliticsAI.com — Map of AI Geopolitics">
+  <meta name="twitter:description" content="Interactive tracker of WAICO, Pax Silica, and Frontier AI Call alignments.">
+  <meta name="twitter:image" content="https://geopoliticsai.com/og-thumbnail.png">
 
   <!-- Google Fonts: Inter & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,7 +98,7 @@
           <!-- Preset Filter -->
           <select id="filter-preset" class="filter-select" aria-label="Filter countries">
             <option value="all">All Countries</option>
-            <option value="aligned">Aligned States Only</option>
+            <option value="aligned" selected>Aligned States Only</option>
             <option value="tripartite">Tripartite Overlap (Kazakhstan)</option>
             <option value="two_way">Two-Way Overlaps</option>
             <option value="waico">WAICO Signatories</option>
@@ -104,10 +116,16 @@
             <span id="table-count" style="margin-left: 0.25rem;"></span>
           </div>
 
-          <div class="export-actions">
-            <button id="export-csv-btn" class="btn btn-sm" title="Download dataset as CSV">CSV</button>
-            <button id="export-json-btn" class="btn btn-sm" title="Download dataset as JSON">JSON</button>
-            <button id="export-xml-btn" class="btn btn-sm" title="Download dataset as XML">XML</button>
+          <div class="export-dropdown" id="export-dropdown">
+            <button type="button" id="export-dropdown-btn" class="btn btn-sm export-dropdown-btn" aria-haspopup="true" aria-expanded="false" title="Export dataset">
+              <span>Export</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="export-dropdown-menu" id="export-dropdown-menu" role="menu">
+              <button type="button" id="export-csv-btn" class="export-menu-item" role="menuitem">CSV (.csv)</button>
+              <button type="button" id="export-json-btn" class="export-menu-item" role="menuitem">JSON (.json)</button>
+              <button type="button" id="export-xml-btn" class="export-menu-item" role="menuitem">XML (.xml)</button>
+            </div>
           </div>
         </div>
       </div>
@@ -172,7 +190,7 @@
             </div>
             <p id="details-waico-notes" class="initiative-card-notes"></p>
             <a id="details-waico-source" href="#" target="_blank" rel="noopener noreferrer" class="initiative-source-link">
-              <span>WAICO Wikipedia</span>
+              <span>Source</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
           </div>
@@ -192,7 +210,7 @@
             </div>
             <p id="details-pax-notes" class="initiative-card-notes"></p>
             <a id="details-pax-source" href="#" target="_blank" rel="noopener noreferrer" class="initiative-source-link">
-              <span>Pax Silica Wikipedia</span>
+              <span>Source</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
           </div>
@@ -212,7 +230,7 @@
             </div>
             <p id="details-frontier-notes" class="initiative-card-notes"></p>
             <a id="details-frontier-source" href="#" target="_blank" rel="noopener noreferrer" class="initiative-source-link">
-              <span>Official Statement (PDF)</span>
+              <span>Source</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
           </div>
@@ -303,6 +321,12 @@
           </button>
         </div>
 
+        <!-- Center Loading Indicator -->
+        <div id="map-loader" class="map-loading-indicator" aria-live="polite" role="status">
+          <div class="map-loading-spinner" aria-hidden="true"></div>
+          <span class="map-loading-text">Loading map...</span>
+        </div>
+
         <!-- Dynamic Floating Tooltip -->
         <div id="map-tooltip" class="map-tooltip" role="tooltip" aria-hidden="true"></div>
       </div>
@@ -382,7 +406,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="footer-container">
       <div class="footer-links">
-        <a href="https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf" target="_blank" rel="noopener noreferrer">Frontier Call PDF</a>
+        <a href="https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/" target="_blank" rel="noopener noreferrer">Frontier AI Call</a>
         <span>&bull;</span>
         <a href="https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization" target="_blank" rel="noopener noreferrer">WAICO Wikipedia</a>
         <span>&bull;</span>
@@ -393,13 +417,13 @@
     </div>
   </footer>
 
-  <!-- Vendored Libraries -->
-  <script src="js/vendor/d3.min.js"></script>
-  <script src="js/vendor/topojson-client.min.js"></script>
+  <!-- External Libraries (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 
   <!-- Application Logic -->
-  <script src="js/data.js?v=5"></script>
-  <script src="js/map.js?v=5"></script>
-  <script src="js/app.js?v=5"></script>
+  <script src="js/data.js?v=7"></script>
+  <script src="js/map.js?v=7"></script>
+  <script src="js/app.js?v=7"></script>
 </body>
 </html>

@@ -70,15 +70,12 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 ├── js/
 │   ├── app.js                   # Application state, event listeners, drawer & modal controller
 │   ├── map.js                   # D3.js 2D Natural Earth & 3D Globe rendering engine
-│   ├── data.js                  # Data store, active layer filtering, and CSV/JSON/XML exports
-│   └── vendor/
-│       ├── d3.min.js            # Vendored D3.js v7 (zero external runtime latency)
-│       └── topojson-client.min.js
+│   └── data.js                  # Data store, active layer filtering, and CSV/JSON/XML exports
 ├── data/
 │   ├── countries.json           # Master unified dataset with ISO-3166 codes & alliance statuses
 │   ├── frontier_call.json       # Verified primary dataset of the 22 endorsing world leaders
 │   ├── iso_countries.json       # ISO-3166-1 standard country codes (249 entities)
-│   └── world-110m.json          # Clean vector world atlas TopoJSON
+│   └── world-50m.json           # Visionscarto 50m TopoJSON (242 countries, clean topology)
 ├── scripts/
 │   └── fetch_wikipedia_data.py  # Python ingestion script to parse Wikipedia API & build countries.json
 ├── .github/
@@ -92,7 +89,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 
 ## Local Development
 
-Because GeopoliticsAI.com is built with vanilla web technologies and vendored libraries, running it locally requires no build steps or bundlers:
+Because GeopoliticsAI.com is built with vanilla web technologies, running it locally requires no build steps or bundlers:
 
 ```bash
 # Clone the repository
@@ -119,8 +116,8 @@ python3 scripts/fetch_wikipedia_data.py
 ## Primary Sources & Truth Citations
 
 - **Call for Control of Frontier AI Models:**
-  - [Official Declaration PDF (Norwegian Government)](https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf)
   - [Office of the President of Finland (Presidentti.fi)](https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/)
+  - [Official Declaration PDF (Norwegian Government)](https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf)
   - [Politico Europe Reporting](https://www.politico.eu/article/20-countries-urge-to-strenghten-oversight-of-ai-to-keep-it-under-human-control/)
 - **World Artificial Intelligence Cooperation Organization (WAICO):**
   - [WAICO on Wikipedia](https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization)

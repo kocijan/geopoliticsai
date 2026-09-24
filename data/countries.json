@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "GeopoliticsAI International Alignment Database",
-    "last_updated": "2026-09-22",
+    "last_updated": "2026-09-23",
     "data_current_as_of": "September 2026",
     "version": "1.0.0",
     "sources": {
@@ -79,7 +79,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -192,12 +192,17 @@
         "date": "2026-06-26",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-06-26.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇦🇷"
+      "flag_emoji": "🇦🇷",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "ARM": {
       "iso3": "ARM",
@@ -208,11 +213,23 @@
       "subregion": "Western Asia",
       "is_eu_member": false,
       "waico": null,
-      "pax_silica": null,
+      "pax_silica": {
+        "status": "opportunity_statement",
+        "role_label": "AI Opportunity Statement",
+        "date": "2026-06-26",
+        "is_direct": false,
+        "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not a signatory of the Pax Silica Declaration.",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      },
       "frontier_call": null,
-      "alignment_category": "none",
+      "alignment_category": "opportunity_statement",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇲"
+      "flag_emoji": "🇦🇲",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "ABW": {
       "iso3": "ABW",
@@ -244,7 +261,7 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Signed inaugural Pax Silica Declaration at Washington Summit.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -259,7 +276,12 @@
       },
       "alignment_category": "pax_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇦🇺"
+      "flag_emoji": "🇦🇺",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "AUT": {
       "iso3": "AUT",
@@ -271,16 +293,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇦🇹"
     },
     "AZE": {
@@ -336,7 +358,12 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇧🇭"
+      "flag_emoji": "🇧🇭",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "BGD": {
       "iso3": "BGD",
@@ -351,7 +378,7 @@
         "role_label": "Observer State",
         "date": "2026-08-01",
         "notes": "Joined as an observer state on 1 August 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.bssnews.net/news/218968"
       },
       "pax_silica": {
         "status": "invited",
@@ -359,11 +386,11 @@
         "date": "2026-08-01",
         "is_direct": true,
         "notes": "Invited to join by U.S. special envoy on 1 August 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "waico_only",
-      "active_initiatives_count": 1,
+      "active_initiatives_count": 0,
       "flag_emoji": "🇧🇩"
     },
     "BRB": {
@@ -394,7 +421,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -412,16 +439,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇧🇪"
     },
     "BLZ": {
@@ -572,7 +599,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -626,16 +653,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇧🇬"
     },
     "BFA": {
@@ -696,7 +723,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -717,7 +744,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -740,7 +767,7 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Participated as observer/guest in summit sessions; not a formal signatory.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -753,8 +780,8 @@
         "notes": "Prime Minister of Canada endorsing frontier AI safeguards.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
-      "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2,
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇨🇦"
     },
     "CYM": {
@@ -817,12 +844,17 @@
         "date": "2026-06-26",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-06-26.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇨🇱"
+      "flag_emoji": "🇨🇱",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "CHN": {
       "iso3": "CHN",
@@ -837,7 +869,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -918,7 +950,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -971,12 +1003,17 @@
         "date": "2026-06-26",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-06-26.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇨🇷"
+      "flag_emoji": "🇨🇷",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "CIV": {
       "iso3": "CIV",
@@ -1003,16 +1040,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇭🇷"
     },
     "CUB": {
@@ -1028,7 +1065,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -1061,16 +1098,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇨🇾"
     },
     "CZE": {
@@ -1083,16 +1120,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇨🇿"
     },
     "DNK": {
@@ -1105,8 +1142,8 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
@@ -1123,9 +1160,14 @@
         "notes": "Nordic partner supporting common European and global safety standards.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
-      "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2,
-      "flag_emoji": "🇩🇰"
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇩🇰",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "DJI": {
       "iso3": "DJI",
@@ -1223,12 +1265,17 @@
         "date": "2026-06-26",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-06-26.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇸🇻"
+      "flag_emoji": "🇸🇻",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "GNQ": {
       "iso3": "GNQ",
@@ -1271,11 +1318,22 @@
       "waico": null,
       "pax_silica": {
         "status": "observer",
-        "role_label": "Observer & Signatory",
-        "date": "2026-06-26",
+        "role_label": "Observer State",
+        "date": "2026-06-25",
         "is_direct": true,
-        "notes": "Became observer and signed declaration on 26 June 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_conflict": false,
+        "notes": "Estonian Foreign Ministry confirmed that Deputy Head of Mission Inga Bowden participated as an observer state in the Pax Silica Summit in Washington on 25 June 2026 and signed the AI Opportunity Statement.",
+        "source_url": "https://www.vm.ee/en/news/foreign-minister-tsahkna-pax-silica-agreement-opportunity-advance-technology-innovation-and",
+        "sources": [
+          {
+            "title": "Estonian MFA Press Release: Pax Silica Agreement Signing",
+            "url": "https://www.vm.ee/en/news/foreign-minister-tsahkna-pax-silica-agreement-opportunity-advance-technology-innovation-and"
+          },
+          {
+            "title": "U.S. State Dept: Outcomes of the Second Pax Silica Summit",
+            "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+          }
+        ]
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -1288,9 +1346,14 @@
         "notes": "Digital leader in EU advocating for transparent verification protocols.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
-      "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2,
-      "flag_emoji": "🇪🇪"
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇪🇪",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "SWZ": {
       "iso3": "SWZ",
@@ -1320,7 +1383,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -1388,7 +1451,7 @@
         "date": "2026-04-16",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-04-16.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -1403,7 +1466,12 @@
       },
       "alignment_category": "pax_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇫🇮"
+      "flag_emoji": "🇫🇮",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "FRA": {
       "iso3": "FRA",
@@ -1415,16 +1483,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇫🇷"
     },
     "GUF": {
@@ -1538,7 +1606,7 @@
         "date": "2026-06-23",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-06-23.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -1553,7 +1621,12 @@
       },
       "alignment_category": "pax_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇩🇪"
+      "flag_emoji": "🇩🇪",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "GHA": {
       "iso3": "GHA",
@@ -1600,12 +1673,17 @@
         "date": "2026-06-23",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-06-23.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇬🇷"
+      "flag_emoji": "🇬🇷",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "GRL": {
       "iso3": "GRL",
@@ -1827,16 +1905,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇭🇺"
     },
     "ISL": {
@@ -1879,12 +1957,17 @@
         "date": "2026-02-20",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-02-20.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇮🇳"
+      "flag_emoji": "🇮🇳",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "IDN": {
       "iso3": "IDN",
@@ -1899,7 +1982,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -1953,8 +2036,8 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
@@ -1971,8 +2054,8 @@
         "notes": "European technology hub leader endorsing frontier oversight.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
-      "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2,
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇮🇪"
     },
     "IMN": {
@@ -2005,12 +2088,17 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Signed inaugural Pax Silica Declaration at Washington Summit.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇮🇱"
+      "flag_emoji": "🇮🇱",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "ITA": {
       "iso3": "ITA",
@@ -2027,12 +2115,17 @@
         "date": "2026-07-31",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-07-31.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇮🇹"
+      "flag_emoji": "🇮🇹",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "JAM": {
       "iso3": "JAM",
@@ -2064,12 +2157,17 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Signed inaugural Pax Silica Declaration at Washington Summit.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇯🇵"
+      "flag_emoji": "🇯🇵",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "JEY": {
       "iso3": "JEY",
@@ -2114,7 +2212,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": {
         "status": "signatory",
@@ -2122,7 +2220,7 @@
         "date": "2026-06-26",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-06-26.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -2137,7 +2235,12 @@
       },
       "alignment_category": "tripartite",
       "active_initiatives_count": 3,
-      "flag_emoji": "🇰🇿"
+      "flag_emoji": "🇰🇿",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "KEN": {
       "iso3": "KEN",
@@ -2152,7 +2255,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": {
@@ -2215,12 +2318,17 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Signed inaugural Pax Silica Declaration at Washington Summit.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇰🇷"
+      "flag_emoji": "🇰🇷",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "KWT": {
       "iso3": "KWT",
@@ -2250,7 +2358,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2271,7 +2379,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2289,8 +2397,8 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
@@ -2307,9 +2415,14 @@
         "notes": "Baltic state endorsing independent AI testing.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
-      "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2,
-      "flag_emoji": "🇱🇻"
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
+      "flag_emoji": "🇱🇻",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "LBN": {
       "iso3": "LBN",
@@ -2339,7 +2452,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2402,17 +2515,22 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
-      "flag_emoji": "🇱🇹"
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇱🇹",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "LUX": {
       "iso3": "LUX",
@@ -2424,16 +2542,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇱🇺"
     },
     "MAC": {
@@ -2494,7 +2612,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2542,16 +2660,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇲🇹"
     },
     "MHL": {
@@ -2772,7 +2890,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2793,7 +2911,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2857,11 +2975,12 @@
       "waico": null,
       "pax_silica": {
         "status": "signatory",
-        "role_label": "Signatory ('Non-signing partner' accession)",
-        "date": "2025-12-17",
+        "role_label": "Signatory",
+        "date": "2026-06-23",
         "is_direct": true,
-        "notes": "Joined Pax Silica on 2025-12-17.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "signatory_title": "Minister of Foreign Trade and Development Cooperation Sjoerd Sjoerdsma",
+        "notes": "Formal Pax Silica Declaration signatory — signed 23 June 2026 in Washington; prior non-signing participant since 17 December 2025.",
+        "source_url": "https://www.state.gov/releases/bureau-of-economic-energy-and-business-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-kingdom-of-the-netherlands-to-pax-silica"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -2876,7 +2995,12 @@
       },
       "alignment_category": "pax_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇳🇱"
+      "flag_emoji": "🇳🇱",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "NCL": {
       "iso3": "NCL",
@@ -2902,11 +3026,23 @@
       "subregion": "Australia and New Zealand",
       "is_eu_member": false,
       "waico": null,
-      "pax_silica": null,
+      "pax_silica": {
+        "status": "opportunity_statement",
+        "role_label": "AI Opportunity Statement",
+        "date": "2026-06-26",
+        "is_direct": false,
+        "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not a signatory of the Pax Silica Declaration.",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      },
       "frontier_call": null,
-      "alignment_category": "none",
+      "alignment_category": "opportunity_statement",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇿"
+      "flag_emoji": "🇳🇿",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "NIC": {
       "iso3": "NIC",
@@ -2921,7 +3057,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3034,7 +3170,7 @@
         "date": "2026-05-06",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-05-06.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -3049,7 +3185,12 @@
       },
       "alignment_category": "pax_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇳🇴"
+      "flag_emoji": "🇳🇴",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "OMN": {
       "iso3": "OMN",
@@ -3064,7 +3205,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3085,7 +3226,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3138,12 +3279,17 @@
         "date": "2026-06-26",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-06-26.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇵🇦"
+      "flag_emoji": "🇵🇦",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "PNG": {
       "iso3": "PNG",
@@ -3169,11 +3315,23 @@
       "subregion": "Latin America and the Caribbean",
       "is_eu_member": false,
       "waico": null,
-      "pax_silica": null,
+      "pax_silica": {
+        "status": "opportunity_statement",
+        "role_label": "AI Opportunity Statement",
+        "date": "2026-06-26",
+        "is_direct": false,
+        "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not a signatory of the Pax Silica Declaration.",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      },
       "frontier_call": null,
-      "alignment_category": "none",
+      "alignment_category": "opportunity_statement",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇾"
+      "flag_emoji": "🇵🇾",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "PER": {
       "iso3": "PER",
@@ -3205,12 +3363,17 @@
         "date": "2026-04-17",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-04-17.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇵🇭"
+      "flag_emoji": "🇵🇭",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "PCN": {
       "iso3": "PCN",
@@ -3237,17 +3400,22 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
-      "flag_emoji": "🇵🇱"
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇱",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "PRT": {
       "iso3": "PRT",
@@ -3259,17 +3427,22 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "signatory",
-        "role_label": "Signatory",
+        "status": "opportunity_statement",
+        "role_label": "AI Opportunity Statement",
         "date": "2026-06-26",
-        "is_direct": true,
-        "notes": "Joined Pax Silica on 2026-06-26.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "is_direct": false,
+        "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not listed among the Pax Silica Declaration signatories in the U.S. State Department June 2026 fact sheet.",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
-      "flag_emoji": "🇵🇹"
+      "alignment_category": "opportunity_statement",
+      "active_initiatives_count": 0,
+      "flag_emoji": "🇵🇹",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "PRI": {
       "iso3": "PRI",
@@ -3301,12 +3474,17 @@
         "date": "2026-01-13",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-01-13.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇶🇦"
+      "flag_emoji": "🇶🇦",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "REU": {
       "iso3": "REU",
@@ -3333,16 +3511,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇷🇴"
     },
     "RUS": {
@@ -3358,7 +3536,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3559,7 +3737,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3580,7 +3758,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3630,7 +3808,7 @@
         "status": "invitee",
         "role_label": "Invited State",
         "date": "2026-09-09",
-        "notes": "Considering invitation to join; also Pax Silica member and Frontier Call endorser.",
+        "notes": "Considering invitation to join; also Pax Silica member and Frontier Control endorser.",
         "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
       },
       "pax_silica": {
@@ -3639,7 +3817,7 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Signed inaugural Pax Silica Declaration at Washington Summit.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -3654,7 +3832,12 @@
       },
       "alignment_category": "pax_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇸🇬"
+      "flag_emoji": "🇸🇬",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "SXM": {
       "iso3": "SXM",
@@ -3681,16 +3864,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇸🇰"
     },
     "SVN": {
@@ -3703,16 +3886,16 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_eu",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇸🇮"
     },
     "SLB": {
@@ -3758,7 +3941,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": {
@@ -3816,8 +3999,8 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "Pax Silica (via EU)",
-        "role_label": "Pax Silica (via EU)",
+        "status": "eu_represented",
+        "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
@@ -3834,8 +4017,8 @@
         "notes": "Host of EU AI supervision initiatives endorsing global oversight.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
-      "alignment_category": "pax_frontier",
-      "active_initiatives_count": 2,
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇪🇸"
     },
     "LKA": {
@@ -3919,12 +4102,17 @@
         "date": "2026-03-17",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-03-17.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇸🇪"
+      "flag_emoji": "🇸🇪",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "CHE": {
       "iso3": "CHE",
@@ -3971,11 +4159,11 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Endorsed principles through separate statement; non-signatory participant.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/01/joint-statement-on-the-pax-silica-declaration-and-u-s-taiwan-economic-security-cooperation/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_only",
-      "active_initiatives_count": 1,
+      "alignment_category": "pax_associated",
+      "active_initiatives_count": 0,
       "flag_emoji": "🇹🇼"
     },
     "TJK": {
@@ -3991,7 +4179,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4154,7 +4342,12 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇹🇷"
+      "flag_emoji": "🇹🇷",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "TKM": {
       "iso3": "TKM",
@@ -4246,7 +4439,7 @@
         "date": "2026-01-14",
         "is_direct": true,
         "notes": "Joined Pax Silica on 2026-01-14.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -4261,7 +4454,12 @@
       },
       "alignment_category": "pax_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇦🇪"
+      "flag_emoji": "🇦🇪",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "GBR": {
       "iso3": "GBR",
@@ -4278,12 +4476,17 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Signed inaugural Pax Silica Declaration at Washington Summit.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇬🇧"
+      "flag_emoji": "🇬🇧",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "USA": {
       "iso3": "USA",
@@ -4300,12 +4503,17 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Signed inaugural Pax Silica Declaration at Washington Summit.",
-        "source_url": "https://en.wikipedia.org/wiki/Pax_Silica"
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇺🇸"
+      "flag_emoji": "🇺🇸",
+      "ai_opportunity_statement": {
+        "signed": true,
+        "date": "2026-06-26",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+      }
     },
     "UMI": {
       "iso3": "UMI",
@@ -4350,7 +4558,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4386,7 +4594,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4503,7 +4711,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4535,7 +4743,9 @@
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,
-      "frontier_call": null
+      "frontier_call": null,
+      "active_initiatives_count": 0,
+      "alignment_category": "none"
     },
     "XNC": {
       "iso3": "XNC",
@@ -4546,7 +4756,9 @@
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,
-      "frontier_call": null
+      "frontier_call": null,
+      "active_initiatives_count": 0,
+      "alignment_category": "none"
     },
     "SOL": {
       "iso3": "SOL",
@@ -4557,7 +4769,9 @@
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,
-      "frontier_call": null
+      "frontier_call": null,
+      "active_initiatives_count": 0,
+      "alignment_category": "none"
     }
   }
 }

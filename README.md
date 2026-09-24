@@ -21,16 +21,17 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
    - *Launch:* 12 December 2025 at the inaugural Pax Silica Summit in Washington, D.C.
    - *Focus:* Securing advanced chip supply chains, critical minerals refining, AI data centers, and trusted international investment to eliminate coercive dependencies.
 
-3. **Call for Control of Frontier AI Models**:
+3. **Call for Control of Frontier AI Models ("Frontier Control")**:
    - *Legal Form:* Open multilateral political declaration.
    - *Launch:* 21 September 2026 on the sidelines of the UN General Assembly in New York.
    - *Initiators:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre, endorsed by 22 world leaders and the European Commission.
    - *Focus:* Mandatory pre-deployment testing, independent safety evaluations, incident reporting, and exploring a UN-style international oversight institution for frontier models.
 
 ### Key Nuances & Institutional Distinctions
-- **Tripartite Overlap:** **Kazakhstan** signed the WAICO founding treaty, joined Pax Silica at the Second Summit, and President Kassym-Jomart Tokayev personally endorsed the Frontier AI Call.
-- **Two-Way Alliances:** **Singapore** signed Pax Silica, endorsed the Frontier AI Call, and is an invited state considering WAICO; **South Africa** and **Kenya** are WAICO founding members whose heads of state endorsed the Frontier Call; **Australia**, **Canada**, **Germany**, **Netherlands**, **Norway**, **UAE**, and **Estonia** bridge Pax Silica and the Frontier AI Call.
-- **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026, and European Commission President Ursula von der Leyen endorsed the Frontier AI Call on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (e.g. Germany, Greece, Netherlands, Sweden, Finland, Portugal, Italy) from those covered via EU competence, as well as leaders who endorsed the Frontier Call in their national capacity.
+- **Tripartite Overlap:** **Kazakhstan** signed the WAICO founding treaty, joined Pax Silica at the Second Summit, and President Kassym-Jomart Tokayev personally endorsed the Frontier Control declaration.
+- **Two-Way Alliances:** **Singapore** signed Pax Silica, endorsed Frontier Control, and is an invited state considering WAICO; **South Africa** and **Kenya** are WAICO founding members whose heads of state endorsed Frontier Control; **Australia**, **Canada**, **Germany**, **Netherlands**, **Norway**, **UAE**, and **Estonia** bridge Pax Silica and Frontier Control.
+- **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (e.g. Germany, Greece, Netherlands, Sweden, Finland, Italy) from those covered via EU competence. Portugal is separately tracked as a signatory of the Joint Statement on AI Opportunity.
+- **Pax Silica Status Taxonomy:** Distinguishes formal national signatories, EU-represented member states, recognized observers (Canada, Estonia), non-signatory participants (Taiwan), and AI Opportunity Statement signatories.
 
 ---
 
@@ -39,20 +40,21 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 - 🌍 **Dual Projections (2D World Map & 3D Globe):**
   - **2D Natural Earth Map (Default):** Optimized for smooth panning and deep zooming into smaller island states and micro-territories (e.g. Singapore, Bahrain, Qatar, Netherlands, Dominica, Brunei).
   - **3D Orthographic Globe:** Smooth touch/mouse spherical rotation with inertial dampening, atmospheric glow, and auto-spin mode.
-- ♿ **Tactile Patterns & Textures Mode (A11y):**
-  - Color-blind friendly palette (Crimson, Azure, Amber Gold).
-  - Toggleable SVG pattern hatching (stripes for WAICO, stipple dots for Pax Silica, grid mesh for Frontier Call, complex weave for tripartite overlaps).
-  - Distinct symbolic badges (`◆` WAICO, `■` Pax Silica, `★` Frontier Call) so meaning is never encoded by color alone.
+- 🎨 **Cell-Colored Table & Map Symbology:**
+  - Modern cell-colored status indicator system with clear text labels and tinted backgrounds.
+  - Multi-initiative overlap styling: customizable between consecutive alternating stripes side-by-side or composite solid colors.
+  - Visual distinction for EU-represented states (hatching) and observers.
 - 🎛️ **Multi-Layer Checkboxes & Presets:**
-  - Independently toggle any combination of WAICO, Pax Silica, and the Frontier Call.
-  - Filter by Tripartite Overlap, Two-Way Overlaps, Direct Signatories, Observers, or EU Member States.
+  - Independently toggle any combination of WAICO, Pax Silica, and Frontier Control.
+  - Filter by Tripartite Overlap, Two-Way Overlaps, Direct Signatories, Observers, EU Member States, or AI Opportunity Statement.
+  - Display & Overlap Settings modal for customizing overlap visualization and EU inclusion.
 - 📋 **Comprehensive Country Profile Drawer:**
   - Full details on accession dates, signatory titles, leader names, and notes.
-  - Direct clickable links to primary government press releases, treaties, and Wikipedia records.
+  - Direct clickable links to primary government press releases (State Department, foreign ministries, official communiqués).
   - One-click copyable shareable permalinks (`#country=KAZ`).
-- 📊 **Searchable & Sortable Register:**
+- 📊 **Searchable & Sortable Countries & Territories:**
   - Instant fuzzy search across countries, leaders, and ISO-3166 codes.
-  - Sort by any column (Country, Region, WAICO status, Pax Silica status, Frontier Call endorsement).
+  - Sort by any column (Country, Region, WAICO status, Pax Silica status, Frontier Control endorsement).
 - 💾 **Data Export:**
   - Download full dataset as **CSV**, **JSON**, or **XML** for academic and policy research.
 - 🤖 **Automated Daily Ingestion (GitHub Actions):**

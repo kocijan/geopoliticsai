@@ -7,7 +7,7 @@
   
   <!-- SEO Meta -->
   <meta name="description" content="An interactive, source-linked tracker of international AI governance, supply-chain, and frontier-safety alignments across WAICO, Pax Silica, and the Call for Control of Frontier AI Models.">
-  <meta name="keywords" content="AI geopolitics, WAICO, Pax Silica, Frontier AI Call, artificial intelligence governance, global AI alliances, AI supply chain">
+  <meta name="keywords" content="AI geopolitics, WAICO, Pax Silica, Frontier Control, artificial intelligence governance, global AI alliances, AI supply chain">
   <meta name="author" content="Martin Josip Kocijan">
 
   <!-- Favicon -->
@@ -25,7 +25,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GeopoliticsAI.com — Map of AI Geopolitics">
-  <meta name="twitter:description" content="Interactive tracker of WAICO, Pax Silica, and Frontier AI Call alignments.">
+  <meta name="twitter:description" content="Interactive tracker of WAICO, Pax Silica, and Frontier Control alignments.">
   <meta name="twitter:image" content="https://geopoliticsai.com/og-thumbnail.png">
 
   <!-- Google Fonts: Inter & Outfit -->
@@ -47,9 +47,9 @@
       <div class="brand-wrapper">
         <h1 class="brand-title">GeopoliticsAI.com</h1>
         <span class="brand-subtitle-tag">Map of AI Geopolitics</span>
-        <div class="brand-date-badge" title="Data updated for September 22, 2026">
+        <div class="brand-date-badge" title="Data updated for September 23, 2026">
           <span class="pulse-dot" aria-hidden="true"></span>
-          <span>September 22, 2026</span>
+          <span>September 23, 2026</span>
         </div>
         <span class="brand-hint">Click on any country for details.</span>
       </div>
@@ -61,10 +61,13 @@
           <button type="button" class="segmented-option" id="proj-3d-btn" role="radio" aria-checked="false" title="Interactive 3D Globe">3D Globe</button>
         </div>
 
-        <label class="header-checkbox-label" id="texture-toggle-label" title="Toggle tactile patterns and hatching for color-blind distinction (Alt+A)">
-          <input type="checkbox" id="texture-toggle-checkbox">
-          <span>Patterns</span>
-        </label>
+        <button id="settings-btn" class="btn btn-sm btn-settings" aria-haspopup="dialog" aria-controls="settings-modal" title="Display & Overlap Settings" aria-label="Display and Overlap Settings">
+          <svg class="settings-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          <span class="settings-btn-text">Settings</span>
+        </button>
 
         <button id="methodology-btn" class="btn btn-sm" aria-haspopup="dialog" aria-controls="methodology-modal">
           <span>Methodology</span>
@@ -101,18 +104,19 @@
             <option value="aligned" selected>Aligned States Only</option>
             <option value="tripartite">Tripartite Overlap (Kazakhstan)</option>
             <option value="two_way">Two-Way Overlaps</option>
-            <option value="waico">WAICO Signatories</option>
-            <option value="pax">Pax Silica (inc. EU)</option>
-            <option value="frontier">Frontier Call Endorsements</option>
+            <option value="waico">WAICO Members</option>
+            <option value="pax">Pax Silica Signatories</option>
+            <option value="frontier">Frontier Control Endorsements</option>
             <option value="observers">Observers & Invited</option>
             <option value="eu">EU Member States</option>
+            <option value="opportunity">AI Opportunity Statement</option>
           </select>
         </div>
 
         <!-- Meta & Export Row -->
         <div class="register-meta-row">
           <div>
-            <strong id="register-heading">Countries Register</strong>
+            <strong id="register-heading">Countries and Territories</strong>
             <span id="table-count" style="margin-left: 0.25rem;"></span>
           </div>
 
@@ -135,10 +139,10 @@
         <table class="countries-table">
           <thead>
             <tr>
-              <th data-sort="name" class="col-country">Country &#8645;</th>
-              <th data-sort="waico" class="col-waico">WAICO &#8645;</th>
-              <th data-sort="pax" class="col-pax">Pax Silica &#8645;</th>
-              <th data-sort="frontier" class="col-frontier">Frontier AI Call &#8645;</th>
+              <th data-sort="name" class="col-country">Country <span class="sort-icon"></span></th>
+              <th data-sort="waico" class="col-waico">WAICO <span class="sort-icon"></span></th>
+              <th data-sort="pax" class="col-pax">Pax Silica <span class="sort-icon"></span></th>
+              <th data-sort="frontier" class="col-frontier">Frontier Control <span class="sort-icon"></span></th>
               <th class="col-details" style="text-align: right;">Details</th>
             </tr>
           </thead>
@@ -213,14 +217,15 @@
               <span>Source</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
+            <div id="details-pax-sources" class="initiative-source-list" style="display:none;"></div>
           </div>
 
-          <!-- Frontier AI Call Card -->
+          <!-- Frontier Control Card -->
           <div id="details-card-frontier" class="initiative-detail-card card-frontier" style="display:none;">
             <div class="initiative-card-header">
               <div class="initiative-card-title">
                 <span class="symbology-badge symbol-frontier">★</span>
-                <span>Frontier AI Call</span>
+                <span>Frontier Control</span>
               </div>
               <span id="details-frontier-status" class="table-badge" style="background:var(--color-frontier-bg); color:var(--color-frontier);">Leader Endorsement</span>
             </div>
@@ -235,9 +240,29 @@
             </a>
           </div>
 
+          <!-- AI Opportunity Statement Card -->
+          <div id="details-card-opportunity" class="initiative-detail-card card-opportunity" style="display:none;">
+            <div class="initiative-card-header">
+              <div class="initiative-card-title">
+                <span class="symbology-badge symbol-opportunity">●</span>
+                <span>AI Opportunity Statement</span>
+              </div>
+              <span id="details-opportunity-status" class="table-badge" style="background:var(--color-opportunity-bg); color:var(--color-opportunity); border:1px solid var(--color-opportunity-border);">Signatory</span>
+            </div>
+            <div class="initiative-card-meta">
+              <div><span class="meta-label">Signed Date</span><span id="details-opportunity-date">--</span></div>
+              <div><span class="meta-label">Forum</span><span>Second Pax Silica Summit</span></div>
+            </div>
+            <p id="details-opportunity-notes" class="initiative-card-notes"></p>
+            <a id="details-opportunity-source" href="#" target="_blank" rel="noopener noreferrer" class="initiative-source-link">
+              <span>Source</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
           <!-- Unaligned Notice -->
           <div id="details-unaligned-notice" style="display:none;" class="unaligned-notice">
-            <p>No recorded signature, accession, or endorsement across WAICO, Pax Silica, or the Frontier AI Call.</p>
+            <p>No recorded signature, accession, or endorsement across WAICO, Pax Silica, or the Frontier Control declaration.</p>
           </div>
         </div>
       </div>
@@ -249,19 +274,19 @@
         <!-- Top Toolbar Row: Layer Checkboxes & Controls -->
         <div class="map-toolbar-row">
           <div class="layer-toggles">
-            <label class="layer-checkbox-label layer-label-waico" title="World Artificial Intelligence Cooperation Organization (37 states)">
+            <label class="layer-checkbox-label layer-label-waico" title="World Artificial Intelligence Cooperation Organization">
               <input type="checkbox" id="layer-waico" value="waico" checked>
               <span><span class="symbology-badge symbol-waico">◆</span> WAICO</span>
             </label>
 
-            <label class="layer-checkbox-label layer-label-pax" title="Pax Silica supply-chain & critical minerals initiative (Includes EU member states)">
+            <label class="layer-checkbox-label layer-label-pax" title="Pax Silica supply-chain & critical minerals initiative">
               <input type="checkbox" id="layer-pax" value="pax" checked>
               <span><span class="symbology-badge symbol-pax">■</span> Pax Silica</span>
             </label>
 
-            <label class="layer-checkbox-label layer-label-frontier" title="Call for Control of Frontier AI Models (20 sovereign countries + European Commission)">
+            <label class="layer-checkbox-label layer-label-frontier" title="Call for Control of Frontier AI Models">
               <input type="checkbox" id="layer-frontier" value="frontier" checked>
-              <span><span class="symbology-badge symbol-frontier">★</span> Frontier AI Call</span>
+              <span><span class="symbology-badge symbol-frontier">★</span> Frontier Control</span>
             </label>
           </div>
 
@@ -272,36 +297,8 @@
 
         <!-- Legend positioned on Top of Map -->
         <div class="legend-panel-top">
-          <div class="legend-items-row">
-            <div class="legend-item" title="World Artificial Intelligence Cooperation Organization (37 states)">
-              <span class="legend-swatch" style="background: var(--color-waico); border-color: var(--color-waico-border);"></span>
-              <span class="legend-label-text"><span class="symbology-badge symbol-waico">◆</span> WAICO (37)</span>
-            </div>
-
-            <div class="legend-item" title="Pax Silica initiative (33 direct + EU member states)">
-              <span class="legend-swatch" style="background: var(--color-pax); border-color: var(--color-pax-border);"></span>
-              <span class="legend-label-text"><span class="symbology-badge symbol-pax">■</span> Pax Silica (inc. EU)</span>
-            </div>
-
-            <div class="legend-item" title="Declaration by 22 leaders from 20 sovereign countries + European Commission">
-              <span class="legend-swatch" style="background: var(--color-frontier); border-color: var(--color-frontier-border);"></span>
-              <span class="legend-label-text"><span class="symbology-badge symbol-frontier">★</span> Frontier Call (20+EU)</span>
-            </div>
-
-            <div class="legend-item" title="Tripartite alignment across all three initiatives (Kazakhstan)">
-              <span class="legend-swatch" style="background: var(--color-tripartite); border-color: #581c87;"></span>
-              <span class="legend-label-text"><span class="symbology-badge">◆■★</span> All 3 (Kazakhstan)</span>
-            </div>
-
-            <div class="legend-item" title="States aligned across both Pax Silica and Frontier Call (13 states)">
-              <span class="legend-swatch" style="background: var(--color-pax-frontier); border-color: #0f766e;"></span>
-              <span class="legend-label-text"><span class="symbology-badge">■★</span> Pax + Frontier (13)</span>
-            </div>
-
-            <div class="legend-item" title="States aligned across both WAICO and Frontier Call (2 states)">
-              <span class="legend-swatch" style="background: var(--color-waico-frontier); border-color: #c2410c;"></span>
-              <span class="legend-label-text"><span class="symbology-badge">◆★</span> WAICO + Frontier (2)</span>
-            </div>
+          <div class="legend-items-row" id="legend-items-row">
+            <!-- Dynamically populated by app.js -->
           </div>
         </div>
       </div>
@@ -387,14 +384,19 @@
         A U.S. State Department-led economic-security framework established in December 2025 focusing on semiconductor fabrication, critical minerals refining, and compute supply-chain resilience.
       </p>
 
-      <h4>3. Call for Control of Frontier AI Models (21 September 2026)</h4>
+      <h4>3. Call for Control of Frontier AI Models — "Frontier Control" (21 September 2026)</h4>
       <p>
-        An open political declaration launched on the sidelines of the UN General Assembly by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre, endorsed by 22 world leaders and the European Commission. It calls for mandatory testing, independent evaluations, and exploring international oversight.
+        An open political declaration launched on the sidelines of the UN General Assembly by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre, endorsed by 22 leaders and senior officials representing 20 countries and the European Commission. It calls for mandatory pre-deployment safety testing, independent third-party evaluations, incident reporting, and exploring a UN-style international oversight institution.
       </p>
 
       <h4>European Union Representation</h4>
       <p>
-        The European Union signed Pax Silica on 23 June 2026, and European Commission President Ursula von der Leyen endorsed the Frontier AI Call. On the map, EU member states are colored into Pax Silica, while the country details window and register distinguish direct national signatories from states covered via EU accession.
+        The European Commission signed Pax Silica on 23 June 2026, and President Ursula von der Leyen endorsed the Frontier Control declaration. EU member states are represented via the EU institutional signature. On the map, EU-covered states are shown with a hatched Pax fill; direct national signatories (e.g. Germany, Greece, Netherlands, Italy) retain a solid fill.
+      </p>
+
+      <h4>Pax Silica Status Taxonomy</h4>
+      <p>
+        This tracker distinguishes: <strong>formal signatories</strong> (signed the Pax Silica Declaration nationally), <strong>EU-represented</strong> states (covered via the European Commission's institutional signature), <strong>observers</strong> (recognized observer participation), <strong>non-signatory participants</strong> (endorsed principles via separate instruments, e.g. Taiwan), and <strong>AI Opportunity Statement</strong> signatories (signed the related but distinct Joint Statement on AI Opportunity, e.g. Portugal).
       </p>
     </div>
     <div class="modal-footer">
@@ -402,15 +404,56 @@
     </div>
   </dialog>
 
+  <!-- Display & Overlap Settings Modal -->
+  <dialog id="settings-modal" class="modal-dialog" aria-labelledby="settings-modal-title">
+    <div class="modal-header">
+      <h3 id="settings-modal-title" class="modal-title">Display & Alignment Settings</h3>
+      <button id="settings-close-btn" class="btn btn-icon" aria-label="Close Settings modal">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="setting-group">
+        <span class="setting-label">Multi-Initiative Overlap Coloring</span>
+        <p class="setting-desc">Choose how countries aligned with multiple initiatives (e.g. Pax + Frontier) are colored on the map.</p>
+        <div class="setting-radio-group" role="radiogroup" aria-label="Multi-initiative overlap coloring style">
+          <label class="setting-radio-option">
+            <input type="radio" name="setting-overlap-style" value="stripes" checked>
+            <div class="setting-radio-content">
+              <span class="setting-radio-title">Consecutive Stripes</span>
+              <span class="setting-radio-subtitle">Alternating colors side-by-side (shows both initiatives distinctly)</span>
+            </div>
+          </label>
+          <label class="setting-radio-option">
+            <input type="radio" name="setting-overlap-style" value="blended">
+            <div class="setting-radio-content">
+              <span class="setting-radio-title">Blended Solid Colors</span>
+              <span class="setting-radio-subtitle">Single hybrid color (Purple, Teal, Orange, etc.)</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="setting-group" style="margin-top: 1.25rem;">
+        <label class="setting-checkbox-label">
+          <input type="checkbox" id="setting-eu-overlap">
+          <span>Include EU-represented states in overlap calculations</span>
+        </label>
+        <p class="setting-desc">By default, only formal national signatories count toward combinations like Pax + Frontier. Enabling this treats all EU member states as Pax participants in overlap combinations.</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button id="settings-save-btn" class="btn btn-primary">Save & Apply</button>
+    </div>
+  </dialog>
+
   <!-- Clean Centered Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-container">
       <div class="footer-links">
-        <a href="https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/" target="_blank" rel="noopener noreferrer">Frontier AI Call</a>
+        <a href="https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/" target="_blank" rel="noopener noreferrer">Frontier Control Declaration</a>
         <span>&bull;</span>
-        <a href="https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization" target="_blank" rel="noopener noreferrer">WAICO Wikipedia</a>
-        <span>&bull;</span>
-        <a href="https://en.wikipedia.org/wiki/Pax_Silica" target="_blank" rel="noopener noreferrer">Pax Silica Wikipedia</a>
+        <a href="https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit" target="_blank" rel="noopener noreferrer">Pax Silica (State Dept)</a>
         <span>&bull;</span>
         <a href="https://github.com/kocijan/geopoliticsai" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
       </div>

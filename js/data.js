@@ -63,29 +63,68 @@ const DataStore = {
   },
 
   /**
-   * Determine dynamic alliance styling given active layer checkboxes.
+   * Determine dynamic alliance styling given active layer checkboxes and options.
    */
-  computeCountryAlliance(country, activeLayers = { waico: true, pax: true, frontier: true }) {
+  computeCountryAlliance(country, activeLayers = { waico: true, pax: true, frontier: true }, options = {}) {
     if (!country) return 'none';
 
-    // WAICO membership (excludes non-member invited/invitee states from map coloring)
-    const hasWaico = activeLayers.waico && country.waico && Boolean(country.waico.status) &&
-      country.waico.status !== 'invitee' && country.waico.status !== 'invited';
+    // WAICO membership (distinguish full member/signatory vs observer)
+    const isWaicoFull = activeLayers.waico && country.waico && (
+      country.waico.status === 'founding_member' ||
+      country.waico.status === 'signatory'
+    );
+    const isWaicoObserver = activeLayers.waico && country.waico && country.waico.status === 'observer';
     
-    // Pax includes founding signatories, later accessions, observers, and EU member states covered via EU (excludes invited states)
-    const hasPax = activeLayers.pax && country.pax_silica && Boolean(country.pax_silica.status) &&
-      country.pax_silica.status !== 'invited' && country.pax_silica.status !== 'invitee';
-    
+    // Pax formal signatories (founding or later national accession)
+    const isFormalPax = Boolean(
+      country.pax_silica && (
+        country.pax_silica.status === 'founding_signatory' ||
+        country.pax_silica.status === 'signatory'
+      )
+    );
+
+    // Pax sub-statuses
+    const isEuRepresented = country.pax_silica && country.pax_silica.status === 'eu_represented';
+    const isPaxObserver = activeLayers.pax && country.pax_silica && country.pax_silica.status === 'observer';
+    const isPaxParticipant = activeLayers.pax && country.pax_silica && country.pax_silica.status === 'participant';
+    const isPaxOpportunity = country.pax_silica && country.pax_silica.status === 'opportunity_statement';
+    const isOpportunityOnly = Boolean(country.ai_opportunity_statement?.signed) || isPaxOpportunity;
+
     const hasFrontier = activeLayers.frontier && country.frontier_call && 
       country.frontier_call.status === 'leader_endorsement';
 
-    if (hasWaico && hasPax && hasFrontier) return 'tripartite';
-    if (hasWaico && hasPax) return 'waico_pax';
-    if (hasPax && hasFrontier) return 'pax_frontier';
-    if (hasWaico && hasFrontier) return 'waico_frontier';
-    if (hasWaico) return 'waico_only';
-    if (hasPax) return 'pax_only';
+    // Whether EU-represented states participate in overlap combinations
+    const includeEuInOverlap = Boolean(options.includeEuInOverlap);
+    const hasPaxForOverlap = activeLayers.pax && (isFormalPax || (includeEuInOverlap && isEuRepresented));
+
+    // Multi-initiative Overlaps for full signatories
+    if (isWaicoFull && hasPaxForOverlap && hasFrontier) return 'tripartite';
+    if (isWaicoFull && hasPaxForOverlap) return 'waico_pax';
+    if (hasPaxForOverlap && hasFrontier) return 'pax_frontier';
+    if (isWaicoFull && hasFrontier) return 'waico_frontier';
+
+    // Pax Observer + Frontier overlap (Canada, Estonia)
+    if (isPaxObserver && hasFrontier) return 'pax_observer_frontier';
+
+    // Frontier + AI Opportunity overlap (Türkiye, Bahrain)
+    if (hasFrontier && isOpportunityOnly && activeLayers.pax && !hasPaxForOverlap && !isPaxObserver) {
+      return 'frontier_opportunity';
+    }
+
+    // Single primary initiative memberships
+    if (isWaicoFull) return 'waico_only';
+    if (hasPaxForOverlap) return 'pax_only';
     if (hasFrontier) return 'frontier_only';
+
+    // Distinct observer and sub-status representation
+    if (isWaicoObserver) return 'waico_observer';
+    if (isPaxObserver) return 'pax_observer';
+    if (activeLayers.pax) {
+      if (isEuRepresented) return 'pax_eu';
+      if (isPaxParticipant) return 'pax_participant';
+      if (isPaxOpportunity) return 'opportunity_statement';
+    }
+    if (isOpportunityOnly && activeLayers.pax) return 'opportunity_statement';
 
     return 'none';
   },
@@ -96,7 +135,8 @@ const DataStore = {
   filterCountries({
     activeLayers = { waico: true, pax: true, frontier: true },
     categoryFilter = 'all',
-    searchQuery = ''
+    searchQuery = '',
+    options = {}
   }) {
     let result = this.countriesList;
 
@@ -115,26 +155,29 @@ const DataStore = {
     if (categoryFilter !== 'all') {
       if (categoryFilter === 'aligned') {
         result = result.filter(c => {
-          const alliance = this.computeCountryAlliance(c, activeLayers);
-          return alliance !== 'none' && alliance !== 'covered_via_eu';
+          const alliance = this.computeCountryAlliance(c, activeLayers, options);
+          return alliance !== 'none';
         });
       } else if (categoryFilter === 'tripartite') {
-        result = result.filter(c => this.computeCountryAlliance(c, activeLayers) === 'tripartite');
+        result = result.filter(c => this.computeCountryAlliance(c, activeLayers, options) === 'tripartite');
       } else if (categoryFilter === 'two_way') {
-        result = result.filter(c => ['waico_pax', 'pax_frontier', 'waico_frontier'].includes(this.computeCountryAlliance(c, activeLayers)));
+        result = result.filter(c => ['waico_pax', 'pax_frontier', 'waico_frontier'].includes(this.computeCountryAlliance(c, activeLayers, options)));
       } else if (categoryFilter === 'waico') {
         result = result.filter(c => c.waico && ['founding_member', 'signatory'].includes(c.waico.status));
       } else if (categoryFilter === 'pax') {
         result = result.filter(c => c.pax_silica && ['founding_signatory', 'signatory'].includes(c.pax_silica.status));
       } else if (categoryFilter === 'frontier') {
         result = result.filter(c => c.frontier_call && c.frontier_call.status === 'leader_endorsement');
+      } else if (categoryFilter === 'opportunity') {
+        result = result.filter(c => Boolean(c.ai_opportunity_statement?.signed) || c.pax_silica?.status === 'opportunity_statement');
       } else if (categoryFilter === 'observers') {
         result = result.filter(c => 
           c.waico?.status === 'observer' || 
           c.waico?.status === 'invitee' || 
           c.pax_silica?.status === 'observer' || 
           c.pax_silica?.status === 'participant' || 
-          c.pax_silica?.status === 'invited'
+          c.pax_silica?.status === 'invited' ||
+          c.pax_silica?.status === 'opportunity_statement'
         );
       } else if (categoryFilter === 'eu') {
         result = result.filter(c => c.is_eu_member);
@@ -152,7 +195,8 @@ const DataStore = {
       'ISO3', 'ISO2', 'Country Name', 'Region', 'Is EU Member',
       'WAICO Status', 'WAICO Date', 'WAICO Notes', 'WAICO Source',
       'Pax Silica Status', 'Pax Silica Date', 'Pax Silica Direct Signatory', 'Pax Silica Notes', 'Pax Silica Source',
-      'Frontier Call Status', 'Frontier Call Date', 'Frontier Call Endorsed By', 'Frontier Call Source'
+      'Frontier Control Status', 'Frontier Control Date', 'Frontier Control Endorsed By', 'Frontier Control Source',
+      'AI Opportunity Statement Signed', 'AI Opportunity Statement Date', 'AI Opportunity Statement Source'
     ];
 
     const rows = this.countriesList.map(c => [
@@ -167,13 +211,16 @@ const DataStore = {
       `"${c.waico?.source_url || ''}"`,
       `"${c.pax_silica?.role_label || 'None'}"`,
       `"${c.pax_silica?.date || ''}"`,
-      c.pax_silica ? (c.pax_silica.is_direct ? 'Direct' : 'Via EU') : 'N/A',
+      c.pax_silica?.is_direct ? 'YES' : (c.pax_silica ? 'NO' : ''),
       `"${(c.pax_silica?.notes || '').replace(/"/g, '""')}"`,
       `"${c.pax_silica?.source_url || ''}"`,
       `"${c.frontier_call?.role_label || 'None'}"`,
       `"${c.frontier_call?.date || ''}"`,
       `"${(c.frontier_call?.endorsed_by || '').replace(/"/g, '""')}"`,
-      `"${c.frontier_call?.source_url || ''}"`
+      `"${c.frontier_call?.source_url || ''}"`,
+      c.ai_opportunity_statement?.signed ? 'YES' : (c.pax_silica?.status === 'opportunity_statement' ? 'YES' : 'NO'),
+      `"${c.ai_opportunity_statement?.date || (c.pax_silica?.status === 'opportunity_statement' ? c.pax_silica.date : '')}"`,
+      `"${c.ai_opportunity_statement?.source_url || (c.pax_silica?.status === 'opportunity_statement' ? c.pax_silica.source_url : '')}"`
     ]);
 
     const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\r\n');

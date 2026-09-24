@@ -79,7 +79,7 @@ def parse_waico(wikitext):
         "status": "invitee",
         "role_label": "Invited State",
         "date": "2026-09-09",
-        "notes": "Considering invitation to join; also Pax Silica member and Frontier Call endorser.",
+        "notes": "Considering invitation to join; also Pax Silica member and Frontier Control endorser.",
         "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
     }
 

@@ -16,9 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Header / Controls
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const textureToggleCheckbox = document.getElementById('texture-toggle-checkbox') || document.getElementById('texture-toggle-btn');
   const themeIcon = document.getElementById('theme-icon');
-  const textureToggleBtn = document.getElementById('texture-toggle-btn');
   const proj2dBtn = document.getElementById('proj-2d-btn');
   const proj3dBtn = document.getElementById('proj-3d-btn');
   const autoRotateBtn = document.getElementById('auto-rotate-btn');
@@ -38,6 +36,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   const methodologyModal = document.getElementById('methodology-modal');
   const methodologyBtn = document.getElementById('methodology-btn');
   const methodologyCloseBtn = document.getElementById('methodology-close-btn');
+
+  // Settings Modal
+  const settingsModal = document.getElementById('settings-modal');
+  const settingsBtn = document.getElementById('settings-btn');
+  const settingsCloseBtn = document.getElementById('settings-close-btn');
+  const settingsSaveBtn = document.getElementById('settings-save-btn');
+  const settingOverlapSelect = document.getElementById('setting-overlap-style');
+  const settingEuOverlapCheckbox = document.getElementById('setting-eu-overlap');
+
+  function getSettings() {
+    return {
+      overlapStyle: localStorage.getItem('geopolitics_overlap_style') || 'stripes',
+      includeEuInOverlap: localStorage.getItem('geopolitics_eu_overlap') === 'true'
+    };
+  }
+
+  function initSettings() {
+    const s = getSettings();
+    const radio = document.querySelector(`input[name="setting-overlap-style"][value="${s.overlapStyle}"]`);
+    if (radio) radio.checked = true;
+    if (settingEuOverlapCheckbox) settingEuOverlapCheckbox.checked = s.includeEuInOverlap;
+  }
 
   // Export Dropdown & Buttons
   const exportDropdown = document.getElementById('export-dropdown');
@@ -164,6 +184,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     console.log('[App] Initializing mapInstance...');
     await mapInstance.init(worldTopoJson);
+    mapInstance.setSettings(getSettings());
     console.log('[App] mapInstance.init completed. Paths in DOM:', document.querySelectorAll('.country-path').length);
 
     // Hide loading indicator smoothly
@@ -250,37 +271,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // 4. Pattern Mode Toggle (Checkbox or Button)
-  if (textureToggleCheckbox) {
-    const handleToggle = () => {
-      const isActive = textureToggleCheckbox.type === 'checkbox'
-        ? textureToggleCheckbox.checked
-        : !mapInstance.textureMode;
-      mapInstance.textureMode = isActive;
-      document.body.classList.toggle('texture-mode-active', isActive);
-      mapInstance.updateStyles();
-    };
-
-    textureToggleCheckbox.addEventListener('change', handleToggle);
-    if (textureToggleCheckbox.tagName === 'BUTTON') {
-      textureToggleCheckbox.addEventListener('click', handleToggle);
-    }
-  }
-
-  // Alt+A Shortcut for Patterns
-  document.addEventListener('keydown', (e) => {
-    if (e.altKey && (e.key === 'a' || e.key === 'A')) {
-      e.preventDefault();
-      if (textureToggleCheckbox) {
-        if (textureToggleCheckbox.type === 'checkbox') {
-          textureToggleCheckbox.checked = !textureToggleCheckbox.checked;
-          textureToggleCheckbox.dispatchEvent(new Event('change'));
-        } else {
-          textureToggleCheckbox.click();
-        }
-      }
-    }
-  });
+  // 4. (Pattern Mode removed)
 
   // 5. Segmented 2D Map / 3D Globe Projection Slider
   function updateProjectionUI(mode) {
@@ -343,7 +334,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 7. Render Table & Counts
   function updateCountsAndTable() {
+    updateSortHeaders();
     renderTable();
+    renderLegend();
   }
 
   function renderTable() {
@@ -354,10 +347,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filtered = DataStore.filterCountries({
       activeLayers,
       categoryFilter,
-      searchQuery: query
+      searchQuery: query,
+      options: getSettings()
     });
 
-    tableCountSpan.textContent = `(${filtered.length} countries)`;
+    tableCountSpan.textContent = `(${filtered.length})`;
 
     // Sort
     filtered.sort((a, b) => {
@@ -368,8 +362,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         valA = a.waico?.role_label || '';
         valB = b.waico?.role_label || '';
       } else if (currentSort.column === 'pax') {
-        valA = a.pax_silica?.role_label || '';
-        valB = b.pax_silica?.role_label || '';
+        valA = a.pax_silica?.role_label || (a.ai_opportunity_statement?.signed ? 'AI Opportunity Statement' : '');
+        valB = b.pax_silica?.role_label || (b.ai_opportunity_statement?.signed ? 'AI Opportunity Statement' : '');
       } else if (currentSort.column === 'frontier') {
         valA = a.frontier_call?.role_label || '';
         valB = b.frontier_call?.role_label || '';
@@ -381,52 +375,63 @@ document.addEventListener('DOMContentLoaded', async () => {
       return currentSort.asc ? (valA > valB ? 1 : -1) : (valA < valB ? 1 : -1);
     });
 
-    // Render Table Rows (no 3-letter ISO in Country column, compact badges)
+    // Cell-colored table rendering
     tableBody.innerHTML = filtered.map(c => {
-      let waicoBadge = '<span class="status-tag inactive">None</span>';
+      // WAICO cell
+      let waicoClass = 'cell-none';
+      let waicoLabel = '—';
       if (c.waico) {
-        const isWaicoInvited = c.waico.status === 'invitee' || c.waico.status === 'invited';
-        if (isWaicoInvited) {
-          waicoBadge = `<span class="table-badge is-invited" title="${c.waico.notes || 'Invited State'}">
-            <span class="symbology-badge symbol-waico" style="opacity:0.6;">◆</span> ${c.waico.role_label || 'Invited State'}
-          </span>`;
+        const st = c.waico.status;
+        if (st === 'invitee' || st === 'invited') {
+          waicoClass = 'cell-status cell-waico-invitee';
+          waicoLabel = c.waico.role_label || 'Invitee';
+        } else if (st === 'observer') {
+          waicoClass = 'cell-status cell-waico-observer';
+          waicoLabel = 'Observer';
         } else {
-          waicoBadge = `<span class="table-badge" style="background:var(--color-waico-bg); color:var(--color-waico); border:1px solid var(--color-waico-border);">
-            <span class="symbology-badge symbol-waico">◆</span> ${c.waico.role_label}
-          </span>`;
+          waicoClass = 'cell-status cell-waico-member';
+          waicoLabel = c.waico.role_label || 'Member';
         }
       }
 
-      let paxBadge = '<span class="status-tag inactive">None</span>';
+      // Pax cell
+      let paxClass = 'cell-none';
+      let paxLabel = '—';
       if (c.pax_silica) {
-        const isPaxInvited = c.pax_silica.status === 'invitee' || c.pax_silica.status === 'invited';
-        let paxLabel = c.pax_silica.role_label || 'Signatory';
-        if (!c.pax_silica.is_direct && !paxLabel.includes('(via EU)') && !isPaxInvited) {
-          paxLabel += ' (via EU)';
-        }
-        paxLabel = paxLabel.replace(/(\s*\(via EU\))+/g, ' (via EU)');
-
-        if (isPaxInvited) {
-          paxBadge = `<span class="table-badge is-invited" title="${c.pax_silica.notes || 'Invited State'}">
-            <span class="symbology-badge symbol-pax" style="opacity:0.6;">■</span> ${paxLabel}
-          </span>`;
+        const st = c.pax_silica.status;
+        if (st === 'founding_signatory' || st === 'signatory') {
+          paxClass = 'cell-status cell-pax-signatory';
+          paxLabel = c.pax_silica.role_label || 'Signatory';
+        } else if (st === 'eu_represented') {
+          paxClass = 'cell-status cell-pax-eu';
+          paxLabel = 'Via EU';
+        } else if (st === 'observer') {
+          paxClass = 'cell-status cell-pax-observer';
+          paxLabel = c.pax_silica.role_label || 'Observer';
+        } else if (st === 'participant') {
+          paxClass = 'cell-status cell-pax-participant';
+          paxLabel = 'Participant';
+        } else if (st === 'opportunity_statement') {
+          paxClass = 'cell-status cell-pax-opportunity';
+          paxLabel = 'AI Opportunity';
+        } else if (st === 'invited') {
+          paxClass = 'cell-status cell-pax-invited';
+          paxLabel = 'Invited';
         } else {
-          const style = c.pax_silica.is_direct
-            ? 'background:var(--color-pax-bg); color:var(--color-pax); border:1px solid var(--color-pax-border);'
-            : 'background:rgba(37,99,235,0.08); color:var(--color-pax); border:1px dashed var(--color-pax-border);';
-
-          paxBadge = `<span class="table-badge" style="${style}">
-            <span class="symbology-badge symbol-pax">■</span> ${paxLabel}
-          </span>`;
+          paxClass = 'cell-status cell-pax-signatory';
+          paxLabel = c.pax_silica.role_label || st;
         }
+      } else if (c.ai_opportunity_statement?.signed) {
+        paxClass = 'cell-status cell-pax-opportunity';
+        paxLabel = 'AI Opportunity';
       }
 
-      let frontierBadge = '<span class="status-tag inactive">None</span>';
+      // Frontier cell
+      let frontierClass = 'cell-none';
+      let frontierLabel = '—';
       if (c.frontier_call) {
-        const leaderTitle = c.frontier_call.leader_title || 'Endorsed';
-        frontierBadge = `<span class="table-badge" style="background:var(--color-frontier-bg); color:var(--color-frontier); border:1px solid var(--color-frontier-border);" title="${c.frontier_call.endorsed_by}">
-          <span class="symbology-badge symbol-frontier">★</span> ${leaderTitle}
-        </span>`;
+        frontierClass = 'cell-status cell-frontier-endorsed';
+        frontierLabel = c.frontier_call.leader_title || 'Endorsed';
       }
 
       const isSelected = mapInstance && mapInstance.selectedIso3 === c.iso3;
@@ -439,9 +444,9 @@ document.addEventListener('DOMContentLoaded', async () => {
               <span class="country-name-text">${c.name}</span>
             </div>
           </td>
-          <td>${waicoBadge}</td>
-          <td>${paxBadge}</td>
-          <td>${frontierBadge}</td>
+          <td class="${waicoClass}"><span class="cell-status-label">${waicoLabel}</span></td>
+          <td class="${paxClass}"><span class="cell-status-label">${paxLabel}</span></td>
+          <td class="${frontierClass}"><span class="cell-status-label">${frontierLabel}</span></td>
           <td style="text-align: right;">
             <button class="btn btn-sm btn-details table-view-btn" data-iso="${c.iso3}" aria-label="View details for ${c.name}">Details</button>
           </td>
@@ -465,7 +470,192 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  // Dynamic Legend Generation (counts derived from data)
+  function renderLegend() {
+    const legendRow = document.getElementById('legend-items-row');
+    if (!legendRow) return;
+
+    const all = DataStore.countriesList;
+    const activeLayers = getActiveLayers();
+    const settings = getSettings();
+    const isStripes = settings.overlapStyle === 'stripes';
+
+    // Count statuses
+    let waicoMembers = 0, waicoObservers = 0, waicoInvitees = 0;
+    let paxSignatories = 0, paxEU = 0, paxObservers = 0, paxParticipants = 0, paxOpportunity = 0;
+    let frontierEndorsers = 0;
+    let tripartite = 0, paxFrontierOnly = 0, waicoFrontierOnly = 0, waicoPaxOnly = 0;
+    let paxObsFrontier = 0, frontierOppOnly = 0;
+
+    for (const c of all) {
+      if (c.waico) {
+        if (c.waico.status === 'founding_member' || c.waico.status === 'signatory') waicoMembers++;
+        else if (c.waico.status === 'observer') waicoObservers++;
+        else if (c.waico.status === 'invitee' || c.waico.status === 'invited') waicoInvitees++;
+      }
+      if (c.pax_silica) {
+        if (c.pax_silica.status === 'founding_signatory' || c.pax_silica.status === 'signatory') paxSignatories++;
+        else if (c.pax_silica.status === 'eu_represented') paxEU++;
+        else if (c.pax_silica.status === 'observer') paxObservers++;
+        else if (c.pax_silica.status === 'participant') paxParticipants++;
+        else if (c.pax_silica.status === 'opportunity_statement') paxOpportunity++;
+      }
+      if (c.frontier_call && c.frontier_call.status === 'leader_endorsement') frontierEndorsers++;
+
+      const alliance = DataStore.computeCountryAlliance(c, activeLayers, settings);
+      if (alliance === 'tripartite') tripartite++;
+      else if (alliance === 'pax_frontier') paxFrontierOnly++;
+      else if (alliance === 'waico_frontier') waicoFrontierOnly++;
+      else if (alliance === 'waico_pax') waicoPaxOnly++;
+      else if (alliance === 'pax_observer_frontier') paxObsFrontier++;
+      else if (alliance === 'frontier_opportunity') frontierOppOnly++;
+    }
+
+    const items = [];
+
+    if (activeLayers.waico) {
+      items.push(`
+        <div class="legend-item" title="World Artificial Intelligence Cooperation Organization">
+          <span class="legend-swatch swatch-waico"></span>
+          <span class="legend-label-text">WAICO (${waicoMembers} members)</span>
+        </div>
+      `);
+
+      if (waicoObservers > 0) {
+        items.push(`
+          <div class="legend-item" title="WAICO Observer States (e.g. Bangladesh)">
+            <span class="legend-swatch swatch-waico-observer"></span>
+            <span class="legend-label-text">WAICO Observer (${waicoObservers})</span>
+          </div>
+        `);
+      }
+    }
+
+    if (activeLayers.pax) {
+      items.push(`
+        <div class="legend-item" title="Pax Silica Declaration formal direct signatories (24 sovereign countries + European Union)">
+          <span class="legend-swatch swatch-pax"></span>
+          <span class="legend-label-text">Pax Silica (${paxSignatories} formal signatories)</span>
+        </div>
+      `);
+
+      if (paxEU > 0) {
+        items.push(`
+          <div class="legend-item" title="European Union member states represented via EU accession">
+            <span class="legend-swatch swatch-pax-eu"></span>
+            <span class="legend-label-text">via EU (${paxEU})</span>
+          </div>
+        `);
+      }
+
+      if (paxObservers > 0) {
+        if (paxObsFrontier > 0 && activeLayers.frontier) {
+          items.push(`
+            <div class="legend-item" title="Pax Silica recognized observers with Frontier Control (Canada, Estonia)">
+              <span class="legend-swatch ${isStripes ? 'swatch-pax-obs-frontier' : 'swatch-pax-observer'}"></span>
+              <span class="legend-label-text">Pax Observer + Frontier (${paxObsFrontier})</span>
+            </div>
+          `);
+        }
+        const pureObservers = paxObservers - paxObsFrontier;
+        if (pureObservers > 0) {
+          items.push(`
+            <div class="legend-item" title="Pax Silica recognized observers">
+              <span class="legend-swatch swatch-pax-observer"></span>
+              <span class="legend-label-text">Pax Observer (${pureObservers})</span>
+            </div>
+          `);
+        }
+      }
+
+      const pureOppCount = all.filter(c => DataStore.computeCountryAlliance(c, activeLayers, settings) === 'opportunity_statement').length;
+      if (pureOppCount > 0) {
+        items.push(`
+          <div class="legend-item" title="Signatories of the Joint Statement on AI Opportunity (Portugal, Paraguay)">
+            <span class="legend-swatch swatch-opportunity"></span>
+            <span class="legend-label-text">AI Opportunity Statement (${pureOppCount})</span>
+          </div>
+        `);
+      }
+    }
+
+    if (activeLayers.frontier) {
+      items.push(`
+        <div class="legend-item" title="Call for Control of Frontier AI Models declaration">
+          <span class="legend-swatch swatch-frontier"></span>
+          <span class="legend-label-text">Frontier Control (${frontierEndorsers} countries + EU)</span>
+        </div>
+      `);
+
+      if (frontierOppOnly > 0 && activeLayers.pax) {
+        items.push(`
+          <div class="legend-item" title="Frontier Control endorsers who signed the AI Opportunity Statement (Türkiye, Bahrain)">
+            <span class="legend-swatch ${isStripes ? 'swatch-split-frontier-opportunity' : 'swatch-opportunity'}"></span>
+            <span class="legend-label-text">Frontier + AI Opportunity (${frontierOppOnly})</span>
+          </div>
+        `);
+      }
+    }
+
+    // Overlaps
+    if (tripartite > 0 && activeLayers.waico && activeLayers.pax && activeLayers.frontier) {
+      const swatchClass = isStripes ? 'swatch-split-tripartite' : 'swatch-blended-tripartite';
+      items.push(`
+        <div class="legend-item" title="Aligned across WAICO, Pax Silica, and Frontier Control (Kazakhstan)">
+          <span class="legend-swatch ${swatchClass}"></span>
+          <span class="legend-label-text">All three (${tripartite})</span>
+        </div>
+      `);
+    }
+
+    if (paxFrontierOnly > 0 && activeLayers.pax && activeLayers.frontier) {
+      const swatchClass = isStripes ? 'swatch-split-pax-frontier' : 'swatch-blended-pax-frontier';
+      items.push(`
+        <div class="legend-item" title="Aligned with Pax Silica and Frontier Control only">
+          <span class="legend-swatch ${swatchClass}"></span>
+          <span class="legend-label-text">Pax + Frontier only (${paxFrontierOnly})</span>
+        </div>
+      `);
+    }
+
+    if (waicoFrontierOnly > 0 && activeLayers.waico && activeLayers.frontier) {
+      const swatchClass = isStripes ? 'swatch-split-waico-frontier' : 'swatch-blended-waico-frontier';
+      items.push(`
+        <div class="legend-item" title="Aligned with WAICO and Frontier Control only">
+          <span class="legend-swatch ${swatchClass}"></span>
+          <span class="legend-label-text">WAICO + Frontier only (${waicoFrontierOnly})</span>
+        </div>
+      `);
+    }
+
+    if (waicoPaxOnly > 0 && activeLayers.waico && activeLayers.pax) {
+      const swatchClass = isStripes ? 'swatch-split-waico-pax' : 'swatch-blended-waico-pax';
+      items.push(`
+        <div class="legend-item" title="Aligned with WAICO and Pax Silica only">
+          <span class="legend-swatch ${swatchClass}"></span>
+          <span class="legend-label-text">WAICO + Pax only (${waicoPaxOnly})</span>
+        </div>
+      `);
+    }
+
+    legendRow.innerHTML = items.join('');
+  }
+
   // Column Sorting
+  function updateSortHeaders() {
+    document.querySelectorAll('.countries-table th[data-sort]').forEach(th => {
+      const col = th.getAttribute('data-sort');
+      const icon = th.querySelector('.sort-icon');
+      if (currentSort.column === col) {
+        th.classList.add('is-sorted');
+        if (icon) icon.textContent = currentSort.asc ? '▲' : '▼';
+      } else {
+        th.classList.remove('is-sorted');
+        if (icon) icon.textContent = '';
+      }
+    });
+  }
+
   document.querySelectorAll('.countries-table th[data-sort]').forEach(th => {
     th.addEventListener('click', () => {
       const col = th.getAttribute('data-sort');
@@ -521,23 +711,44 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Pax Silica Card
     const paxCard = document.getElementById('details-card-pax');
-    if (country.pax_silica) {
+    const isPaxOppOnly = country.pax_silica?.status === 'opportunity_statement';
+    if (country.pax_silica && !isPaxOppOnly) {
       paxCard.style.display = 'block';
       let paxLabel = country.pax_silica.role_label || 'Signatory';
-      if (!country.pax_silica.is_direct && !paxLabel.includes('(via EU)')) {
+      if (country.is_eu_member && (country.pax_silica.status === 'eu_represented' || !country.pax_silica.is_direct) && !paxLabel.toLowerCase().includes('via eu')) {
         paxLabel += ' (via EU)';
       }
-      paxLabel = paxLabel.replace(/(\s*\(via EU\))+/g, ' (via EU)');
+      paxLabel = paxLabel.replace(/(\s*\(via EU\))+/gi, ' (via EU)');
       document.getElementById('details-pax-status').textContent = paxLabel;
       document.getElementById('details-pax-date').textContent = country.pax_silica.date || 'December 2025';
       document.getElementById('details-pax-signatory').textContent = country.pax_silica.signatory_title || (country.pax_silica.is_direct ? 'National Representative' : 'European Commission');
       document.getElementById('details-pax-notes').textContent = country.pax_silica.notes || '';
-      document.getElementById('details-pax-source').href = country.pax_silica.source_url || 'https://en.wikipedia.org/wiki/Pax_Silica';
+
+      const singleSource = document.getElementById('details-pax-source');
+      const multiSources = document.getElementById('details-pax-sources');
+      if (country.pax_silica.sources && country.pax_silica.sources.length > 0) {
+        if (singleSource) singleSource.style.display = 'none';
+        if (multiSources) {
+          multiSources.style.display = 'flex';
+          multiSources.innerHTML = country.pax_silica.sources.map(s => `
+            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="initiative-source-item" title="${s.title}">
+              <span>${s.title}</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          `).join('');
+        }
+      } else {
+        if (multiSources) multiSources.style.display = 'none';
+        if (singleSource) {
+          singleSource.style.display = 'inline-flex';
+          singleSource.href = country.pax_silica.source_url || 'https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit';
+        }
+      }
     } else {
       paxCard.style.display = 'none';
     }
 
-    // Frontier AI Call Card
+    // Frontier Control Card
     const frontierCard = document.getElementById('details-card-frontier');
     if (country.frontier_call) {
       frontierCard.style.display = 'block';
@@ -553,9 +764,40 @@ document.addEventListener('DOMContentLoaded', async () => {
       frontierCard.style.display = 'none';
     }
 
+    // AI Opportunity Statement Card
+    const oppCard = document.getElementById('details-card-opportunity');
+    const isPaxSignatoryOrObserver = country.pax_silica && (
+      country.pax_silica.status === 'founding_signatory' ||
+      country.pax_silica.status === 'signatory' ||
+      country.pax_silica.status === 'eu_represented' ||
+      country.pax_silica.status === 'observer'
+    );
+    const hasOpp = Boolean(country.ai_opportunity_statement?.signed || isPaxOppOnly);
+    if (oppCard) {
+      if (hasOpp) {
+        oppCard.style.display = 'block';
+        if (isPaxSignatoryOrObserver) {
+          oppCard.classList.add('card-opportunity-pax-signatory');
+        } else {
+          oppCard.classList.remove('card-opportunity-pax-signatory');
+        }
+        const oppDate = country.ai_opportunity_statement?.date || country.pax_silica?.date || '26 June 2026';
+        const oppNotes = isPaxOppOnly
+          ? (country.pax_silica.notes || 'Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not confirmed as a Pax Silica Declaration signatory.')
+          : 'Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit in Washington.';
+        const oppSource = country.ai_opportunity_statement?.source_url || country.pax_silica?.source_url || 'https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit';
+        document.getElementById('details-opportunity-date').textContent = oppDate;
+        document.getElementById('details-opportunity-notes').textContent = oppNotes;
+        document.getElementById('details-opportunity-source').href = oppSource;
+      } else {
+        oppCard.style.display = 'none';
+        oppCard.classList.remove('card-opportunity-pax-signatory');
+      }
+    }
+
     // Unaligned Notice
     const unalignedNotice = document.getElementById('details-unaligned-notice');
-    if (!country.waico && !country.pax_silica && !country.frontier_call) {
+    if (!country.waico && (!country.pax_silica || isPaxOppOnly) && !country.frontier_call && !hasOpp) {
       unalignedNotice.style.display = 'block';
     } else {
       unalignedNotice.style.display = 'none';
@@ -624,7 +866,34 @@ document.addEventListener('DOMContentLoaded', async () => {
   methodologyBtn.addEventListener('click', () => methodologyModal.showModal());
   methodologyCloseBtn.addEventListener('click', () => methodologyModal.close());
 
-  [aboutModal, methodologyModal].forEach(m => {
+  if (settingsBtn && settingsModal) {
+    settingsBtn.addEventListener('click', () => {
+      initSettings();
+      settingsModal.showModal();
+    });
+  }
+  if (settingsCloseBtn && settingsModal) {
+    settingsCloseBtn.addEventListener('click', () => settingsModal.close());
+  }
+  if (settingsSaveBtn && settingsModal) {
+    settingsSaveBtn.addEventListener('click', () => {
+      const selectedRadio = document.querySelector('input[name="setting-overlap-style"]:checked');
+      const overlapStyle = selectedRadio ? selectedRadio.value : 'stripes';
+      const includeEu = settingEuOverlapCheckbox ? settingEuOverlapCheckbox.checked : false;
+      localStorage.setItem('geopolitics_overlap_style', overlapStyle);
+      localStorage.setItem('geopolitics_eu_overlap', includeEu ? 'true' : 'false');
+
+      const newSettings = { overlapStyle, includeEuInOverlap: includeEu };
+      if (mapInstance && typeof mapInstance.setSettings === 'function') {
+        mapInstance.setSettings(newSettings);
+      }
+      renderLegend();
+      updateCountsAndTable();
+      settingsModal.close();
+    });
+  }
+
+  [aboutModal, methodologyModal, settingsModal].filter(Boolean).forEach(m => {
     m.addEventListener('click', (e) => {
       const rect = m.getBoundingClientRect();
       const inDialog = (
@@ -714,6 +983,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (countryDetailsPanel.classList.contains('is-open')) closeCountryDetails();
       if (aboutModal.open) aboutModal.close();
       if (methodologyModal.open) methodologyModal.close();
+      if (settingsModal && settingsModal.open) settingsModal.close();
     }
   });
 });

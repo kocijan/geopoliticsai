@@ -307,9 +307,26 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   // Floating On-Map Zoom Controls
-  zoomInBtn.addEventListener('click', () => mapInstance.zoomIn());
-  zoomOutBtn.addEventListener('click', () => mapInstance.zoomOut());
-  resetViewBtn.addEventListener('click', () => mapInstance.resetView());
+  const floatingControls = document.querySelector('.map-floating-controls');
+  if (floatingControls) {
+    floatingControls.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
+    floatingControls.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
+    floatingControls.addEventListener('touchend', (e) => e.stopPropagation(), { passive: true });
+    floatingControls.addEventListener('pointerdown', (e) => e.stopPropagation());
+  }
+
+  zoomInBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mapInstance.zoomIn();
+  });
+  zoomOutBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mapInstance.zoomOut();
+  });
+  resetViewBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mapInstance.resetView();
+  });
 
   // 6. Search and Preset Filter Events
   let searchDebounceTimer = null;

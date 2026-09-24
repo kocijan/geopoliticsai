@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "GeopoliticsAI International Alignment Database",
-    "last_updated": "2026-09-23",
+    "last_updated": "2026-09-24",
     "data_current_as_of": "September 2026",
     "version": "1.0.0",
     "sources": {
@@ -300,9 +300,19 @@
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
-      "frontier_call": null,
-      "alignment_category": "pax_eu",
-      "active_initiatives_count": 0,
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by Federal Chancellor",
+        "leader_title": "Federal Chancellor",
+        "leader_name": "Christian Stocker",
+        "date": "2026-09-21",
+        "endorsed_by": "Christian Stocker (Federal Chancellor)",
+        "is_co_initiator": false,
+        "notes": "Endorsed the statement on 21 September 2026.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      },
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇦🇹"
     },
     "AZE": {
@@ -1490,9 +1500,19 @@
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
-      "frontier_call": null,
-      "alignment_category": "pax_eu",
-      "active_initiatives_count": 0,
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by President",
+        "leader_title": "President",
+        "leader_name": "Emmanuel Macron",
+        "date": "2026-09-23",
+        "endorsed_by": "Emmanuel Macron (President)",
+        "is_co_initiator": false,
+        "notes": "Endorsed the statement on 23 September 2026.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      },
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇫🇷"
     },
     "GUF": {
@@ -2500,9 +2520,19 @@
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,
-      "frontier_call": null,
-      "alignment_category": "none",
-      "active_initiatives_count": 0,
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by Hereditary Prince",
+        "leader_title": "Hereditary Prince",
+        "leader_name": "H.S.H Prince Alois",
+        "date": "2026-09-22",
+        "endorsed_by": "H.S.H Prince Alois (Hereditary Prince)",
+        "is_co_initiator": false,
+        "notes": "Endorsed the statement on 22 September 2026.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      },
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇱🇮"
     },
     "LTU": {
@@ -2549,9 +2579,19 @@
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
-      "frontier_call": null,
-      "alignment_category": "pax_eu",
-      "active_initiatives_count": 0,
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by Prime Minister",
+        "leader_title": "Prime Minister",
+        "leader_name": "Luc Frieden",
+        "date": "2026-09-22",
+        "endorsed_by": "Luc Frieden (Prime Minister)",
+        "is_co_initiator": false,
+        "notes": "Endorsed the statement on 22 September 2026.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      },
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇱🇺"
     },
     "MAC": {
@@ -3518,9 +3558,19 @@
         "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
-      "frontier_call": null,
-      "alignment_category": "pax_eu",
-      "active_initiatives_count": 0,
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by President",
+        "leader_title": "President",
+        "leader_name": "Nicușor Dan",
+        "date": "2026-09-21",
+        "endorsed_by": "Nicușor Dan (President)",
+        "is_co_initiator": false,
+        "notes": "Endorsed the statement on 21 September 2026.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      },
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇷🇴"
     },
     "RUS": {
@@ -3791,9 +3841,19 @@
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,
-      "frontier_call": null,
-      "alignment_category": "none",
-      "active_initiatives_count": 0,
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by President",
+        "leader_title": "President",
+        "leader_name": "Julius Maada Bio",
+        "date": "2026-09-23",
+        "endorsed_by": "Julius Maada Bio (President)",
+        "is_co_initiator": false,
+        "notes": "Endorsed the statement on 23 September 2026.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      },
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇸🇱"
     },
     "SGP": {

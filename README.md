@@ -24,7 +24,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 3. **Call for Control of Frontier AI Models ("Frontier Control")**:
    - *Legal Form:* Open multilateral political declaration.
    - *Launch:* 21 September 2026 on the sidelines of the UN General Assembly in New York.
-   - *Initiators:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre, endorsed by 22 world leaders and the European Commission.
+   - *Initiators:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre, endorsed by 28 world leaders and senior officials representing 26 countries and the European Commission.
    - *Focus:* Mandatory pre-deployment testing, independent safety evaluations, incident reporting, and exploring a UN-style international oversight institution for frontier models.
 
 ### Key Nuances & Institutional Distinctions
@@ -75,7 +75,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 │   └── data.js                  # Data store, active layer filtering, and CSV/JSON/XML exports
 ├── data/
 │   ├── countries.json           # Master unified dataset with ISO-3166 codes & alliance statuses
-│   ├── frontier_call.json       # Verified primary dataset of the 22 endorsing world leaders
+│   ├── frontier_call.json       # Verified primary dataset of the endorsing world leaders and officials
 │   ├── iso_countries.json       # ISO-3166-1 standard country codes (249 entities)
 │   └── world-50m.json           # Visionscarto 50m TopoJSON (242 countries, clean topology)
 ├── scripts/

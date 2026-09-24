@@ -373,7 +373,7 @@ def render_thumbnail():
     left_items = [
         (COLOR_MAP["waico_only"], "WAICO", "(37)"),
         (COLOR_MAP["pax_only"], "Pax Silica", "(inc. EU)"),
-        (COLOR_MAP["frontier_only"], "Frontier Control", "(20+EU)"),
+        (COLOR_MAP["frontier_only"], "Frontier Control", "(26+EU)"),
     ]
 
     # Right Card: 3 overlap combinations, bottom-right aligned

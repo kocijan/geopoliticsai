@@ -7,7 +7,7 @@
     "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf",
     "https://www.politico.eu/article/20-countries-urge-to-strenghten-oversight-of-ai-to-keep-it-under-human-control/"
   ],
-  "summary": "International call launched on 21 September 2026 by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre alongside 20 other world leaders and the European Commission on the sidelines of the UN General Assembly. Urges mandatory pre-deployment safety testing, independent third-party evaluations, incident reporting, and exploring a UN-style international oversight institution for frontier AI.",
+  "summary": "International call launched on 21 September 2026 by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre alongside world leaders and the European Commission on the sidelines of the UN General Assembly. Urges mandatory pre-deployment safety testing, independent third-party evaluations, incident reporting, and exploring a UN-style international oversight institution for frontier AI.",
   "open_to_further_endorsements": true,
   "signatories": [
     {
@@ -198,6 +198,60 @@
       "is_co_initiator": false,
       "date": "2026-09-21",
       "notes": "Supranational body; European Commission endorsed the declaration."
+    },
+    {
+      "country_name": "Austria",
+      "iso3": "AUT",
+      "leader_name": "Christian Stocker",
+      "leader_title": "Federal Chancellor",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Endorsed the statement on 21 September 2026."
+    },
+    {
+      "country_name": "Romania",
+      "iso3": "ROU",
+      "leader_name": "Nicușor Dan",
+      "leader_title": "President",
+      "is_co_initiator": false,
+      "date": "2026-09-21",
+      "notes": "Endorsed the statement on 21 September 2026."
+    },
+    {
+      "country_name": "Liechtenstein",
+      "iso3": "LIE",
+      "leader_name": "H.S.H Prince Alois",
+      "leader_title": "Hereditary Prince",
+      "is_co_initiator": false,
+      "date": "2026-09-22",
+      "notes": "Endorsed the statement on 22 September 2026."
+    },
+    {
+      "country_name": "Luxembourg",
+      "iso3": "LUX",
+      "leader_name": "Luc Frieden",
+      "leader_title": "Prime Minister",
+      "is_co_initiator": false,
+      "date": "2026-09-22",
+      "notes": "Endorsed the statement on 22 September 2026."
+    },
+    {
+      "country_name": "France",
+      "iso3": "FRA",
+      "leader_name": "Emmanuel Macron",
+      "leader_title": "President",
+      "is_co_initiator": false,
+      "date": "2026-09-23",
+      "notes": "Endorsed the statement on 23 September 2026."
+    },
+    {
+      "country_name": "Sierra Leone",
+      "iso3": "SLE",
+      "leader_name": "Julius Maada Bio",
+      "leader_title": "President",
+      "is_co_initiator": false,
+      "date": "2026-09-23",
+      "notes": "Endorsed the statement on 23 September 2026."
     }
   ]
 }

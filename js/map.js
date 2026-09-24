@@ -453,9 +453,9 @@ class GeopoliticsMap {
     const self = this;
     const container = this.container;
 
-    // D3 Zoom exclusively for 2D Mode
+    // D3 Zoom exclusively for 2D Mode (enhanced max zoom for mobile detail)
     this.zoomBehavior = d3.zoom()
-      .scaleExtent([0.75, 12])
+      .scaleExtent([0.75, 28])
       .filter(event => {
         // Only allow D3 zoom when in 2D mode!
         if (self.options.mode !== '2d') return false;
@@ -606,6 +606,9 @@ class GeopoliticsMap {
     let touch2DPinchMidpoint = null;
 
     container.addEventListener('touchstart', (e) => {
+      // Do not intercept touches on floating zoom buttons
+      if (e.target.closest('.map-floating-controls')) return;
+
       if (self.options.mode === '2d') {
         const t = self.current2DTransform || d3.zoomIdentity;
         if (e.touches.length === 1) {
@@ -645,14 +648,17 @@ class GeopoliticsMap {
     }, { passive: false });
 
     container.addEventListener('touchmove', (e) => {
+      // Do not intercept touches on floating zoom buttons
+      if (e.target.closest('.map-floating-controls')) return;
+
       if (self.options.mode === '2d') {
-        // Two-finger pinch zoom in 2D
+        // Two-finger pinch zoom in 2D (allow deep zoom up to 28x)
         if (e.touches.length === 2 && touch2DPinchStartDist && touch2DPinchStart) {
           e.preventDefault();
           const p1 = e.touches[0], p2 = e.touches[1];
           const currentDist = Math.hypot(p1.clientX - p2.clientX, p1.clientY - p2.clientY);
           const ratio = currentDist / touch2DPinchStartDist;
-          const newK = Math.max(0.75, Math.min(12, touch2DPinchStart.k * ratio));
+          const newK = Math.max(0.75, Math.min(28, touch2DPinchStart.k * ratio));
 
           // Zoom centered on the midpoint between the two fingers
           const rect = container.getBoundingClientRect();
@@ -705,6 +711,9 @@ class GeopoliticsMap {
     }, { passive: false });
 
     container.addEventListener('touchend', (e) => {
+      // Do not intercept touches on floating zoom buttons
+      if (e.target.closest('.map-floating-controls')) return;
+
       if (self.options.mode === '2d') {
         if (e.touches.length === 0) {
           touch2DSingleStart = null;
@@ -729,6 +738,16 @@ class GeopoliticsMap {
           initialPinchDistance = null;
         }
       }
+    });
+
+    container.addEventListener('touchcancel', (e) => {
+      if (e.target.closest('.map-floating-controls')) return;
+      touch2DSingleStart = null;
+      touch2DStartTransform = null;
+      touch2DPinchStart = null;
+      touch2DPinchStartDist = null;
+      touch2DPinchMidpoint = null;
+      initialPinchDistance = null;
     });
 
     // Mouse wheel zoom for 3D Globe

@@ -11,13 +11,35 @@
     },
     "statistics": {
       "tripartite": 1,
-      "waico_only": 35,
-      "pax_only": 33,
-      "frontier_only": 4,
+      "waico_only": 34,
+      "pax_only": 16,
+      "frontier_only": 16,
       "waico_pax": 0,
-      "pax_frontier": 13,
+      "pax_frontier": 7,
       "waico_frontier": 2,
-      "none": 161
+      "none": 176
+    },
+    "entity_counts": {
+      "iso_3166_1_entities": 249,
+      "additional_entities": 3,
+      "total_map_records": 252,
+      "additional_entity_details": [
+        {
+          "code": "XKX",
+          "name": "Kosovo",
+          "description": "User-assigned alpha-3 code (temporary ISO 3166-1 exception)"
+        },
+        {
+          "code": "SOL",
+          "name": "Somaliland",
+          "description": "De facto sovereign state (project-defined code)"
+        },
+        {
+          "code": "XNC",
+          "name": "Northern Cyprus",
+          "description": "De facto state / TopoJSON CYN entity (project-defined code)"
+        }
+      ]
     }
   },
   "countries": {
@@ -222,7 +244,7 @@
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
-      "alignment_category": "opportunity_statement",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇦🇲",
       "ai_opportunity_statement": {
@@ -297,7 +319,7 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
@@ -385,10 +407,10 @@
       "is_eu_member": false,
       "waico": {
         "status": "observer",
-        "role_label": "Observer State",
+        "role_label": "Announced Observer",
         "date": "2026-08-01",
-        "notes": "Joined as an observer state on 1 August 2026.",
-        "source_url": "https://www.bssnews.net/news/218968"
+        "notes": "Observer participation announced by Bangladesh’s Ministry of Foreign Affairs.",
+        "source_url": "https://unb.com.bd/category/Bangladesh/bangladesh-decides-to-join-shanghai-based-waico-as-observer-mofa/192071"
       },
       "pax_silica": {
         "status": "invited",
@@ -399,7 +421,7 @@
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
-      "alignment_category": "waico_only",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇧🇩"
     },
@@ -453,11 +475,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇧🇪"
     },
@@ -667,11 +689,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇧🇬"
     },
@@ -773,10 +795,10 @@
       "waico": null,
       "pax_silica": {
         "status": "observer",
-        "role_label": "Observer State",
+        "role_label": "Observer",
         "date": "2025-12-12",
         "is_direct": true,
-        "notes": "Participated as observer/guest in summit sessions; not a formal signatory.",
+        "notes": "Participated as reported observer/guest in summit sessions; not listed on the State Department official signatory roster.",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": {
@@ -1054,11 +1076,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇭🇷"
     },
@@ -1112,11 +1134,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇨🇾"
     },
@@ -1134,11 +1156,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇨🇿"
     },
@@ -1156,7 +1178,7 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
@@ -1328,11 +1350,11 @@
       "waico": null,
       "pax_silica": {
         "status": "observer",
-        "role_label": "Observer State",
+        "role_label": "Observer",
         "date": "2026-06-25",
         "is_direct": true,
         "source_conflict": false,
-        "notes": "Estonian Foreign Ministry confirmed that Deputy Head of Mission Inga Bowden participated as an observer state in the Pax Silica Summit in Washington on 25 June 2026 and signed the AI Opportunity Statement.",
+        "notes": "Estonian MFA confirmed participation as observer and signed the AI Opportunity Statement; not listed on the State Department official signatory roster.",
         "source_url": "https://www.vm.ee/en/news/foreign-minister-tsahkna-pax-silica-agreement-opportunity-advance-technology-innovation-and",
         "sources": [
           {
@@ -1497,7 +1519,7 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
@@ -1929,11 +1951,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇭🇺"
     },
@@ -2060,7 +2082,7 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
@@ -2421,7 +2443,7 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
@@ -2549,11 +2571,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇱🇹",
       "ai_opportunity_statement": {
@@ -2576,7 +2598,7 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
@@ -2704,11 +2726,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇲🇹"
     },
@@ -3075,7 +3097,7 @@
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
-      "alignment_category": "opportunity_statement",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇳🇿",
       "ai_opportunity_statement": {
@@ -3364,7 +3386,7 @@
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
-      "alignment_category": "opportunity_statement",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇵🇾",
       "ai_opportunity_statement": {
@@ -3444,11 +3466,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇵🇱",
       "ai_opportunity_statement": {
@@ -3475,7 +3497,7 @@
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,
-      "alignment_category": "opportunity_statement",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇵🇹",
       "ai_opportunity_statement": {
@@ -3555,7 +3577,7 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
@@ -3866,10 +3888,10 @@
       "is_eu_member": false,
       "waico": {
         "status": "invitee",
-        "role_label": "Invited State",
+        "role_label": "Invited State (Under Consideration)",
         "date": "2026-09-09",
-        "notes": "Considering invitation to join; also Pax Silica member and Frontier Control endorser.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Invited; invitation under consideration according to Singapore Ministry of Digital Development and Information (MDDI).",
+        "source_url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-singapore-position-on-the-world-artificial-intelligence-cooperation-association/"
       },
       "pax_silica": {
         "status": "founding_signatory",
@@ -3928,11 +3950,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇸🇰"
     },
@@ -3950,11 +3972,11 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_eu",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇸🇮"
     },
@@ -4063,7 +4085,7 @@
         "role_label": "Via EU",
         "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Covered through European Union accession signed on June 23, 2026 (EU competence; not an individual national signatory).",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
@@ -4222,7 +4244,7 @@
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/01/joint-statement-on-the-pax-silica-declaration-and-u-s-taiwan-economic-security-cooperation/"
       },
       "frontier_call": null,
-      "alignment_category": "pax_associated",
+      "alignment_category": "none",
       "active_initiatives_count": 0,
       "flag_emoji": "🇹🇼"
     },

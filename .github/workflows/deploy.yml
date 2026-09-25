@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Daily automated refresh of latest Wikipedia & treaty data
+  # Scheduled daily refresh / thumbnail check
   schedule:
     - cron: '0 4 * * *'
   # Allow manual trigger from GitHub Actions tab

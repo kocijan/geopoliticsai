@@ -530,91 +530,35 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const items = [];
 
+    // 1. Top 3 Primary Initiatives strictly at the front
     if (activeLayers.waico) {
       items.push(`
-        <div class="legend-item" title="World Artificial Intelligence Cooperation Organization">
+        <div class="legend-item" title="World Artificial Intelligence Cooperation Organization: 37 founding and signatory member states">
           <span class="legend-swatch swatch-waico"></span>
           <span class="legend-label-text">WAICO (${waicoMembers} members)</span>
         </div>
       `);
-
-      if (waicoObservers > 0) {
-        items.push(`
-          <div class="legend-item" title="WAICO Observer States (e.g. Bangladesh)">
-            <span class="legend-swatch swatch-waico-observer"></span>
-            <span class="legend-label-text">WAICO Observer (${waicoObservers})</span>
-          </div>
-        `);
-      }
     }
 
     if (activeLayers.pax) {
       items.push(`
-        <div class="legend-item" title="Pax Silica Declaration formal direct signatories (24 sovereign countries + European Union)">
+        <div class="legend-item" title="Pax Silica Declaration signatories: 24 sovereign countries + European Union (including the United States and Italy)">
           <span class="legend-swatch swatch-pax"></span>
-          <span class="legend-label-text">Pax Silica (${paxSignatories} formal signatories)</span>
+          <span class="legend-label-text">Pax Silica (${paxSignatories} countries + EU)</span>
         </div>
       `);
-
-      if (paxEU > 0) {
-        items.push(`
-          <div class="legend-item" title="European Union member states represented via EU accession">
-            <span class="legend-swatch swatch-pax-eu"></span>
-            <span class="legend-label-text">via EU (${paxEU})</span>
-          </div>
-        `);
-      }
-
-      if (paxObservers > 0) {
-        if (paxObsFrontier > 0 && activeLayers.frontier) {
-          items.push(`
-            <div class="legend-item" title="Pax Silica recognized observers with Frontier Control (Canada, Estonia)">
-              <span class="legend-swatch ${isStripes ? 'swatch-pax-obs-frontier' : 'swatch-pax-observer'}"></span>
-              <span class="legend-label-text">Pax Observer + Frontier (${paxObsFrontier})</span>
-            </div>
-          `);
-        }
-        const pureObservers = paxObservers - paxObsFrontier;
-        if (pureObservers > 0) {
-          items.push(`
-            <div class="legend-item" title="Pax Silica recognized observers">
-              <span class="legend-swatch swatch-pax-observer"></span>
-              <span class="legend-label-text">Pax Observer (${pureObservers})</span>
-            </div>
-          `);
-        }
-      }
-
-      const pureOppCount = all.filter(c => DataStore.computeCountryAlliance(c, activeLayers, settings) === 'opportunity_statement').length;
-      if (pureOppCount > 0) {
-        items.push(`
-          <div class="legend-item" title="Signatories of the Joint Statement on AI Opportunity (Portugal, Paraguay)">
-            <span class="legend-swatch swatch-opportunity"></span>
-            <span class="legend-label-text">AI Opportunity Statement (${pureOppCount})</span>
-          </div>
-        `);
-      }
     }
 
     if (activeLayers.frontier) {
       items.push(`
-        <div class="legend-item" title="Call for Control of Frontier AI Models declaration">
+        <div class="legend-item" title="Call for Control of Frontier AI Models declaration: endorsed by 28 leaders and senior officials representing 26 countries + the European Commission">
           <span class="legend-swatch swatch-frontier"></span>
           <span class="legend-label-text">Frontier Control (${frontierEndorsers} countries + EU)</span>
         </div>
       `);
-
-      if (frontierOppOnly > 0 && activeLayers.pax) {
-        items.push(`
-          <div class="legend-item" title="Frontier Control endorsers who signed the AI Opportunity Statement (Türkiye, Bahrain)">
-            <span class="legend-swatch ${isStripes ? 'swatch-split-frontier-opportunity' : 'swatch-opportunity'}"></span>
-            <span class="legend-label-text">Frontier + AI Opportunity (${frontierOppOnly})</span>
-          </div>
-        `);
-      }
     }
 
-    // Overlaps
+    // 2. Multi-initiative Overlap (Tripartite)
     if (tripartite > 0 && activeLayers.waico && activeLayers.pax && activeLayers.frontier) {
       const swatchClass = isStripes ? 'swatch-split-tripartite' : 'swatch-blended-tripartite';
       items.push(`
@@ -625,34 +569,44 @@ document.addEventListener('DOMContentLoaded', async () => {
       `);
     }
 
-    if (paxFrontierOnly > 0 && activeLayers.pax && activeLayers.frontier) {
-      const swatchClass = isStripes ? 'swatch-split-pax-frontier' : 'swatch-blended-pax-frontier';
+    // 3. Sub-statuses & Observers
+    if (activeLayers.pax && paxEU > 0) {
       items.push(`
-        <div class="legend-item" title="Aligned with Pax Silica and Frontier Control only">
-          <span class="legend-swatch ${swatchClass}"></span>
-          <span class="legend-label-text">Pax + Frontier only (${paxFrontierOnly})</span>
+        <div class="legend-item" title="EU member states represented through the EU’s Pax Silica signature. Displayed as blue dots over neutral grey, or blue dots over gold for Frontier Control endorsers (e.g. France).">
+          <span class="legend-swatch swatch-pax-eu"></span>
+          <span class="legend-label-text">via EU (${paxEU})</span>
         </div>
       `);
     }
 
-    if (waicoFrontierOnly > 0 && activeLayers.waico && activeLayers.frontier) {
-      const swatchClass = isStripes ? 'swatch-split-waico-frontier' : 'swatch-blended-waico-frontier';
+    if (activeLayers.pax && paxObservers > 0) {
       items.push(`
-        <div class="legend-item" title="Aligned with WAICO and Frontier Control only">
-          <span class="legend-swatch ${swatchClass}"></span>
-          <span class="legend-label-text">WAICO + Frontier only (${waicoFrontierOnly})</span>
+        <div class="legend-item" title="Pax Silica observers (Canada, Estonia)">
+          <span class="legend-swatch swatch-pax-observer"></span>
+          <span class="legend-label-text">Observer (${paxObservers})</span>
         </div>
       `);
     }
 
-    if (waicoPaxOnly > 0 && activeLayers.waico && activeLayers.pax) {
-      const swatchClass = isStripes ? 'swatch-split-waico-pax' : 'swatch-blended-waico-pax';
+    if (activeLayers.waico && waicoObservers > 0) {
       items.push(`
-        <div class="legend-item" title="Aligned with WAICO and Pax Silica only">
-          <span class="legend-swatch ${swatchClass}"></span>
-          <span class="legend-label-text">WAICO + Pax only (${waicoPaxOnly})</span>
+        <div class="legend-item" title="WAICO Observer States (e.g. Bangladesh)">
+          <span class="legend-swatch swatch-waico-observer"></span>
+          <span class="legend-label-text">WAICO Observer (${waicoObservers})</span>
         </div>
       `);
+    }
+
+    if (activeLayers.pax) {
+      const pureOppCount = all.filter(c => DataStore.computeCountryAlliance(c, activeLayers, settings) === 'opportunity_statement').length;
+      if (pureOppCount > 0) {
+        items.push(`
+          <div class="legend-item" title="Signatories of the Joint Statement on AI Opportunity (Portugal, Paraguay)">
+            <span class="legend-swatch swatch-opportunity"></span>
+            <span class="legend-label-text">AI Opportunity Statement (${pureOppCount})</span>
+          </div>
+        `);
+      }
     }
 
     legendRow.innerHTML = items.join('');
@@ -705,7 +659,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <strong>🇪🇺 European Union Member State</strong><br/>
           ${direct 
             ? 'Signed Pax Silica directly in national capacity.' 
-            : 'Covered under European Union Pax Silica accession signed on 23 June 2026. Colored as Pax Silica on the map.'}
+            : 'EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.'}
         </div>
       `;
       euContainer.style.display = 'block';
@@ -721,7 +675,19 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.getElementById('details-waico-date').textContent = country.waico.date || 'July 2026';
       document.getElementById('details-waico-signatory').textContent = country.waico.signatory_title || 'Government Delegation';
       document.getElementById('details-waico-notes').textContent = country.waico.notes || '';
-      document.getElementById('details-waico-source').href = country.waico.source_url || 'https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization';
+      
+      const waicoSource = country.waico.source_url || 'https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization';
+      const waicoSourceEl = document.getElementById('details-waico-source');
+      waicoSourceEl.href = waicoSource;
+      const isWiki = waicoSource.includes('wikipedia.org');
+      waicoSourceEl.innerHTML = isWiki
+        ? `<span>Secondary source — primary confirmation pending</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`
+        : `<span>Official Source</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
+      if (isWiki) {
+        waicoSourceEl.classList.add('is-secondary-source');
+      } else {
+        waicoSourceEl.classList.remove('is-secondary-source');
+      }
     } else {
       waicoCard.style.display = 'none';
     }

@@ -13,25 +13,25 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 1. **WAICO (World Artificial Intelligence Cooperation Organization)**:
    - *Legal Form:* Intergovernmental treaty organization.
    - *Launch:* 16 July 2026 in Shanghai on the eve of the World AI Conference (WAIC).
-   - *Focus:* Digital capacity building in the Global South and adoption of open-weight/open-source AI architectures (e.g. DeepSeek, Kimi).
+   - *Focus:* Digital capacity building in the Global South, open technology cooperation, and equitable AI infrastructure access.
    - *Secretariat:* Headquartered in Shanghai with a Ministerial Council.
 
 2. **Pax Silica**:
    - *Legal Form:* Non-binding economic-security and supply-chain framework coordinated by the U.S. Department of State.
    - *Launch:* 12 December 2025 at the inaugural Pax Silica Summit in Washington, D.C.
-   - *Focus:* Securing advanced chip supply chains, critical minerals refining, AI data centers, and trusted international investment to eliminate coercive dependencies.
+   - *Focus:* Securing advanced chip supply chains, critical minerals refining, AI data centers, and trusted international investment to reduce strategic or excessive dependencies and address non-market practices.
 
 3. **Call for Control of Frontier AI Models ("Frontier Control")**:
    - *Legal Form:* Open multilateral political declaration.
    - *Launch:* 21 September 2026 on the sidelines of the UN General Assembly in New York.
-   - *Initiators:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre, endorsed by 28 world leaders and senior officials representing 26 countries and the European Commission.
-   - *Focus:* Mandatory pre-deployment testing, independent safety evaluations, incident reporting, and exploring a UN-style international oversight institution for frontier models.
+   - *Initiators:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre; launched on 21 September 2026 and currently endorsed by 28 leaders and senior officials representing 26 countries, together with the President of the European Commission.
+   - *Focus:* Mandatory pre-deployment testing, independent safety evaluations, incident reporting, and exploring an international institution capable of standard-setting and verification for frontier models.
 
 ### Key Nuances & Institutional Distinctions
 - **Tripartite Overlap:** **Kazakhstan** signed the WAICO founding treaty, joined Pax Silica at the Second Summit, and President Kassym-Jomart Tokayev personally endorsed the Frontier Control declaration.
-- **Two-Way Alliances:** **Singapore** signed Pax Silica, endorsed Frontier Control, and is an invited state considering WAICO; **South Africa** and **Kenya** are WAICO founding members whose heads of state endorsed Frontier Control; **Australia**, **Canada**, **Germany**, **Netherlands**, **Norway**, **UAE**, and **Estonia** bridge Pax Silica and Frontier Control.
-- **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (e.g. Germany, Greece, Netherlands, Sweden, Finland, Italy) from those covered via EU competence. Portugal is separately tracked as a signatory of the Joint Statement on AI Opportunity.
-- **Pax Silica Status Taxonomy:** Distinguishes formal national signatories, EU-represented member states, recognized observers (Canada, Estonia), non-signatory participants (Taiwan), and AI Opportunity Statement signatories.
+- **Two-Way Alliances:** **Singapore** signed Pax Silica, endorsed Frontier Control, and is an invited state considering WAICO; **South Africa** and **Kenya** are WAICO founding members whose heads of state endorsed Frontier Control; **Direct Pax + Frontier only:** 7 countries under the default direct-signatory methodology (Australia, Germany, Netherlands, Norway, Singapore, UAE, and Kazakhstan as tripartite; plus observers Estonia and Canada).
+- **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (Germany, Greece, Netherlands, Sweden, Finland, Italy) from 19 member states represented visually through the EU’s institutional signature (displayed with blue dots over a neutral grey background, or blue dots over gold for Frontier Control endorsers such as France). Portugal is separately tracked as a signatory of the Joint Statement on AI Opportunity.
+- **Taxonomy & Statuses:** Distinguishes formal national signatories (24 countries + EU), EU-represented member states (19), observers (Canada, Estonia), announced observers (Bangladesh), invited states under consideration (Singapore), non-signatory participants (Taiwan), and AI Opportunity Statement signatories.
 
 ---
 
@@ -43,22 +43,23 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 - 🎨 **Cell-Colored Table & Map Symbology:**
   - Modern cell-colored status indicator system with clear text labels and tinted backgrounds.
   - Multi-initiative overlap styling: customizable between consecutive alternating stripes side-by-side or composite solid colors.
-  - Visual distinction for EU-represented states (hatching) and observers.
+  - Visual distinction for EU-represented states (blue with golden yellow dots) and observers.
 - 🎛️ **Multi-Layer Checkboxes & Presets:**
   - Independently toggle any combination of WAICO, Pax Silica, and Frontier Control.
   - Filter by Tripartite Overlap, Two-Way Overlaps, Direct Signatories, Observers, EU Member States, or AI Opportunity Statement.
   - Display & Overlap Settings modal for customizing overlap visualization and EU inclusion.
 - 📋 **Comprehensive Country Profile Drawer:**
   - Full details on accession dates, signatory titles, leader names, and notes.
-  - Direct clickable links to primary government press releases (State Department, foreign ministries, official communiqués).
+  - Direct clickable links to primary government press releases (State Department, foreign ministries, official communiqués) with transparent tagging for any secondary sources pending confirmation.
   - One-click copyable shareable permalinks (`#country=KAZ`).
 - 📊 **Searchable & Sortable Countries & Territories:**
-  - Instant fuzzy search across countries, leaders, and ISO-3166 codes.
+  - Instant fuzzy search with typo tolerance, subsequence matching, and score ranking across countries, leaders, and ISO-3166 codes.
   - Sort by any column (Country, Region, WAICO status, Pax Silica status, Frontier Control endorsement).
-- 💾 **Data Export:**
-  - Download full dataset as **CSV**, **JSON**, or **XML** for academic and policy research.
-- 🤖 **Automated Daily Ingestion (GitHub Actions):**
-  - Workflow scrapes Wikipedia MediaWiki APIs for newly ratified accessions and builds the site artifact daily without polluting the git commit history.
+  - Accurate coverage of 252 total entities: 249 official ISO 3166-1 entities plus 3 additional project entities (Kosovo `XKX`, Somaliland `SOL`, Northern Cyprus `XNC`).
+- 💾 **Comprehensive Data Export:**
+  - Download full dataset as **CSV**, **JSON**, or **XML** for academic and policy research, with full multi-source citations, AI Opportunity Statement data, and supranational organization records (EU/Commission).
+- 🛡️ **Authoritative Curation:**
+  - Strict verification against primary diplomatic texts, government portals, and official foreign ministry declarations.
 
 ---
 
@@ -79,10 +80,11 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 │   ├── iso_countries.json       # ISO-3166-1 standard country codes (249 entities)
 │   └── world-50m.json           # Visionscarto 50m TopoJSON (242 countries, clean topology)
 ├── scripts/
-│   └── fetch_wikipedia_data.py  # Python ingestion script to parse Wikipedia API & build countries.json
+│   ├── compare_wikipedia_report.py  # Informative comparison report script (manual diagnostic tool; not in CI/CD)
+│   └── generate_thumbnail.py        # Generates high-res Open Graph social sharing card
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml           # GitHub Actions workflow for daily automated build & Pages deployment
+│       └── deploy.yml           # GitHub Actions workflow for deployment & thumbnail generation
 ├── LICENSE                      # MIT License
 └── README.md                    # Project documentation
 ```
@@ -105,28 +107,24 @@ python3 -m http.server 8000
 
 Open your browser at `http://localhost:8000`.
 
-### Updating the Data Manually
+### Comparing Data with Wikipedia
 
-To fetch the latest accessions from Wikipedia and rebuild `data/countries.json`:
+To run a live comparison of current Wikipedia wikitext against `data/countries.json` (strictly read-only diagnostic report):
 
 ```bash
-python3 scripts/fetch_wikipedia_data.py
+python3 scripts/compare_wikipedia_report.py
 ```
 
 ---
 
-## Primary Sources & Truth Citations
+## Evidentiary Methodology & Sources
 
-- **Call for Control of Frontier AI Models:**
-  - [Office of the President of Finland (Presidentti.fi)](https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/)
-  - [Official Declaration PDF (Norwegian Government)](https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf)
-  - [Politico Europe Reporting](https://www.politico.eu/article/20-countries-urge-to-strenghten-oversight-of-ai-to-keep-it-under-human-control/)
-- **World Artificial Intelligence Cooperation Organization (WAICO):**
-  - [WAICO on Wikipedia](https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization)
-  - State Council of the People's Republic of China & Ministry of Foreign Affairs releases.
-- **Pax Silica:**
-  - [Pax Silica on Wikipedia](https://en.wikipedia.org/wiki/Pax_Silica)
-  - [U.S. Department of State: Pax Silica Initiative](https://www.state.gov/pax-silica)
+Data integrity follows a strict five-tier evidentiary hierarchy:
+1. **Official initiative roster or declaration** (e.g. [Presidentti.fi official declaration](https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/), [Norwegian Government Declaration text](https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf)).
+2. **Depositary, treaty registry, or organizing government** (e.g. [U.S. Department of State Pax Silica Initiative & Fact Sheets](https://www.state.gov/pax-silica), Shanghai Municipal Government / WAIC Secretariat).
+3. **Acceding country’s foreign ministry or head-of-government office** (e.g. [Singapore MDDI Parliamentary response](https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-singapore-position-on-the-world-artificial-intelligence-cooperation-association/), [Estonian MFA Press Release](https://www.vm.ee/en/news/foreign-minister-tsahkna-pax-silica-agreement-opportunity-advance-technology-innovation-and), [Bangladesh MOFA announcement via UNB](https://unb.com.bd/category/Bangladesh/bangladesh-decides-to-join-shanghai-based-waico-as-observer-mofa/192071)).
+4. **Reputable wire service or established publication** (e.g. Politico, Reuters, The Diplomat).
+5. **Wikipedia** is used strictly for discovering potential newly reported developments, never as the final evidentiary source. Records with pending primary confirmation are transparently labeled as secondary sources.
 
 ---
 

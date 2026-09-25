@@ -47,7 +47,7 @@
   /* Neutral Map Colors */
   --map-ocean: #e8f1fa;
   --map-graticule: rgba(148, 163, 184, 0.35);
-  --map-country-default: #94a3b8; /* Slate-400: clear, distinct darker grey on light theme */
+  --map-country-default: #cbd5e1; /* Slate-300: soft, bright, clear light neutral grey */
   --map-country-stroke: #64748b;
   --map-country-hover: #0f172a;
   --map-globe-glow: rgba(37, 99, 235, 0.15);
@@ -530,11 +530,33 @@ a:hover {
 .swatch-opportunity { background: var(--color-opportunity); border-color: var(--color-opportunity-border); }
 
 .swatch-pax-eu {
-  background: repeating-linear-gradient(45deg, #2563eb, #2563eb 3px, #93c5fd 3px, #93c5fd 5px);
-  border-color: var(--color-pax-border);
+  background-color: var(--map-country-default, #cbd5e1);
+  background-image: radial-gradient(#2563eb 1.5px, transparent 1.5px);
+  background-size: 5px 5px;
+  background-position: center;
+  border-color: #94a3b8;
 }
 [data-theme="dark"] .swatch-pax-eu {
-  background: repeating-linear-gradient(45deg, #1d4ed8, #1d4ed8 3px, #93c5fd 3px, #93c5fd 5px);
+  background-color: #1e293b;
+  background-image: radial-gradient(#60a5fa 1.5px, transparent 1.5px);
+  background-size: 5px 5px;
+  background-position: center;
+  border-color: #475569;
+}
+
+.swatch-frontier-pax-eu {
+  background-color: var(--color-frontier, #d97706);
+  background-image: radial-gradient(#1e40af 1.5px, transparent 1.5px);
+  background-size: 5px 5px;
+  background-position: center;
+  border-color: var(--color-frontier-border);
+}
+[data-theme="dark"] .swatch-frontier-pax-eu {
+  background-color: #f59e0b;
+  background-image: radial-gradient(#1e3a8a 1.5px, transparent 1.5px);
+  background-size: 5px 5px;
+  background-position: center;
+  border-color: #d97706;
 }
 
 .swatch-waico-observer {
@@ -628,7 +650,7 @@ a:hover {
 .country-path {
   fill: var(--map-country-default);
   stroke: var(--map-country-stroke);
-  stroke-width: 0.5px;
+  stroke-width: 1.5px;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
   cursor: pointer;
@@ -649,25 +671,14 @@ a:hover {
 .country-path[data-alliance="waico_pax"] { fill: var(--color-waico-pax); }
 .country-path[data-alliance="pax_frontier"] { fill: var(--color-pax-frontier); }
 .country-path[data-alliance="waico_frontier"] { fill: var(--color-waico-frontier); }
+.country-path[data-alliance="frontier_pax_eu"] { fill: var(--color-frontier); }
 .country-path[data-alliance="covered_via_eu"] { fill: var(--color-pax); }
 .country-path[data-alliance="opportunity_statement"] { fill: var(--color-opportunity); }
 .country-path[data-alliance="none"] { fill: var(--map-country-default); }
 
-.country-path[data-alliance="waico_observer"] {
-  stroke: #ef4444;
-  stroke-width: 1.4px;
-  vector-effect: non-scaling-stroke;
-}
-.country-path[data-alliance="pax_observer"],
-.country-path[data-alliance="pax_observer_frontier"] {
-  stroke: #60a5fa;
-  stroke-width: 1.4px;
-  vector-effect: non-scaling-stroke;
-}
-
 .country-path:hover {
   stroke: var(--text-primary);
-  stroke-width: 0.85px;
+  stroke-width: 2.2px;
   opacity: 0.95;
 }
 
@@ -1512,6 +1523,22 @@ a:hover {
 
 .initiative-source-link:hover {
   text-decoration: underline;
+}
+
+.initiative-source-link.is-secondary-source {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+[data-theme="dark"] .initiative-source-link.is-secondary-source {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(251, 191, 36, 0.35);
 }
 
 .initiative-source-list {

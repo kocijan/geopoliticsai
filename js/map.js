@@ -303,29 +303,50 @@ class GeopoliticsMap {
     addStripes2('pattern-split-frontier-opportunity-dark', '#f59e0b', '#06b6d4');
 
     // 3. Pax Silica Sub-status Patterns
-    // Pax via EU: Blue background with light blue stripes
+    // Pax via EU (Pure): Neutral grey background with royal blue dots (e.g. Poland, Spain, Belgium)
     defs.append('pattern')
       .attr('id', 'pattern-pax-eu')
-      .attr('class', 'map-pattern-rotated')
+      .attr('class', 'map-pattern-fixed')
       .attr('width', 8)
       .attr('height', 8)
       .attr('patternUnits', 'userSpaceOnUse')
-      .attr('patternTransform', 'rotate(45)')
       .html(`
-        <rect width="8" height="8" fill="#2563eb" />
-        <line x1="0" y1="0" x2="0" y2="8" stroke="#93c5fd" stroke-width="2.5" />
+        <rect width="8" height="8" fill="#cbd5e1" />
+        <circle cx="4" cy="4" r="1.8" fill="#2563eb" />
       `);
 
     defs.append('pattern')
       .attr('id', 'pattern-pax-eu-dark')
-      .attr('class', 'map-pattern-rotated')
+      .attr('class', 'map-pattern-fixed')
       .attr('width', 8)
       .attr('height', 8)
       .attr('patternUnits', 'userSpaceOnUse')
-      .attr('patternTransform', 'rotate(45)')
       .html(`
-        <rect width="8" height="8" fill="#1d4ed8" />
-        <line x1="0" y1="0" x2="0" y2="8" stroke="#93c5fd" stroke-width="2.5" />
+        <rect width="8" height="8" fill="#1e293b" />
+        <circle cx="4" cy="4" r="1.8" fill="#60a5fa" />
+      `);
+
+    // Pax via EU + Frontier Control Endorser: Frontier Gold background with blue dots (e.g. France, Luxembourg, Austria, Romania)
+    defs.append('pattern')
+      .attr('id', 'pattern-pax-eu-frontier')
+      .attr('class', 'map-pattern-fixed')
+      .attr('width', 8)
+      .attr('height', 8)
+      .attr('patternUnits', 'userSpaceOnUse')
+      .html(`
+        <rect width="8" height="8" fill="#d97706" />
+        <circle cx="4" cy="4" r="1.8" fill="#1e40af" />
+      `);
+
+    defs.append('pattern')
+      .attr('id', 'pattern-pax-eu-frontier-dark')
+      .attr('class', 'map-pattern-fixed')
+      .attr('width', 8)
+      .attr('height', 8)
+      .attr('patternUnits', 'userSpaceOnUse')
+      .html(`
+        <rect width="8" height="8" fill="#f59e0b" />
+        <circle cx="4" cy="4" r="1.8" fill="#1e3a8a" />
       `);
 
     // WAICO Observer: Light coral red fill with crimson diagonal hatching
@@ -913,16 +934,19 @@ class GeopoliticsMap {
       this.svg.selectAll('.map-pattern-fixed')
         .attr('patternTransform', `scale(${invK})`);
     } else {
-      // In 3D globe: lock pattern translation to globe rotation so stripes pan with countries!
+      // In 3D globe: synchronize 2D pattern translation to globe rotation
+      // tx tracks horizontal rotation (yaw); ty tracks vertical tilt (pitch, with inverted sign)
       const kFactor = (Math.PI / 180) * this.globeScale;
-      const tx = (this.rotation[0] * kFactor);
-      const ty = (this.rotation[1] * kFactor);
-      const cx = (this.width || 800) / 2;
-      const cy = (this.height || 560) / 2;
+      const tx = this.rotation[0] * kFactor;
+      const ty = -this.rotation[1] * kFactor; // Inverted Y-axis fix
+
       this.svg.selectAll('.map-pattern-rotated')
-        .attr('patternTransform', `translate(${cx + tx}, ${cy + ty}) rotate(45) translate(${-cx}, ${-cy})`);
+        .attr('patternTransform', `translate(${tx}, ${ty}) rotate(45)`);
+
+      const tx8 = ((tx % 8) + 8) % 8;
+      const ty8 = ((ty % 8) + 8) % 8;
       this.svg.selectAll('.map-pattern-fixed')
-        .attr('patternTransform', `translate(${tx}, ${ty})`);
+        .attr('patternTransform', `translate(${tx8}, ${ty8})`);
     }
   }
 
@@ -956,7 +980,7 @@ class GeopoliticsMap {
 
   getCountryFill(d) {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const neutralGrey = isDark ? '#1e293b' : '#94a3b8';
+    const neutralGrey = isDark ? '#1e293b' : '#cbd5e1';
 
     const country = this.resolveCountry(d);
     if (!country) return neutralGrey;
@@ -987,7 +1011,7 @@ class GeopoliticsMap {
       if (alliance === 'frontier_opportunity') return isDark ? '#06b6d4' : '#0891b2';
     }
 
-    // Single initiative and Pax sub-statuses
+    // Single initiative, Pax via EU, and observer sub-statuses
     switch (alliance) {
       case 'waico_only':
         return isDark ? '#ef4444' : '#dc2626';
@@ -999,6 +1023,8 @@ class GeopoliticsMap {
         return `url(#pattern-waico-observer${darkSuffix})`;
       case 'pax_eu':
         return `url(#pattern-pax-eu${darkSuffix})`;
+      case 'frontier_pax_eu':
+        return `url(#pattern-pax-eu-frontier${darkSuffix})`;
       case 'pax_observer':
         return isDark ? '#93c5fd' : '#60a5fa'; // Cornflower Blue
       case 'pax_observer_frontier':

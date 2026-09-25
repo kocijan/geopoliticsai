@@ -372,14 +372,14 @@ def render_thumbnail():
     # Left Card: 3 primary initiatives positioned in open Pacific Ocean (extra large font)
     left_items = [
         (COLOR_MAP["waico_only"], "WAICO", "(37)"),
-        (COLOR_MAP["pax_only"], "Pax Silica", "(inc. EU)"),
+        (COLOR_MAP["pax_only"], "Pax Silica", "(24+EU)"),
         (COLOR_MAP["frontier_only"], "Frontier Control", "(26+EU)"),
     ]
 
     # Right Card: 3 overlap combinations, bottom-right aligned
     right_items = [
         (COLOR_MAP["tripartite"], "All 3", "(Kazakhstan)"),
-        (COLOR_MAP["pax_frontier"], "Pax + Frontier", "(13)"),
+        (COLOR_MAP["pax_frontier"], "Pax + Frontier", "(7)"),
         (COLOR_MAP["waico_frontier"], "WAICO + Frontier", "(2)"),
     ]
 

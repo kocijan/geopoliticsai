@@ -920,7 +920,6 @@ class GeopoliticsMap {
     this.g.selectAll('.graticule-path').attr('d', this.path);
     this.g.selectAll('.country-path').attr('d', this.path);
     this.g.selectAll('.country-hitbox').attr('d', this.path);
-    this.updatePatternTransforms();
   }
 
   updatePatternTransforms(k = 1) {
@@ -934,19 +933,11 @@ class GeopoliticsMap {
       this.svg.selectAll('.map-pattern-fixed')
         .attr('patternTransform', `scale(${invK})`);
     } else {
-      // In 3D globe: synchronize 2D pattern translation to globe rotation
-      // tx tracks horizontal rotation (yaw); ty tracks vertical tilt (pitch, with inverted sign)
-      const kFactor = (Math.PI / 180) * this.globeScale;
-      const tx = this.rotation[0] * kFactor;
-      const ty = -this.rotation[1] * kFactor; // Inverted Y-axis fix
-
+      // In 3D globe: keep patterns completely static on screen without any translation or motion
       this.svg.selectAll('.map-pattern-rotated')
-        .attr('patternTransform', `translate(${tx}, ${ty}) rotate(45)`);
-
-      const tx8 = ((tx % 8) + 8) % 8;
-      const ty8 = ((ty % 8) + 8) % 8;
+        .attr('patternTransform', 'rotate(45)');
       this.svg.selectAll('.map-pattern-fixed')
-        .attr('patternTransform', `translate(${tx8}, ${ty8})`);
+        .attr('patternTransform', null);
     }
   }
 

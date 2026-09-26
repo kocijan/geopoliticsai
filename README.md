@@ -24,13 +24,13 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 3. **Call for Control of Frontier AI Models ("Frontier Control")**:
    - *Legal Form:* Open multilateral political declaration.
    - *Launch:* 21 September 2026 on the sidelines of the UN General Assembly in New York.
-   - *Initiators:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre; launched on 21 September 2026 and currently endorsed by 28 leaders and senior officials representing 26 countries, together with the President of the European Commission.
+   - *Initiators:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre; launched on 21 September 2026 and currently endorsed by 30 leaders and senior officials representing 28 countries, together with the President of the European Commission.
    - *Focus:* Mandatory pre-deployment testing, independent safety evaluations, incident reporting, and exploring an international institution capable of standard-setting and verification for frontier models.
 
 ### Key Nuances & Institutional Distinctions
 - **Tripartite Overlap:** **Kazakhstan** signed the WAICO founding treaty, joined Pax Silica at the Second Summit, and President Kassym-Jomart Tokayev personally endorsed the Frontier Control declaration.
-- **Two-Way Alliances:** **Singapore** signed Pax Silica, endorsed Frontier Control, and is an invited state considering WAICO; **South Africa** and **Kenya** are WAICO founding members whose heads of state endorsed Frontier Control; **Direct Pax + Frontier only:** 7 countries under the default direct-signatory methodology (Australia, Germany, Netherlands, Norway, Singapore, UAE, and Kazakhstan as tripartite; plus observers Estonia and Canada).
-- **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (Germany, Greece, Netherlands, Sweden, Finland, Italy) from 19 member states represented visually through the EU’s institutional signature (displayed with blue dots over a neutral grey background, or blue dots over gold for Frontier Control endorsers such as France). Portugal is separately tracked as a signatory of the Joint Statement on AI Opportunity.
+- **Two-Way Overlaps:** Australia, Finland, Germany, the Netherlands, Norway, Singapore, and the United Arab Emirates are direct Pax Silica signatories that also endorsed Frontier Control. Canada and Estonia form separate observer–Frontier overlaps. Kenya and South Africa are WAICO–Frontier overlaps. Kazakhstan is the sole tripartite overlap.
+- **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026; the European Commission represents the EU institutionally in the project’s organization-level record, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (Germany, Greece, Netherlands, Sweden, Finland, Italy) from 19 member states represented visually through the EU’s institutional signature (displayed with blue dots over a neutral grey background, or blue dots over gold for Frontier Control endorsers such as France, Croatia, etc.). Portugal is separately tracked as a signatory of the Joint Statement on AI Opportunity (and also endorsed Frontier Control).
 - **Taxonomy & Statuses:** Distinguishes formal national signatories (24 countries + EU), EU-represented member states (19), observers (Canada, Estonia), announced observers (Bangladesh), invited states under consideration (Singapore), non-signatory participants (Taiwan), and AI Opportunity Statement signatories.
 
 ---
@@ -59,7 +59,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 - 💾 **Comprehensive Data Export:**
   - Download full dataset as **CSV**, **JSON**, or **XML** for academic and policy research, with full multi-source citations, AI Opportunity Statement data, and supranational organization records (EU/Commission).
 - 🛡️ **Authoritative Curation:**
-  - Strict verification against primary diplomatic texts, government portals, and official foreign ministry declarations.
+  - Prioritizes primary diplomatic texts, government portals, and official foreign ministry declarations, with transparent disclosure and secondary-source labeling where primary accession instruments are pending confirmation.
 
 ---
 

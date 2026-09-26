@@ -551,7 +551,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (activeLayers.frontier) {
       items.push(`
-        <div class="legend-item" title="Call for Control of Frontier AI Models declaration: endorsed by 28 leaders and senior officials representing 26 countries + the European Commission">
+        <div class="legend-item" title="Call for Control of Frontier AI Models declaration: endorsed by 30 leaders and senior officials representing 28 countries + the European Commission">
           <span class="legend-swatch swatch-frontier"></span>
           <span class="legend-label-text">Frontier Control (${frontierEndorsers} countries + EU)</span>
         </div>
@@ -676,7 +676,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.getElementById('details-waico-signatory').textContent = country.waico.signatory_title || 'Government Delegation';
       document.getElementById('details-waico-notes').textContent = country.waico.notes || '';
       
-      const waicoSource = country.waico.source_url || 'https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization';
+      const waicoSource = country.waico.source_url || 'https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html';
       const waicoSourceEl = document.getElementById('details-waico-source');
       waicoSourceEl.href = waicoSource;
       const isWiki = waicoSource.includes('wikipedia.org');
@@ -704,7 +704,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       paxLabel = paxLabel.replace(/(\s*\(via EU\))+/gi, ' (via EU)');
       document.getElementById('details-pax-status').textContent = paxLabel;
       document.getElementById('details-pax-date').textContent = country.pax_silica.date || 'December 2025';
-      document.getElementById('details-pax-signatory').textContent = country.pax_silica.signatory_title || (country.pax_silica.is_direct ? 'National Representative' : 'European Commission');
+      document.getElementById('details-pax-signatory').textContent = country.pax_silica.signatory_title || (country.pax_silica.is_direct ? 'National Representative' : 'European Union');
       document.getElementById('details-pax-notes').textContent = country.pax_silica.notes || '';
 
       const singleSource = document.getElementById('details-pax-source');
@@ -724,7 +724,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (multiSources) multiSources.style.display = 'none';
         if (singleSource) {
           singleSource.style.display = 'inline-flex';
-          singleSource.href = country.pax_silica.source_url || 'https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit';
+          const paxSource = country.pax_silica.source_url || 'https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit';
+          singleSource.href = paxSource;
+          const isSecondary = country.pax_silica.is_secondary || (!paxSource.includes('.gov') && !paxSource.includes('.europa.eu'));
+          singleSource.innerHTML = isSecondary
+            ? `<span>Secondary confirmation — official statement pending</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`
+            : `<span>Official Source</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
+          if (isSecondary) {
+            singleSource.classList.add('is-secondary-source');
+          } else {
+            singleSource.classList.remove('is-secondary-source');
+          }
         }
       }
     } else {

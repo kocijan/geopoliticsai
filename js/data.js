@@ -327,7 +327,7 @@ const DataStore = {
       '""',
       '"European Union (Supranational Organization)"',
       '"Europe"',
-      'YES',
+      'N/A',
       '"None"',
       '""',
       '""',
@@ -369,8 +369,8 @@ const DataStore = {
         },
         statistics: this.meta?.statistics,
         sources: this.meta?.sources || {
-          waico: 'https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization',
-          pax_silica: 'https://www.state.gov/pax-silica',
+          waico: 'https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html',
+          pax_silica: 'https://www.state.gov/releases/office-of-the-spokesperson/2025/12/pax-silica-initiative/',
           frontier_call: 'https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/'
         }
       },

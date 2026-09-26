@@ -1,23 +1,23 @@
 {
   "meta": {
     "title": "GeopoliticsAI International Alignment Database",
-    "last_updated": "2026-09-24",
+    "last_updated": "2026-09-27",
     "data_current_as_of": "September 2026",
     "version": "1.0.0",
     "sources": {
-      "waico": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization",
-      "pax_silica": "https://en.wikipedia.org/wiki/Pax_Silica",
+      "waico": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+      "pax_silica": "https://www.state.gov/releases/office-of-the-spokesperson/2025/12/pax-silica-initiative/",
       "frontier_call": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
     },
     "statistics": {
       "tripartite": 1,
       "waico_only": 34,
       "pax_only": 16,
-      "frontier_only": 16,
+      "frontier_only": 18,
       "waico_pax": 0,
       "pax_frontier": 7,
       "waico_frontier": 2,
-      "none": 176
+      "none": 174
     },
     "entity_counts": {
       "iso_3166_1_entities": 249,
@@ -101,7 +101,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -414,11 +414,11 @@
       },
       "pax_silica": {
         "status": "invited",
-        "role_label": "Invited State",
+        "role_label": "Invited State (Under Review)",
         "date": "2026-08-01",
         "is_direct": true,
-        "notes": "Invited to join by U.S. special envoy on 1 August 2026.",
-        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+        "notes": "Invited/proposed participant; under review following visit by U.S. special envoy on 1 August 2026 (secondary confirmation pending official MOFA statement).",
+        "source_url": "https://www.newagebd.net/post/foreign-affairs/314147/dhaka-reviews-us-led-pax-silica-initiative"
       },
       "frontier_call": null,
       "alignment_category": "none",
@@ -453,7 +453,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -631,7 +631,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -755,7 +755,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -776,7 +776,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -799,7 +799,7 @@
         "date": "2025-12-12",
         "is_direct": true,
         "notes": "Participated as reported observer/guest in summit sessions; not listed on the State Department official signatory roster.",
-        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+        "source_url": "https://www.state.gov/briefings-foreign-press-centers/outcomes-of-the-paxs-silica-summit"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -901,7 +901,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -982,7 +982,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -1079,9 +1079,19 @@
         "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
-      "frontier_call": null,
-      "alignment_category": "none",
-      "active_initiatives_count": 0,
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by Prime Minister",
+        "leader_title": "Prime Minister",
+        "leader_name": "Andrej Plenković",
+        "date": "2026-09-23",
+        "endorsed_by": "Andrej Plenković (Prime Minister)",
+        "is_co_initiator": false,
+        "notes": "Endorsed the statement on 23 September 2026.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      },
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇭🇷"
     },
     "CUB": {
@@ -1097,7 +1107,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -1415,7 +1425,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2024,7 +2034,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2154,10 +2164,10 @@
       "pax_silica": {
         "status": "signatory",
         "role_label": "Signatory",
-        "date": "2026-07-31",
+        "date": "2026-08-03",
         "is_direct": true,
-        "notes": "Joined Pax Silica on 2026-07-31.",
-        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+        "notes": "Joined Pax Silica on 2026-08-03 as the 25th signatory entity.",
+        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/07/us-welcomes-italy-into-pax-silica-initiative/"
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
@@ -2254,7 +2264,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": {
         "status": "signatory",
@@ -2297,7 +2307,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": {
@@ -2400,7 +2410,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2421,7 +2431,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2494,7 +2504,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2674,7 +2684,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2952,7 +2962,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2973,7 +2983,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3119,7 +3129,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3267,7 +3277,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3288,7 +3298,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3496,9 +3506,19 @@
         "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not listed among the Pax Silica Declaration signatories in the U.S. State Department June 2026 fact sheet.",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
-      "frontier_call": null,
-      "alignment_category": "none",
-      "active_initiatives_count": 0,
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by Prime Minister",
+        "leader_title": "Prime Minister",
+        "leader_name": "Luis Montenegro",
+        "date": "2026-09-24",
+        "endorsed_by": "Luis Montenegro (Prime Minister)",
+        "is_co_initiator": false,
+        "notes": "Endorsed the statement on 24 September 2026.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      },
+      "alignment_category": "frontier_only",
+      "active_initiatives_count": 1,
       "flag_emoji": "🇵🇹",
       "ai_opportunity_statement": {
         "signed": true,
@@ -3608,7 +3628,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3809,7 +3829,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -3830,7 +3850,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4023,7 +4043,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": {
@@ -4261,7 +4281,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4640,7 +4660,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4676,7 +4696,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4793,7 +4813,7 @@
         "role_label": "Founding Member State",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
-        "source_url": "https://www.fmprc.gov.cn/eng/topics_665678/2026waico/"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
       "frontier_call": null,

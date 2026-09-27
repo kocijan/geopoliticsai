@@ -11,20 +11,22 @@ An interactive, source-linked geospatial tracker of international AI governance,
 Global artificial intelligence governance is dividing not into rigid Cold War-style blocs, but into overlapping, institutionally distinct coalitions:
 
 1. **WAICO (World Artificial Intelligence Cooperation Organization)**:
-   - *Legal Form:* Intergovernmental treaty organization.
+   - *Legal Form:* Intergovernmental organization established by an agreement opened for signature in 2026 and headquartered in Shanghai. Because the agreement requires ratification, acceptance, or approval (entering into force upon deposit of the third instrument), this tracker distinguishes treaty signature from verified membership or entry into force.
    - *Launch:* 16 July 2026 in Shanghai on the eve of the World AI Conference (WAIC).
-   - *Focus:* Digital capacity building in the Global South, open technology cooperation, and equitable AI infrastructure access.
+   - *Focus:* Openness to all countries, AI-for-good, digital capacity building, and narrowing the global AI divide.
+   - *Signatories:* 37 states signed the establishment agreement by 31 July 2026 (29 founding signatories on 16 July 2026 and 8 signatories during the open window on 30–31 July 2026).
    - *Secretariat:* Headquartered in Shanghai with a Ministerial Council.
 
 2. **Pax Silica**:
    - *Legal Form:* Non-binding economic-security and supply-chain framework coordinated by the U.S. Department of State.
    - *Launch:* 12 December 2025 at the inaugural Pax Silica Summit in Washington, D.C.
    - *Focus:* Securing advanced chip supply chains, critical minerals refining, AI data centers, and trusted international investment to reduce strategic or excessive dependencies and address non-market practices.
+   - *Signatories:* 25 formal signatory entities as of 31 July 2026 (24 sovereign countries that signed nationally, plus the European Union).
 
 3. **Call for Control of Frontier AI Models ("Frontier Control")**:
    - *Legal Form:* Open multilateral political declaration.
    - *Launch:* 21 September 2026 on the sidelines of the UN General Assembly in New York.
-   - *Initiators:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre; launched on 21 September 2026 and currently endorsed by 30 leaders and senior officials representing 28 countries, together with the President of the European Commission.
+   - *Initiators & Endorsement:* Spearheaded by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre; launched on 21 September 2026 and endorsed by 30 officials: leaders or senior officials representing 28 countries, plus the President of the European Commission.
    - *Focus:* Mandatory pre-deployment testing, independent safety evaluations, incident reporting, and exploring an international institution capable of standard-setting and verification for frontier models.
 
 ### Key Nuances & Institutional Distinctions
@@ -32,7 +34,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 - **Two-Way Overlaps:** Australia, Finland, Germany, the Netherlands, Norway, Singapore, and the United Arab Emirates are direct Pax Silica signatories that also endorsed Frontier Control. Canada and Estonia form separate observer–Frontier overlaps. Kenya and South Africa are WAICO–Frontier overlaps. Kazakhstan is the sole tripartite overlap.
 - **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026; the European Commission represents the EU institutionally in the project’s organization-level record, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (Germany, Greece, Netherlands, Sweden, Finland, Italy) from 19 member states represented visually through the EU’s institutional signature (displayed with blue dots over a neutral grey background, or blue dots over gold for Frontier Control endorsers such as France, Croatia, etc.). Portugal is separately tracked as a signatory of the Joint Statement on AI Opportunity (and also endorsed Frontier Control).
 - **Provenance Note on U.S. Pax Silica Signatory Status:** The project tracks the United States as a formal signatory (convening and founding signatory at the December 2025 Washington Summit, reaffirmed in the State Department June 2026 outcomes fact sheet), even though the subsequent State Department static web roster page lists only foreign partner signatories.
-- **Taxonomy & Statuses:** Distinguishes formal national signatories (24 countries + EU), EU-represented member states (19), observers (Canada, Estonia), announced observers (Bangladesh), invited states under consideration (Singapore), non-signatory participants (Taiwan), and AI Opportunity Statement signatories.
+- **Taxonomy & Statuses:** Distinguishes formal signatories (25 formal signatory entities: 24 sovereign countries + EU), EU-represented member states (19), observers (Canada, Estonia), announced observers (Bangladesh), invited states under consideration (Singapore), non-signatory participants (Taiwan), and AI Opportunity Statement signatories.
 
 ---
 
@@ -56,7 +58,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 - 📊 **Searchable & Sortable Countries & Territories:**
   - Instant fuzzy search with typo tolerance, subsequence matching, and score ranking across countries, leaders, and ISO-3166 codes.
   - Sort by any column (Country, Region, WAICO status, Pax Silica status, Frontier Control endorsement).
-  - Accurate coverage of 252 total entities: 249 official ISO 3166-1 entities plus 3 additional project entities (Kosovo `XKX`, Somaliland `SOL`, Northern Cyprus `XNC`).
+  - Accurate coverage of 252 countries, territories, and entities: 249 official ISO 3166-1 entities plus 3 additional project entities (Kosovo `XKX`, Somaliland `SOL`, Northern Cyprus `XNC`).
 - 💾 **Comprehensive Data Export:**
   - Download full dataset as **CSV**, **JSON**, or **XML** for academic and policy research, with full multi-source citations, AI Opportunity Statement data, and supranational organization records (EU/Commission).
 - 🛡️ **Authoritative Curation:**
@@ -70,6 +72,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 ├── index.html                   # Main application shell
 ├── css/
 │   ├── style.css                # Light/dark theme variables, modern typography & layout
+│   ├── responsive.css           # Mobile touch handling, adaptive layout & drawer rules
 │   └── accessibility.css        # Tactile pattern definitions, colorblindness & high-contrast styles
 ├── js/
 │   ├── app.js                   # Application state, event listeners, drawer & modal controller
@@ -82,10 +85,11 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 │   └── world-50m.json           # Visionscarto 50m TopoJSON (242 countries, clean topology)
 ├── scripts/
 │   ├── compare_wikipedia_report.py  # Informative comparison report script (manual diagnostic tool; not in CI/CD)
-│   └── generate_thumbnail.py        # Generates high-res Open Graph social sharing card
+│   ├── generate_thumbnail.py        # Generates high-res Open Graph social sharing card
+│   └── validate_data.py             # Data invariant & schema validator (enforced in CI/CD)
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml           # GitHub Actions workflow for deployment & thumbnail generation
+│       └── deploy.yml           # GitHub Actions workflow for validation, thumbnail generation & deployment
 ├── LICENSE                      # MIT License
 └── README.md                    # Project documentation
 ```

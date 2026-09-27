@@ -9,6 +9,12 @@
       "pax_silica": "https://www.state.gov/releases/office-of-the-spokesperson/2025/12/pax-silica-initiative/",
       "frontier_call": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
     },
+    "classification_rules": {
+      "direct_signatory_rule": "Only direct national sovereign signatures count toward primary multi-initiative alignment categories (tripartite, pax_frontier, waico_frontier, waico_pax). Supranational, EU-represented, observer, and invitee statuses are tracked separately.",
+      "waico_taxonomy": "Treaty signatures during the open period (through 31 July 2026) are classified as signatories. Membership under the constitutive agreement is contingent upon ratification, acceptance, or approval and formal entry into force upon deposit of the third instrument.",
+      "pax_silica_taxonomy": "Pax Silica is a non-binding U.S. State Department-led economic-security framework (25 formal signatory entities: 24 sovereign nations + EU). EU member states without separate national signatures are categorized as eu_represented.",
+      "frontier_call_taxonomy": "The Call for Control of Frontier AI Models is an open political declaration endorsed by 30 officials representing 28 sovereign nations plus the European Commission President."
+    },
     "statistics": {
       "tripartite": 1,
       "waico_only": 34,
@@ -98,9 +104,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -174,8 +180,8 @@
       "iso2": "AQ",
       "numeric": "010",
       "name": "Antarctica",
-      "region": "",
-      "subregion": "",
+      "region": "Polar",
+      "subregion": "Antarctica",
       "is_eu_member": false,
       "waico": null,
       "pax_silica": null,
@@ -293,7 +299,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Anthony Albanese (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "Representing a major Asia-Pacific middle power.",
+        "notes": "Endorsed declaration on 21 September 2026.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "pax_frontier",
@@ -385,7 +391,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Dr. Abdullatif bin Rashid Al Zayani (Minister of Foreign Affairs)",
         "is_co_initiator": false,
-        "notes": "Endorsed in official ministerial capacity.",
+        "notes": "Endorsed declaration on 21 September 2026 in ministerial capacity; also AI Opportunity signatory.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -450,9 +456,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -628,9 +634,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -664,10 +670,10 @@
       "is_eu_member": false,
       "waico": {
         "status": "signatory",
-        "role_label": "Later Signatory Member",
+        "role_label": "Signatory",
         "date": "2026-07-31",
-        "notes": "Acceded to WAICO on 2026-07-31.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
+        "source_url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -752,9 +758,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -773,9 +779,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -809,7 +815,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Mark Carney (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "Prime Minister of Canada endorsing frontier AI safeguards.",
+        "notes": "Endorsed declaration on 21 September 2026; reported Pax Silica observer.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -898,9 +904,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -979,9 +985,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -1104,9 +1110,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -1199,7 +1205,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Mette Frederiksen (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "Nordic partner supporting common European and global safety standards.",
+        "notes": "Endorsed declaration on 21 September 2026; EU member state.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -1236,10 +1242,10 @@
       "is_eu_member": false,
       "waico": {
         "status": "signatory",
-        "role_label": "Later Signatory Member",
+        "role_label": "Signatory",
         "date": "2026-07-30",
-        "notes": "Acceded to WAICO on 2026-07-30.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
+        "source_url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -1385,7 +1391,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Kristen Michal (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "Digital leader in EU advocating for transparent verification protocols.",
+        "notes": "Endorsed declaration on 21 September 2026; also Pax Silica observer and AI Opportunity signatory.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -1422,9 +1428,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -1632,10 +1638,10 @@
       "is_eu_member": false,
       "waico": {
         "status": "signatory",
-        "role_label": "Later Signatory Member",
+        "role_label": "Signatory",
         "date": "2026-07-31",
-        "notes": "Acceded to WAICO on 2026-07-31.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
+        "source_url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -1668,7 +1674,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Friedrich Merz (Federal Chancellor)",
         "is_co_initiator": false,
-        "notes": "Largest European economy endorsing mandatory pre-deployment evaluations.",
+        "notes": "Endorsed declaration on 21 September 2026; also Pax Silica direct signatory.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "pax_frontier",
@@ -1987,7 +1993,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Kristrún Frostadóttir (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "Nordic endorsement of international AI oversight.",
+        "notes": "Endorsed declaration on 21 September 2026.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -2031,9 +2037,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -2052,10 +2058,20 @@
       "is_eu_member": false,
       "waico": {
         "status": "signatory",
-        "role_label": "Later Signatory Member",
+        "role_label": "Signatory",
         "date": "2026-07-31",
-        "notes": "Iran's ambassador to China signed the founding charter of WAICO in late July 2026.",
-        "source_url": "https://en.irna.ir/news/86224376/Iran-joins-world-AI-cooperation-organization"
+        "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
+        "source_url": "https://en.irna.ir/news/86224376/Iran-joins-world-AI-cooperation-organization",
+        "sources": [
+          {
+            "title": "Ministry of Foreign Affairs of China (Signing Readout)",
+            "url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
+          },
+          {
+            "title": "National Official Announcement",
+            "url": "https://en.irna.ir/news/86224376/Iran-joins-world-AI-cooperation-organization"
+          }
+        ]
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2103,7 +2119,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Micheál Martin (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "European technology hub leader endorsing frontier oversight.",
+        "notes": "Endorsed declaration on 21 September 2026; EU member state.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -2271,9 +2287,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": {
@@ -2292,7 +2308,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Kassym-Jomart Tokayev (President)",
         "is_co_initiator": false,
-        "notes": "Crucial Central Asian bridge state; also WAICO founding member and Pax Silica signatory.",
+        "notes": "Endorsed declaration on 21 September 2026; also WAICO founding signatory and Pax Silica direct signatory (tripartite overlap).",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "tripartite",
@@ -2314,9 +2330,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -2328,7 +2344,7 @@
         "date": "2026-09-21",
         "endorsed_by": "William Ruto (President)",
         "is_co_initiator": false,
-        "notes": "East African tech hub leader; also a WAICO founding member.",
+        "notes": "Endorsed declaration on 21 September 2026; also WAICO founding signatory.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "waico_frontier",
@@ -2417,9 +2433,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -2438,9 +2454,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -2474,7 +2490,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Edgars Rinkēvičs (President)",
         "is_co_initiator": false,
-        "notes": "Baltic state endorsing independent AI testing.",
+        "notes": "Endorsed declaration on 21 September 2026; EU member state.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -2511,9 +2527,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -2691,9 +2707,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -2877,7 +2893,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Maia Sandu (President)",
         "is_co_initiator": false,
-        "notes": "Eastern European partner supporting democratic AI governance.",
+        "notes": "Endorsed declaration on 21 September 2026.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -2969,9 +2985,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -2990,9 +3006,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -3072,7 +3088,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Rob Jetten (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "Key semiconductor and technology hub; also a Pax Silica signatory.",
+        "notes": "Endorsed declaration on 21 September 2026; also Pax Silica direct signatory.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "pax_frontier",
@@ -3136,9 +3152,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -3284,9 +3300,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -3305,9 +3321,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -3635,9 +3651,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -3836,9 +3852,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -3857,9 +3873,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -3939,7 +3955,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Lawrence Wong (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "Major Southeast Asian AI hub; also a Pax Silica founding signatory and WAICO invitee.",
+        "notes": "Endorsed declaration on 21 September 2026; also Pax Silica founding signatory and WAICO invitee.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "pax_frontier",
@@ -4050,9 +4066,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -4064,7 +4080,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Cyril Ramaphosa (President)",
         "is_co_initiator": false,
-        "notes": "Leading African economy; also a WAICO founding member.",
+        "notes": "Endorsed declaration on 21 September 2026; also WAICO founding signatory.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "waico_frontier",
@@ -4126,7 +4142,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Pedro Sánchez (Prime Minister)",
         "is_co_initiator": false,
-        "notes": "Host of EU AI supervision initiatives endorsing global oversight.",
+        "notes": "Endorsed declaration on 21 September 2026; EU member state.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -4158,10 +4174,20 @@
       "is_eu_member": false,
       "waico": {
         "status": "signatory",
-        "role_label": "Later Signatory Member",
+        "role_label": "Signatory",
         "date": "2026-07-31",
-        "notes": "Signed agreement establishing WAICO (confirmed by Telecommunications and Post Regulatory Authority of Sudan).",
-        "source_url": "https://tpra.gov.sd/en/sudan-signs-agreement-establishing-world-artificial-intelligence-cooperation-organization-as-a-founding-member-state/"
+        "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
+        "source_url": "https://tpra.gov.sd/en/sudan-signs-agreement-establishing-world-artificial-intelligence-cooperation-organization-as-a-founding-member-state/",
+        "sources": [
+          {
+            "title": "Ministry of Foreign Affairs of China (Signing Readout)",
+            "url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
+          },
+          {
+            "title": "National Official Announcement",
+            "url": "https://tpra.gov.sd/en/sudan-signs-agreement-establishing-world-artificial-intelligence-cooperation-organization-as-a-founding-member-state/"
+          }
+        ]
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4261,8 +4287,8 @@
       "iso2": "TW",
       "numeric": "158",
       "name": "Taiwan, Province of China",
-      "region": null,
-      "subregion": null,
+      "region": "Asia",
+      "subregion": "Eastern Asia",
       "is_eu_member": false,
       "waico": null,
       "pax_silica": {
@@ -4288,9 +4314,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -4309,10 +4335,10 @@
       "is_eu_member": false,
       "waico": {
         "status": "signatory",
-        "role_label": "Later Signatory Member",
+        "role_label": "Signatory",
         "date": "2026-07-31",
-        "notes": "Acceded to WAICO on 2026-07-31.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
+        "source_url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4360,10 +4386,10 @@
       "is_eu_member": false,
       "waico": {
         "status": "signatory",
-        "role_label": "Later Signatory Member",
+        "role_label": "Signatory",
         "date": "2026-07-31",
-        "notes": "Acceded to WAICO on 2026-07-31.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
+        "source_url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4449,7 +4475,7 @@
         "date": "2026-09-21",
         "endorsed_by": "Hakan Fidan (Minister of Foreign Affairs)",
         "is_co_initiator": false,
-        "notes": "Transcontinental regional power endorsing frontier model guardrails.",
+        "notes": "Endorsed declaration on 21 September 2026 in ministerial capacity; also AI Opportunity signatory.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "frontier_only",
@@ -4561,7 +4587,7 @@
         "date": "2026-09-21",
         "endorsed_by": "H.H. Sheikh Abdullah bin Zayed Al Nahyan (Deputy Prime Minister & Minister of Foreign Affairs)",
         "is_co_initiator": false,
-        "notes": "Leading AI compute and investment investor; also a Pax Silica signatory.",
+        "notes": "Endorsed declaration on 21 September 2026 in ministerial capacity; also Pax Silica signatory.",
         "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
       },
       "alignment_category": "pax_frontier",
@@ -4667,9 +4693,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -4703,9 +4729,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -4724,10 +4750,10 @@
       "is_eu_member": false,
       "waico": {
         "status": "signatory",
-        "role_label": "Later Signatory Member",
+        "role_label": "Signatory",
         "date": "2026-07-31",
-        "notes": "Acceded to WAICO on 2026-07-31.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
+        "source_url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4820,9 +4846,9 @@
       "is_eu_member": false,
       "waico": {
         "status": "founding_member",
-        "role_label": "Founding Member State",
+        "role_label": "Founding Signatory",
         "date": "2026-07-16",
-        "notes": "Signed founding agreement in Shanghai on eve of WAIC 2026.",
+        "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
         "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
       },
       "pax_silica": null,
@@ -4851,6 +4877,7 @@
       "numeric": "383",
       "name": "Kosovo",
       "region": "Europe",
+      "subregion": "Southern Europe",
       "flag_emoji": "🇽🇰",
       "is_eu_member": false,
       "waico": null,
@@ -4864,6 +4891,7 @@
       "numeric": "900",
       "name": "N. Cyprus",
       "region": "Asia",
+      "subregion": "Western Asia",
       "flag_emoji": "🇨🇾",
       "is_eu_member": false,
       "waico": null,
@@ -4877,6 +4905,7 @@
       "numeric": "901",
       "name": "Somaliland",
       "region": "Africa",
+      "subregion": "Eastern Africa",
       "flag_emoji": "🇸🇴",
       "is_eu_member": false,
       "waico": null,

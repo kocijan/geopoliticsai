@@ -7,7 +7,7 @@
     "https://www.regjeringen.no/contentassets/35b2ea6933304966bd739ff4b8107300/a-call-for-control-of-frontier-ai-models-final.pdf",
     "https://www.politico.eu/article/20-countries-urge-to-strenghten-oversight-of-ai-to-keep-it-under-human-control/"
   ],
-  "summary": "International political declaration launched on 21 September 2026 by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre, currently endorsed by 30 leaders and senior officials representing 28 countries, together with the President of the European Commission on the sidelines of the UN General Assembly. Urges mandatory pre-deployment safety testing, independent third-party evaluations, incident reporting, and exploring an international institution capable of standard-setting and verification for frontier AI models.",
+  "summary": "International political declaration launched on 21 September 2026 on the sidelines of the UN General Assembly by Finnish President Alexander Stubb and Norwegian Prime Minister Jonas Gahr Støre. Endorsed by 30 officials: leaders or senior officials representing 28 countries, plus the President of the European Commission. Urges mandatory pre-deployment safety testing, independent third-party evaluations, incident reporting, and exploring an international institution capable of standard-setting and verification for frontier AI models.",
   "open_to_further_endorsements": true,
   "signatories": [
     {
@@ -35,7 +35,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Representing a major Asia-Pacific middle power."
+      "notes": "Endorsed declaration on 21 September 2026."
     },
     {
       "country_name": "Bahrain",
@@ -44,7 +44,7 @@
       "leader_title": "Minister of Foreign Affairs",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Endorsed in official ministerial capacity."
+      "notes": "Endorsed declaration on 21 September 2026 in ministerial capacity; also AI Opportunity signatory."
     },
     {
       "country_name": "Canada",
@@ -53,7 +53,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Prime Minister of Canada endorsing frontier AI safeguards."
+      "notes": "Endorsed declaration on 21 September 2026; reported Pax Silica observer."
     },
     {
       "country_name": "Denmark",
@@ -62,7 +62,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Nordic partner supporting common European and global safety standards."
+      "notes": "Endorsed declaration on 21 September 2026; EU member state."
     },
     {
       "country_name": "Estonia",
@@ -71,7 +71,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Digital leader in EU advocating for transparent verification protocols."
+      "notes": "Endorsed declaration on 21 September 2026; also Pax Silica observer and AI Opportunity signatory."
     },
     {
       "country_name": "Germany",
@@ -80,7 +80,7 @@
       "leader_title": "Federal Chancellor",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Largest European economy endorsing mandatory pre-deployment evaluations."
+      "notes": "Endorsed declaration on 21 September 2026; also Pax Silica direct signatory."
     },
     {
       "country_name": "Iceland",
@@ -89,7 +89,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Nordic endorsement of international AI oversight."
+      "notes": "Endorsed declaration on 21 September 2026."
     },
     {
       "country_name": "Ireland",
@@ -98,7 +98,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "European technology hub leader endorsing frontier oversight."
+      "notes": "Endorsed declaration on 21 September 2026; EU member state."
     },
     {
       "country_name": "Kazakhstan",
@@ -107,7 +107,7 @@
       "leader_title": "President",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Crucial Central Asian bridge state; also WAICO founding member and Pax Silica signatory."
+      "notes": "Endorsed declaration on 21 September 2026; also WAICO founding signatory and Pax Silica direct signatory (tripartite overlap)."
     },
     {
       "country_name": "Kenya",
@@ -116,7 +116,7 @@
       "leader_title": "President",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "East African tech hub leader; also a WAICO founding member."
+      "notes": "Endorsed declaration on 21 September 2026; also WAICO founding signatory."
     },
     {
       "country_name": "Latvia",
@@ -125,7 +125,7 @@
       "leader_title": "President",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Baltic state endorsing independent AI testing."
+      "notes": "Endorsed declaration on 21 September 2026; EU member state."
     },
     {
       "country_name": "Moldova",
@@ -134,7 +134,7 @@
       "leader_title": "President",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Eastern European partner supporting democratic AI governance."
+      "notes": "Endorsed declaration on 21 September 2026."
     },
     {
       "country_name": "Netherlands",
@@ -143,7 +143,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Key semiconductor and technology hub; also a Pax Silica signatory."
+      "notes": "Endorsed declaration on 21 September 2026; also Pax Silica direct signatory."
     },
     {
       "country_name": "Singapore",
@@ -152,7 +152,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Major Southeast Asian AI hub; also a Pax Silica founding signatory and WAICO invitee."
+      "notes": "Endorsed declaration on 21 September 2026; also Pax Silica founding signatory and WAICO invitee."
     },
     {
       "country_name": "South Africa",
@@ -161,7 +161,7 @@
       "leader_title": "President",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Leading African economy; also a WAICO founding member."
+      "notes": "Endorsed declaration on 21 September 2026; also WAICO founding signatory."
     },
     {
       "country_name": "Spain",
@@ -170,7 +170,7 @@
       "leader_title": "Prime Minister",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Host of EU AI supervision initiatives endorsing global oversight."
+      "notes": "Endorsed declaration on 21 September 2026; EU member state."
     },
     {
       "country_name": "Türkiye",
@@ -179,7 +179,7 @@
       "leader_title": "Minister of Foreign Affairs",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Transcontinental regional power endorsing frontier model guardrails."
+      "notes": "Endorsed declaration on 21 September 2026 in ministerial capacity; also AI Opportunity signatory."
     },
     {
       "country_name": "United Arab Emirates",
@@ -188,7 +188,7 @@
       "leader_title": "Deputy Prime Minister & Minister of Foreign Affairs",
       "is_co_initiator": false,
       "date": "2026-09-21",
-      "notes": "Leading AI compute and investment investor; also a Pax Silica signatory."
+      "notes": "Endorsed declaration on 21 September 2026 in ministerial capacity; also Pax Silica signatory."
     },
     {
       "country_name": "European Union",

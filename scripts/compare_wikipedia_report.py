@@ -75,7 +75,7 @@ def main():
     else:
         countries_list = countries
 
-    print(f"\nLoaded local database: {len(countries_list)} sovereign states and territories.\n")
+    print(f"\nLoaded local database: {len(countries_list)} countries, territories, and entities.\n")
 
     # 1. Compare WAICO
     print("-" * 70)
@@ -87,7 +87,7 @@ def main():
     local_waico_inv = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] in ["invitee", "invited"]}
     
     print(f"  Local Database:")
-    print(f"    - Full Members/Signatories : {len(local_waico_full)}")
+    print(f"    - Signatories             : {len(local_waico_full)}")
     print(f"    - Observers               : {len(local_waico_obs)} ({', '.join(local_waico_obs.keys())})")
     print(f"    - Invitees                : {len(local_waico_inv)} ({', '.join(local_waico_inv.keys())})")
 

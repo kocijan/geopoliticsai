@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           waicoLabel = 'Observer';
         } else {
           waicoClass = 'cell-status cell-waico-member';
-          waicoLabel = c.waico.role_label || 'Member';
+          waicoLabel = c.waico.role_label || 'Signatory';
         }
       }
 
@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const isStripes = settings.overlapStyle === 'stripes';
 
     // Count statuses
-    let waicoMembers = 0, waicoObservers = 0, waicoInvitees = 0;
+    let waicoSignatories = 0, waicoObservers = 0, waicoInvitees = 0;
     let paxSignatories = 0, paxEU = 0, paxObservers = 0, paxParticipants = 0, paxOpportunity = 0;
     let frontierEndorsers = 0;
     let tripartite = 0, paxFrontierOnly = 0, waicoFrontierOnly = 0, waicoPaxOnly = 0;
@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     for (const c of all) {
       if (c.waico) {
-        if (c.waico.status === 'founding_member' || c.waico.status === 'signatory') waicoMembers++;
+        if (c.waico.status === 'founding_member' || c.waico.status === 'signatory') waicoSignatories++;
         else if (c.waico.status === 'observer') waicoObservers++;
         else if (c.waico.status === 'invitee' || c.waico.status === 'invited') waicoInvitees++;
       }
@@ -533,16 +533,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 1. Top 3 Primary Initiatives strictly at the front
     if (activeLayers.waico) {
       items.push(`
-        <div class="legend-item" title="World Artificial Intelligence Cooperation Organization: 37 founding and signatory member states">
+        <div class="legend-item" title="World Artificial Intelligence Cooperation Organization: 37 founding and open-period signatory states (subject to ratification/entry into force)">
           <span class="legend-swatch swatch-waico"></span>
-          <span class="legend-label-text">WAICO (${waicoMembers} members)</span>
+          <span class="legend-label-text">WAICO (${waicoSignatories} signatories)</span>
         </div>
       `);
     }
 
     if (activeLayers.pax) {
       items.push(`
-        <div class="legend-item" title="Pax Silica Declaration signatories: 24 sovereign countries + European Union (including the United States and Italy)">
+        <div class="legend-item" title="Pax Silica: 25 formal signatory entities as of 31 July 2026 (24 sovereign countries + European Union)">
           <span class="legend-swatch swatch-pax"></span>
           <span class="legend-label-text">Pax Silica (${paxSignatories} countries + EU)</span>
         </div>
@@ -551,7 +551,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (activeLayers.frontier) {
       items.push(`
-        <div class="legend-item" title="Call for Control of Frontier AI Models declaration: endorsed by 30 leaders and senior officials representing 28 countries + the European Commission">
+        <div class="legend-item" title="Call for Control of Frontier AI Models: endorsed by 30 officials (representatives of 28 countries plus the European Commission President)">
           <span class="legend-swatch swatch-frontier"></span>
           <span class="legend-label-text">Frontier Control (${frontierEndorsers} countries + EU)</span>
         </div>

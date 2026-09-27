@@ -104,7 +104,7 @@ const DataStore = {
   computeCountryAlliance(country, activeLayers = { waico: true, pax: true, frontier: true }, options = {}) {
     if (!country) return 'none';
 
-    // WAICO membership (distinguish full member/signatory vs observer)
+    // WAICO signatory status (distinguish full signatory vs observer)
     const isWaicoFull = activeLayers.waico && country.waico && (
       country.waico.status === 'founding_member' ||
       country.waico.status === 'signatory'
@@ -425,6 +425,7 @@ const DataStore = {
           ]
         },
         statistics: this.meta?.statistics,
+        classification_rules: this.meta?.classification_rules,
         sources: this.meta?.sources || {
           waico: 'https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html',
           pax_silica: 'https://www.state.gov/releases/office-of-the-spokesperson/2025/12/pax-silica-initiative/',
@@ -468,7 +469,7 @@ const DataStore = {
     xml += '<geopolitics_ai>\n';
     xml += `  <metadata>\n`;
     xml += `    <title>${this.escapeXml(this.meta?.title || 'GeopoliticsAI')}</title>\n`;
-    xml += `    <last_updated>${this.meta?.last_updated || '2026-09-24'}</last_updated>\n`;
+    xml += `    <last_updated>${this.meta?.last_updated || '2026-09-27'}</last_updated>\n`;
     xml += `    <data_current_as_of>${this.meta?.data_current_as_of || 'September 2026'}</data_current_as_of>\n`;
     xml += `    <entity_counts>\n`;
     xml += `      <iso_3166_1_entities>249</iso_3166_1_entities>\n`;

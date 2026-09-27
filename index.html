@@ -28,14 +28,12 @@
   <meta name="twitter:description" content="Interactive tracker of WAICO, Pax Silica, and Frontier Control alignments.">
   <meta name="twitter:image" content="https://geopoliticsai.com/og-thumbnail.png">
 
-  <!-- Resource Hints & Critical Preloads -->
+  <!-- Resource Hints & Critical Map Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2" crossorigin>
-  <link rel="preload" as="fetch" href="data/world-110m.json" crossorigin>
+  <link rel="preload" as="fetch" href="data/world-110m.json">
 
-  <!-- Asynchronous Google Fonts: Inter & Outfit -->
+  <!-- Asynchronous Google Fonts: Inter & Outfit with font-display: swap -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
   <noscript>
@@ -43,11 +41,11 @@
   </noscript>
 
   <!-- Production Minified Stylesheet -->
-  <link rel="stylesheet" href="css/style.min.css?v=9">
+  <link rel="stylesheet" href="css/style.min.css?v=10">
 
   <!-- Production Minified & Deferred Scripts -->
-  <script defer src="js/vendor.min.js?v=9"></script>
-  <script defer src="js/app.min.js?v=9"></script>
+  <script defer src="js/vendor.min.js?v=10"></script>
+  <script defer src="js/app.min.js?v=10"></script>
 </head>
 <body>
   <!-- Accessibility Skip Link -->

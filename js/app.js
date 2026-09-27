@@ -137,41 +137,72 @@ async function initApp() {
   const mapLoader = document.getElementById('map-loader');
 
   try {
+    // Parallelize 110m world map fetching with DataStore initialization for optimal LCP
+    const worldMapPromise = (async () => {
+      try {
+        const worldResp = await fetch('data/world-110m.json');
+        if (!worldResp.ok) throw new Error(`HTTP ${worldResp.status}`);
+        return await worldResp.json();
+      } catch (localErr) {
+        console.warn('[App] Local data/world-110m.json fetch failed, falling back to CDN:', localErr);
+        try {
+          const cdnResp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/110m.json');
+          if (!cdnResp.ok) throw new Error(`110m CDN fallback: ${cdnResp.status}`);
+          return await cdnResp.json();
+        } catch (fallbackErr) {
+          console.warn('[App] 110m not available, loading 50m directly:', fallbackErr);
+          const local50m = await fetch('data/world-50m.json');
+          if (local50m.ok) return await local50m.json();
+          const resp50m = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/50m.json');
+          if (!resp50m.ok) throw new Error('Failed to load any world map');
+          return await resp50m.json();
+        }
+      }
+    })();
+
     await DataStore.init();
 
     // Show table and URL hash immediately before map finishes loading!
     updateCountsAndTable();
     checkUrlHash();
 
-    // Load 110m (low-res) world map TopoJSON from local repository first for fast initial render
-    let worldTopoJson;
-    try {
-      const worldResp = await fetch('data/world-110m.json');
-      if (!worldResp.ok) throw new Error(`HTTP ${worldResp.status}`);
-      worldTopoJson = await worldResp.json();
-    } catch (localErr) {
-      console.warn('[App] Local data/world-110m.json fetch failed, falling back to CDN:', localErr);
+    // Wait for world map TopoJSON
+    const worldTopoJson = await worldMapPromise;
+
+    // Deferred on-demand loading of 50m (high-res) TopoJSON:
+    // Only fetched when the user zooms in or during background idle, NEVER competing with initial LCP!
+    let is50mLoading = false;
+    let is50mLoaded = false;
+    async function loadHighResMap() {
+      if (is50mLoading || is50mLoaded || !mapInstance) return;
+      is50mLoading = true;
       try {
-        const cdnResp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/110m.json');
-        if (!cdnResp.ok) throw new Error(`110m CDN fallback: ${cdnResp.status}`);
-        worldTopoJson = await cdnResp.json();
-      } catch (fallbackErr) {
-        // Ultimate fallback: try 50m directly
-        console.warn('[App] 110m not available, loading 50m directly:', fallbackErr);
-        const resp50m = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/50m.json');
-        if (!resp50m.ok) {
-          const local50m = await fetch('data/world-50m.json');
-          if (!local50m.ok) throw new Error(`Failed to load any world map`);
-          worldTopoJson = await local50m.json();
-        } else {
-          worldTopoJson = await resp50m.json();
+        let hiRes;
+        try {
+          // Prioritize local repository first (same origin, gzipped, fast)
+          const localResp = await fetch('data/world-50m.json');
+          if (!localResp.ok) throw new Error(`Local 50m HTTP ${localResp.status}`);
+          hiRes = await localResp.json();
+        } catch (_) {
+          const cdnResp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/50m.json');
+          if (cdnResp.ok) hiRes = await cdnResp.json();
         }
+        if (hiRes && mapInstance) {
+          is50mLoaded = true;
+          mapInstance.setHighResData(hiRes);
+          console.log('[App] 50m high-res map loaded on-demand and ready for zoom switching.');
+        }
+      } catch (err) {
+        console.warn('[App] Failed to lazy-load 50m map, staying on 110m:', err);
+      } finally {
+        is50mLoading = false;
       }
     }
 
     // Initialize Map (Default: 2D Projection for best zooming)
     mapInstance = new GeopoliticsMap('map-viewport', {
       mode: '2d',
+      onNeedHighRes: loadHighResMap,
       onCountrySelect: (country) => {
         openCountryDetails(country);
         updateUrlHash(country.iso3);
@@ -221,26 +252,21 @@ async function initApp() {
       mapInstance.selectCountryByIso3(iso);
     }
 
-    // Lazy-load 50m (high-res) TopoJSON in background for zoom-based upgrade
-    (async () => {
-      try {
-        let hiRes;
-        try {
-          const resp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/50m.json');
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          hiRes = await resp.json();
-        } catch (_) {
-          const fallback = await fetch('data/world-50m.json');
-          if (fallback.ok) hiRes = await fallback.json();
-        }
-        if (hiRes && mapInstance) {
-          mapInstance.setHighResData(hiRes);
-          console.log('[App] 50m high-res map loaded and available for zoom switching.');
-        }
-      } catch (err) {
-        console.warn('[App] Failed to lazy-load 50m map, staying on 110m:', err);
-      }
-    })();
+    // Trigger 50m loading on user zoom interactions
+    if (zoomInBtn) zoomInBtn.addEventListener('click', loadHighResMap, { once: true });
+    if (mapViewport) {
+      mapViewport.addEventListener('wheel', loadHighResMap, { once: true, passive: true });
+      mapViewport.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length > 1) loadHighResMap(); // pinch-to-zoom
+      }, { passive: true });
+    }
+
+    // Idle fallback: only load in background when browser is completely idle (or after 8 seconds)
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(() => loadHighResMap(), { timeout: 10000 });
+    } else {
+      setTimeout(loadHighResMap, 8000);
+    }
 
   } catch (err) {
     console.error('[App] Initialization error:', err);

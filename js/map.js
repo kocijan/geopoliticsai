@@ -118,7 +118,12 @@ class GeopoliticsMap {
   }
 
   checkResolutionSwitch(zoomScale) {
-    if (!this.worldDataHighRes) return; // high-res not loaded yet
+    if (!this.worldDataHighRes) {
+      if (zoomScale > 1.2 && typeof this.options.onNeedHighRes === 'function') {
+        this.options.onNeedHighRes();
+      }
+      return; // high-res not loaded yet
+    }
     const shouldBeHigh = zoomScale >= this.resolutionSwitchThreshold;
     const targetRes = shouldBeHigh ? 'high' : 'low';
     if (targetRes !== this.currentResolution) {

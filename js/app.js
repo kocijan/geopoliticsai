@@ -2,7 +2,7 @@
  * GeopoliticsAI.com - Main Application Controller (Condensed Layout)
  */
 
-document.addEventListener('DOMContentLoaded', async () => {
+async function initApp() {
   let mapInstance = null;
   let currentSort = { column: 'name', asc: true };
 
@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     for (const c of all) {
       if (c.waico) {
-        if (c.waico.status === 'founding_member' || c.waico.status === 'signatory') waicoSignatories++;
+        if (c.waico.status === 'founding_signatory' || c.waico.status === 'founding_member' || c.waico.status === 'signatory') waicoSignatories++;
         else if (c.waico.status === 'observer') waicoObservers++;
         else if (c.waico.status === 'invitee' || c.waico.status === 'invited') waicoInvitees++;
       }
@@ -677,16 +677,36 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.getElementById('details-waico-notes').textContent = country.waico.notes || '';
       
       const waicoSource = country.waico.source_url || 'https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html';
-      const waicoSourceEl = document.getElementById('details-waico-source');
-      waicoSourceEl.href = waicoSource;
-      const isWiki = waicoSource.includes('wikipedia.org');
-      waicoSourceEl.innerHTML = isWiki
-        ? `<span>Secondary source — primary confirmation pending</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`
-        : `<span>Official Source</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
-      if (isWiki) {
-        waicoSourceEl.classList.add('is-secondary-source');
+      const singleWaicoSource = document.getElementById('details-waico-source');
+      const multiWaicoSources = document.getElementById('details-waico-sources');
+      if (country.waico.sources && country.waico.sources.length > 0) {
+        if (singleWaicoSource) singleWaicoSource.style.display = 'none';
+        if (multiWaicoSources) {
+          multiWaicoSources.style.display = 'flex';
+          multiWaicoSources.innerHTML = country.waico.sources.map(s => `
+            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="initiative-source-item" title="${s.title}">
+              <span>${s.title}</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          `).join('');
+        }
       } else {
-        waicoSourceEl.classList.remove('is-secondary-source');
+        if (multiWaicoSources) multiWaicoSources.style.display = 'none';
+        if (singleWaicoSource) {
+          singleWaicoSource.style.display = 'inline-flex';
+          singleWaicoSource.href = waicoSource;
+          const isOfficial = country.waico.is_official !== undefined
+            ? country.waico.is_official
+            : (country.waico.source_type === 'secondary' ? false : !waicoSource.includes('wikipedia.org') && !waicoSource.includes('unb.com.bd'));
+          singleWaicoSource.innerHTML = !isOfficial
+            ? `<span>Secondary confirmation — official statement pending</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`
+            : `<span>Official Source</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
+          if (!isOfficial) {
+            singleWaicoSource.classList.add('is-secondary-source');
+          } else {
+            singleWaicoSource.classList.remove('is-secondary-source');
+          }
+        }
       }
     } else {
       waicoCard.style.display = 'none';
@@ -726,7 +746,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           singleSource.style.display = 'inline-flex';
           const paxSource = country.pax_silica.source_url || 'https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit';
           singleSource.href = paxSource;
-          const isSecondary = country.pax_silica.is_secondary || (!paxSource.includes('.gov') && !paxSource.includes('.europa.eu'));
+          const isSecondary = country.pax_silica.is_official !== undefined
+            ? !country.pax_silica.is_official
+            : (country.pax_silica.is_secondary || country.pax_silica.source_type === 'secondary' || (!paxSource.includes('.gov') && !paxSource.includes('.europa.eu')));
           singleSource.innerHTML = isSecondary
             ? `<span>Secondary confirmation — official statement pending</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`
             : `<span>Official Source</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
@@ -759,17 +781,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // AI Opportunity Statement Card
     const oppCard = document.getElementById('details-card-opportunity');
-    const isPaxSignatoryOrObserver = country.pax_silica && (
+    // If a country is Pax Silica only through the EU (and is not a direct signatory or observer),
+    // it is important we list the AI Opportunity Statement signature.
+    const isDirectPaxSignatoryOrObserver = country.pax_silica && (
       country.pax_silica.status === 'founding_signatory' ||
       country.pax_silica.status === 'signatory' ||
-      country.pax_silica.status === 'eu_represented' ||
       country.pax_silica.status === 'observer'
     );
     const hasOpp = Boolean(country.ai_opportunity_statement?.signed || isPaxOppOnly);
     if (oppCard) {
       if (hasOpp) {
         oppCard.style.display = 'block';
-        if (isPaxSignatoryOrObserver) {
+        if (isDirectPaxSignatoryOrObserver) {
           oppCard.classList.add('card-opportunity-pax-signatory');
         } else {
           oppCard.classList.remove('card-opportunity-pax-signatory');
@@ -979,4 +1002,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (settingsModal && settingsModal.open) settingsModal.close();
     }
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

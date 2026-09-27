@@ -21,6 +21,7 @@ const DataStore = {
       this.raw = data;
       this.meta = data.meta;
       this.countries = data.countries;
+      this.organizations = data.organizations;
       this.countriesList = Object.values(data.countries);
 
       if (frontierResp && frontierResp.ok) {
@@ -106,6 +107,7 @@ const DataStore = {
 
     // WAICO signatory status (distinguish full signatory vs observer)
     const isWaicoFull = activeLayers.waico && country.waico && (
+      country.waico.status === 'founding_signatory' ||
       country.waico.status === 'founding_member' ||
       country.waico.status === 'signatory'
     );
@@ -131,7 +133,7 @@ const DataStore = {
 
     // Whether EU-represented states participate in overlap combinations
     const includeEuInOverlap = Boolean(options.includeEuInOverlap);
-    const hasPaxForOverlap = activeLayers.pax && (isFormalPax || (includeEuInOverlap && isEuRepresented));
+    const hasPaxForOverlap = activeLayers.pax && (isFormalPax || (includeEuInOverlap && isEuRepresented && !isOpportunityOnly));
 
     // Multi-initiative Overlaps for full signatories
     if (isWaicoFull && hasPaxForOverlap && hasFrontier) return 'tripartite';
@@ -139,18 +141,19 @@ const DataStore = {
     if (hasPaxForOverlap && hasFrontier) return 'pax_frontier';
     if (isWaicoFull && hasFrontier) return 'waico_frontier';
 
-    // Frontier + Pax via EU (e.g. France, Luxembourg, Austria, Romania, Spain)
+    // Frontier + AI Opportunity overlap (e.g. Portugal, Türkiye, Bahrain)
+    // AI Opportunity statement has higher priority than (via EU Pax Silica)
+    if (hasFrontier && isOpportunityOnly && activeLayers.pax && !isFormalPax && !isPaxObserver) {
+      return 'frontier_opportunity';
+    }
+
+    // Frontier + Pax via EU (e.g. France, Luxembourg, Austria, Romania, Croatia)
     if (hasFrontier && activeLayers.pax && isEuRepresented) {
       return 'frontier_pax_eu';
     }
 
     // Pax Observer + Frontier overlap (Canada, Estonia)
     if (isPaxObserver && hasFrontier) return 'pax_observer_frontier';
-
-    // Frontier + AI Opportunity overlap (Türkiye, Bahrain)
-    if (hasFrontier && isOpportunityOnly && activeLayers.pax && !hasPaxForOverlap && !isPaxObserver) {
-      return 'frontier_opportunity';
-    }
 
     // Single primary initiative memberships
     if (isWaicoFull) return 'waico_only';
@@ -160,12 +163,15 @@ const DataStore = {
     // Distinct observer and sub-status representation
     if (isWaicoObserver) return 'waico_observer';
     if (isPaxObserver) return 'pax_observer';
+
+    // AI Opportunity Statement has higher priority than (via EU Pax Silica)
+    if (isOpportunityOnly && activeLayers.pax) return 'opportunity_statement';
+
     if (activeLayers.pax) {
       if (isEuRepresented) return 'pax_eu';
       if (isPaxParticipant) return 'pax_participant';
       if (isPaxOpportunity) return 'opportunity_statement';
     }
-    if (isOpportunityOnly && activeLayers.pax) return 'opportunity_statement';
 
     return 'none';
   },
@@ -315,9 +321,9 @@ const DataStore = {
       } else if (categoryFilter === 'tripartite') {
         result = result.filter(c => this.computeCountryAlliance(c, activeLayers, options) === 'tripartite');
       } else if (categoryFilter === 'two_way') {
-        result = result.filter(c => ['waico_pax', 'pax_frontier', 'waico_frontier', 'frontier_pax_eu'].includes(this.computeCountryAlliance(c, activeLayers, options)));
+        result = result.filter(c => ['waico_pax', 'pax_frontier', 'waico_frontier', 'frontier_pax_eu', 'frontier_opportunity', 'pax_observer_frontier'].includes(this.computeCountryAlliance(c, activeLayers, options)));
       } else if (categoryFilter === 'waico') {
-        result = result.filter(c => c.waico && ['founding_member', 'signatory'].includes(c.waico.status));
+        result = result.filter(c => c.waico && ['founding_signatory', 'founding_member', 'signatory'].includes(c.waico.status));
       } else if (categoryFilter === 'pax') {
         result = result.filter(c => c.pax_silica && ['founding_signatory', 'signatory'].includes(c.pax_silica.status));
       } else if (categoryFilter === 'frontier') {
@@ -432,7 +438,7 @@ const DataStore = {
           frontier_call: 'https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/'
         }
       },
-      organizations: {
+      organizations: this.organizations || this.raw?.organizations || {
         EU: {
           id: 'EU',
           name: 'European Union',

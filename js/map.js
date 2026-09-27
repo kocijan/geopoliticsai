@@ -62,6 +62,12 @@ class GeopoliticsMap {
     this.countryFeatures = topojson.feature(this.worldData, this.worldData.objects.countries).features;
     this.injectCityStates(1);
 
+    // Cache container dimensions once before any DOM mutation to prevent forced reflow
+    const rawW = this.container ? this.container.clientWidth : 0;
+    const rawH = this.container ? this.container.clientHeight : 0;
+    this.width = Math.max(300, rawW || 800);
+    this.height = Math.max(300, rawH || 560);
+
     this.setupSvg();
     this.setupDefs();
     this.setupProjection();
@@ -232,10 +238,10 @@ class GeopoliticsMap {
   }
 
   setupSvg() {
-    const rawW = this.container ? this.container.clientWidth : 0;
-    const rawH = this.container ? this.container.clientHeight : 0;
-    const width = Math.max(300, rawW || 800);
-    const height = Math.max(300, rawH || 560);
+    const width = this.width || Math.max(300, (this.container ? this.container.clientWidth : 0) || 800);
+    const height = this.height || Math.max(300, (this.container ? this.container.clientHeight : 0) || 560);
+    this.width = width;
+    this.height = height;
 
     this.svg = d3.select(this.container)
       .append('svg')
@@ -422,11 +428,8 @@ class GeopoliticsMap {
   }
 
   setupProjection() {
-    const rawW = this.container ? this.container.clientWidth : 0;
-    const rawH = this.container ? this.container.clientHeight : 0;
-    const width = Math.max(300, rawW || 800);
-    const height = Math.max(300, rawH || 560);
-    console.log('[Map] setupProjection: container raw dims =', rawW, rawH, 'effective =', width, height);
+    const width = this.width || 800;
+    const height = this.height || 560;
 
     this.baseScale2D = Math.min(width, height) * 0.28;
     this.baseScaleGlobe = Math.min(width, height) * 0.44;
@@ -1098,14 +1101,16 @@ class GeopoliticsMap {
         `;
       }
 
-      const isPaxSignatoryOrObserver = country.pax_silica && (
+      // Only direct national signatories and observers suppress the separate AI Opportunity badge.
+      // If a country is Pax Silica only through the EU (and is not a direct signatory or observer),
+      // it is important we list the AI Opportunity Statement signature.
+      const isDirectPaxSignatoryOrObserver = country.pax_silica && (
         country.pax_silica.status === 'founding_signatory' ||
         country.pax_silica.status === 'signatory' ||
-        country.pax_silica.status === 'eu_represented' ||
         country.pax_silica.status === 'observer'
       );
 
-      if (country.ai_opportunity_statement && country.ai_opportunity_statement.signed && !isPaxSignatoryOrObserver) {
+      if (country.ai_opportunity_statement && country.ai_opportunity_statement.signed && !isDirectPaxSignatoryOrObserver) {
         badgesHtml += `
           <div class="tooltip-badge-row">
             <span class="symbology-badge" style="color: var(--color-opportunity, #0891b2);">●</span>
@@ -1114,7 +1119,7 @@ class GeopoliticsMap {
         `;
       }
 
-      const hasOppBadge = Boolean(country.ai_opportunity_statement?.signed && !isPaxSignatoryOrObserver);
+      const hasOppBadge = Boolean(country.ai_opportunity_statement?.signed && !isDirectPaxSignatoryOrObserver);
       if (!country.waico && (!country.pax_silica || country.pax_silica.status === 'opportunity_statement') && !country.frontier_call && !hasOppBadge) {
         badgesHtml = `<div style="color: var(--text-muted);">No recorded alignment</div>`;
       }

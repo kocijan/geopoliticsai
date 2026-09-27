@@ -32,9 +32,9 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 ### Key Nuances & Institutional Distinctions
 - **Tripartite Overlap:** **Kazakhstan** signed the WAICO founding treaty, joined Pax Silica at the Second Summit, and President Kassym-Jomart Tokayev personally endorsed the Frontier Control declaration.
 - **Two-Way Overlaps:** Australia, Finland, Germany, the Netherlands, Norway, Singapore, and the United Arab Emirates are direct Pax Silica signatories that also endorsed Frontier Control. Canada and Estonia form separate observer–Frontier overlaps. Kenya and South Africa are WAICO–Frontier overlaps. Kazakhstan is the sole tripartite overlap.
-- **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026; the European Commission represents the EU institutionally in the project’s organization-level record, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (Germany, Greece, Netherlands, Sweden, Finland, Italy) from 19 member states represented visually through the EU’s institutional signature (displayed with blue dots over a neutral grey background, or blue dots over gold for Frontier Control endorsers such as France, Croatia, etc.). Portugal is separately tracked as a signatory of the Joint Statement on AI Opportunity (and also endorsed Frontier Control).
+- **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026; the European Commission represents the EU institutionally in the project’s organization-level record, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (Germany, Greece, Netherlands, Sweden, Finland, Italy) from 20 member states represented visually through the EU’s institutional signature (displayed with blue dots over a neutral grey background, or blue dots over gold for Frontier Control endorsers such as France, Croatia, Portugal, etc.).
 - **Provenance Note on U.S. Pax Silica Signatory Status:** The project tracks the United States as a formal signatory (convening and founding signatory at the December 2025 Washington Summit, reaffirmed in the State Department June 2026 outcomes fact sheet), even though the subsequent State Department static web roster page lists only foreign partner signatories.
-- **Taxonomy & Statuses:** Distinguishes formal signatories (25 formal signatory entities: 24 sovereign countries + EU), EU-represented member states (19), observers (Canada, Estonia), announced observers (Bangladesh), invited states under consideration (Singapore), non-signatory participants (Taiwan), and AI Opportunity Statement signatories.
+- **Taxonomy & Statuses:** Distinguishes formal signatories (25 formal signatory entities: 24 sovereign countries + EU), EU-represented member states (20), observers (Canada, Estonia), announced observers (Bangladesh), invited states under consideration (Singapore), non-signatory participants (Taiwan), and AI Opportunity Statement signatories (35).
 
 ---
 
@@ -52,7 +52,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
   - Filter by Tripartite Overlap, Two-Way Overlaps, Direct Signatories, Observers, EU Member States, or AI Opportunity Statement.
   - Display & Overlap Settings modal for customizing overlap visualization and EU inclusion.
 - 📋 **Comprehensive Country Profile Drawer:**
-  - Full details on accession dates, signatory titles, leader names, and notes.
+  - Full details on signature, participation, accession, and endorsement dates, signatory titles, leader names, and notes.
   - Direct clickable links to primary government press releases (State Department, foreign ministries, official communiqués) with transparent tagging for any secondary sources pending confirmation.
   - One-click copyable shareable permalinks (`#country=KAZ`).
 - 📊 **Searchable & Sortable Countries & Territories:**

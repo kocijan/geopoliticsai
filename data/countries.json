@@ -13,7 +13,8 @@
       "direct_signatory_rule": "Only direct national sovereign signatures count toward primary multi-initiative alignment categories (tripartite, pax_frontier, waico_frontier, waico_pax). Supranational, EU-represented, observer, and invitee statuses are tracked separately.",
       "waico_taxonomy": "Treaty signatures during the open period (through 31 July 2026) are classified as signatories. Membership under the constitutive agreement is contingent upon ratification, acceptance, or approval and formal entry into force upon deposit of the third instrument.",
       "pax_silica_taxonomy": "Pax Silica is a non-binding U.S. State Department-led economic-security framework (25 formal signatory entities: 24 sovereign nations + EU). EU member states without separate national signatures are categorized as eu_represented.",
-      "frontier_call_taxonomy": "The Call for Control of Frontier AI Models is an open political declaration endorsed by 30 officials representing 28 sovereign nations plus the European Commission President."
+      "frontier_call_taxonomy": "The Call for Control of Frontier AI Models is an open political declaration endorsed by 30 officials representing 28 sovereign nations plus the European Commission President.",
+      "primary_alignment_count_definition": "primary_alignment_count (and active_initiatives_count) measures direct national sovereign participation across the three primary initiatives: direct national Pax Silica signatory, direct WAICO signatory, and direct Frontier Control endorsement. Associated statuses (observers, invitees, non-signatory participants, EU representation, and the secondary AI Opportunity Statement) are excluded from this primary count and recorded in their respective objects."
     },
     "statistics": {
       "tripartite": 1,
@@ -62,7 +63,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇫"
+      "flag_emoji": "🇦🇫",
+      "primary_alignment_count": 0
     },
     "ALA": {
       "iso3": "ALA",
@@ -77,7 +79,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇽"
+      "flag_emoji": "🇦🇽",
+      "primary_alignment_count": 0
     },
     "ALB": {
       "iso3": "ALB",
@@ -92,7 +95,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇱"
+      "flag_emoji": "🇦🇱",
+      "primary_alignment_count": 0
     },
     "DZA": {
       "iso3": "DZA",
@@ -103,17 +107,19 @@
       "subregion": "Northern Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇩🇿"
+      "flag_emoji": "🇩🇿",
+      "primary_alignment_count": 1
     },
     "ASM": {
       "iso3": "ASM",
@@ -128,7 +134,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇸"
+      "flag_emoji": "🇦🇸",
+      "primary_alignment_count": 0
     },
     "AND": {
       "iso3": "AND",
@@ -143,7 +150,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇩"
+      "flag_emoji": "🇦🇩",
+      "primary_alignment_count": 0
     },
     "AGO": {
       "iso3": "AGO",
@@ -158,7 +166,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇴"
+      "flag_emoji": "🇦🇴",
+      "primary_alignment_count": 0
     },
     "AIA": {
       "iso3": "AIA",
@@ -173,7 +182,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇮"
+      "flag_emoji": "🇦🇮",
+      "primary_alignment_count": 0
     },
     "ATA": {
       "iso3": "ATA",
@@ -188,7 +198,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇶"
+      "flag_emoji": "🇦🇶",
+      "primary_alignment_count": 0
     },
     "ATG": {
       "iso3": "ATG",
@@ -203,7 +214,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇬"
+      "flag_emoji": "🇦🇬",
+      "primary_alignment_count": 0
     },
     "ARG": {
       "iso3": "ARG",
@@ -230,7 +242,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "ARM": {
       "iso3": "ARM",
@@ -241,14 +254,7 @@
       "subregion": "Western Asia",
       "is_eu_member": false,
       "waico": null,
-      "pax_silica": {
-        "status": "opportunity_statement",
-        "role_label": "AI Opportunity Statement",
-        "date": "2026-06-26",
-        "is_direct": false,
-        "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not a signatory of the Pax Silica Declaration.",
-        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      },
+      "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
@@ -257,7 +263,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 0
     },
     "ABW": {
       "iso3": "ABW",
@@ -272,7 +279,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇼"
+      "flag_emoji": "🇦🇼",
+      "primary_alignment_count": 0
     },
     "AUS": {
       "iso3": "AUS",
@@ -309,7 +317,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 2
     },
     "AUT": {
       "iso3": "AUT",
@@ -341,7 +350,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇦🇹"
+      "flag_emoji": "🇦🇹",
+      "primary_alignment_count": 1
     },
     "AZE": {
       "iso3": "AZE",
@@ -356,7 +366,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇦🇿"
+      "flag_emoji": "🇦🇿",
+      "primary_alignment_count": 0
     },
     "BHS": {
       "iso3": "BHS",
@@ -371,7 +382,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇸"
+      "flag_emoji": "🇧🇸",
+      "primary_alignment_count": 0
     },
     "BHR": {
       "iso3": "BHR",
@@ -401,7 +413,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "BGD": {
       "iso3": "BGD",
@@ -416,7 +429,10 @@
         "role_label": "Announced Observer",
         "date": "2026-08-01",
         "notes": "Observer participation announced by Bangladesh’s Ministry of Foreign Affairs.",
-        "source_url": "https://unb.com.bd/category/Bangladesh/bangladesh-decides-to-join-shanghai-based-waico-as-observer-mofa/192071"
+        "source_url": "https://unb.com.bd/category/Bangladesh/bangladesh-decides-to-join-shanghai-based-waico-as-observer-mofa/192071",
+        "is_official": false,
+        "source_type": "secondary",
+        "publisher": "United News of Bangladesh (UNB)"
       },
       "pax_silica": {
         "status": "invited",
@@ -424,12 +440,16 @@
         "date": "2026-08-01",
         "is_direct": false,
         "notes": "Invited/proposed participant; under review following visit by U.S. special envoy on 1 August 2026 (secondary confirmation pending official MOFA statement).",
-        "source_url": "https://www.newagebd.net/post/foreign-affairs/314147/dhaka-reviews-us-led-pax-silica-initiative"
+        "source_url": "https://www.newagebd.net/post/foreign-affairs/314147/dhaka-reviews-us-led-pax-silica-initiative",
+        "is_official": false,
+        "source_type": "secondary",
+        "publisher": "New Age Bangladesh"
       },
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇩"
+      "flag_emoji": "🇧🇩",
+      "primary_alignment_count": 0
     },
     "BRB": {
       "iso3": "BRB",
@@ -444,7 +464,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇧"
+      "flag_emoji": "🇧🇧",
+      "primary_alignment_count": 0
     },
     "BLR": {
       "iso3": "BLR",
@@ -455,17 +476,19 @@
       "subregion": "Eastern Europe",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇧🇾"
+      "flag_emoji": "🇧🇾",
+      "primary_alignment_count": 1
     },
     "BEL": {
       "iso3": "BEL",
@@ -487,7 +510,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇪"
+      "flag_emoji": "🇧🇪",
+      "primary_alignment_count": 0
     },
     "BLZ": {
       "iso3": "BLZ",
@@ -502,7 +526,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇿"
+      "flag_emoji": "🇧🇿",
+      "primary_alignment_count": 0
     },
     "BEN": {
       "iso3": "BEN",
@@ -517,7 +542,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇯"
+      "flag_emoji": "🇧🇯",
+      "primary_alignment_count": 0
     },
     "BMU": {
       "iso3": "BMU",
@@ -532,7 +558,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇲"
+      "flag_emoji": "🇧🇲",
+      "primary_alignment_count": 0
     },
     "BTN": {
       "iso3": "BTN",
@@ -547,7 +574,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇹"
+      "flag_emoji": "🇧🇹",
+      "primary_alignment_count": 0
     },
     "BOL": {
       "iso3": "BOL",
@@ -562,7 +590,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇴"
+      "flag_emoji": "🇧🇴",
+      "primary_alignment_count": 0
     },
     "BES": {
       "iso3": "BES",
@@ -577,7 +606,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇶"
+      "flag_emoji": "🇧🇶",
+      "primary_alignment_count": 0
     },
     "BIH": {
       "iso3": "BIH",
@@ -592,7 +622,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇦"
+      "flag_emoji": "🇧🇦",
+      "primary_alignment_count": 0
     },
     "BWA": {
       "iso3": "BWA",
@@ -607,7 +638,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇼"
+      "flag_emoji": "🇧🇼",
+      "primary_alignment_count": 0
     },
     "BVT": {
       "iso3": "BVT",
@@ -622,7 +654,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇻"
+      "flag_emoji": "🇧🇻",
+      "primary_alignment_count": 0
     },
     "BRA": {
       "iso3": "BRA",
@@ -633,17 +666,19 @@
       "subregion": "Latin America and the Caribbean",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇧🇷"
+      "flag_emoji": "🇧🇷",
+      "primary_alignment_count": 1
     },
     "IOT": {
       "iso3": "IOT",
@@ -658,7 +693,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇮🇴"
+      "flag_emoji": "🇮🇴",
+      "primary_alignment_count": 0
     },
     "BRN": {
       "iso3": "BRN",
@@ -679,7 +715,8 @@
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇧🇳"
+      "flag_emoji": "🇧🇳",
+      "primary_alignment_count": 1
     },
     "BGR": {
       "iso3": "BGR",
@@ -701,7 +738,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇬"
+      "flag_emoji": "🇧🇬",
+      "primary_alignment_count": 0
     },
     "BFA": {
       "iso3": "BFA",
@@ -716,7 +754,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇫"
+      "flag_emoji": "🇧🇫",
+      "primary_alignment_count": 0
     },
     "BDI": {
       "iso3": "BDI",
@@ -731,7 +770,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇮"
+      "flag_emoji": "🇧🇮",
+      "primary_alignment_count": 0
     },
     "CPV": {
       "iso3": "CPV",
@@ -746,7 +786,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇻"
+      "flag_emoji": "🇨🇻",
+      "primary_alignment_count": 0
     },
     "KHM": {
       "iso3": "KHM",
@@ -757,17 +798,19 @@
       "subregion": "South-eastern Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇰🇭"
+      "flag_emoji": "🇰🇭",
+      "primary_alignment_count": 1
     },
     "CMR": {
       "iso3": "CMR",
@@ -778,17 +821,19 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇨🇲"
+      "flag_emoji": "🇨🇲",
+      "primary_alignment_count": 1
     },
     "CAN": {
       "iso3": "CAN",
@@ -820,7 +865,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇨🇦"
+      "flag_emoji": "🇨🇦",
+      "primary_alignment_count": 1
     },
     "CYM": {
       "iso3": "CYM",
@@ -835,7 +881,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇰🇾"
+      "flag_emoji": "🇰🇾",
+      "primary_alignment_count": 0
     },
     "CAF": {
       "iso3": "CAF",
@@ -850,7 +897,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇫"
+      "flag_emoji": "🇨🇫",
+      "primary_alignment_count": 0
     },
     "TCD": {
       "iso3": "TCD",
@@ -865,7 +913,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇩"
+      "flag_emoji": "🇹🇩",
+      "primary_alignment_count": 0
     },
     "CHL": {
       "iso3": "CHL",
@@ -892,7 +941,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "CHN": {
       "iso3": "CHN",
@@ -903,17 +953,19 @@
       "subregion": "Eastern Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇨🇳"
+      "flag_emoji": "🇨🇳",
+      "primary_alignment_count": 1
     },
     "CXR": {
       "iso3": "CXR",
@@ -928,7 +980,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇽"
+      "flag_emoji": "🇨🇽",
+      "primary_alignment_count": 0
     },
     "CCK": {
       "iso3": "CCK",
@@ -943,7 +996,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇨"
+      "flag_emoji": "🇨🇨",
+      "primary_alignment_count": 0
     },
     "COL": {
       "iso3": "COL",
@@ -958,7 +1012,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇴"
+      "flag_emoji": "🇨🇴",
+      "primary_alignment_count": 0
     },
     "COM": {
       "iso3": "COM",
@@ -973,7 +1028,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇰🇲"
+      "flag_emoji": "🇰🇲",
+      "primary_alignment_count": 0
     },
     "COG": {
       "iso3": "COG",
@@ -984,17 +1040,19 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇨🇬"
+      "flag_emoji": "🇨🇬",
+      "primary_alignment_count": 1
     },
     "COD": {
       "iso3": "COD",
@@ -1009,7 +1067,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇩"
+      "flag_emoji": "🇨🇩",
+      "primary_alignment_count": 0
     },
     "COK": {
       "iso3": "COK",
@@ -1024,7 +1083,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇰"
+      "flag_emoji": "🇨🇰",
+      "primary_alignment_count": 0
     },
     "CRI": {
       "iso3": "CRI",
@@ -1051,7 +1111,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "CIV": {
       "iso3": "CIV",
@@ -1066,7 +1127,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇮"
+      "flag_emoji": "🇨🇮",
+      "primary_alignment_count": 0
     },
     "HRV": {
       "iso3": "HRV",
@@ -1098,7 +1160,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇭🇷"
+      "flag_emoji": "🇭🇷",
+      "primary_alignment_count": 1
     },
     "CUB": {
       "iso3": "CUB",
@@ -1109,17 +1172,19 @@
       "subregion": "Latin America and the Caribbean",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇨🇺"
+      "flag_emoji": "🇨🇺",
+      "primary_alignment_count": 1
     },
     "CUW": {
       "iso3": "CUW",
@@ -1134,7 +1199,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇼"
+      "flag_emoji": "🇨🇼",
+      "primary_alignment_count": 0
     },
     "CYP": {
       "iso3": "CYP",
@@ -1156,7 +1222,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇾"
+      "flag_emoji": "🇨🇾",
+      "primary_alignment_count": 0
     },
     "CZE": {
       "iso3": "CZE",
@@ -1178,7 +1245,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇿"
+      "flag_emoji": "🇨🇿",
+      "primary_alignment_count": 0
     },
     "DNK": {
       "iso3": "DNK",
@@ -1215,7 +1283,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "DJI": {
       "iso3": "DJI",
@@ -1230,7 +1299,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇩🇯"
+      "flag_emoji": "🇩🇯",
+      "primary_alignment_count": 0
     },
     "DMA": {
       "iso3": "DMA",
@@ -1251,7 +1321,8 @@
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇩🇲"
+      "flag_emoji": "🇩🇲",
+      "primary_alignment_count": 1
     },
     "DOM": {
       "iso3": "DOM",
@@ -1266,7 +1337,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇩🇴"
+      "flag_emoji": "🇩🇴",
+      "primary_alignment_count": 0
     },
     "ECU": {
       "iso3": "ECU",
@@ -1281,7 +1353,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇪🇨"
+      "flag_emoji": "🇪🇨",
+      "primary_alignment_count": 0
     },
     "EGY": {
       "iso3": "EGY",
@@ -1296,7 +1369,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇪🇬"
+      "flag_emoji": "🇪🇬",
+      "primary_alignment_count": 0
     },
     "SLV": {
       "iso3": "SLV",
@@ -1323,7 +1397,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "GNQ": {
       "iso3": "GNQ",
@@ -1338,7 +1413,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇶"
+      "flag_emoji": "🇬🇶",
+      "primary_alignment_count": 0
     },
     "ERI": {
       "iso3": "ERI",
@@ -1353,7 +1429,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇪🇷"
+      "flag_emoji": "🇪🇷",
+      "primary_alignment_count": 0
     },
     "EST": {
       "iso3": "EST",
@@ -1401,7 +1478,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "SWZ": {
       "iso3": "SWZ",
@@ -1416,7 +1494,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇿"
+      "flag_emoji": "🇸🇿",
+      "primary_alignment_count": 0
     },
     "ETH": {
       "iso3": "ETH",
@@ -1427,17 +1506,19 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇪🇹"
+      "flag_emoji": "🇪🇹",
+      "primary_alignment_count": 1
     },
     "FLK": {
       "iso3": "FLK",
@@ -1452,7 +1533,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇫🇰"
+      "flag_emoji": "🇫🇰",
+      "primary_alignment_count": 0
     },
     "FRO": {
       "iso3": "FRO",
@@ -1467,7 +1549,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇫🇴"
+      "flag_emoji": "🇫🇴",
+      "primary_alignment_count": 0
     },
     "FJI": {
       "iso3": "FJI",
@@ -1482,7 +1565,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇫🇯"
+      "flag_emoji": "🇫🇯",
+      "primary_alignment_count": 0
     },
     "FIN": {
       "iso3": "FIN",
@@ -1519,7 +1603,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 2
     },
     "FRA": {
       "iso3": "FRA",
@@ -1551,7 +1636,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇫🇷"
+      "flag_emoji": "🇫🇷",
+      "primary_alignment_count": 1
     },
     "GUF": {
       "iso3": "GUF",
@@ -1566,7 +1652,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇫"
+      "flag_emoji": "🇬🇫",
+      "primary_alignment_count": 0
     },
     "PYF": {
       "iso3": "PYF",
@@ -1581,7 +1668,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇫"
+      "flag_emoji": "🇵🇫",
+      "primary_alignment_count": 0
     },
     "ATF": {
       "iso3": "ATF",
@@ -1596,7 +1684,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇫"
+      "flag_emoji": "🇹🇫",
+      "primary_alignment_count": 0
     },
     "GAB": {
       "iso3": "GAB",
@@ -1611,7 +1700,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇦"
+      "flag_emoji": "🇬🇦",
+      "primary_alignment_count": 0
     },
     "GMB": {
       "iso3": "GMB",
@@ -1626,7 +1716,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇲"
+      "flag_emoji": "🇬🇲",
+      "primary_alignment_count": 0
     },
     "GEO": {
       "iso3": "GEO",
@@ -1647,7 +1738,8 @@
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇬🇪"
+      "flag_emoji": "🇬🇪",
+      "primary_alignment_count": 1
     },
     "DEU": {
       "iso3": "DEU",
@@ -1684,7 +1776,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 2
     },
     "GHA": {
       "iso3": "GHA",
@@ -1699,7 +1792,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇭"
+      "flag_emoji": "🇬🇭",
+      "primary_alignment_count": 0
     },
     "GIB": {
       "iso3": "GIB",
@@ -1714,7 +1808,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇮"
+      "flag_emoji": "🇬🇮",
+      "primary_alignment_count": 0
     },
     "GRC": {
       "iso3": "GRC",
@@ -1741,7 +1836,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "GRL": {
       "iso3": "GRL",
@@ -1756,7 +1852,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇱"
+      "flag_emoji": "🇬🇱",
+      "primary_alignment_count": 0
     },
     "GRD": {
       "iso3": "GRD",
@@ -1771,7 +1868,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇩"
+      "flag_emoji": "🇬🇩",
+      "primary_alignment_count": 0
     },
     "GLP": {
       "iso3": "GLP",
@@ -1786,7 +1884,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇵"
+      "flag_emoji": "🇬🇵",
+      "primary_alignment_count": 0
     },
     "GUM": {
       "iso3": "GUM",
@@ -1801,7 +1900,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇺"
+      "flag_emoji": "🇬🇺",
+      "primary_alignment_count": 0
     },
     "GTM": {
       "iso3": "GTM",
@@ -1816,7 +1916,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇹"
+      "flag_emoji": "🇬🇹",
+      "primary_alignment_count": 0
     },
     "GGY": {
       "iso3": "GGY",
@@ -1831,7 +1932,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇬"
+      "flag_emoji": "🇬🇬",
+      "primary_alignment_count": 0
     },
     "GIN": {
       "iso3": "GIN",
@@ -1846,7 +1948,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇳"
+      "flag_emoji": "🇬🇳",
+      "primary_alignment_count": 0
     },
     "GNB": {
       "iso3": "GNB",
@@ -1861,7 +1964,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇼"
+      "flag_emoji": "🇬🇼",
+      "primary_alignment_count": 0
     },
     "GUY": {
       "iso3": "GUY",
@@ -1876,7 +1980,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇾"
+      "flag_emoji": "🇬🇾",
+      "primary_alignment_count": 0
     },
     "HTI": {
       "iso3": "HTI",
@@ -1891,7 +1996,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇭🇹"
+      "flag_emoji": "🇭🇹",
+      "primary_alignment_count": 0
     },
     "HMD": {
       "iso3": "HMD",
@@ -1906,7 +2012,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇭🇲"
+      "flag_emoji": "🇭🇲",
+      "primary_alignment_count": 0
     },
     "VAT": {
       "iso3": "VAT",
@@ -1921,7 +2028,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇻🇦"
+      "flag_emoji": "🇻🇦",
+      "primary_alignment_count": 0
     },
     "HND": {
       "iso3": "HND",
@@ -1936,7 +2044,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇭🇳"
+      "flag_emoji": "🇭🇳",
+      "primary_alignment_count": 0
     },
     "HKG": {
       "iso3": "HKG",
@@ -1951,7 +2060,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇭🇰"
+      "flag_emoji": "🇭🇰",
+      "primary_alignment_count": 0
     },
     "HUN": {
       "iso3": "HUN",
@@ -1973,7 +2083,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇭🇺"
+      "flag_emoji": "🇭🇺",
+      "primary_alignment_count": 0
     },
     "ISL": {
       "iso3": "ISL",
@@ -1998,7 +2109,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇮🇸"
+      "flag_emoji": "🇮🇸",
+      "primary_alignment_count": 1
     },
     "IND": {
       "iso3": "IND",
@@ -2025,7 +2137,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "IDN": {
       "iso3": "IDN",
@@ -2036,17 +2149,19 @@
       "subregion": "South-eastern Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇮🇩"
+      "flag_emoji": "🇮🇩",
+      "primary_alignment_count": 1
     },
     "IRN": {
       "iso3": "IRN",
@@ -2061,15 +2176,21 @@
         "role_label": "Signatory",
         "date": "2026-07-31",
         "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
-        "source_url": "https://en.irna.ir/news/86224376/Iran-joins-world-AI-cooperation-organization",
+        "source_url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html",
         "sources": [
           {
-            "title": "Ministry of Foreign Affairs of China (Signing Readout)",
-            "url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
+            "title": "Ministry of Foreign Affairs of China (Official Signing Readout)",
+            "url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html",
+            "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+            "date": "2026-08-04",
+            "is_official": true
           },
           {
-            "title": "National Official Announcement",
-            "url": "https://en.irna.ir/news/86224376/Iran-joins-world-AI-cooperation-organization"
+            "title": "National Official Announcement (IRNA)",
+            "url": "https://en.irna.ir/news/86224376/Iran-joins-world-AI-cooperation-organization",
+            "publisher": "Islamic Republic News Agency (IRNA)",
+            "date": "2026-07-31",
+            "is_official": true
           }
         ]
       },
@@ -2077,7 +2198,8 @@
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇮🇷"
+      "flag_emoji": "🇮🇷",
+      "primary_alignment_count": 1
     },
     "IRQ": {
       "iso3": "IRQ",
@@ -2092,7 +2214,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇮🇶"
+      "flag_emoji": "🇮🇶",
+      "primary_alignment_count": 0
     },
     "IRL": {
       "iso3": "IRL",
@@ -2124,7 +2247,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇮🇪"
+      "flag_emoji": "🇮🇪",
+      "primary_alignment_count": 1
     },
     "IMN": {
       "iso3": "IMN",
@@ -2139,7 +2263,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇮🇲"
+      "flag_emoji": "🇮🇲",
+      "primary_alignment_count": 0
     },
     "ISR": {
       "iso3": "ISR",
@@ -2166,7 +2291,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "ITA": {
       "iso3": "ITA",
@@ -2203,7 +2329,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "JAM": {
       "iso3": "JAM",
@@ -2218,7 +2345,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇯🇲"
+      "flag_emoji": "🇯🇲",
+      "primary_alignment_count": 0
     },
     "JPN": {
       "iso3": "JPN",
@@ -2245,7 +2373,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "JEY": {
       "iso3": "JEY",
@@ -2260,7 +2389,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇯🇪"
+      "flag_emoji": "🇯🇪",
+      "primary_alignment_count": 0
     },
     "JOR": {
       "iso3": "JOR",
@@ -2275,7 +2405,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇯🇴"
+      "flag_emoji": "🇯🇴",
+      "primary_alignment_count": 0
     },
     "KAZ": {
       "iso3": "KAZ",
@@ -2286,11 +2417,12 @@
       "subregion": "Central Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": {
         "status": "signatory",
@@ -2318,7 +2450,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 3
     },
     "KEN": {
       "iso3": "KEN",
@@ -2329,11 +2462,12 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": {
@@ -2349,7 +2483,8 @@
       },
       "alignment_category": "waico_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇰🇪"
+      "flag_emoji": "🇰🇪",
+      "primary_alignment_count": 2
     },
     "KIR": {
       "iso3": "KIR",
@@ -2364,7 +2499,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇰🇮"
+      "flag_emoji": "🇰🇮",
+      "primary_alignment_count": 0
     },
     "PRK": {
       "iso3": "PRK",
@@ -2379,7 +2515,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇰🇵"
+      "flag_emoji": "🇰🇵",
+      "primary_alignment_count": 0
     },
     "KOR": {
       "iso3": "KOR",
@@ -2406,7 +2543,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "KWT": {
       "iso3": "KWT",
@@ -2421,7 +2559,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇰🇼"
+      "flag_emoji": "🇰🇼",
+      "primary_alignment_count": 0
     },
     "KGZ": {
       "iso3": "KGZ",
@@ -2432,17 +2571,19 @@
       "subregion": "Central Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇰🇬"
+      "flag_emoji": "🇰🇬",
+      "primary_alignment_count": 1
     },
     "LAO": {
       "iso3": "LAO",
@@ -2453,17 +2594,19 @@
       "subregion": "South-eastern Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇱🇦"
+      "flag_emoji": "🇱🇦",
+      "primary_alignment_count": 1
     },
     "LVA": {
       "iso3": "LVA",
@@ -2500,7 +2643,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "LBN": {
       "iso3": "LBN",
@@ -2515,7 +2659,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇱🇧"
+      "flag_emoji": "🇱🇧",
+      "primary_alignment_count": 0
     },
     "LSO": {
       "iso3": "LSO",
@@ -2526,17 +2671,19 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇱🇸"
+      "flag_emoji": "🇱🇸",
+      "primary_alignment_count": 1
     },
     "LBR": {
       "iso3": "LBR",
@@ -2551,7 +2698,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇱🇷"
+      "flag_emoji": "🇱🇷",
+      "primary_alignment_count": 0
     },
     "LBY": {
       "iso3": "LBY",
@@ -2566,7 +2714,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇱🇾"
+      "flag_emoji": "🇱🇾",
+      "primary_alignment_count": 0
     },
     "LIE": {
       "iso3": "LIE",
@@ -2591,7 +2740,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇱🇮"
+      "flag_emoji": "🇱🇮",
+      "primary_alignment_count": 1
     },
     "LTU": {
       "iso3": "LTU",
@@ -2618,7 +2768,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 0
     },
     "LUX": {
       "iso3": "LUX",
@@ -2650,7 +2801,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇱🇺"
+      "flag_emoji": "🇱🇺",
+      "primary_alignment_count": 1
     },
     "MAC": {
       "iso3": "MAC",
@@ -2665,7 +2817,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇴"
+      "flag_emoji": "🇲🇴",
+      "primary_alignment_count": 0
     },
     "MDG": {
       "iso3": "MDG",
@@ -2680,7 +2833,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇬"
+      "flag_emoji": "🇲🇬",
+      "primary_alignment_count": 0
     },
     "MWI": {
       "iso3": "MWI",
@@ -2695,7 +2849,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇼"
+      "flag_emoji": "🇲🇼",
+      "primary_alignment_count": 0
     },
     "MYS": {
       "iso3": "MYS",
@@ -2706,17 +2861,19 @@
       "subregion": "South-eastern Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇲🇾"
+      "flag_emoji": "🇲🇾",
+      "primary_alignment_count": 1
     },
     "MDV": {
       "iso3": "MDV",
@@ -2731,7 +2888,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇻"
+      "flag_emoji": "🇲🇻",
+      "primary_alignment_count": 0
     },
     "MLI": {
       "iso3": "MLI",
@@ -2746,7 +2904,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇱"
+      "flag_emoji": "🇲🇱",
+      "primary_alignment_count": 0
     },
     "MLT": {
       "iso3": "MLT",
@@ -2768,7 +2927,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇹"
+      "flag_emoji": "🇲🇹",
+      "primary_alignment_count": 0
     },
     "MHL": {
       "iso3": "MHL",
@@ -2783,7 +2943,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇭"
+      "flag_emoji": "🇲🇭",
+      "primary_alignment_count": 0
     },
     "MTQ": {
       "iso3": "MTQ",
@@ -2798,7 +2959,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇶"
+      "flag_emoji": "🇲🇶",
+      "primary_alignment_count": 0
     },
     "MRT": {
       "iso3": "MRT",
@@ -2813,7 +2975,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇷"
+      "flag_emoji": "🇲🇷",
+      "primary_alignment_count": 0
     },
     "MUS": {
       "iso3": "MUS",
@@ -2828,7 +2991,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇺"
+      "flag_emoji": "🇲🇺",
+      "primary_alignment_count": 0
     },
     "MYT": {
       "iso3": "MYT",
@@ -2843,7 +3007,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇾🇹"
+      "flag_emoji": "🇾🇹",
+      "primary_alignment_count": 0
     },
     "MEX": {
       "iso3": "MEX",
@@ -2858,7 +3023,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇽"
+      "flag_emoji": "🇲🇽",
+      "primary_alignment_count": 0
     },
     "FSM": {
       "iso3": "FSM",
@@ -2873,7 +3039,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇫🇲"
+      "flag_emoji": "🇫🇲",
+      "primary_alignment_count": 0
     },
     "MDA": {
       "iso3": "MDA",
@@ -2898,7 +3065,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇲🇩"
+      "flag_emoji": "🇲🇩",
+      "primary_alignment_count": 1
     },
     "MCO": {
       "iso3": "MCO",
@@ -2913,7 +3081,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇨"
+      "flag_emoji": "🇲🇨",
+      "primary_alignment_count": 0
     },
     "MNG": {
       "iso3": "MNG",
@@ -2928,7 +3097,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇳"
+      "flag_emoji": "🇲🇳",
+      "primary_alignment_count": 0
     },
     "MNE": {
       "iso3": "MNE",
@@ -2943,7 +3113,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇪"
+      "flag_emoji": "🇲🇪",
+      "primary_alignment_count": 0
     },
     "MSR": {
       "iso3": "MSR",
@@ -2958,7 +3129,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇸"
+      "flag_emoji": "🇲🇸",
+      "primary_alignment_count": 0
     },
     "MAR": {
       "iso3": "MAR",
@@ -2973,7 +3145,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇦"
+      "flag_emoji": "🇲🇦",
+      "primary_alignment_count": 0
     },
     "MOZ": {
       "iso3": "MOZ",
@@ -2984,17 +3157,19 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇲🇿"
+      "flag_emoji": "🇲🇿",
+      "primary_alignment_count": 1
     },
     "MMR": {
       "iso3": "MMR",
@@ -3005,17 +3180,19 @@
       "subregion": "South-eastern Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇲🇲"
+      "flag_emoji": "🇲🇲",
+      "primary_alignment_count": 1
     },
     "NAM": {
       "iso3": "NAM",
@@ -3030,7 +3207,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇦"
+      "flag_emoji": "🇳🇦",
+      "primary_alignment_count": 0
     },
     "NRU": {
       "iso3": "NRU",
@@ -3045,7 +3223,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇷"
+      "flag_emoji": "🇳🇷",
+      "primary_alignment_count": 0
     },
     "NPL": {
       "iso3": "NPL",
@@ -3060,7 +3239,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇵"
+      "flag_emoji": "🇳🇵",
+      "primary_alignment_count": 0
     },
     "NLD": {
       "iso3": "NLD",
@@ -3098,7 +3278,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 2
     },
     "NCL": {
       "iso3": "NCL",
@@ -3113,7 +3294,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇨"
+      "flag_emoji": "🇳🇨",
+      "primary_alignment_count": 0
     },
     "NZL": {
       "iso3": "NZL",
@@ -3124,14 +3306,7 @@
       "subregion": "Australia and New Zealand",
       "is_eu_member": false,
       "waico": null,
-      "pax_silica": {
-        "status": "opportunity_statement",
-        "role_label": "AI Opportunity Statement",
-        "date": "2026-06-26",
-        "is_direct": false,
-        "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not a signatory of the Pax Silica Declaration.",
-        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      },
+      "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
@@ -3140,7 +3315,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 0
     },
     "NIC": {
       "iso3": "NIC",
@@ -3151,17 +3327,19 @@
       "subregion": "Latin America and the Caribbean",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇳🇮"
+      "flag_emoji": "🇳🇮",
+      "primary_alignment_count": 1
     },
     "NER": {
       "iso3": "NER",
@@ -3176,7 +3354,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇪"
+      "flag_emoji": "🇳🇪",
+      "primary_alignment_count": 0
     },
     "NGA": {
       "iso3": "NGA",
@@ -3191,7 +3370,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇬"
+      "flag_emoji": "🇳🇬",
+      "primary_alignment_count": 0
     },
     "NIU": {
       "iso3": "NIU",
@@ -3206,7 +3386,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇺"
+      "flag_emoji": "🇳🇺",
+      "primary_alignment_count": 0
     },
     "NFK": {
       "iso3": "NFK",
@@ -3221,7 +3402,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇳🇫"
+      "flag_emoji": "🇳🇫",
+      "primary_alignment_count": 0
     },
     "MKD": {
       "iso3": "MKD",
@@ -3236,7 +3418,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇰"
+      "flag_emoji": "🇲🇰",
+      "primary_alignment_count": 0
     },
     "MNP": {
       "iso3": "MNP",
@@ -3251,7 +3434,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇵"
+      "flag_emoji": "🇲🇵",
+      "primary_alignment_count": 0
     },
     "NOR": {
       "iso3": "NOR",
@@ -3288,7 +3472,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 2
     },
     "OMN": {
       "iso3": "OMN",
@@ -3299,17 +3484,19 @@
       "subregion": "Western Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇴🇲"
+      "flag_emoji": "🇴🇲",
+      "primary_alignment_count": 1
     },
     "PAK": {
       "iso3": "PAK",
@@ -3320,17 +3507,19 @@
       "subregion": "Southern Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇵🇰"
+      "flag_emoji": "🇵🇰",
+      "primary_alignment_count": 1
     },
     "PLW": {
       "iso3": "PLW",
@@ -3345,7 +3534,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇼"
+      "flag_emoji": "🇵🇼",
+      "primary_alignment_count": 0
     },
     "PSE": {
       "iso3": "PSE",
@@ -3360,7 +3550,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇸"
+      "flag_emoji": "🇵🇸",
+      "primary_alignment_count": 0
     },
     "PAN": {
       "iso3": "PAN",
@@ -3387,7 +3578,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "PNG": {
       "iso3": "PNG",
@@ -3402,7 +3594,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇬"
+      "flag_emoji": "🇵🇬",
+      "primary_alignment_count": 0
     },
     "PRY": {
       "iso3": "PRY",
@@ -3413,14 +3606,7 @@
       "subregion": "Latin America and the Caribbean",
       "is_eu_member": false,
       "waico": null,
-      "pax_silica": {
-        "status": "opportunity_statement",
-        "role_label": "AI Opportunity Statement",
-        "date": "2026-06-26",
-        "is_direct": false,
-        "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not a signatory of the Pax Silica Declaration.",
-        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      },
+      "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
@@ -3429,7 +3615,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 0
     },
     "PER": {
       "iso3": "PER",
@@ -3444,7 +3631,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇪"
+      "flag_emoji": "🇵🇪",
+      "primary_alignment_count": 0
     },
     "PHL": {
       "iso3": "PHL",
@@ -3471,7 +3659,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "PCN": {
       "iso3": "PCN",
@@ -3486,7 +3675,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇳"
+      "flag_emoji": "🇵🇳",
+      "primary_alignment_count": 0
     },
     "POL": {
       "iso3": "POL",
@@ -3513,7 +3703,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 0
     },
     "PRT": {
       "iso3": "PRT",
@@ -3525,12 +3716,14 @@
       "is_eu_member": true,
       "waico": null,
       "pax_silica": {
-        "status": "opportunity_statement",
-        "role_label": "AI Opportunity Statement",
-        "date": "2026-06-26",
+        "status": "eu_represented",
+        "role_label": "Via EU",
+        "date": "2026-06-23",
         "is_direct": false,
-        "notes": "Signed Joint Statement on AI Opportunity at the Second Pax Silica Summit; not listed among the Pax Silica Declaration signatories in the U.S. State Department June 2026 fact sheet.",
-        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
+        "is_official": true,
+        "source_type": "official",
+        "notes": "EU member state; shown as represented through the EU’s Pax Silica signature. Not a direct national signatory. Also signed Joint Statement on AI Opportunity.",
+        "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/06/under-secretary-jacob-helberg-on-the-accession-of-the-european-union-germany-and-greece-to-pax-silica/"
       },
       "frontier_call": {
         "status": "leader_endorsement",
@@ -3550,7 +3743,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "PRI": {
       "iso3": "PRI",
@@ -3565,7 +3759,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇷"
+      "flag_emoji": "🇵🇷",
+      "primary_alignment_count": 0
     },
     "QAT": {
       "iso3": "QAT",
@@ -3592,7 +3787,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "REU": {
       "iso3": "REU",
@@ -3607,7 +3803,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇷🇪"
+      "flag_emoji": "🇷🇪",
+      "primary_alignment_count": 0
     },
     "ROU": {
       "iso3": "ROU",
@@ -3639,7 +3836,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇷🇴"
+      "flag_emoji": "🇷🇴",
+      "primary_alignment_count": 1
     },
     "RUS": {
       "iso3": "RUS",
@@ -3650,17 +3848,19 @@
       "subregion": "Eastern Europe",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇷🇺"
+      "flag_emoji": "🇷🇺",
+      "primary_alignment_count": 1
     },
     "RWA": {
       "iso3": "RWA",
@@ -3675,7 +3875,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇷🇼"
+      "flag_emoji": "🇷🇼",
+      "primary_alignment_count": 0
     },
     "BLM": {
       "iso3": "BLM",
@@ -3690,7 +3891,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇧🇱"
+      "flag_emoji": "🇧🇱",
+      "primary_alignment_count": 0
     },
     "SHN": {
       "iso3": "SHN",
@@ -3705,7 +3907,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇭"
+      "flag_emoji": "🇸🇭",
+      "primary_alignment_count": 0
     },
     "KNA": {
       "iso3": "KNA",
@@ -3720,7 +3923,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇰🇳"
+      "flag_emoji": "🇰🇳",
+      "primary_alignment_count": 0
     },
     "LCA": {
       "iso3": "LCA",
@@ -3735,7 +3939,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇱🇨"
+      "flag_emoji": "🇱🇨",
+      "primary_alignment_count": 0
     },
     "MAF": {
       "iso3": "MAF",
@@ -3750,7 +3955,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇲🇫"
+      "flag_emoji": "🇲🇫",
+      "primary_alignment_count": 0
     },
     "SPM": {
       "iso3": "SPM",
@@ -3765,7 +3971,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇵🇲"
+      "flag_emoji": "🇵🇲",
+      "primary_alignment_count": 0
     },
     "VCT": {
       "iso3": "VCT",
@@ -3780,7 +3987,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇻🇨"
+      "flag_emoji": "🇻🇨",
+      "primary_alignment_count": 0
     },
     "WSM": {
       "iso3": "WSM",
@@ -3795,7 +4003,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇼🇸"
+      "flag_emoji": "🇼🇸",
+      "primary_alignment_count": 0
     },
     "SMR": {
       "iso3": "SMR",
@@ -3810,7 +4019,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇲"
+      "flag_emoji": "🇸🇲",
+      "primary_alignment_count": 0
     },
     "STP": {
       "iso3": "STP",
@@ -3825,7 +4035,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇹"
+      "flag_emoji": "🇸🇹",
+      "primary_alignment_count": 0
     },
     "SAU": {
       "iso3": "SAU",
@@ -3840,7 +4051,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇦"
+      "flag_emoji": "🇸🇦",
+      "primary_alignment_count": 0
     },
     "SEN": {
       "iso3": "SEN",
@@ -3851,17 +4063,19 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇸🇳"
+      "flag_emoji": "🇸🇳",
+      "primary_alignment_count": 1
     },
     "SRB": {
       "iso3": "SRB",
@@ -3872,17 +4086,19 @@
       "subregion": "Southern Europe",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇷🇸"
+      "flag_emoji": "🇷🇸",
+      "primary_alignment_count": 1
     },
     "SYC": {
       "iso3": "SYC",
@@ -3897,7 +4113,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇨"
+      "flag_emoji": "🇸🇨",
+      "primary_alignment_count": 0
     },
     "SLE": {
       "iso3": "SLE",
@@ -3922,7 +4139,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇸🇱"
+      "flag_emoji": "🇸🇱",
+      "primary_alignment_count": 1
     },
     "SGP": {
       "iso3": "SGP",
@@ -3965,7 +4183,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 2
     },
     "SXM": {
       "iso3": "SXM",
@@ -3980,7 +4199,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇽"
+      "flag_emoji": "🇸🇽",
+      "primary_alignment_count": 0
     },
     "SVK": {
       "iso3": "SVK",
@@ -4002,7 +4222,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇰"
+      "flag_emoji": "🇸🇰",
+      "primary_alignment_count": 0
     },
     "SVN": {
       "iso3": "SVN",
@@ -4024,7 +4245,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇮"
+      "flag_emoji": "🇸🇮",
+      "primary_alignment_count": 0
     },
     "SLB": {
       "iso3": "SLB",
@@ -4039,7 +4261,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇧"
+      "flag_emoji": "🇸🇧",
+      "primary_alignment_count": 0
     },
     "SOM": {
       "iso3": "SOM",
@@ -4054,7 +4277,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇴"
+      "flag_emoji": "🇸🇴",
+      "primary_alignment_count": 0
     },
     "ZAF": {
       "iso3": "ZAF",
@@ -4065,11 +4289,12 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": {
@@ -4085,7 +4310,8 @@
       },
       "alignment_category": "waico_frontier",
       "active_initiatives_count": 2,
-      "flag_emoji": "🇿🇦"
+      "flag_emoji": "🇿🇦",
+      "primary_alignment_count": 2
     },
     "SGS": {
       "iso3": "SGS",
@@ -4100,7 +4326,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇬🇸"
+      "flag_emoji": "🇬🇸",
+      "primary_alignment_count": 0
     },
     "SSD": {
       "iso3": "SSD",
@@ -4115,7 +4342,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇸"
+      "flag_emoji": "🇸🇸",
+      "primary_alignment_count": 0
     },
     "ESP": {
       "iso3": "ESP",
@@ -4147,7 +4375,8 @@
       },
       "alignment_category": "frontier_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇪🇸"
+      "flag_emoji": "🇪🇸",
+      "primary_alignment_count": 1
     },
     "LKA": {
       "iso3": "LKA",
@@ -4162,7 +4391,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇱🇰"
+      "flag_emoji": "🇱🇰",
+      "primary_alignment_count": 0
     },
     "SDN": {
       "iso3": "SDN",
@@ -4177,15 +4407,21 @@
         "role_label": "Signatory",
         "date": "2026-07-31",
         "notes": "Signed agreement on 30–31 July 2026 during the open signature period, witnessed by China's Ministry of Foreign Affairs (subject to ratification/entry into force).",
-        "source_url": "https://tpra.gov.sd/en/sudan-signs-agreement-establishing-world-artificial-intelligence-cooperation-organization-as-a-founding-member-state/",
+        "source_url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html",
         "sources": [
           {
-            "title": "Ministry of Foreign Affairs of China (Signing Readout)",
-            "url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html"
+            "title": "Ministry of Foreign Affairs of China (Official Signing Readout)",
+            "url": "https://www.fmprc.gov.cn/eng/xw/wjbxw/202608/t20260804_11998300.html",
+            "publisher": "Ministry of Foreign Affairs of the People's Republic of China",
+            "date": "2026-08-04",
+            "is_official": true
           },
           {
-            "title": "National Official Announcement",
-            "url": "https://tpra.gov.sd/en/sudan-signs-agreement-establishing-world-artificial-intelligence-cooperation-organization-as-a-founding-member-state/"
+            "title": "National Official Announcement (TPRA Sudan)",
+            "url": "https://tpra.gov.sd/en/sudan-signs-agreement-establishing-world-artificial-intelligence-cooperation-organization-as-a-founding-member-state/",
+            "publisher": "Telecommunications and Post Regulatory Authority of Sudan",
+            "date": "2026-07-31",
+            "is_official": true
           }
         ]
       },
@@ -4193,7 +4429,8 @@
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇸🇩"
+      "flag_emoji": "🇸🇩",
+      "primary_alignment_count": 1
     },
     "SUR": {
       "iso3": "SUR",
@@ -4208,7 +4445,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇷"
+      "flag_emoji": "🇸🇷",
+      "primary_alignment_count": 0
     },
     "SJM": {
       "iso3": "SJM",
@@ -4223,7 +4461,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇯"
+      "flag_emoji": "🇸🇯",
+      "primary_alignment_count": 0
     },
     "SWE": {
       "iso3": "SWE",
@@ -4250,7 +4489,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "CHE": {
       "iso3": "CHE",
@@ -4265,7 +4505,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇨🇭"
+      "flag_emoji": "🇨🇭",
+      "primary_alignment_count": 0
     },
     "SYR": {
       "iso3": "SYR",
@@ -4280,7 +4521,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇸🇾"
+      "flag_emoji": "🇸🇾",
+      "primary_alignment_count": 0
     },
     "TWN": {
       "iso3": "TWN",
@@ -4302,7 +4544,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇼"
+      "flag_emoji": "🇹🇼",
+      "primary_alignment_count": 0
     },
     "TJK": {
       "iso3": "TJK",
@@ -4313,17 +4556,19 @@
       "subregion": "Central Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇹🇯"
+      "flag_emoji": "🇹🇯",
+      "primary_alignment_count": 1
     },
     "TZA": {
       "iso3": "TZA",
@@ -4344,7 +4589,8 @@
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇹🇿"
+      "flag_emoji": "🇹🇿",
+      "primary_alignment_count": 1
     },
     "THA": {
       "iso3": "THA",
@@ -4359,7 +4605,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇭"
+      "flag_emoji": "🇹🇭",
+      "primary_alignment_count": 0
     },
     "TLS": {
       "iso3": "TLS",
@@ -4374,7 +4621,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇱"
+      "flag_emoji": "🇹🇱",
+      "primary_alignment_count": 0
     },
     "TGO": {
       "iso3": "TGO",
@@ -4395,7 +4643,8 @@
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇹🇬"
+      "flag_emoji": "🇹🇬",
+      "primary_alignment_count": 1
     },
     "TKL": {
       "iso3": "TKL",
@@ -4410,7 +4659,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇰"
+      "flag_emoji": "🇹🇰",
+      "primary_alignment_count": 0
     },
     "TON": {
       "iso3": "TON",
@@ -4425,7 +4675,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇴"
+      "flag_emoji": "🇹🇴",
+      "primary_alignment_count": 0
     },
     "TTO": {
       "iso3": "TTO",
@@ -4440,7 +4691,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇹"
+      "flag_emoji": "🇹🇹",
+      "primary_alignment_count": 0
     },
     "TUN": {
       "iso3": "TUN",
@@ -4455,7 +4707,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇳"
+      "flag_emoji": "🇹🇳",
+      "primary_alignment_count": 0
     },
     "TUR": {
       "iso3": "TUR",
@@ -4485,7 +4738,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "TKM": {
       "iso3": "TKM",
@@ -4500,7 +4754,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇲"
+      "flag_emoji": "🇹🇲",
+      "primary_alignment_count": 0
     },
     "TCA": {
       "iso3": "TCA",
@@ -4515,7 +4770,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇨"
+      "flag_emoji": "🇹🇨",
+      "primary_alignment_count": 0
     },
     "TUV": {
       "iso3": "TUV",
@@ -4530,7 +4786,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇹🇻"
+      "flag_emoji": "🇹🇻",
+      "primary_alignment_count": 0
     },
     "UGA": {
       "iso3": "UGA",
@@ -4545,7 +4802,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇺🇬"
+      "flag_emoji": "🇺🇬",
+      "primary_alignment_count": 0
     },
     "UKR": {
       "iso3": "UKR",
@@ -4560,7 +4818,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇺🇦"
+      "flag_emoji": "🇺🇦",
+      "primary_alignment_count": 0
     },
     "ARE": {
       "iso3": "ARE",
@@ -4597,7 +4856,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 2
     },
     "GBR": {
       "iso3": "GBR",
@@ -4624,7 +4884,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "USA": {
       "iso3": "USA",
@@ -4651,7 +4912,8 @@
         "signed": true,
         "date": "2026-06-26",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
-      }
+      },
+      "primary_alignment_count": 1
     },
     "UMI": {
       "iso3": "UMI",
@@ -4666,7 +4928,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇺🇲"
+      "flag_emoji": "🇺🇲",
+      "primary_alignment_count": 0
     },
     "URY": {
       "iso3": "URY",
@@ -4681,7 +4944,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇺🇾"
+      "flag_emoji": "🇺🇾",
+      "primary_alignment_count": 0
     },
     "UZB": {
       "iso3": "UZB",
@@ -4692,17 +4956,19 @@
       "subregion": "Central Asia",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇺🇿"
+      "flag_emoji": "🇺🇿",
+      "primary_alignment_count": 1
     },
     "VUT": {
       "iso3": "VUT",
@@ -4717,7 +4983,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇻🇺"
+      "flag_emoji": "🇻🇺",
+      "primary_alignment_count": 0
     },
     "VEN": {
       "iso3": "VEN",
@@ -4728,17 +4995,19 @@
       "subregion": "Latin America and the Caribbean",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇻🇪"
+      "flag_emoji": "🇻🇪",
+      "primary_alignment_count": 1
     },
     "VNM": {
       "iso3": "VNM",
@@ -4759,7 +5028,8 @@
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇻🇳"
+      "flag_emoji": "🇻🇳",
+      "primary_alignment_count": 1
     },
     "VGB": {
       "iso3": "VGB",
@@ -4774,7 +5044,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇻🇬"
+      "flag_emoji": "🇻🇬",
+      "primary_alignment_count": 0
     },
     "VIR": {
       "iso3": "VIR",
@@ -4789,7 +5060,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇻🇮"
+      "flag_emoji": "🇻🇮",
+      "primary_alignment_count": 0
     },
     "WLF": {
       "iso3": "WLF",
@@ -4804,7 +5076,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇼🇫"
+      "flag_emoji": "🇼🇫",
+      "primary_alignment_count": 0
     },
     "ESH": {
       "iso3": "ESH",
@@ -4819,7 +5092,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇪🇭"
+      "flag_emoji": "🇪🇭",
+      "primary_alignment_count": 0
     },
     "YEM": {
       "iso3": "YEM",
@@ -4834,7 +5108,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇾🇪"
+      "flag_emoji": "🇾🇪",
+      "primary_alignment_count": 0
     },
     "ZMB": {
       "iso3": "ZMB",
@@ -4845,17 +5120,19 @@
       "subregion": "Sub-Saharan Africa",
       "is_eu_member": false,
       "waico": {
-        "status": "founding_member",
+        "status": "founding_signatory",
         "role_label": "Founding Signatory",
         "date": "2026-07-16",
         "notes": "Signed founding agreement in Shanghai on 16 July 2026; designated a founding member by the agreement, subject to ratification/entry into force.",
-        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html"
+        "source_url": "https://www.fmprc.gov.cn/eng/wjbzhd/202607/t20260717_11984747.html",
+        "official_designation": "founding member"
       },
       "pax_silica": null,
       "frontier_call": null,
       "alignment_category": "waico_only",
       "active_initiatives_count": 1,
-      "flag_emoji": "🇿🇲"
+      "flag_emoji": "🇿🇲",
+      "primary_alignment_count": 1
     },
     "ZWE": {
       "iso3": "ZWE",
@@ -4870,7 +5147,8 @@
       "frontier_call": null,
       "alignment_category": "none",
       "active_initiatives_count": 0,
-      "flag_emoji": "🇿🇼"
+      "flag_emoji": "🇿🇼",
+      "primary_alignment_count": 0
     },
     "XKX": {
       "iso3": "XKX",
@@ -4884,7 +5162,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "active_initiatives_count": 0,
-      "alignment_category": "none"
+      "alignment_category": "none",
+      "primary_alignment_count": 0
     },
     "XNC": {
       "iso3": "XNC",
@@ -4898,7 +5177,8 @@
       "pax_silica": null,
       "frontier_call": null,
       "active_initiatives_count": 0,
-      "alignment_category": "none"
+      "alignment_category": "none",
+      "primary_alignment_count": 0
     },
     "SOL": {
       "iso3": "SOL",
@@ -4912,7 +5192,38 @@
       "pax_silica": null,
       "frontier_call": null,
       "active_initiatives_count": 0,
-      "alignment_category": "none"
+      "alignment_category": "none",
+      "primary_alignment_count": 0
+    }
+  },
+  "organizations": {
+    "EU": {
+      "id": "EU",
+      "name": "European Union",
+      "type": "supranational_organization",
+      "pax_silica": {
+        "status": "signatory",
+        "role_label": "Supranational Signatory",
+        "date": "2026-06-23",
+        "is_direct": true,
+        "is_official": true,
+        "source_type": "official",
+        "notes": "Signed Pax Silica Declaration on 23 June 2026 on behalf of the European Union.",
+        "source_url": "https://www.state.gov/pax-silica"
+      },
+      "frontier_call": {
+        "status": "leader_endorsement",
+        "role_label": "Endorsed by President of the European Commission",
+        "leader_title": "President of the European Commission",
+        "leader_name": "Ursula von der Leyen",
+        "date": "2026-09-21",
+        "endorsed_by": "Ursula von der Leyen (President of the European Commission)",
+        "is_co_initiator": false,
+        "is_official": true,
+        "source_type": "official",
+        "notes": "Supranational body; European Commission endorsed the declaration on behalf of the EU.",
+        "source_url": "https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/"
+      }
     }
   }
 }

@@ -82,7 +82,7 @@ def main():
     print("1. WAICO (World Artificial Intelligence Cooperation Organization)")
     print("-" * 70)
     
-    local_waico_full = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] in ["founding_member", "signatory"]}
+    local_waico_full = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] in ["founding_signatory", "founding_member", "signatory"]}
     local_waico_obs = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] == "observer"}
     local_waico_inv = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] in ["invitee", "invited"]}
     
@@ -114,14 +114,14 @@ def main():
     local_pax_eu = {c["name"]: c for c in countries_list if c.get("pax_silica") and c["pax_silica"]["status"] == "eu_represented"}
     local_pax_obs = {c["name"]: c for c in countries_list if c.get("pax_silica") and c["pax_silica"]["status"] == "observer"}
     local_pax_part = {c["name"]: c for c in countries_list if c.get("pax_silica") and c["pax_silica"]["status"] == "participant"}
-    local_pax_opp = {c["name"]: c for c in countries_list if c.get("pax_silica") and c["pax_silica"]["status"] == "opportunity_statement"}
+    local_pax_opp = {c["name"]: c for c in countries_list if c.get("ai_opportunity_statement") and c["ai_opportunity_statement"].get("signed")}
 
     print(f"  Local Database:")
     print(f"    - Direct Sovereign Signatories : {len(local_pax_direct)} (+ European Union)")
     print(f"    - EU-Represented States       : {len(local_pax_eu)}")
     print(f"    - Observers                   : {len(local_pax_obs)} ({', '.join(local_pax_obs.keys())})")
     print(f"    - Non-Signatory Participants  : {len(local_pax_part)} ({', '.join(local_pax_part.keys())})")
-    print(f"    - AI Opportunity Signatories  : {len(local_pax_opp)} ({', '.join(local_pax_opp.keys())})")
+    print(f"    - AI Opportunity Signatories  : {len(local_pax_opp)} ({len(local_pax_opp)} states)")
 
     pax_wiki = fetch_wikitext("Pax_Silica")
     if pax_wiki:
@@ -139,7 +139,7 @@ def main():
     print(f"    - Sovereign States with Leader Endorsements: {len(local_frontier)} (+ European Commission)")
     
     # 4. Overlap Summary
-    tripartite = [c["name"] for c in countries_list if c.get("waico") and c["waico"]["status"] in ["founding_member", "signatory"] and c.get("pax_silica") and c["pax_silica"].get("is_direct") and c.get("frontier_call")]
+    tripartite = [c["name"] for c in countries_list if c.get("waico") and c["waico"]["status"] in ["founding_signatory", "founding_member", "signatory"] and c.get("pax_silica") and c["pax_silica"].get("is_direct") and c.get("frontier_call")]
     print("\n" + "-" * 70)
     print("4. Multi-Initiative Alignments")
     print("-" * 70)

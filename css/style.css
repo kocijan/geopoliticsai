@@ -13,7 +13,7 @@
   
   --text-primary: #0f172a;
   --text-secondary: #334155;
-  --text-muted: #64748b;
+  --text-muted: #475569;          /* Slate-600: WCAG AAA contrast (7.0:1) on white */
   --text-inverse: #ffffff;
 
   --border-subtle: #e2e8f0;
@@ -22,14 +22,17 @@
 
   /* Alliance Colors */
   --color-waico: #dc2626;         /* Crimson / Red */
+  --color-waico-text: #b91c1c;    /* Red-700: High contrast text on light bg */
   --color-waico-bg: rgba(220, 38, 38, 0.12);
   --color-waico-border: #ef4444;
 
   --color-pax: #2563eb;           /* Azure / Cobalt Blue */
+  --color-pax-text: #1d4ed8;      /* Blue-700: High contrast text on light bg */
   --color-pax-bg: rgba(37, 99, 235, 0.12);
   --color-pax-border: #3b82f6;
 
   --color-frontier: #d97706;      /* Amber / Warm Gold */
+  --color-frontier-text: #92400e; /* Amber-800: High contrast text (5.8:1) on light bg */
   --color-frontier-bg: rgba(217, 119, 6, 0.14);
   --color-frontier-border: #f59e0b;
 
@@ -41,6 +44,7 @@
 
   /* AI Opportunity Statement (Cyan / Ocean Blue) */
   --color-opportunity: #0891b2;        /* Vibrant Cyan Blue */
+  --color-opportunity-text: #0e7490;   /* Cyan-700: High contrast text (5.5:1) on light bg */
   --color-opportunity-bg: rgba(8, 145, 178, 0.12);
   --color-opportunity-border: #06b6d4;
 
@@ -92,14 +96,17 @@
   --border-focus: #60a5fa;
 
   --color-waico: #ef4444;
+  --color-waico-text: #f87171;
   --color-waico-bg: rgba(239, 68, 68, 0.2);
   --color-waico-border: #f87171;
 
   --color-pax: #3b82f6;
+  --color-pax-text: #60a5fa;
   --color-pax-bg: rgba(59, 130, 246, 0.2);
   --color-pax-border: #60a5fa;
 
   --color-frontier: #f59e0b;
+  --color-frontier-text: #fbbf24;
   --color-frontier-bg: rgba(245, 158, 11, 0.2);
   --color-frontier-border: #fbbf24;
 
@@ -109,6 +116,7 @@
   --color-waico-frontier: #f97316;
 
   --color-opportunity: #06b6d4;
+  --color-opportunity-text: #22d3ee;
   --color-opportunity-bg: rgba(6, 182, 212, 0.2);
   --color-opportunity-border: #22d3ee;
 
@@ -378,7 +386,7 @@ a:hover {
 }
 
 .segmented-option {
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.85rem;
   font-size: 0.775rem;
   font-weight: 600;
   border-radius: var(--radius-full);
@@ -388,6 +396,10 @@ a:hover {
   cursor: pointer;
   transition: all var(--transition-fast);
   z-index: 2;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .segmented-option:hover {
@@ -477,19 +489,19 @@ a:hover {
   cursor: pointer;
 }
 
-.layer-label-waico { color: var(--color-waico); }
+.layer-label-waico { color: var(--color-waico-text); }
 .layer-checkbox-label:has(input[value="waico"]:checked) {
   background: var(--color-waico-bg);
   border-color: var(--color-waico-border);
 }
 
-.layer-label-pax { color: var(--color-pax); }
+.layer-label-pax { color: var(--color-pax-text); }
 .layer-checkbox-label:has(input[value="pax"]:checked) {
   background: var(--color-pax-bg);
   border-color: var(--color-pax-border);
 }
 
-.layer-label-frontier { color: var(--color-frontier); }
+.layer-label-frontier { color: var(--color-frontier-text); }
 .layer-checkbox-label:has(input[value="frontier"]:checked) {
   background: var(--color-frontier-bg);
   border-color: var(--color-frontier-border);
@@ -758,8 +770,10 @@ a:hover {
 }
 
 .floating-btn {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: var(--radius-md);
   background: var(--bg-surface-glass);
   backdrop-filter: blur(8px);
@@ -802,12 +816,13 @@ a:hover {
   box-shadow: var(--shadow-lg);
   z-index: 25;
   pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .map-loading-indicator.is-hidden {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .map-loading-spinner {
@@ -981,6 +996,11 @@ a:hover {
   border: 1px solid var(--border-subtle);
   background: var(--bg-surface);
   color: var(--text-primary);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
 }
 
 .search-input:focus {
@@ -1243,19 +1263,19 @@ a:hover {
 }
 
 .symbol-waico {
-  color: var(--color-waico);
+  color: var(--color-waico-text);
 }
 
 .symbol-pax {
-  color: var(--color-pax);
+  color: var(--color-pax-text);
 }
 
 .symbol-frontier {
-  color: var(--color-frontier);
+  color: var(--color-frontier-text);
 }
 
 .symbol-opportunity {
-  color: var(--color-opportunity);
+  color: var(--color-opportunity-text);
 }
 
 /* ====== Cell-Colored Status System ====== */
@@ -1280,14 +1300,14 @@ a:hover {
 .cell-waico-member {
   background: var(--color-waico-bg);
   border-left-color: var(--color-waico);
-  color: var(--color-waico);
+  color: var(--color-waico-text);
 }
 
 .cell-waico-observer {
   background: rgba(220, 38, 38, 0.06);
   border-left-color: var(--color-waico);
   border-left-style: dashed;
-  color: var(--color-waico);
+  color: var(--color-waico-text);
   opacity: 0.85;
 }
 
@@ -1305,14 +1325,14 @@ a:hover {
 .cell-pax-signatory {
   background: var(--color-pax-bg);
   border-left-color: var(--color-pax);
-  color: var(--color-pax);
+  color: var(--color-pax-text);
 }
 
 .cell-pax-eu {
   background: rgba(37, 99, 235, 0.05);
   border-left-color: var(--color-pax);
   border-left-style: dashed;
-  color: var(--color-pax);
+  color: var(--color-pax-text);
   opacity: 0.8;
   background-image: repeating-linear-gradient(
     -45deg,
@@ -1327,7 +1347,7 @@ a:hover {
   background: rgba(37, 99, 235, 0.05);
   border-left-color: var(--color-pax);
   border-left-style: dotted;
-  color: var(--color-pax);
+  color: var(--color-pax-text);
   opacity: 0.85;
 }
 
@@ -1341,13 +1361,13 @@ a:hover {
 .cell-pax-opportunity {
   background: var(--color-opportunity-bg);
   border-left: 3px solid var(--color-opportunity);
-  color: var(--color-opportunity);
+  color: var(--color-opportunity-text);
 }
 
 [data-theme="dark"] .cell-pax-opportunity {
   background: var(--color-opportunity-bg);
   border-left-color: var(--color-opportunity);
-  color: var(--color-opportunity);
+  color: var(--color-opportunity-text);
 }
 
 .cell-pax-invited {
@@ -1364,7 +1384,7 @@ a:hover {
 .cell-frontier-endorsed {
   background: var(--color-frontier-bg);
   border-left-color: var(--color-frontier);
-  color: var(--color-frontier);
+  color: var(--color-frontier-text);
 }
 
 /* None / inactive status */
@@ -1376,9 +1396,20 @@ a:hover {
 }
 
 .btn-details {
-  padding: 0.15rem 0.45rem;
+  padding: 0.22rem 0.55rem;
   font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
   border-radius: var(--radius-sm);
+  min-height: 28px;
+}
+
+.btn-details:hover {
+  background: var(--bg-hover);
+  color: var(--color-pax);
+  border-color: var(--color-pax);
 }
 
 /* Inline Country Details Window (Pop-up at bottom of table on Desktop) */
@@ -1471,6 +1502,10 @@ a:hover {
 .card-pax { border-left-color: var(--color-pax); }
 .card-frontier { border-left-color: var(--color-frontier); }
 .card-opportunity { border-left-color: var(--color-opportunity); }
+
+#details-card-opportunity.card-opportunity-pax-signatory {
+  display: none !important;
+}
 
 .initiative-card-header {
   display: flex;
@@ -1845,7 +1880,7 @@ a:hover {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    gap: 0.2rem;
+    gap: 0.3rem;
     width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
@@ -1858,17 +1893,25 @@ a:hover {
   .header-nav .btn-sm,
   .header-nav .header-checkbox-label,
   .header-nav .segmented-option {
-    padding: 0.18rem 0.32rem;
-    font-size: 0.66rem;
+    padding: 0.35rem 0.55rem;
+    font-size: 0.72rem;
     flex-shrink: 0;
-    gap: 0.2rem;
+    gap: 0.25rem;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .header-nav .btn-icon,
   .header-nav .btn-settings {
-    height: 1.75rem;
-    padding: 0.22rem 0.4rem;
+    height: 36px;
+    min-height: 36px;
+    min-width: 36px;
+    padding: 0.35rem 0.5rem;
     flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .settings-btn-text {
@@ -1926,9 +1969,10 @@ a:hover {
 
   .layer-checkbox-label {
     flex: 0 0 auto;
-    padding: 0.12rem 0.28rem;
-    font-size: 0.6rem;
-    gap: 0.2rem;
+    padding: 0.25rem 0.55rem;
+    font-size: 0.68rem;
+    gap: 0.25rem;
+    min-height: 34px;
   }
 
   .legend-panel-top {
@@ -1963,8 +2007,10 @@ a:hover {
   }
 
   .floating-btn {
-    width: 2.35rem;
-    height: 2.35rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   /* Countries Register Pane Fills Remaining Space */
@@ -1988,9 +2034,10 @@ a:hover {
 
   .search-input,
   .filter-select {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    font-size: 0.68rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-size: 0.75rem;
+    min-height: 36px;
   }
 
   .filter-select {
@@ -2059,13 +2106,17 @@ a:hover {
 
   .cell-status,
   .btn-details {
-    font-size: 0.58rem;
-    padding: 0.06rem 0.18rem;
+    font-size: 0.62rem;
+    padding: 0.12rem 0.25rem;
     line-height: 1.15;
   }
 
   .btn-details {
-    padding: 0.1rem 0.22rem;
+    padding: 0.2rem 0.4rem;
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Bottom sheet modal for details in portrait */
@@ -2144,3 +2195,64 @@ a:hover {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Accessibility Essentials (Consolidated from accessibility.css)
+   ========================================================================== */
+
+/* Screen Reader Only Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to Content Link */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-pax);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Universal Focus States */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Country SVG paths manage selection through custom strokes, suppress rectangular outline */
+.country-path:focus,
+.country-path:focus-visible {
+  outline: none !important;
+}
+
+/* Reduced Motion Accommodations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

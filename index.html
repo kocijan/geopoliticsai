@@ -28,14 +28,32 @@
   <meta name="twitter:description" content="Interactive tracker of WAICO, Pax Silica, and Frontier Control alignments.">
   <meta name="twitter:image" content="https://geopoliticsai.com/og-thumbnail.png">
 
-  <!-- Google Fonts: Inter & Outfit -->
+  <!-- Resource Hints & Preconnections -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=5">
-  <link rel="stylesheet" href="css/accessibility.css?v=5">
+  <!-- Asynchronous Google Fonts: Inter & Outfit -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
+  </noscript>
+
+  <!-- Core Stylesheet (Includes consolidated accessibility rules) -->
+  <link rel="stylesheet" href="css/style.css?v=8">
+
+  <!-- Preload Critical Map Data -->
+  <link rel="preload" as="fetch" href="data/countries.json" crossorigin>
+  <link rel="preload" as="fetch" href="https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/110m.json" crossorigin>
+
+  <!-- Deferred Application Scripts (Execute in order, non-render-blocking) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script defer src="js/data.js?v=8"></script>
+  <script defer src="js/map.js?v=8"></script>
+  <script defer src="js/app.js?v=8"></script>
 </head>
 <body>
   <!-- Accessibility Skip Link -->
@@ -197,6 +215,7 @@
               <span>Source</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
+            <div id="details-waico-sources" class="initiative-source-list" style="display:none;"></div>
           </div>
 
           <!-- Pax Silica Card -->
@@ -391,12 +410,12 @@
 
       <h4>European Union Representation</h4>
       <p>
-        The European Union signed Pax Silica on 23 June 2026; the European Commission represents the EU institutionally in the project’s organization-level record, and President Ursula von der Leyen endorsed the Frontier Control declaration. EU member states are represented visually through the EU’s institutional signature (not as individual direct national signatories). On the map, EU-represented states with no separate national status (e.g. Poland, Spain, Belgium) are displayed with a neutral grey fill and blue dots. EU member states that independently endorsed the Frontier AI Call (e.g. France, Luxembourg, Austria, Romania, Croatia) are displayed with Frontier gold fill and blue dots. Direct national Pax signatories (e.g. Germany, Greece, Netherlands, Italy, Sweden, Finland) retain a solid blue fill.
+        The European Union signed Pax Silica on 23 June 2026; the European Commission represents the EU institutionally in the project’s organization-level record, and President Ursula von der Leyen endorsed the Frontier Control declaration. EU member states are represented visually through the EU’s institutional signature (not as individual direct national signatories). On the map, EU-represented states with no separate national status (e.g. Poland, Spain, Belgium) are displayed with a neutral grey fill and blue dots. EU member states that independently endorsed the Frontier AI Call (e.g. France, Luxembourg, Austria, Romania, Croatia, Portugal) are displayed with Frontier gold fill and blue dots. Direct national Pax signatories (e.g. Germany, Greece, Netherlands, Italy, Sweden, Finland) retain a solid blue fill.
       </p>
 
       <h4>Pax Silica Status Taxonomy</h4>
       <p>
-        This tracker distinguishes: <strong>formal signatories</strong> (25 formal signatory entities as of 31 July 2026: 24 sovereign countries that signed nationally, plus the European Union as a supranational signatory; the United States is retained based on its convening signature and June 2026 outcomes fact sheet, despite omission from the State Department's current web roster table), <strong>EU-represented</strong> states (19 EU member states shown as represented through the EU signature without direct national accession), <strong>observers</strong> (reported observer participation in summit sessions, e.g. Canada, Estonia), <strong>non-signatory participants</strong> (endorsed principles via separate bilateral instruments, e.g. Taiwan), and <strong>AI Opportunity Statement</strong> signatories (signed the related Joint Statement on AI Opportunity, e.g. Portugal).
+        This tracker distinguishes: <strong>formal signatories</strong> (25 formal signatory entities as of 31 July 2026: 24 sovereign countries that signed nationally, plus the European Union as a supranational signatory; the United States is retained based on its convening signature and June 2026 outcomes fact sheet, despite omission from the State Department's current web roster table), <strong>EU-represented</strong> states (20 EU member states shown as represented through the EU signature without direct national accession), <strong>observers</strong> (reported observer participation in summit sessions, e.g. Canada, Estonia), <strong>non-signatory participants</strong> (endorsed principles via separate bilateral instruments, e.g. Taiwan), and <strong>AI Opportunity Statement</strong> signatories (35 signatories of the related Joint Statement on AI Opportunity, tracked in their dedicated dataset object).
       </p>
 
       <h4>Known Limitations</h4>
@@ -465,13 +484,6 @@
     </div>
   </footer>
 
-  <!-- External Libraries (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
-
-  <!-- Application Logic -->
-  <script src="js/data.js?v=7"></script>
-  <script src="js/map.js?v=7"></script>
-  <script src="js/app.js?v=7"></script>
+  <!-- External Libraries & Application Scripts are loaded with defer in <head> for optimal LCP -->
 </body>
 </html>

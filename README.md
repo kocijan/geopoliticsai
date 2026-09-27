@@ -31,6 +31,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 - **Tripartite Overlap:** **Kazakhstan** signed the WAICO founding treaty, joined Pax Silica at the Second Summit, and President Kassym-Jomart Tokayev personally endorsed the Frontier Control declaration.
 - **Two-Way Overlaps:** Australia, Finland, Germany, the Netherlands, Norway, Singapore, and the United Arab Emirates are direct Pax Silica signatories that also endorsed Frontier Control. Canada and Estonia form separate observer–Frontier overlaps. Kenya and South Africa are WAICO–Frontier overlaps. Kazakhstan is the sole tripartite overlap.
 - **The European Union Nuance:** The European Union signed Pax Silica on 23 June 2026; the European Commission represents the EU institutionally in the project’s organization-level record, and European Commission President Ursula von der Leyen endorsed Frontier Control on 21 September 2026. This tracker distinguishes individual EU member states that directly signed in a national capacity (Germany, Greece, Netherlands, Sweden, Finland, Italy) from 19 member states represented visually through the EU’s institutional signature (displayed with blue dots over a neutral grey background, or blue dots over gold for Frontier Control endorsers such as France, Croatia, etc.). Portugal is separately tracked as a signatory of the Joint Statement on AI Opportunity (and also endorsed Frontier Control).
+- **Provenance Note on U.S. Pax Silica Signatory Status:** The project tracks the United States as a formal signatory (convening and founding signatory at the December 2025 Washington Summit, reaffirmed in the State Department June 2026 outcomes fact sheet), even though the subsequent State Department static web roster page lists only foreign partner signatories.
 - **Taxonomy & Statuses:** Distinguishes formal national signatories (24 countries + EU), EU-represented member states (19), observers (Canada, Estonia), announced observers (Bangladesh), invited states under consideration (Singapore), non-signatory participants (Taiwan), and AI Opportunity Statement signatories.
 
 ---
@@ -43,7 +44,7 @@ Global artificial intelligence governance is dividing not into rigid Cold War-st
 - 🎨 **Cell-Colored Table & Map Symbology:**
   - Modern cell-colored status indicator system with clear text labels and tinted backgrounds.
   - Multi-initiative overlap styling: customizable between consecutive alternating stripes side-by-side or composite solid colors.
-  - Visual distinction for EU-represented states (blue with golden yellow dots) and observers.
+  - Visual distinction for EU-represented states (blue dots over neutral grey for EU representation only, or blue dots over gold for Frontier Control endorsers) and observers.
 - 🎛️ **Multi-Layer Checkboxes & Presets:**
   - Independently toggle any combination of WAICO, Pax Silica, and Frontier Control.
   - Filter by Tripartite Overlap, Two-Way Overlaps, Direct Signatories, Observers, EU Member States, or AI Opportunity Statement.
@@ -124,7 +125,7 @@ Data integrity follows a strict five-tier evidentiary hierarchy:
 2. **Depositary, treaty registry, or organizing government** (e.g. [U.S. Department of State Pax Silica Initiative & Fact Sheets](https://www.state.gov/pax-silica), Shanghai Municipal Government / WAIC Secretariat).
 3. **Acceding country’s foreign ministry or head-of-government office** (e.g. [Singapore MDDI Parliamentary response](https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-singapore-position-on-the-world-artificial-intelligence-cooperation-association/), [Estonian MFA Press Release](https://www.vm.ee/en/news/foreign-minister-tsahkna-pax-silica-agreement-opportunity-advance-technology-innovation-and), [Bangladesh MOFA announcement via UNB](https://unb.com.bd/category/Bangladesh/bangladesh-decides-to-join-shanghai-based-waico-as-observer-mofa/192071)).
 4. **Reputable wire service or established publication** (e.g. Politico, Reuters, The Diplomat).
-5. **Wikipedia** is used strictly for discovering potential newly reported developments, never as the final evidentiary source. Records with pending primary confirmation are transparently labeled as secondary sources.
+5. **Wikipedia** is used only as a temporary discovery source, with affected records explicitly flagged pending primary confirmation, never as the final evidentiary authority.
 
 ---
 

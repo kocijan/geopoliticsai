@@ -416,7 +416,7 @@
         "status": "invited",
         "role_label": "Invited State (Under Review)",
         "date": "2026-08-01",
-        "is_direct": true,
+        "is_direct": false,
         "notes": "Invited/proposed participant; under review following visit by U.S. special envoy on 1 August 2026 (secondary confirmation pending official MOFA statement).",
         "source_url": "https://www.newagebd.net/post/foreign-affairs/314147/dhaka-reviews-us-led-pax-silica-initiative"
       },
@@ -797,7 +797,7 @@
         "status": "observer",
         "role_label": "Observer",
         "date": "2025-12-12",
-        "is_direct": true,
+        "is_direct": false,
         "notes": "Participated as reported observer/guest in summit sessions; not listed on the State Department official signatory roster.",
         "source_url": "https://www.state.gov/briefings-foreign-press-centers/outcomes-of-the-paxs-silica-summit"
       },
@@ -1362,7 +1362,7 @@
         "status": "observer",
         "role_label": "Observer",
         "date": "2026-06-25",
-        "is_direct": true,
+        "is_direct": false,
         "source_conflict": false,
         "notes": "Estonian MFA confirmed participation as observer and signed the AI Opportunity Statement; not listed on the State Department official signatory roster.",
         "source_url": "https://www.vm.ee/en/news/foreign-minister-tsahkna-pax-silica-agreement-opportunity-advance-technology-innovation-and",
@@ -2054,8 +2054,8 @@
         "status": "signatory",
         "role_label": "Later Signatory Member",
         "date": "2026-07-31",
-        "notes": "Acceded to WAICO on 2026-07-31.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Iran's ambassador to China signed the founding charter of WAICO in late July 2026.",
+        "source_url": "https://en.irna.ir/news/86224376/Iran-joins-world-AI-cooperation-organization"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -2164,10 +2164,20 @@
       "pax_silica": {
         "status": "signatory",
         "role_label": "Signatory",
-        "date": "2026-08-03",
+        "date": "2026-07-31",
         "is_direct": true,
-        "notes": "Joined Pax Silica on 2026-08-03 as the 25th signatory entity.",
-        "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/07/us-welcomes-italy-into-pax-silica-initiative/"
+        "notes": "Joined Pax Silica on 2026-07-31 as the 25th signatory entity.",
+        "source_url": "https://www.esteri.it/en/sala_stampa/archivionotizie/comunicati/2026/07/litalia-aderisce-alla-pax-silica/",
+        "sources": [
+          {
+            "title": "Ministry of Foreign Affairs of Italy (Farnesina)",
+            "url": "https://www.esteri.it/en/sala_stampa/archivionotizie/comunicati/2026/07/litalia-aderisce-alla-pax-silica/"
+          },
+          {
+            "title": "U.S. Department of State",
+            "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/07/us-welcomes-italy-into-pax-silica-initiative/"
+          }
+        ]
       },
       "frontier_call": null,
       "alignment_category": "pax_only",
@@ -4150,8 +4160,8 @@
         "status": "signatory",
         "role_label": "Later Signatory Member",
         "date": "2026-07-31",
-        "notes": "Acceded to WAICO on 2026-07-31.",
-        "source_url": "https://en.wikipedia.org/wiki/World_Artificial_Intelligence_Cooperation_Organization"
+        "notes": "Signed agreement establishing WAICO (confirmed by Telecommunications and Post Regulatory Authority of Sudan).",
+        "source_url": "https://tpra.gov.sd/en/sudan-signs-agreement-establishing-world-artificial-intelligence-cooperation-organization-as-a-founding-member-state/"
       },
       "pax_silica": null,
       "frontier_call": null,
@@ -4259,7 +4269,7 @@
         "status": "participant",
         "role_label": "Non-signatory Participant",
         "date": "2025-12-12",
-        "is_direct": true,
+        "is_direct": false,
         "notes": "Endorsed principles through separate statement; non-signatory participant.",
         "source_url": "https://www.state.gov/releases/under-secretary-for-economic-affairs/2026/01/joint-statement-on-the-pax-silica-declaration-and-u-s-taiwan-economic-security-cooperation/"
       },
@@ -4604,7 +4614,7 @@
         "role_label": "Founding Signatory",
         "date": "2025-12-12",
         "is_direct": true,
-        "notes": "Signed inaugural Pax Silica Declaration at Washington Summit.",
+        "notes": "Convening and founding signatory at the inaugural December 2025 Washington Summit, reaffirmed in the State Department June 2026 outcomes release. Retained as a formal signatory despite omission from the subsequent state.gov web roster table.",
         "source_url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/outcomes-of-the-second-pax-silica-summit"
       },
       "frontier_call": null,

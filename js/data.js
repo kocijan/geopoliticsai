@@ -12,12 +12,48 @@ const DataStore = {
 
   async init() {
     try {
-      const resp = await fetch('data/countries.json');
+      const [resp, frontierResp] = await Promise.all([
+        fetch('data/countries.json'),
+        fetch('data/frontier_call.json').catch(() => null)
+      ]);
       if (!resp.ok) throw new Error(`HTTP error ${resp.status}`);
       const data = await resp.json();
       this.raw = data;
       this.meta = data.meta;
+      this.countries = data.countries;
       this.countriesList = Object.values(data.countries);
+
+      if (frontierResp && frontierResp.ok) {
+        try {
+          this.frontierCallData = await frontierResp.json();
+          if (this.frontierCallData?.signatories && Array.isArray(this.frontierCallData.signatories)) {
+            for (const s of this.frontierCallData.signatories) {
+              if (s.iso3 && data.countries[s.iso3]) {
+                const c = data.countries[s.iso3];
+                if (!c.frontier_call) {
+                  c.frontier_call = {
+                    status: 'leader_endorsement',
+                    role_label: `Endorsed by ${s.leader_title || 'Leader'}`,
+                    leader_title: s.leader_title,
+                    leader_name: s.leader_name,
+                    date: s.date,
+                    endorsed_by: `${s.leader_name} (${s.leader_title})`,
+                    is_co_initiator: Boolean(s.is_co_initiator),
+                    notes: s.notes || '',
+                    source_url: 'https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/'
+                  };
+                  if (c.alignment_category === 'none') {
+                    c.alignment_category = 'frontier_only';
+                  }
+                  c.active_initiatives_count = (c.active_initiatives_count || 0) + 1;
+                }
+              }
+            }
+          }
+        } catch (_) {
+          this.frontierCallData = null;
+        }
+      }
 
       // Indexing
       this.countriesByIso3.clear();
@@ -143,6 +179,26 @@ const DataStore = {
       return item.sources.map(s => (typeof s === 'string' ? s : `${s.title ? s.title + ': ' : ''}${s.url}`)).join(' | ');
     }
     return item.source_url || '';
+  },
+
+  formatXmlSources(item, indent = '        ') {
+    if (!item) return '';
+    const list = [];
+    if (item.sources && Array.isArray(item.sources) && item.sources.length > 0) {
+      for (const s of item.sources) {
+        if (typeof s === 'string' && s) list.push({ title: '', url: s });
+        else if (s && s.url) list.push({ title: s.title || '', url: s.url });
+      }
+    } else if (item.source_url) {
+      list.push({ title: '', url: item.source_url });
+    }
+    if (list.length === 0) return '';
+    let out = `${indent}<sources>\n`;
+    for (const s of list) {
+      out += `${indent}  <source${s.title ? ` title="${this.escapeXml(s.title)}"` : ''}>${this.escapeXml(s.url)}</source>\n`;
+    }
+    out += `${indent}</sources>\n`;
+    return out;
   },
 
   /**
@@ -275,6 +331,7 @@ const DataStore = {
           c.pax_silica?.status === 'observer' || 
           c.pax_silica?.status === 'participant' || 
           c.pax_silica?.status === 'invited' ||
+          Boolean(c.ai_opportunity_statement?.signed) ||
           c.pax_silica?.status === 'opportunity_statement'
         );
       } else if (categoryFilter === 'eu') {
@@ -309,7 +366,7 @@ const DataStore = {
       `"${(this.formatSources(c.waico)).replace(/"/g, '""')}"`,
       `"${c.pax_silica?.role_label || 'None'}"`,
       `"${c.pax_silica?.date || ''}"`,
-      c.pax_silica?.is_direct ? 'YES' : (c.pax_silica ? 'NO' : ''),
+      (c.pax_silica?.is_direct && ['founding_signatory', 'signatory'].includes(c.pax_silica.status)) ? 'YES' : (c.pax_silica ? 'NO' : ''),
       `"${(c.pax_silica?.notes || '').replace(/"/g, '""')}"`,
       `"${(this.formatSources(c.pax_silica)).replace(/"/g, '""')}"`,
       `"${c.frontier_call?.role_label || 'None'}"`,
@@ -427,7 +484,9 @@ const DataStore = {
     xml += `        <role>Supranational Signatory</role>\n`;
     xml += `        <date>2026-06-23</date>\n`;
     xml += `        <notes>Signed Pax Silica Declaration on 23 June 2026.</notes>\n`;
-    xml += `        <source>https://www.state.gov/pax-silica</source>\n`;
+    xml += `        <sources>\n`;
+    xml += `          <source>https://www.state.gov/pax-silica</source>\n`;
+    xml += `        </sources>\n`;
     xml += `      </pax_silica>\n`;
     xml += `      <frontier_call status="leader_endorsement">\n`;
     xml += `        <role>Endorsed by President of the European Commission</role>\n`;
@@ -435,7 +494,9 @@ const DataStore = {
     xml += `        <leader_name>Ursula von der Leyen</leader_name>\n`;
     xml += `        <date>2026-09-21</date>\n`;
     xml += `        <endorsed_by>Ursula von der Leyen (President of the European Commission)</endorsed_by>\n`;
-    xml += `        <source>https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/</source>\n`;
+    xml += `        <sources>\n`;
+    xml += `          <source>https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/</source>\n`;
+    xml += `        </sources>\n`;
     xml += `      </frontier_call>\n`;
     xml += `    </organization>\n`;
     xml += `  </organizations>\n`;
@@ -453,14 +514,7 @@ const DataStore = {
         xml += `        <role>${this.escapeXml(c.waico.role_label)}</role>\n`;
         xml += `        <date>${c.waico.date || ''}</date>\n`;
         xml += `        <notes>${this.escapeXml(c.waico.notes || '')}</notes>\n`;
-        xml += `        <source>${this.escapeXml(c.waico.source_url || '')}</source>\n`;
-        if (c.waico.sources && c.waico.sources.length > 0) {
-          xml += `        <sources>\n`;
-          for (const s of c.waico.sources) {
-            xml += `          <source title="${this.escapeXml(s.title || '')}">${this.escapeXml(s.url || s)}</source>\n`;
-          }
-          xml += `        </sources>\n`;
-        }
+        xml += this.formatXmlSources(c.waico);
         xml += `      </waico>\n`;
       }
 
@@ -469,14 +523,7 @@ const DataStore = {
         xml += `        <role>${this.escapeXml(c.pax_silica.role_label)}</role>\n`;
         xml += `        <date>${c.pax_silica.date || ''}</date>\n`;
         xml += `        <notes>${this.escapeXml(c.pax_silica.notes || '')}</notes>\n`;
-        xml += `        <source>${this.escapeXml(c.pax_silica.source_url || '')}</source>\n`;
-        if (c.pax_silica.sources && c.pax_silica.sources.length > 0) {
-          xml += `        <sources>\n`;
-          for (const s of c.pax_silica.sources) {
-            xml += `          <source title="${this.escapeXml(s.title || '')}">${this.escapeXml(s.url || s)}</source>\n`;
-          }
-          xml += `        </sources>\n`;
-        }
+        xml += this.formatXmlSources(c.pax_silica);
         xml += `      </pax_silica>\n`;
       }
 
@@ -486,24 +533,17 @@ const DataStore = {
         xml += `        <date>${c.frontier_call.date || ''}</date>\n`;
         xml += `        <endorsed_by>${this.escapeXml(c.frontier_call.endorsed_by || '')}</endorsed_by>\n`;
         xml += `        <notes>${this.escapeXml(c.frontier_call.notes || '')}</notes>\n`;
-        xml += `        <source>${this.escapeXml(c.frontier_call.source_url || '')}</source>\n`;
-        if (c.frontier_call.sources && c.frontier_call.sources.length > 0) {
-          xml += `        <sources>\n`;
-          for (const s of c.frontier_call.sources) {
-            xml += `          <source title="${this.escapeXml(s.title || '')}">${this.escapeXml(s.url || s)}</source>\n`;
-          }
-          xml += `        </sources>\n`;
-        }
+        xml += this.formatXmlSources(c.frontier_call);
         xml += `      </frontier_call>\n`;
       }
 
       const oppSigned = Boolean(c.ai_opportunity_statement?.signed) || c.pax_silica?.status === 'opportunity_statement';
       if (oppSigned) {
         const oppDate = c.ai_opportunity_statement?.date || (c.pax_silica?.status === 'opportunity_statement' ? c.pax_silica.date : '');
-        const oppSource = c.ai_opportunity_statement?.source_url || (c.pax_silica?.status === 'opportunity_statement' ? c.pax_silica.source_url : '');
+        const oppObj = c.ai_opportunity_statement || (c.pax_silica?.status === 'opportunity_statement' ? c.pax_silica : null);
         xml += `      <ai_opportunity_statement signed="true">\n`;
         xml += `        <date>${oppDate}</date>\n`;
-        xml += `        <source>${this.escapeXml(oppSource)}</source>\n`;
+        xml += this.formatXmlSources(oppObj);
         xml += `      </ai_opportunity_statement>\n`;
       } else {
         xml += `      <ai_opportunity_statement signed="false" />\n`;

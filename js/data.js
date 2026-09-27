@@ -12,42 +12,65 @@ const DataStore = {
 
   async init() {
     try {
-      const [resp, frontierResp] = await Promise.all([
-        fetch('data/countries.json'),
-        fetch('data/frontier_call.json').catch(() => null)
-      ]);
-      if (!resp.ok) throw new Error(`HTTP error ${resp.status}`);
-      const data = await resp.json();
+      let data = null;
+      let frontierData = null;
+
+      // Check for pre-calculated embedded data in the document to eliminate network roundtrips
+      const embeddedEl = typeof document !== 'undefined' ? document.getElementById('initial-country-data') : null;
+      if (embeddedEl && embeddedEl.textContent) {
+        try {
+          data = JSON.parse(embeddedEl.textContent);
+        } catch (e) {
+          console.warn('[DataStore] Embedded data parse failed, falling back to fetch:', e);
+          data = null;
+        }
+      }
+
+      if (!data) {
+        const [resp, frontierResp] = await Promise.all([
+          fetch('data/countries.json'),
+          fetch('data/frontier_call.json').catch(() => null)
+        ]);
+        if (!resp.ok) throw new Error(`HTTP error ${resp.status}`);
+        data = await resp.json();
+
+        if (frontierResp && frontierResp.ok) {
+          try {
+            frontierData = await frontierResp.json();
+          } catch (_) {
+            frontierData = null;
+          }
+        }
+      }
+
       this.raw = data;
       this.meta = data.meta;
       this.countries = data.countries;
       this.organizations = data.organizations;
       this.countriesList = Object.values(data.countries);
 
-      if (frontierResp && frontierResp.ok) {
+      if (frontierData?.signatories && Array.isArray(frontierData.signatories)) {
         try {
-          this.frontierCallData = await frontierResp.json();
-          if (this.frontierCallData?.signatories && Array.isArray(this.frontierCallData.signatories)) {
-            for (const s of this.frontierCallData.signatories) {
-              if (s.iso3 && data.countries[s.iso3]) {
-                const c = data.countries[s.iso3];
-                if (!c.frontier_call) {
-                  c.frontier_call = {
-                    status: 'leader_endorsement',
-                    role_label: `Endorsed by ${s.leader_title || 'Leader'}`,
-                    leader_title: s.leader_title,
-                    leader_name: s.leader_name,
-                    date: s.date,
-                    endorsed_by: `${s.leader_name} (${s.leader_title})`,
-                    is_co_initiator: Boolean(s.is_co_initiator),
-                    notes: s.notes || '',
-                    source_url: 'https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/'
-                  };
-                  if (c.alignment_category === 'none') {
-                    c.alignment_category = 'frontier_only';
-                  }
-                  c.active_initiatives_count = (c.active_initiatives_count || 0) + 1;
+          this.frontierCallData = frontierData;
+          for (const s of frontierData.signatories) {
+            if (s.iso3 && data.countries[s.iso3]) {
+              const c = data.countries[s.iso3];
+              if (!c.frontier_call) {
+                c.frontier_call = {
+                  status: 'leader_endorsement',
+                  role_label: `Endorsed by ${s.leader_title || 'Leader'}`,
+                  leader_title: s.leader_title,
+                  leader_name: s.leader_name,
+                  date: s.date,
+                  endorsed_by: `${s.leader_name} (${s.leader_title})`,
+                  is_co_initiator: Boolean(s.is_co_initiator),
+                  notes: s.notes || '',
+                  source_url: 'https://www.presidentti.fi/en/a-call-for-control-of-frontier-ai-models/'
+                };
+                if (c.alignment_category === 'none') {
+                  c.alignment_category = 'frontier_only';
                 }
+                c.active_initiatives_count = (c.active_initiatives_count || 0) + 1;
               }
             }
           }

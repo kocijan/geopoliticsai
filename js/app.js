@@ -143,18 +143,18 @@ async function initApp() {
     updateCountsAndTable();
     checkUrlHash();
 
-    // Load 110m (low-res) world map TopoJSON first for fast initial render
+    // Load 110m (low-res) world map TopoJSON from local repository first for fast initial render
     let worldTopoJson;
     try {
-      const worldResp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/110m.json');
+      const worldResp = await fetch('data/world-110m.json');
       if (!worldResp.ok) throw new Error(`HTTP ${worldResp.status}`);
       worldTopoJson = await worldResp.json();
-    } catch (cdnErr) {
-      console.warn('[App] CDN 110m fetch failed, falling back to local data/world-110m.json:', cdnErr);
+    } catch (localErr) {
+      console.warn('[App] Local data/world-110m.json fetch failed, falling back to CDN:', localErr);
       try {
-        const fallbackResp = await fetch('data/world-110m.json');
-        if (!fallbackResp.ok) throw new Error(`110m fallback: ${fallbackResp.status}`);
-        worldTopoJson = await fallbackResp.json();
+        const cdnResp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/110m.json');
+        if (!cdnResp.ok) throw new Error(`110m CDN fallback: ${cdnResp.status}`);
+        worldTopoJson = await cdnResp.json();
       } catch (fallbackErr) {
         // Ultimate fallback: try 50m directly
         console.warn('[App] 110m not available, loading 50m directly:', fallbackErr);

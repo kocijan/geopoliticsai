@@ -28,7 +28,11 @@ function generateSvg() {
       getElementById: () => null
     },
     localStorage: { getItem: () => null },
-    window: {}
+    window: {
+      matchMedia: () => ({ matches: false, addEventListener: () => {}, removeEventListener: () => {} }),
+      innerWidth: 1280,
+      innerHeight: 800
+    }
   };
   sandbox.window = sandbox;
   sandbox.global = sandbox;
@@ -244,7 +248,7 @@ function generateSvg() {
     hitboxesHtml += `        <path class="country-hitbox" vector-effect="non-scaling-stroke" style="stroke-width: 5px;" aria-hidden="true" d="${d}"></path>\n`;
   }
 
-  const svgHtml = `<svg class="map-svg" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet" aria-label="Interactive geopolitical map of AI alignments">
+  const svgHtml = `<svg class="map-svg is-prerendered" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet" aria-label="Interactive geopolitical map of AI alignments">
 ${defsHtml}
   <g class="map-root-group">
     <path class="graticule-layer graticule-path" d="${graticuleD}"></path>

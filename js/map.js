@@ -56,14 +56,41 @@ class GeopoliticsMap {
     // Tooltip
     this.tooltip = document.getElementById('map-tooltip');
     this.isPreRendered = false;
+    this.lastPatternInvK = null;
   }
 
-  async init(worldTopoJson) {
-    this.worldData = worldTopoJson;
+  isMobile() {
+    return (typeof window !== 'undefined') && (
+      (window.matchMedia && window.matchMedia('(orientation: portrait)').matches) ||
+      (window.innerWidth && window.innerWidth <= 768) ||
+      (window.matchMedia && window.matchMedia('(pointer: coarse)').matches && window.innerWidth <= 1024)
+    );
+  }
+
+  getDefault2DTransform() {
+    if (this.options.mode !== '2d') return d3.zoomIdentity;
+    if (this.isMobile()) {
+      // Zoom in by ~1.38x centered on the world map so the landmass fills mobile width nicely
+      const k = 1.38;
+      const cx = (this.baseWidth2D || 750) / 2;
+      const cy = (this.baseHeight2D || 690) / 2;
+      const tx = cx * (1 - k);
+      const ty = cy * (1 - k);
+      return d3.zoomIdentity.translate(tx, ty).scale(k);
+    }
+    return d3.zoomIdentity;
+  }
+
+  async init(worldTopoJson = null) {
+    this.worldData = worldTopoJson || null;
     // Store as low-res by default (caller may provide 110m or 50m)
-    this.worldDataLowRes = worldTopoJson;
-    this.countryFeatures = topojson.feature(this.worldData, this.worldData.objects.countries).features;
-    this.injectCityStates(1);
+    this.worldDataLowRes = this.worldData;
+    if (this.worldData && typeof topojson !== 'undefined' && this.worldData.objects?.countries) {
+      this.countryFeatures = topojson.feature(this.worldData, this.worldData.objects.countries).features;
+      this.injectCityStates(1);
+    } else {
+      this.countryFeatures = [];
+    }
 
     // Cache container dimensions once before any DOM mutation to prevent forced reflow
     const rawW = this.container ? this.container.clientWidth : 0;
@@ -76,11 +103,57 @@ class GeopoliticsMap {
     this.setupProjection();
     this.setupGraticule();
     this.setupInteractions();
+
+    const defaultTransform = this.getDefault2DTransform();
+    this.current2DTransform = defaultTransform;
+    if (this.options.mode === '2d' && defaultTransform !== d3.zoomIdentity && this.svg) {
+      this.g.attr('transform', defaultTransform);
+      this.zoomBehavior.transform(this.svg, defaultTransform);
+      this.updateCityStateGeometry(defaultTransform.k);
+      this.checkResolutionSwitch(defaultTransform.k);
+      this.updatePatternTransforms(defaultTransform.k);
+    }
+    if (this.svg) {
+      this.svg.classed('is-prerendered', false);
+    }
+
     this.render();
 
     window.addEventListener('resize', () => this.handleResize());
     if (window.ResizeObserver) {
       new ResizeObserver(() => this.handleResize()).observe(this.container);
+    }
+  }
+
+  /**
+   * Accept low-resolution (110m) TopoJSON when loaded in the background or on demand.
+   */
+  setLowResData(worldTopoJson110m) {
+    this.worldDataLowRes = worldTopoJson110m;
+    if (!this.worldDataHighRes || this.currentResolution === 'low') {
+      this.worldData = worldTopoJson110m;
+      if (typeof topojson !== 'undefined' && worldTopoJson110m.objects?.countries) {
+        this.countryFeatures = topojson.feature(worldTopoJson110m, worldTopoJson110m.objects.countries).features;
+        const zoomScale = this.getCurrentZoomScale();
+        this.injectCityStates(zoomScale);
+        if (this.options.mode === 'globe') {
+          this.render();
+          this.updateStyles();
+        } else {
+          // In 2D, bind features to existing pre-rendered paths if not yet bound
+          const baseFeatures = this.countryFeatures.filter(f => !f.isCityState);
+          const cityStateFeatures = this.countryFeatures.filter(f => f.isCityState);
+          const baseLayer = this.g ? this.g.select('.base-countries-layer') : null;
+          const cityStatesLayer = this.g ? this.g.select('.city-states-layer') : null;
+          if (baseLayer && !baseLayer.empty() && baseFeatures.length === baseLayer.selectAll('.country-path').size()) {
+            baseLayer.selectAll('.country-path').data(baseFeatures);
+          }
+          if (cityStatesLayer && !cityStatesLayer.empty() && cityStateFeatures.length === cityStatesLayer.selectAll('.country-path').size()) {
+            cityStatesLayer.selectAll('.country-path').data(cityStateFeatures);
+            cityStatesLayer.selectAll('.country-hitbox').data(cityStateFeatures);
+          }
+        }
+      }
     }
   }
 
@@ -519,9 +592,25 @@ class GeopoliticsMap {
       .attr('d', this.path);
   }
 
+  apply2DTransform(transform) {
+    this.current2DTransform = transform;
+    this.g.attr('transform', transform);
+
+    // Update city-state sizes and check resolution switch on zoom
+    const k = transform.k;
+    this.updateCityStateGeometry(k);
+    this.checkResolutionSwitch(k);
+    this.updatePatternTransforms(k);
+  }
+
   setupInteractions() {
     const self = this;
     const container = this.container;
+
+    // Reduced-FPS Zoom throttler for mobile to alleviate strobe/jitter of dots & stripes
+    let lastD3ZoomTime = 0;
+    let pendingD3ZoomTransform = null;
+    const MOBILE_ZOOM_MIN_INTERVAL = 36; // ~28 fps
 
     // D3 Zoom exclusively for 2D Mode (enhanced max zoom for mobile detail)
     this.zoomBehavior = d3.zoom()
@@ -534,14 +623,34 @@ class GeopoliticsMap {
       })
       .on('zoom', event => {
         if (self.options.mode === '2d') {
-          self.current2DTransform = event.transform;
-          self.g.attr('transform', event.transform);
+          // If on mobile and zooming (scale changed), throttle update rate to ~28 fps
+          // to alleviate rapid pattern/stripe strobing while zooming
+          const isMobile = self.isMobile();
+          const currentK = self.current2DTransform ? self.current2DTransform.k : 1;
+          const newK = event.transform.k;
+          const isZooming = Math.abs(newK - currentK) > 0.001;
 
-          // Update city-state sizes and check resolution switch on zoom
-          const k = event.transform.k;
-          self.updateCityStateGeometry(k);
-          self.checkResolutionSwitch(k);
-          self.updatePatternTransforms(k);
+          if (isMobile && isZooming) {
+            pendingD3ZoomTransform = event.transform;
+            const now = performance.now();
+            if (now - lastD3ZoomTime < MOBILE_ZOOM_MIN_INTERVAL) {
+              return;
+            }
+            lastD3ZoomTime = now;
+            pendingD3ZoomTransform = null;
+          }
+
+          self.apply2DTransform(event.transform);
+        }
+      })
+      .on('end', event => {
+        if (self.options.mode === '2d') {
+          if (pendingD3ZoomTransform) {
+            self.apply2DTransform(pendingD3ZoomTransform);
+            pendingD3ZoomTransform = null;
+          } else if (event.transform) {
+            self.apply2DTransform(event.transform);
+          }
         }
       });
 
@@ -674,6 +783,8 @@ class GeopoliticsMap {
     let touch2DPinchStart = null;
     let touch2DPinchStartDist = null;
     let touch2DPinchMidpoint = null;
+    let touch2DLastPinchTime = 0;
+    let touch2DPendingPinchTransform = null;
 
     container.addEventListener('touchstart', (e) => {
       // Do not intercept touches on floating zoom buttons
@@ -687,6 +798,7 @@ class GeopoliticsMap {
           touch2DSingleStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
           touch2DPinchStart = null;
           touch2DPinchStartDist = null;
+          touch2DPendingPinchTransform = null;
         } else if (e.touches.length === 2) {
           e.preventDefault();
           const p1 = e.touches[0], p2 = e.touches[1];
@@ -694,6 +806,8 @@ class GeopoliticsMap {
           touch2DPinchMidpoint = { x: (p1.clientX + p2.clientX) / 2, y: (p1.clientY + p2.clientY) / 2 };
           touch2DPinchStart = t;
           touch2DSingleStart = null; // Cancel single-finger pan
+          touch2DLastPinchTime = performance.now();
+          touch2DPendingPinchTransform = null;
         }
 
         if (self.isRotating) {
@@ -722,7 +836,7 @@ class GeopoliticsMap {
       if (e.target.closest('.map-floating-controls')) return;
 
       if (self.options.mode === '2d') {
-        // Two-finger pinch zoom in 2D (allow deep zoom up to 28x)
+        // Two-finger pinch zoom in 2D (allow deep zoom up to 30x)
         if (e.touches.length === 2 && touch2DPinchStartDist && touch2DPinchStart) {
           e.preventDefault();
           const p1 = e.touches[0], p2 = e.touches[1];
@@ -739,7 +853,19 @@ class GeopoliticsMap {
           const ty = my - newK / touch2DPinchStart.k * (my - touch2DPinchStart.y);
 
           const newTransform = d3.zoomIdentity.translate(tx, ty).scale(newK);
-          self.svg.call(self.zoomBehavior.transform, newTransform);
+
+          // On mobile, throttle pinch-zoom updates to ~28 FPS to alleviate high-speed strobe
+          if (self.isMobile()) {
+            touch2DPendingPinchTransform = newTransform;
+            const now = performance.now();
+            if (now - touch2DLastPinchTime >= MOBILE_ZOOM_MIN_INTERVAL) {
+              touch2DLastPinchTime = now;
+              self.svg.call(self.zoomBehavior.transform, newTransform);
+              touch2DPendingPinchTransform = null;
+            }
+          } else {
+            self.svg.call(self.zoomBehavior.transform, newTransform);
+          }
           return;
         }
 
@@ -785,6 +911,10 @@ class GeopoliticsMap {
       if (e.target.closest('.map-floating-controls')) return;
 
       if (self.options.mode === '2d') {
+        if (touch2DPendingPinchTransform) {
+          self.svg.call(self.zoomBehavior.transform, touch2DPendingPinchTransform);
+          touch2DPendingPinchTransform = null;
+        }
         if (e.touches.length === 0) {
           touch2DSingleStart = null;
           touch2DStartTransform = null;
@@ -812,6 +942,10 @@ class GeopoliticsMap {
 
     container.addEventListener('touchcancel', (e) => {
       if (e.target.closest('.map-floating-controls')) return;
+      if (touch2DPendingPinchTransform) {
+        self.svg.call(self.zoomBehavior.transform, touch2DPendingPinchTransform);
+        touch2DPendingPinchTransform = null;
+      }
       touch2DSingleStart = null;
       touch2DStartTransform = null;
       touch2DPinchStart = null;
@@ -841,31 +975,31 @@ class GeopoliticsMap {
     const self = this;
     console.log('[Map] render called: feature count =', this.countryFeatures ? this.countryFeatures.length : 0);
 
-    const baseFeatures = this.countryFeatures.filter(f => !f.isCityState);
-    const cityStateFeatures = this.countryFeatures.filter(f => f.isCityState);
+    const baseFeatures = this.countryFeatures ? this.countryFeatures.filter(f => !f.isCityState) : [];
+    const cityStateFeatures = this.countryFeatures ? this.countryFeatures.filter(f => f.isCityState) : [];
 
     let baseLayer = this.g.select('.base-countries-layer');
     let cityStatesLayer = this.g.select('.city-states-layer');
 
-    const canHydrate = this.isPreRendered &&
-      !baseLayer.empty() &&
-      baseLayer.selectAll('.country-path').size() === baseFeatures.length &&
-      !cityStatesLayer.empty() &&
-      cityStatesLayer.selectAll('.country-path').size() === cityStateFeatures.length;
+    const canHydrate = this.isPreRendered && !baseLayer.empty();
 
     if (canHydrate) {
-      console.log('[Map] Hydrating pre-rendered SVG with', baseFeatures.length, 'base countries and', cityStateFeatures.length, 'city states');
+      console.log('[Map] Hydrating pre-rendered SVG (base features ready =', baseFeatures.length > 0, ')');
       this.isPreRendered = false;
 
       // 1. Hydrate Base Countries Layer
-      baseLayer.selectAll('.country-path')
-        .data(baseFeatures)
-        .attr('class', d => {
-          const country = self.resolveCountry(d);
+      const baseSelection = baseLayer.selectAll('.country-path');
+      if (baseFeatures.length > 0 && baseFeatures.length === baseSelection.size()) {
+        baseSelection.data(baseFeatures);
+      }
+
+      baseSelection
+        .attr('class', function(d) {
+          const country = self.resolveCountry(d, this);
           const isSelected = country && country.iso3 === self.selectedIso3;
           return `country-path ${isSelected ? 'is-selected' : ''}`.trim();
         })
-        .style('fill', d => self.getCountryFill(d))
+        .style('fill', function(d) { return self.getCountryFill(d, this); })
         .on('mouseenter', function(event, d) {
           self.handleMouseEnter(this, event, d);
         })
@@ -878,64 +1012,74 @@ class GeopoliticsMap {
         .on('click', function(event, d) {
           event.stopPropagation();
           try { this.blur(); } catch (_) {}
-          self.handleCountryClick(d);
+          self.handleCountryClick(d, this);
         })
         .on('keydown', function(event, d) {
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            self.handleCountryClick(d);
+            self.handleCountryClick(d, this);
           }
         });
 
       // 2. Hydrate City States Layer
-      cityStatesLayer.selectAll('.country-path')
-        .data(cityStateFeatures)
-        .attr('class', d => {
-          const country = self.resolveCountry(d);
-          const isSelected = country && country.iso3 === self.selectedIso3;
-          return `country-path is-city-state ${isSelected ? 'is-selected' : ''}`.trim();
-        })
-        .style('fill', d => self.getCountryFill(d))
-        .each(function(d) {
-          d._pathElement = this;
-        })
-        .on('mouseenter', function(event, d) {
-          self.handleMouseEnter(this, event, d);
-        })
-        .on('mousemove', function(event) {
-          self.handleMouseMove(event);
-        })
-        .on('mouseleave', function() {
-          self.handleMouseLeave(this);
-        })
-        .on('click', function(event, d) {
-          event.stopPropagation();
-          try { this.blur(); } catch (_) {}
-          self.handleCountryClick(d);
-        })
-        .on('keydown', function(event, d) {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            self.handleCountryClick(d);
-          }
-        });
+      if (!cityStatesLayer.empty()) {
+        const citySelection = cityStatesLayer.selectAll('.country-path');
+        if (cityStateFeatures.length > 0 && cityStateFeatures.length === citySelection.size()) {
+          citySelection.data(cityStateFeatures);
+          cityStatesLayer.selectAll('.country-hitbox').data(cityStateFeatures);
+        }
 
-      // 3. Hydrate City States Hitboxes
-      cityStatesLayer.selectAll('.country-hitbox')
-        .data(cityStateFeatures)
-        .on('mouseenter', function(event, d) {
-          self.handleMouseEnter(d._pathElement, event, d);
-        })
-        .on('mousemove', function(event) {
-          self.handleMouseMove(event);
-        })
-        .on('mouseleave', function(event, d) {
-          self.handleMouseLeave(d._pathElement);
-        })
-        .on('click', function(event, d) {
-          event.stopPropagation();
-          self.handleCountryClick(d);
-        });
+        citySelection
+          .attr('class', function(d) {
+            const country = self.resolveCountry(d, this);
+            const isSelected = country && country.iso3 === self.selectedIso3;
+            return `country-path is-city-state ${isSelected ? 'is-selected' : ''}`.trim();
+          })
+          .style('fill', function(d) { return self.getCountryFill(d, this); })
+          .each(function(d) {
+            if (d) d._pathElement = this;
+            this._pathElement = this;
+          })
+          .on('mouseenter', function(event, d) {
+            self.handleMouseEnter(this, event, d);
+          })
+          .on('mousemove', function(event) {
+            self.handleMouseMove(event);
+          })
+          .on('mouseleave', function() {
+            self.handleMouseLeave(this);
+          })
+          .on('click', function(event, d) {
+            event.stopPropagation();
+            try { this.blur(); } catch (_) {}
+            self.handleCountryClick(d, this);
+          })
+          .on('keydown', function(event, d) {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              self.handleCountryClick(d, this);
+            }
+          });
+
+        // 3. Hydrate City States Hitboxes
+        cityStatesLayer.selectAll('.country-hitbox')
+          .on('mouseenter', function(event, d) {
+            const target = (d && d._pathElement) ? d._pathElement : (this.previousElementSibling || this);
+            self.handleMouseEnter(target, event, d);
+          })
+          .on('mousemove', function(event) {
+            self.handleMouseMove(event);
+          })
+          .on('mouseleave', function() {
+            const target = this.previousElementSibling || this;
+            self.handleMouseLeave(target);
+          })
+          .on('click', function(event, d) {
+            event.stopPropagation();
+            const target = (d && d._pathElement) ? d._pathElement : (this.previousElementSibling || this);
+            self.handleCountryClick(d, target);
+          });
+      }
 
       return;
     }
@@ -1071,23 +1215,54 @@ class GeopoliticsMap {
   updatePatternTransforms(k = 1) {
     if (!this.svg) return;
     if (this.options.mode === '2d') {
-      const zoomK = this.current2DTransform ? this.current2DTransform.k : (k || 1);
-      const invK = 1 / zoomK;
-      // In 2D: counteract zoom scaling so screen stripe width is completely invariant
-      this.svg.selectAll('.map-pattern-rotated')
-        .attr('patternTransform', `scale(${invK}) rotate(45)`);
-      this.svg.selectAll('.map-pattern-fixed')
-        .attr('patternTransform', `scale(${invK})`);
+      const defaultK = (this.getDefault2DTransform && this.getDefault2DTransform().k) || 1;
+      const zoomK = this.current2DTransform ? this.current2DTransform.k : (k || defaultK);
+      // Relative zoom from default framing: at default view, relative zoom is 1.0 (no scaling of patterns)
+      const relativeK = zoomK / defaultK;
+      const invK = 1 / relativeK;
+
+      // Avoid redundant DOM pattern updates when zoom change is minuscule (< 0.5%)
+      if (this.lastPatternInvK && Math.abs(invK - this.lastPatternInvK) < 0.005) {
+        return;
+      }
+      this.lastPatternInvK = invK;
+
+      // In 2D: counteract zoom scaling relative to default view so stripe width matches pre-rendered HTML on load
+      if (Math.abs(invK - 1) < 0.001) {
+        this.svg.selectAll('.map-pattern-rotated')
+          .attr('patternTransform', 'rotate(45)');
+        this.svg.selectAll('.map-pattern-fixed')
+          .attr('patternTransform', null);
+      } else {
+        this.svg.selectAll('.map-pattern-rotated')
+          .attr('patternTransform', `scale(${invK}) rotate(45)`);
+        this.svg.selectAll('.map-pattern-fixed')
+          .attr('patternTransform', `scale(${invK})`);
+      }
     } else {
       // In 3D globe: keep patterns completely static on screen without any translation or motion
       this.svg.selectAll('.map-pattern-rotated')
         .attr('patternTransform', 'rotate(45)');
       this.svg.selectAll('.map-pattern-fixed')
         .attr('patternTransform', null);
+      this.lastPatternInvK = null;
     }
   }
 
-  resolveCountry(d) {
+  resolveCountry(d, element = null) {
+    if (element) {
+      const iso = element.getAttribute('data-iso') || element.getAttribute('data-iso3');
+      if (iso) {
+        const c = DataStore.getCountryByIso3(iso);
+        if (c) return c;
+      }
+      const numId = element.getAttribute('data-id');
+      if (numId) {
+        const c = DataStore.getCountryByNumeric(numId);
+        if (c) return c;
+      }
+    }
+    if (!d) return null;
     const id = d.id !== undefined && d.id !== null ? String(d.id).padStart(3, '0') : null;
     let country = id ? DataStore.getCountryByNumeric(id) : null;
     if (!country && d.properties?.a3) {
@@ -1115,11 +1290,11 @@ class GeopoliticsMap {
     this.updateStyles();
   }
 
-  getCountryFill(d) {
+  getCountryFill(d, element = null) {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     const neutralGrey = isDark ? '#1e293b' : '#cbd5e1';
 
-    const country = this.resolveCountry(d);
+    const country = this.resolveCountry(d, element);
     if (!country) return neutralGrey;
 
     const settings = this.settings || {
@@ -1185,14 +1360,16 @@ class GeopoliticsMap {
     };
 
     this.g.selectAll('.country-path')
-      .attr('data-alliance', d => {
-        const country = self.resolveCountry(d);
+      .attr('data-alliance', function(d) {
+        const country = self.resolveCountry(d, this);
         return country ? DataStore.computeCountryAlliance(country, self.activeLayers, settings) : 'none';
       })
-      .style('fill', d => self.getCountryFill(d))
-      .classed('is-selected', d => {
-        const country = self.resolveCountry(d);
-        return country && country.iso3 === self.selectedIso3;
+      .style('fill', function(d) {
+        return self.getCountryFill(d, this);
+      })
+      .classed('is-selected', function(d) {
+        const country = self.resolveCountry(d, this);
+        return Boolean(country && country.iso3 === self.selectedIso3);
       });
 
     if (this.selectedIso3) {
@@ -1201,7 +1378,7 @@ class GeopoliticsMap {
   }
 
   handleMouseEnter(element, event, d) {
-    const country = this.resolveCountry(d);
+    const country = this.resolveCountry(d, element);
     if (!country) return;
 
     if (element) {
@@ -1344,8 +1521,8 @@ class GeopoliticsMap {
     }
   }
 
-  handleCountryClick(d) {
-    const country = this.resolveCountry(d);
+  handleCountryClick(d, element = null) {
+    const country = this.resolveCountry(d, element);
     if (!country) return;
 
     this.selectedIso3 = country.iso3;
@@ -1356,7 +1533,7 @@ class GeopoliticsMap {
     }
 
     if (this.options.mode === 'globe') {
-      const centroid = d3.geoCentroid(d);
+      const centroid = d ? d3.geoCentroid(d) : null;
       if (centroid && !isNaN(centroid[0])) {
         this.rotateTo([-centroid[0], -centroid[1]]);
       }
@@ -1384,13 +1561,25 @@ class GeopoliticsMap {
     requestAnimationFrame(step);
   }
 
-  setProjectionMode(mode) {
+  async setProjectionMode(mode) {
     if (this.options.mode === mode) return;
+
+    if (mode === 'globe' && (!this.countryFeatures || this.countryFeatures.length === 0)) {
+      if (typeof this.options.onNeedGlobeData === 'function') {
+        await this.options.onNeedGlobeData();
+      }
+      if (!this.countryFeatures || this.countryFeatures.length === 0) {
+        console.warn('[Map] Cannot switch to 3D Globe without geographic coordinate data');
+        return;
+      }
+    }
     this.options.mode = mode;
 
-    // Reset 2D zoom transform
-    this.svg.call(this.zoomBehavior.transform, d3.zoomIdentity);
-    this.g.attr('transform', null);
+    // Reset 2D zoom transform using mobile-aware default
+    const defaultTransform = this.getDefault2DTransform();
+    this.current2DTransform = defaultTransform;
+    this.svg.call(this.zoomBehavior.transform, defaultTransform);
+    this.g.attr('transform', defaultTransform === d3.zoomIdentity ? null : defaultTransform);
 
     this.isPreRendered = false;
     this.setupProjection();
@@ -1405,7 +1594,7 @@ class GeopoliticsMap {
 
     this.setupGraticule();
     this.render();
-    this.updatePatternTransforms();
+    this.updatePatternTransforms(defaultTransform.k);
 
     if (mode === 'globe' && this.isRotating) {
       this.startRotation();
@@ -1456,7 +1645,8 @@ class GeopoliticsMap {
 
   zoomIn() {
     if (this.options.mode === '2d') {
-      this.svg.transition().duration(250).call(this.zoomBehavior.scaleBy, 1.4);
+      const duration = this.isMobile() ? 280 : 250;
+      this.svg.transition().duration(duration).call(this.zoomBehavior.scaleBy, 1.4);
     } else {
       this.globeScale = Math.min(3500, this.globeScale * 1.35);
       this.projection.scale(this.globeScale);
@@ -1469,7 +1659,8 @@ class GeopoliticsMap {
 
   zoomOut() {
     if (this.options.mode === '2d') {
-      this.svg.transition().duration(250).call(this.zoomBehavior.scaleBy, 0.72);
+      const duration = this.isMobile() ? 280 : 250;
+      this.svg.transition().duration(duration).call(this.zoomBehavior.scaleBy, 0.72);
     } else {
       this.globeScale = Math.max(100, this.globeScale * 0.74);
       this.projection.scale(this.globeScale);
@@ -1482,7 +1673,8 @@ class GeopoliticsMap {
 
   resetView() {
     if (this.options.mode === '2d') {
-      this.svg.transition().duration(350).call(this.zoomBehavior.transform, d3.zoomIdentity);
+      const defaultTransform = this.getDefault2DTransform();
+      this.svg.transition().duration(350).call(this.zoomBehavior.transform, defaultTransform);
     } else {
       this.rotateTo([0, -15]);
       this.globeScale = this.baseScaleGlobe;
@@ -1499,36 +1691,54 @@ class GeopoliticsMap {
     this.updateStyles();
 
     if (this.selectedIso3) {
-      const feature = this.countryFeatures.find(f => {
-        const c = this.resolveCountry(f);
-        return c && c.iso3 === this.selectedIso3;
-      });
-
-      if (!feature) return;
+      let feature = null;
+      if (this.countryFeatures && this.countryFeatures.length > 0) {
+        feature = this.countryFeatures.find(f => {
+          const c = this.resolveCountry(f);
+          return c && c.iso3 === this.selectedIso3;
+        });
+      }
 
       if (this.options.mode === 'globe') {
-        const centroid = d3.geoCentroid(feature);
-        if (centroid && !isNaN(centroid[0])) {
-          this.rotateTo([-centroid[0], -centroid[1]]);
+        if (feature) {
+          const centroid = d3.geoCentroid(feature);
+          if (centroid && !isNaN(centroid[0])) {
+            this.rotateTo([-centroid[0], -centroid[1]]);
+          }
         }
       } else if (this.options.mode === '2d') {
         // If 2D map is zoomed in, smoothly pan/jump to center on that country
         if (this.current2DTransform && this.current2DTransform.k > 1.05) {
           let center = null;
-          try {
-            const pCentroid = this.path.centroid(feature);
-            if (pCentroid && !isNaN(pCentroid[0]) && !isNaN(pCentroid[1])) {
-              center = pCentroid;
-            }
-          } catch (_) {}
-
-          if (!center) {
+          if (feature) {
             try {
-              const gCentroid = d3.geoCentroid(feature);
-              if (gCentroid && !isNaN(gCentroid[0]) && !isNaN(gCentroid[1])) {
-                center = this.projection(gCentroid);
+              const pCentroid = this.path.centroid(feature);
+              if (pCentroid && !isNaN(pCentroid[0]) && !isNaN(pCentroid[1])) {
+                center = pCentroid;
               }
             } catch (_) {}
+
+            if (!center) {
+              try {
+                const gCentroid = d3.geoCentroid(feature);
+                if (gCentroid && !isNaN(gCentroid[0]) && !isNaN(gCentroid[1])) {
+                  center = this.projection(gCentroid);
+                }
+              } catch (_) {}
+            }
+          }
+
+          // Fallback: calculate centroid from SVG path DOM element bounding box if TopoJSON feature not ready
+          if (!center && this.svg) {
+            const pathNode = this.svg.select(`.country-path[data-iso="${this.selectedIso3}"]`).node();
+            if (pathNode && typeof pathNode.getBBox === 'function') {
+              try {
+                const bbox = pathNode.getBBox();
+                if (bbox && bbox.width > 0 && bbox.height > 0) {
+                  center = [bbox.x + bbox.width / 2, bbox.y + bbox.height / 2];
+                }
+              } catch (_) {}
+            }
           }
 
           if (center && !isNaN(center[0]) && !isNaN(center[1])) {

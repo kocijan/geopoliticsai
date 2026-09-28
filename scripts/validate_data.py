@@ -26,6 +26,7 @@ Fails with a non-zero exit code if:
 - Organizations section or EU record is missing/invalid.
 - Frontier call national signatories mismatch between countries.json and frontier_call.json.
 - Headline prose counts in README.md or index.html drift from dataset invariants.
+- Obsolete terminology appears in index.html (e.g. 'newly signed accession').
 - Generated index.html legend shows incorrect/stale counts (e.g. AI Opportunity Statement total != 35).
 - Embedded dataset in index.html does not match data/countries.json.
 """
@@ -424,6 +425,8 @@ def validate():
                 errors.append("index.html legend drift: missing 'AI Opportunity Statement (35)'")
             if "AI Opportunity Statement (3)" in index_text:
                 errors.append("index.html legend defect: found stale 'AI Opportunity Statement (3)'")
+            if "newly signed accession" in index_text:
+                errors.append("index.html text defect: found obsolete phrase 'newly signed accession'")
 
             # Check embedded JSON consistency
             m = re.search(r'<script id="initial-country-data"[^>]*>(.*?)</script>', index_text, re.DOTALL)

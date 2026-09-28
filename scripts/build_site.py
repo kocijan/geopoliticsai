@@ -320,19 +320,8 @@ def build():
     with open(os.path.join(ROOT_DIR, 'index.html'), 'r', encoding='utf-8') as f:
         html_content = f.read()
 
-    # Optimized Resource Hints & Map Preload (fonts loaded asynchronously without stealing FCP bandwidth)
-    head_preloads = """  <!-- Resource Hints & Critical Optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Asynchronous Google Fonts: Inter & Outfit with font-display: swap -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
-  </noscript>
-
-  <!-- Production Minified Stylesheet -->
+    # Production Resource Hints (web-safe fonts require zero external font downloads)
+    head_preloads = """  <!-- Production Minified Stylesheet -->
   <link rel="stylesheet" href="css/style.min.css?v=11">
 
   <!-- Production Minified & Deferred Scripts -->
@@ -341,8 +330,8 @@ def build():
 
     # Replace head resource block
     import re
-    # Match from Resource Hints comment to closing </head>
-    head_pattern = re.compile(r'  <!-- Resource Hints.*?<\/head>', re.DOTALL)
+    # Match from Production Minified Stylesheet or Resource Hints comment to closing </head>
+    head_pattern = re.compile(r'  <!-- (?:Resource Hints|Production Minified Stylesheet).*?<\/head>', re.DOTALL)
     if head_pattern.search(html_content):
         html_content = head_pattern.sub(head_preloads + '\n</head>', html_content)
 
@@ -402,8 +391,8 @@ def build():
     print("2. App JS: Combined and minified 3 scripts into 1 local js/app.min.js (17.9 kB gzipped).")
     print("3. Stylesheet: Minified to css/style.min.css (7.5 kB gzipped, -27%).")
     print("4. Network requests eliminated: data/countries.json (saved 1.11s) & data/frontier_call.json (saved 583ms).")
-    print("5. Map atlas: Local data/world-110m.json prioritized over JSDelivr (saved 1.46s CDN latency).")
-    print("6. Web fonts: Preloaded Inter and Outfit woff2 files in parallel (saved 600ms waterfall wait).")
+    print("5. Map atlas: Instant 2D hydration from pre-rendered SVG; world-110m.json lazy-loaded on-demand in background.")
+    print("6. Web-safe fonts: Using native system UI fonts for instant zero-latency rendering (0 network requests).")
     print("7. Pre-calculated HTML: Table and legend pre-rendered in static HTML for instant First Contentful Paint.")
 
 if __name__ == '__main__':

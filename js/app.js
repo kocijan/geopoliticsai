@@ -137,37 +137,46 @@ async function initApp() {
   const mapLoader = document.getElementById('map-loader');
 
   try {
-    // Parallelize 110m world map fetching with DataStore initialization for optimal LCP
-    const worldMapPromise = (async () => {
-      try {
-        const worldResp = await fetch('data/world-110m.json');
-        if (!worldResp.ok) throw new Error(`HTTP ${worldResp.status}`);
-        return await worldResp.json();
-      } catch (localErr) {
-        console.warn('[App] Local data/world-110m.json fetch failed, falling back to CDN:', localErr);
-        try {
-          const cdnResp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/110m.json');
-          if (!cdnResp.ok) throw new Error(`110m CDN fallback: ${cdnResp.status}`);
-          return await cdnResp.json();
-        } catch (fallbackErr) {
-          console.warn('[App] 110m not available, loading 50m directly:', fallbackErr);
-          const local50m = await fetch('data/world-50m.json');
-          if (local50m.ok) return await local50m.json();
-          const resp50m = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/50m.json');
-          if (!resp50m.ok) throw new Error('Failed to load any world map');
-          return await resp50m.json();
-        }
-      }
-    })();
-
     await DataStore.init();
 
     // Show table and URL hash immediately before map finishes loading!
     updateCountsAndTable();
     checkUrlHash();
 
-    // Wait for world map TopoJSON
-    const worldTopoJson = await worldMapPromise;
+    // Deferred on-demand / background loading of 110m TopoJSON for 3D globe and deep calculations
+    let is110mLoading = false;
+    let is110mLoaded = false;
+    async function load110mMap() {
+      if (is110mLoading || is110mLoaded || !mapInstance) return;
+      is110mLoading = true;
+      try {
+        let topo;
+        try {
+          const resp = await fetch('data/world-110m.json');
+          if (!resp.ok) throw new Error(`Local 110m HTTP ${resp.status}`);
+          topo = await resp.json();
+        } catch (localErr) {
+          console.warn('[App] Local data/world-110m.json fetch failed, falling back to CDN:', localErr);
+          const cdnResp = await fetch('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.1.0/world/110m.json');
+          if (cdnResp.ok) topo = await cdnResp.json();
+        }
+        if (topo && mapInstance) {
+          is110mLoaded = true;
+          mapInstance.setLowResData(topo);
+          console.log('[App] 110m TopoJSON loaded in background.');
+        }
+      } catch (err) {
+        console.warn('[App] Failed to load 110m map:', err);
+      } finally {
+        is110mLoading = false;
+      }
+    }
+
+    async function ensure110mLoaded() {
+      if (is110mLoaded && mapInstance && mapInstance.worldData) return true;
+      await load110mMap();
+      return Boolean(is110mLoaded);
+    }
 
     // Deferred on-demand loading of 50m (high-res) TopoJSON:
     // Only fetched when the user zooms in or during background idle, NEVER competing with initial LCP!
@@ -199,10 +208,11 @@ async function initApp() {
       }
     }
 
-    // Initialize Map (Default: 2D Projection for best zooming)
+    // Initialize Map (Default: 2D Projection with INSTANT hydration from pre-rendered SVG!)
     mapInstance = new GeopoliticsMap('map-viewport', {
       mode: '2d',
       onNeedHighRes: loadHighResMap,
+      onNeedGlobeData: ensure110mLoaded,
       onCountrySelect: (country) => {
         openCountryDetails(country);
         updateUrlHash(country.iso3);
@@ -213,8 +223,8 @@ async function initApp() {
       }
     });
 
-    console.log('[App] Initializing mapInstance...');
-    await mapInstance.init(worldTopoJson);
+    console.log('[App] Initializing mapInstance with instant 2D pre-rendered SVG...');
+    await mapInstance.init(null);
     mapInstance.setSettings(getSettings());
     console.log('[App] mapInstance.init completed. Paths in DOM:', document.querySelectorAll('.country-path').length);
 
@@ -264,8 +274,10 @@ async function initApp() {
     // Idle fallback: only load in background when browser is completely idle (or after 8 seconds)
     if (typeof window.requestIdleCallback === 'function') {
       window.requestIdleCallback(() => loadHighResMap(), { timeout: 10000 });
+      window.requestIdleCallback(() => load110mMap(), { timeout: 3000 });
     } else {
       setTimeout(loadHighResMap, 8000);
+      setTimeout(load110mMap, 1500);
     }
 
   } catch (err) {
@@ -316,13 +328,13 @@ async function initApp() {
     }
   }
 
-  proj2dBtn.addEventListener('click', () => {
-    mapInstance.setProjectionMode('2d');
+  proj2dBtn.addEventListener('click', async () => {
+    await mapInstance.setProjectionMode('2d');
     updateProjectionUI('2d');
   });
 
-  proj3dBtn.addEventListener('click', () => {
-    mapInstance.setProjectionMode('globe');
+  proj3dBtn.addEventListener('click', async () => {
+    await mapInstance.setProjectionMode('globe');
     updateProjectionUI('globe');
   });
 

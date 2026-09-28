@@ -60,7 +60,7 @@ def compute_alliance(country):
     frontier = country.get('frontier_call')
     opp = country.get('ai_opportunity_statement')
 
-    is_waico_full = waico and waico.get('status') in ('founding_signatory', 'founding_member', 'signatory')
+    is_waico_full = waico and waico.get('status') in ('founding_signatory', 'signatory')
     is_formal_pax = pax and pax.get('status') in ('founding_signatory', 'signatory')
     is_eu_represented = pax and pax.get('status') == 'eu_represented'
     is_pax_observer = pax and pax.get('status') == 'observer'
@@ -142,7 +142,7 @@ def generate_initial_table_rows(data):
                 waico_class = 'cell-status cell-waico-observer'
                 waico_label = 'Observer'
             else:
-                waico_class = 'cell-status cell-waico-member'
+                waico_class = 'cell-status cell-waico-signatory'
                 waico_label = w.get('role_label', 'Signatory')
 
         # Pax cell
@@ -216,12 +216,15 @@ def generate_initial_legend_items(data):
     waico_obs = 0
     frontier_sig = 0
     tripartite = 0
-    pure_opp = 0
+    ai_opp_total = sum(
+        1 for c in all_countries
+        if c.get('ai_opportunity_statement', {}).get('signed')
+    )
 
     for c in all_countries:
         w = c.get('waico')
         if w:
-            if w.get('status') in ('founding_signatory', 'founding_member', 'signatory'):
+            if w.get('status') in ('founding_signatory', 'signatory'):
                 waico_sig += 1
             elif w.get('status') == 'observer':
                 waico_obs += 1
@@ -242,8 +245,6 @@ def generate_initial_legend_items(data):
         alliance = compute_alliance(c)
         if alliance == 'tripartite':
             tripartite += 1
-        elif alliance == 'opportunity_statement':
-            pure_opp += 1
 
     items = [
         f'''            <div class="legend-item" title="World Artificial Intelligence Cooperation Organization: 37 founding and open-period signatory states (subject to ratification/entry into force)">
@@ -276,17 +277,17 @@ def generate_initial_legend_items(data):
             </div>'''
     ]
 
-    if pure_opp > 0:
-        items.append(f'''            <div class="legend-item" title="Signatories of the Joint Statement on AI Opportunity (Portugal, Paraguay)">
+    if ai_opp_total > 0:
+        items.append(f'''            <div class="legend-item" title="Signatories of the Joint Statement on AI Opportunity">
               <span class="legend-swatch swatch-opportunity"></span>
-              <span class="legend-label-text">AI Opportunity Statement ({pure_opp})</span>
+              <span class="legend-label-text">AI Opportunity Statement ({ai_opp_total})</span>
             </div>''')
 
     return '\n'.join(items)
 
 def build():
     print("=== Step 1: Validating Data Invariants ===")
-    run_command("python3 scripts/validate_data.py")
+    run_command("python3 scripts/validate_data.py --data-only")
     print("✓ Data invariants verified.")
 
     print("\n=== Step 2: Minifying CSS ===")
@@ -320,10 +321,9 @@ def build():
         html_content = f.read()
 
     # Optimized Resource Hints & Map Preload (fonts loaded asynchronously without stealing FCP bandwidth)
-    head_preloads = """  <!-- Resource Hints & Critical Map Preload -->
+    head_preloads = """  <!-- Resource Hints & Critical Optimization -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="fetch" href="data/world-110m.json">
 
   <!-- Asynchronous Google Fonts: Inter & Outfit with font-display: swap -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
@@ -333,11 +333,11 @@ def build():
   </noscript>
 
   <!-- Production Minified Stylesheet -->
-  <link rel="stylesheet" href="css/style.min.css?v=10">
+  <link rel="stylesheet" href="css/style.min.css?v=11">
 
   <!-- Production Minified & Deferred Scripts -->
-  <script defer src="js/vendor.min.js?v=10"></script>
-  <script defer src="js/app.min.js?v=10"></script>"""
+  <script defer src="js/vendor.min.js?v=11"></script>
+  <script defer src="js/app.min.js?v=11"></script>"""
 
     # Replace head resource block
     import re
@@ -362,6 +362,21 @@ def build():
         legend_replacement = f'<!-- LEGEND_ITEMS_START -->\n{legend_html}\n            <!-- LEGEND_ITEMS_END -->'
         html_content = legend_pattern.sub(legend_replacement, html_content)
 
+    # Generate and inject pre-rendered map SVG into #map-viewport
+    print("  - Generating pre-rendered SVG map...")
+    map_svg = run_command("node scripts/generate_map_svg.js")
+    map_pattern = re.compile(r'<!-- PRE_RENDERED_MAP_START -->.*?<!-- PRE_RENDERED_MAP_END -->', re.DOTALL)
+    if map_pattern.search(html_content):
+        map_replacement = f'<!-- PRE_RENDERED_MAP_START -->\n{map_svg}\n        <!-- PRE_RENDERED_MAP_END -->'
+        html_content = map_pattern.sub(map_replacement, html_content)
+    else:
+        vp_pattern = re.compile(r'(<div id="map-viewport"[^>]*>)', re.DOTALL)
+        if vp_pattern.search(html_content):
+            html_content = vp_pattern.sub(f'\\1\n        <!-- PRE_RENDERED_MAP_START -->\n{map_svg}\n        <!-- PRE_RENDERED_MAP_END -->', html_content)
+
+    # Ensure loader indicator is hidden by default since map is pre-rendered
+    html_content = html_content.replace('class="map-loading-indicator"', 'class="map-loading-indicator is-hidden"')
+
     # Inject embedded initial dataset before </body>
     data_script = f'  <!-- Pre-calculated Embedded Country Dataset for Zero-Latency Synchronous Hydration -->\n  <script id="initial-country-data" type="application/json">{minified_json_str}</script>\n'
     
@@ -373,9 +388,14 @@ def build():
         f.write(html_content)
 
     html_size = os.path.getsize(os.path.join(ROOT_DIR, 'index.html'))
-    print(f"✓ index.html pre-calculated and optimized ({html_size / 1024:.1f} KB uncompressed, ~25 KB gzipped).")
+    print(f"✓ index.html pre-calculated and optimized ({html_size / 1024:.1f} KB uncompressed, ~85 KB gzipped).")
     print(f"  - Pre-rendered {aligned_count} aligned country rows.")
+    print(f"  - Pre-rendered full 2D SVG map embedded in HTML.")
     print(f"  - Embedded initial dataset ({len(minified_json_str) / 1024:.1f} KB uncompressed, ~13 KB gzipped).")
+
+    print("\n=== Step 5: Validating Full Site & Invariants ===")
+    run_command("python3 scripts/validate_data.py")
+    print("✓ All invariants, legend counts, and embedded dataset integrity verified.")
 
     print("\n=== Summary of Optimization Improvements ===")
     print("1. Vendor JS: Replaced 95 kB external JSDelivr d3/topojson with 35.9 kB local js/vendor.min.js (-62%).")

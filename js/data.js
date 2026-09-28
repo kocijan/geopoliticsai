@@ -131,7 +131,6 @@ const DataStore = {
     // WAICO signatory status (distinguish full signatory vs observer)
     const isWaicoFull = activeLayers.waico && country.waico && (
       country.waico.status === 'founding_signatory' ||
-      country.waico.status === 'founding_member' ||
       country.waico.status === 'signatory'
     );
     const isWaicoObserver = activeLayers.waico && country.waico && country.waico.status === 'observer';
@@ -346,7 +345,7 @@ const DataStore = {
       } else if (categoryFilter === 'two_way') {
         result = result.filter(c => ['waico_pax', 'pax_frontier', 'waico_frontier', 'frontier_pax_eu', 'frontier_opportunity', 'pax_observer_frontier'].includes(this.computeCountryAlliance(c, activeLayers, options)));
       } else if (categoryFilter === 'waico') {
-        result = result.filter(c => c.waico && ['founding_signatory', 'founding_member', 'signatory'].includes(c.waico.status));
+        result = result.filter(c => c.waico && ['founding_signatory', 'signatory'].includes(c.waico.status));
       } else if (categoryFilter === 'pax') {
         result = result.filter(c => c.pax_silica && ['founding_signatory', 'signatory'].includes(c.pax_silica.status));
       } else if (categoryFilter === 'frontier') {

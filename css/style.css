@@ -1297,6 +1297,7 @@ a:hover {
 }
 
 /* WAICO cell statuses */
+.cell-waico-signatory,
 .cell-waico-member {
   background: var(--color-waico-bg);
   border-left-color: var(--color-waico);
@@ -2194,6 +2195,36 @@ a:hover {
   .settings-btn-text {
     display: none;
   }
+}
+
+/* Thin country borders (.5px) on portrait, mobile, and low-res/high-DPI screens */
+@media (orientation: portrait), (max-width: 820px), (max-height: 520px), ((pointer: coarse) and (max-width: 1024px)) {
+  .country-path {
+    stroke-width: 0.5px;
+  }
+
+  .country-path.is-city-state {
+    stroke-width: 0.5px;
+  }
+
+  .country-path:hover {
+    stroke-width: 1.2px;
+  }
+
+  .country-path.is-selected,
+  .country-path.is-city-state.is-selected,
+  [data-theme="dark"] .country-path.is-selected,
+  [data-theme="dark"] .country-path.is-city-state.is-selected {
+    stroke-width: 1.5px !important;
+  }
+}
+
+.is-mobile-layout .country-path {
+  stroke-width: 0.5px;
+}
+
+.is-mobile-layout .country-path.is-city-state {
+  stroke-width: 0.5px;
 }
 
 /* ==========================================================================

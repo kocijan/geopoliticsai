@@ -82,7 +82,7 @@ def main():
     print("1. WAICO (World Artificial Intelligence Cooperation Organization)")
     print("-" * 70)
     
-    local_waico_full = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] in ["founding_signatory", "founding_member", "signatory"]}
+    local_waico_full = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] in ["founding_signatory", "signatory"]}
     local_waico_obs = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] == "observer"}
     local_waico_inv = {c["name"]: c for c in countries_list if c.get("waico") and c["waico"]["status"] in ["invitee", "invited"]}
     
@@ -139,7 +139,7 @@ def main():
     print(f"    - Sovereign States with Leader Endorsements: {len(local_frontier)} (+ European Commission)")
     
     # 4. Overlap Summary
-    tripartite = [c["name"] for c in countries_list if c.get("waico") and c["waico"]["status"] in ["founding_signatory", "founding_member", "signatory"] and c.get("pax_silica") and c["pax_silica"].get("is_direct") and c.get("frontier_call")]
+    tripartite = [c["name"] for c in countries_list if c.get("waico") and c["waico"]["status"] in ["founding_signatory", "signatory"] and c.get("pax_silica") and c["pax_silica"].get("is_direct") and c.get("frontier_call")]
     print("\n" + "-" * 70)
     print("4. Multi-Initiative Alignments")
     print("-" * 70)

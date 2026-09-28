@@ -136,7 +136,7 @@ Data integrity follows a strict five-tier evidentiary hierarchy:
 ## Author & Community Contributions
 
 Improvements, corrections, and additions are warmly welcomed:
-- Found a newly signed accession or missing leader endorsement? Open a [GitHub Issue](https://github.com/kocijan/geopoliticsai/issues) or submit a Pull Request.
+- Found a new signature, accession, ratification, or endorsement? Open a [GitHub Issue](https://github.com/kocijan/geopoliticsai/issues) or submit a Pull Request.
 - Citations must include primary government statements, treaty registry entries, or official diplomatic press releases.
 
 ---

@@ -14,7 +14,8 @@
       "waico_taxonomy": "Treaty signatures during the open period (through 31 July 2026) are classified as signatories. Membership under the constitutive agreement is contingent upon ratification, acceptance, or approval and formal entry into force upon deposit of the third instrument.",
       "pax_silica_taxonomy": "Pax Silica is a non-binding U.S. State Department-led economic-security framework (25 formal signatory entities: 24 sovereign nations + EU). EU member states without separate national signatures are categorized as eu_represented.",
       "frontier_call_taxonomy": "The Call for Control of Frontier AI Models is an open political declaration endorsed by 30 officials representing 28 sovereign nations plus the European Commission President.",
-      "primary_alignment_count_definition": "primary_alignment_count (and active_initiatives_count) measures direct national sovereign participation across the three primary initiatives: direct national Pax Silica signatory, direct WAICO signatory, and direct Frontier Control endorsement. Associated statuses (observers, invitees, non-signatory participants, EU representation, and the secondary AI Opportunity Statement) are excluded from this primary count and recorded in their respective objects."
+      "primary_alignment_count_definition": "primary_alignment_count (and active_initiatives_count) measures direct national sovereign participation across the three primary initiatives: direct national Pax Silica signatory, direct WAICO signatory, and direct Frontier Control endorsement. Associated statuses (observers, invitees, non-signatory participants, EU representation, and the secondary AI Opportunity Statement) are excluded from this primary count and recorded in their respective objects.",
+      "waico_founding_provenance_note": "The PRC Foreign Ministry signing ceremony readout officially confirms 29 founding signatory countries on 16 July 2026 (naming five illustrative examples: Kazakhstan, Laos, Pakistan, Russia, and Indonesia). The complete 29-country founding roster is cross-validated via diplomatic reporting and international coverage (including The Diplomat's comprehensive enumeration). The eight later open-window signatories (July 30–31) are individually confirmed by name in official Foreign Ministry statements."
     },
     "statistics": {
       "tripartite": 1,
@@ -432,6 +433,7 @@
         "source_url": "https://unb.com.bd/category/Bangladesh/bangladesh-decides-to-join-shanghai-based-waico-as-observer-mofa/192071",
         "is_official": false,
         "source_type": "secondary",
+        "evidence_status": "secondary_pending",
         "publisher": "United News of Bangladesh (UNB)"
       },
       "pax_silica": {
@@ -443,6 +445,7 @@
         "source_url": "https://www.newagebd.net/post/foreign-affairs/314147/dhaka-reviews-us-led-pax-silica-initiative",
         "is_official": false,
         "source_type": "secondary",
+        "evidence_status": "secondary_pending",
         "publisher": "New Age Bangladesh"
       },
       "frontier_call": null,
@@ -1446,8 +1449,9 @@
         "role_label": "Observer",
         "date": "2026-06-25",
         "is_direct": false,
-        "source_conflict": false,
-        "notes": "Estonian MFA confirmed participation as observer and signed the AI Opportunity Statement; not listed on the State Department official signatory roster.",
+        "source_conflict": true,
+        "evidence_status": "primary_ambiguous",
+        "notes": "Official Estonian release calls Estonia an observer and uses 'Pax Silica Declaration on Artificial Intelligence' for the document it signed; the U.S. outcomes list places Estonia only in the AI Opportunity Statement roster.",
         "source_url": "https://www.vm.ee/en/news/foreign-minister-tsahkna-pax-silica-agreement-opportunity-advance-technology-innovation-and",
         "sources": [
           {

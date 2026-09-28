@@ -432,7 +432,7 @@ async function initApp() {
           waicoClass = 'cell-status cell-waico-observer';
           waicoLabel = 'Observer';
         } else {
-          waicoClass = 'cell-status cell-waico-member';
+          waicoClass = 'cell-status cell-waico-signatory';
           waicoLabel = c.waico.role_label || 'Signatory';
         }
       }
@@ -532,7 +532,7 @@ async function initApp() {
 
     for (const c of all) {
       if (c.waico) {
-        if (c.waico.status === 'founding_signatory' || c.waico.status === 'founding_member' || c.waico.status === 'signatory') waicoSignatories++;
+        if (c.waico.status === 'founding_signatory' || c.waico.status === 'signatory') waicoSignatories++;
         else if (c.waico.status === 'observer') waicoObservers++;
         else if (c.waico.status === 'invitee' || c.waico.status === 'invited') waicoInvitees++;
       }
@@ -624,12 +624,12 @@ async function initApp() {
     }
 
     if (activeLayers.pax) {
-      const pureOppCount = all.filter(c => DataStore.computeCountryAlliance(c, activeLayers, settings) === 'opportunity_statement').length;
-      if (pureOppCount > 0) {
+      const aiOppTotal = all.filter(c => c.ai_opportunity_statement && c.ai_opportunity_statement.signed).length;
+      if (aiOppTotal > 0) {
         items.push(`
-          <div class="legend-item" title="Signatories of the Joint Statement on AI Opportunity (Portugal, Paraguay)">
+          <div class="legend-item" title="Signatories of the Joint Statement on AI Opportunity">
             <span class="legend-swatch swatch-opportunity"></span>
-            <span class="legend-label-text">AI Opportunity Statement (${pureOppCount})</span>
+            <span class="legend-label-text">AI Opportunity Statement (${aiOppTotal})</span>
           </div>
         `);
       }
